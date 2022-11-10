@@ -1,0 +1,65 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
+import { MatSliderModule } from '@angular/material/slider';
+import { UserModelModule } from './user-model/user-model.module';
+import { DashBoardModule } from './dash-board/dash-board.module';
+import { ProfileModule } from './profile/profile.module';
+import {HttpClientModule} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { CompanyModuleModule } from './company-module/company-module.module';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OpratorModuleModule } from './oprator-module/oprator-module.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { TranslateLoader } from '@ngx-translate/core';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    UserModelModule,
+    CompanyModuleModule,
+    OpratorModuleModule,
+    DashBoardModule,
+    CommonModule,
+    ProfileModule,
+    HttpClientModule,
+    ProfileModule,
+    NgxIntlTelInputModule,
+    CarouselModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
+    
+    
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}

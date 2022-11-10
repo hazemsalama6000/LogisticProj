@@ -1,0 +1,62 @@
+p{
+    font-size: 16px;
+   
+}
+
+.title{
+    font-size: 44px;
+    color: #202020;
+   margin-top: 10vh;
+
+}
+.btn{
+    background-color:#021955;
+    border-radius: 10px;
+    border: none;
+  color: #FFFFFF;
+  }
+
+  // textcontral
+  @media only screen and (max-width: 600px) {
+    .textcontral {
+   font-size: 8px;
+   font-weight: 300;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .textcontral {
+      font-size: 10px;
+      font-weight: 500;
+       }
+     }
+  
+     @media only screen and (max-width: 415px) {
+      .textcontral {
+        
+     font-size: 6px;
+     font-weight: 300;
+      }
+    }
+
+  // btncontraol
+  
+  @media only screen and (max-width: 600px) {
+    .btn {
+   font-size: 8px;
+   font-weight: 300;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .btn {
+      font-size: 10px;
+      font-weight: 500;
+       }
+     }
+  
+     @media only screen and (max-width: 415px) {
+      .btn {
+        
+     font-size: 4px;
+     font-weight: 300;
+      }
+    }

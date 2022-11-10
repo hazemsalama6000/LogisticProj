@@ -1,0 +1,32 @@
+
+<div class=" container">
+    <div class="row text-center">
+        <h2 class="title"> <i class="bi bi-newspaper"></i> {{ "latestnews" | translate }}</h2>
+        <p class="px-2 px-lg-5"> {{ "thisTextforTexting" | translate }}</p> 
+
+        <p>{{ "thisTextforTexting2" | translate }}</p>
+    </div>
+</div>
+<div class="my-5 container"> 
+    <owl-carousel-o [options]="customOptions" class="my-5 mx-5">
+      <ng-container *ngFor="let slide of slidesStore" class="card text-center mx-5 ">
+        <ng-template carouselSlide [id]="slide.id" class="mx-5">
+          <video controls  #videoPlayer class="video ">
+            <source src="{{slide.video}}" type="video/mp4" />
+            Browser not supported
+        </video>
+          <div class="bodyCard px-3">
+            <h3>{{ slide.title }}</h3>
+            <p class="border-2 border-dark border-light w-75">{{ slide.description }}</p>
+            <a class="text-decoration-none" style="color: black; font-size: 10px;" routerLink="/learn-about-us">See More <i class="bi bi-arrow-right-short"></i>
+            </a>
+          </div>
+        </ng-template>
+        
+      </ng-container>
+      
+    </owl-carousel-o>
+</div>
+
+  
+  

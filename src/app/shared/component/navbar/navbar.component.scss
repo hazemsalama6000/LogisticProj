@@ -1,0 +1,21 @@
+$basecolor:#021955;
+$secondColor:#CA5135;
+$background:#FAFAFA;
+    .btnLogin{
+        background-color:$basecolor;
+        color:$background ;
+    }
+    .btnRegister{
+       background-color:$background ;
+       border:$basecolor  solid 2px ;
+       
+    }
+
+    .bi{
+        color: #57B8CE;
+        font-size:20px;
+        margin-right: 10px;
+    }
+
+    
+    

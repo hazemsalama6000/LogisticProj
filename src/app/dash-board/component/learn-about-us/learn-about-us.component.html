@@ -1,0 +1,118 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-2">
+            <div class="  bg-white card " >
+                <div class="list-unstyled  text-center" *ngFor="let topic of topices ">
+                        <button class="btn " (click)="getid(topic.id)" >
+                           {{topic.name}}
+                        </button>
+                        <hr class="my-1">
+                </div>
+            </div>
+        </div>
+        <div class="col-6" >
+          <div *ngFor="let detalis of topicdetalis" class="text-center" >
+                <div >
+                    <h3>LEARN ABOUT US</h3>
+                    <video class="w-100" controls src="{{ detalis.video }}"></video>
+                </div>
+                <div class="p-3 mt-3" >
+                    <h3 class="title text-center title " >{{  detalis.title }}</h3>
+                    <p>{{ detalis.description }}</p>
+                </div>
+          </div>
+    </div>
+        <div class="col-4 card p-2 p-lg-4 p-md-3 ">
+            <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white">
+                    <div class=" d-flex justify-content-between mb-2 " >
+                        <a style="color:#57B8CE ;" class=" text-decoration-none  " href="#">RESPONSES</a>
+                        <a style="color:#57B8CE ;" class="ms-5 ms-lg-5 ms-md-3 ms-sm-2 text-decoration-none" href="">SHARE</a>
+                        <a style="color:#57B8CE ;" class="text-decoration-none" href="">MORE</a>
+                    </div>
+                   <textarea name="" id="" cols="50" rows="5"></textarea>
+                <div class="list-group list-group-flush border-bottom scrollarea">
+                    <div class="row ">
+                        <div class="col-12 col-md-12 col-lg-12 col-xl-12 bg-white">
+                            <div class="" style="border-radius: 15px;">
+                                <div class="">
+                                    <div class="d-flex text-black">
+                                        <div class="flex-shrink-0">
+                                            <img src="../../../../assets/Logisty ui images/istockphoto-492786318-612x612.jpg"
+                                                alt="" class="py-2" style="width: 50px; border-radius: 10px;">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3 py-2  text-black ">
+                                            <h5 class="mb-1 fw-bold">ahmed ali</h5>
+                                            <p>2020/12/2</p>
+                                            <div class="   lh-sm">
+                                                <div class="d-flex w-100 align-items-center justify-content-between">
+                                                    <div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-10 mb-1 small">Some placeholder content in a paragraph
+                                                    below the heading and date.</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-12 col-xl-12 bg-white">
+                            <div class="" style="border-radius: 15px;">
+                                <div class="">
+                                    <div class="d-flex text-black">
+                                        <div class="flex-shrink-0">
+                                            <img src="../../../../assets/Logisty ui images/istockphoto-492786318-612x612.jpg"
+                                                alt="" class="py-2" style="width: 50px; border-radius: 10px;">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3 py-2  text-black ">
+                                            <h5 class="mb-1 fw-bold">ahmed ali</h5>
+                                            <p>2020/12/2</p>
+                                            <div class="   lh-sm">
+                                                <div class="d-flex w-100 align-items-center justify-content-between">
+                                                    <div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-10 mb-1 small">Some placeholder content in a paragraph
+                                                    below the heading and date.</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-12 col-xl-12 bg-white">
+                            <div class="" style="border-radius: 15px;">
+                                <div class="">
+                                    <div class="d-flex text-black">
+                                        <div class="flex-shrink-0">
+                                            <img src="../../../../assets/Logisty ui images/istockphoto-492786318-612x612.jpg"
+                                                alt="" class="py-2" style="width: 50px; border-radius: 10px;">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3 py-2  text-black ">
+                                            <h5 class="mb-1 fw-bold">ahmed ali</h5>
+                                            <p>2020/12/2</p>
+                                            <div class="   lh-sm">
+                                                <div class="d-flex w-100 align-items-center justify-content-between">
+                                                    <div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-10 mb-1 small">Some placeholder content in a paragraph
+                                                    below the heading and date.</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
