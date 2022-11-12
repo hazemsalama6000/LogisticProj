@@ -17,5 +17,5 @@ export class GlobalConstantsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+
 }

@@ -19,6 +19,10 @@ userToken = new BehaviorSubject(null);
   }
 
    savecurrentuser(){
+    // if (localStorage.getItem('token')) {
+    //   let token:any= localStorage.getItem('usertoken')
+    //   this.userToken.next(token);
+    // }
     let token:any= localStorage.getItem('usertoken')
     this.userToken.next(token);
   }
@@ -45,7 +49,7 @@ team():Observable<any>{
   header = header.append("Apipassword" , this.apiPassword);
    return this._HttpClient.get(this.url + 'guest/topics' ,{headers:header} )
  }
- 
+
  topicsDetalis(id:any):Observable<any>{
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);
@@ -109,7 +113,7 @@ questions(id:any):Observable<any>{
 }
 
 cliendLogOut(token:any):Observable<any>{
-    
+
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);
   header = header.append("Apipassword" , this.apiPassword);

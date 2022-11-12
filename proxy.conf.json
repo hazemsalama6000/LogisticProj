@@ -1,0 +1,12 @@
+
+{
+  "/api": {
+  "target": "https://ams-egypt.in/logistics/public/",
+  "/proxy/*": {
+  "secure": false,
+  "changeOrigin": true,
+  "logLevel": "debug",
+  "pathRewrite": {"^/proxy" : ""}
+  }
+}
+}

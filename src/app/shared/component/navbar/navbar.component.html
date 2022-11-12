@@ -5,11 +5,11 @@
       <img src="../../../../assets/Logisty ui images/3D-Logo-mOCKUP-02-removebg.png" alt="" width="85" height="50">
     </a>
     <form class="d-flex justify-content-start">
-      <button *ngIf='!islogin'   class="btnLogin btn me-1 ms-1  ms-lg-3  me-lg-3" 
+      <button *ngIf='!islogin'   class="btnLogin btn me-1 ms-1  ms-lg-3  me-lg-3"
       type="button" routerLink="/log-in">{{"Login" | translate}}</button>
       <div class="dropdown">
         <button *ngIf='!islogin'   class="btn dropdown-toggle btnRegister" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          {{"register" | translate}} 
+          {{"register" | translate}}
         </button>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" routerLink="/register">عميل</a></li>
@@ -47,7 +47,6 @@
       </ul>
 
     </div>
-
     <div *ngIf='islogin'  class="me-lg-5">
       <div class="dropdown text-center ">
         <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle-split" data-bs-toggle="dropdown"
