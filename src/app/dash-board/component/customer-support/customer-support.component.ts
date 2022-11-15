@@ -7,18 +7,29 @@ import { CustomerTicketsService } from 'src/app/service/Tickets/Customer/custome
   styleUrls: ['./customer-support.component.scss']
 })
 export class CustomerSupportComponent implements OnInit {
-
+data:any  ;
   constructor(private _CustomerTicketsService:CustomerTicketsService) { }
 
   ngOnInit(): void {
-    this.getCustomerTickets();
+
+      this._CustomerTicketsService.getClientTickets().subscribe((res:any) => {
+        this.data = res.data
+        console.log(this.data);
+      })
+
+      // this._CustomerTicketsService.getClientTickets().subscribe({
+      //   next: result =>
+      //   {
+      //     this.data = result
+      //     console.log(this.data);
+      //   },
+      //   error :error =>  error
+
+
+      // })
   }
 
   //Get Customer Tickets:
-  getCustomerTickets() {
-    this._CustomerTicketsService.getClientTickets().subscribe((response) => {
-      console.log(response);
-    })
-  }
+
 
 }

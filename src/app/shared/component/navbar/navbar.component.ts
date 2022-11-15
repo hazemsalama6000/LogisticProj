@@ -79,7 +79,13 @@ export class NavbarComponent implements OnInit {
 
      this._GeneralService.savecurrentuser();
     localStorage.removeItem("usertoken");
-    this._Router.navigate(['/home-page'])
+    this._Router.navigate(['/home-page']);
+    setTimeout(() =>
+    {
+    location.reload();
+    }, 1000);
+    //window.location.reload();
+
     });
 
   }

@@ -11,7 +11,7 @@ import { GeneralService } from 'src/app/service/general.service';
 })
 export class ActivateAccountComponent implements OnInit {
   error = ''
-token = ''
+  token = ''
   otpform = new FormGroup({
     otp: new FormControl(null, Validators.required)
   })
@@ -26,7 +26,7 @@ token = ''
     this._ClientAuthService.clientOtp(this.otpform.value).subscribe((res: any) => {
 
       if (res.status == true){
-        this._Router.navigate(['/main-sction'])  
+        this._Router.navigate(['/main-sction'])
         localStorage.setItem('usertoken', res.token);
         this._GeneralService.savecurrentuser();
       } else {

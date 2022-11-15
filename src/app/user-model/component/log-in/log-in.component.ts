@@ -26,17 +26,21 @@ loginform = new FormGroup({
   sumbnitLoginForm(loginform:FormGroup){
 
    this._ClientAuthService.clientLogin(this.loginform.value).subscribe((res)=>{
-    if(res.type == 0){
-    this.validatephone = true }
+    if(res.type == 0)
+    {
+    this.validatephone = true
+   }
     if(res.status == true && res.type == "client" ){
       localStorage.setItem('usertoken', res.token)
       this._GeneralService.savecurrentuser();
       this._Router.navigate(['/main-sction'])
-    }if(res.status == true && res.type == "company" ){
+    }
+    if(res.status == true && res.type == "company" ){
       localStorage.setItem('usertoken', res.token)
       this._GeneralService.savecurrentuser();
       this._Router.navigate(['/company-dash-board'])
-    }if(res.status == true && res.type == "operator" ){
+    }
+    if(res.status == true && res.type == "operator" ){
       localStorage.setItem('usertoken', res.token)
       this._GeneralService.savecurrentuser();
       this._Router.navigate(['/individual-dashboard'])
@@ -46,7 +50,7 @@ loginform = new FormGroup({
       console.log(this.error )
     }
 
-
+//console.log(res);
    })
 
   }

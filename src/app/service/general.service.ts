@@ -18,7 +18,7 @@ userToken = new BehaviorSubject(null);
     }
   }
 
-   savecurrentuser(){
+savecurrentuser(){
     // if (localStorage.getItem('token')) {
     //   let token:any= localStorage.getItem('usertoken')
     //   this.userToken.next(token);
@@ -26,7 +26,6 @@ userToken = new BehaviorSubject(null);
     let token:any= localStorage.getItem('usertoken')
     this.userToken.next(token);
   }
-
 aboutUs():Observable<any>{
 
  let header = new HttpHeaders();
@@ -34,37 +33,33 @@ aboutUs():Observable<any>{
  header = header.append("Apipassword" , this.apiPassword);
   return this._HttpClient.get(this.url + 'guest/abouts' ,{headers:header} )
 }
-
-
 team():Observable<any>{
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);
   header = header.append("Apipassword" , this.apiPassword);
    return this._HttpClient.get(this.url + 'guest/teams' ,{headers:header} )
  }
-
- topics():Observable<any>{
+topics():Observable<any>{
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);
   header = header.append("Apipassword" , this.apiPassword);
    return this._HttpClient.get(this.url + 'guest/topics' ,{headers:header} )
  }
-
- topicsDetalis(id:any):Observable<any>{
+topicsDetalis(id:any):Observable<any>{
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);
   header = header.append("Apipassword" , this.apiPassword);
    return this._HttpClient.get(this.url + `guest/topics-detail/${id}` ,{headers:header} )
 
  }
- blogs():Observable<any>{
+blogs():Observable<any>{
 
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);
   header = header.append("Apipassword" , this.apiPassword);
    return this._HttpClient.get(this.url + 'guest/blogs' ,{headers:header} )
  }
- packages():Observable<any>{
+packages():Observable<any>{
 
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);
@@ -91,8 +86,6 @@ questionCategory(){
   header = header.append("lang" , this.lang);
   header = header.append("Apipassword" , this.apiPassword);
    return this._HttpClient.get(this.url + 'guest/questionCategory' ,{headers:header} )
-
-
 }
 questions(id:any):Observable<any>{
   let header = new HttpHeaders();
@@ -101,17 +94,14 @@ questions(id:any):Observable<any>{
    return this._HttpClient.get(this.url + `guest/questions/${id}` ,{headers:header} )
 
  }
- companylogout(token:any):Observable<any>{
+companylogout(token:any):Observable<any>{
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);
   header = header.append("Apipassword" , this.apiPassword);
   header = header.append("Authorization" , token);
-
   let option ={headers:header} ;
-
- return this._HttpClient.post(this.url + 'company/logout' , option)
+  return this._HttpClient.post(this.url + 'company/logout' , option)
 }
-
 cliendLogOut(token:any):Observable<any>{
 
   let header = new HttpHeaders();
@@ -122,7 +112,6 @@ cliendLogOut(token:any):Observable<any>{
 
  return this._HttpClient.post(this.url + 'client/logout' ,option)
 }
-
 opratorlogout(token:any):Observable<any>{
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);

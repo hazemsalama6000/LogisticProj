@@ -8,13 +8,18 @@ $background:#FAFAFA;
 
 body{
     background-color:$background ;
-	
+
 }
 *{
     color: #707070;
     font-family: almarai ;
 
 }
+thead  {
+  // background-color: #006DCC;
+  color: red !important;
+}
+
 .btn{
     border-radius: 10px;
 

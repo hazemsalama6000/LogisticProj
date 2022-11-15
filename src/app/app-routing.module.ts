@@ -107,12 +107,7 @@ const routes: Routes = [
   { path: "company-add-representative", component:CompanyAddRepresentativeComponent},
   { path: "available-for-work", component:AvailableForWorkComponent},
   { path: "company-completed-detalis", component:CompanyCompletedDetalisComponent},
-
-  
   { path: "individual-request-detiles", component:IndividualRequestDetilesComponent},
-
-  
-  
 
   { path: "**", redirectTo: "home-page", pathMatch: "full" },
 

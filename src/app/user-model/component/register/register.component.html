@@ -17,11 +17,11 @@
                 <div *ngFor='let email of email' class="alert alert-danger">
                   <p>{{email}}</p>
                 </div>
-             
+
                 <div *ngFor='let phone of phone' class="alert alert-danger">
                   <p>{{phone}}</p>
                 </div>
-                
+
 
                 <form #f="ngForm" class="mx-1 mx-md-4" [formGroup]="regsiterForm" (ngSubmit)="submitRegister(regsiterForm)">
                   <div class="d-flex flex-row align-items-center ">
@@ -53,28 +53,28 @@
                   <div class="d-flex flex-row align-items-center ">
                     <div class="form-outline flex-fill mb-0 my-2">
                       <label class="form-label "> {{"Phone" | translate }} </label>
-                      <ngx-intl-tel-input 
+                      <ngx-intl-tel-input
                       [cssClass]="'custom'"
                         [preferredCountries]="preferredCountries"
-                        [enableAutoCountrySelect]="true" 
-                        [enablePlaceholder]="false" 
+                        [enableAutoCountrySelect]="true"
+                        [enablePlaceholder]="false"
                         [searchCountryFlag]="true"
                         [searchCountryField]="[
                         SearchCountryField.Iso2,
-                        SearchCountryField.Name]" 
+                        SearchCountryField.Name]"
                         [selectFirstCountry]="false"
-                        [selectedCountryISO]="CountryISO.Egypt" 
+                        [selectedCountryISO]="CountryISO.Egypt"
                         [maxLength]="20" [phoneValidation]="true"
-                        [separateDialCode]="separateDialCode" 
+                        [separateDialCode]="separateDialCode"
                         [numberFormat]="PhoneNumberFormat.National"
                          name="phone"
                         formControlName="phone">
                       </ngx-intl-tel-input>
-                   
+
                     </div>
                   </div>
-           
-            
+
+
                   <div class="d-flex flex-row align-items-center ">
                     <div class="form-outline flex-fill mb-0">
                       <label class="form-label">{{"Password" | translate }}</label>
@@ -107,7 +107,7 @@
               </div>
               <div class="col-md-10 col-lg-6 col-xl-7 text-center order-1 order-lg-2">
                 <img src="../../../../assets/Logisty ui images/Sign up-cuate.svg" class="w-75 mt-5">
-                
+
               </div>
             </div>
           </div>

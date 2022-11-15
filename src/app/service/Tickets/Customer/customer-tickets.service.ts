@@ -11,24 +11,31 @@ import { Ticket } from './Model';
 export class CustomerTicketsService {
 
   url:string = GlobalConstantsComponent.baseUrl;
-  apiPassword:string = GlobalConstantsComponent.apiPassword;
+  apiPassword:string =  GlobalConstantsComponent.apiPassword;
   lang:any;
   token:any
 
-  constructor(private _HttpClient:HttpClient) { 
+  constructor(private _HttpClient:HttpClient) {
     this.token = localStorage.getItem('usertoken') || '';
     this.lang = localStorage.getItem('currentLang') || '';
   }
 
   //Get Client Tickets:
-  getClientTickets(): Observable<BaseResponseData<Ticket>> {
+  getClientTickets() {
     let header = new HttpHeaders();
-    header.append("lang" , this.lang);
-    header.append("Apipassword" , "as@#@as");
-    header.append("Authorization", this.token);
-    let option = {headers:header};
-  
-    return this._HttpClient.get<BaseResponseData<Ticket>>(this.url + 'client/tickets', option);
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.get(this.url + 'client/tickets', option);
+  }
+  addClientTicket(formclient:any):Observable<any> {
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.post(this.url + 'client/tickets',formclient, option);
   }
 
 }

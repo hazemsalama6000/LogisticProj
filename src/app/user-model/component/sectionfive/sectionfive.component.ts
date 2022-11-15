@@ -11,9 +11,9 @@ export class SectionfiveComponent implements OnInit {
   question:any[]=[];
   questionDetalis:any=[]
   id:any =''
-  
+
   constructor(private _GeneralService:GeneralService) {
-    
+
    }
 
   ngOnInit(): void {
@@ -23,7 +23,7 @@ export class SectionfiveComponent implements OnInit {
 
 getQuestionCategory(){
 this._GeneralService.questionCategory().subscribe((res:any)=>{
-    
+
   this.getid(res.data[0].id);
    this.question = res.data
 

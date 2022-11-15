@@ -16,14 +16,11 @@ export class FAQComponent implements OnInit {
 
   ngOnInit(): void {
     this.getQuestionCategory()
-
   }
   getQuestionCategory(){
-    this._GeneralService.questionCategory().subscribe((res:any)=>{
-        
+      this._GeneralService.questionCategory().subscribe((res:any)=>{
       this.getid(res.data[0].id);
-       this.question = res.data
-    
+      this.question = res.data
     })
     }
     getid(id:any){

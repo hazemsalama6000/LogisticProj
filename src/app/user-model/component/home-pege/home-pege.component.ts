@@ -10,7 +10,7 @@ templateUrl: './home-pege.component.html',
 })
 export class HomePegeComponent implements OnInit {
   sliderbar:any=''
- 
+
   constructor(private _GeneralService:GeneralService) { }
   customOptions: OwlOptions = {
     rtl:this._GeneralService.lang,
@@ -43,9 +43,11 @@ export class HomePegeComponent implements OnInit {
     this._GeneralService.slider().subscribe((res:any)=>{
 
       this.sliderbar = res.data;
+      //console.log(this.sliderbar);
+
     })
   }
- 
+
   }
 
 
