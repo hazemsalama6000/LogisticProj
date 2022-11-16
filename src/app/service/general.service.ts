@@ -123,6 +123,14 @@ opratorlogout(token:any):Observable<any>{
  return this._HttpClient.post(this.url + 'operator/logout' , option)
 }
 
+getAllCategory() {
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+ // header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'guest/ticketCategories', option);
+}
 
 getlang(lang:any):Observable<any>{
 

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-3 col-md-3 col-lg-3">
        <app-individual-sidebar></app-individual-sidebar>
-     
+
         </div>
         <div class="col-8">
             <div class="container">
@@ -27,89 +27,41 @@
 
                             </div>
                             <div class="body">
-                                <div class="table-responsive ">
-                                    <table class="table table-bordered table-striped table-hover  dataTable">
-                                        <thead>
-                                            <td></td>
-                                            <th>Number</th>
-                                            <th>Last update</th>
-                                            <th>Section</th>
-                                            <th>Type</th>
-                                            <th>State</th>
-                                            <th>Priority</th>
+                              <div class="table-responsive ">
+                                  <table
+                                      class="table table-bordered table-striped table-hover  dataTable"
+                                      >
+                                      <thead   style="background-color: #e4e1e1 !important;">
 
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="fw-bold fs-6  ">Delivery state problem</td>
+                                          <th style=" color: black !important; padding: 10px;">Number</th>
+                                          <th style=" color: black !important; padding: 10px;">Last update</th>
+                                          <th style=" color: black !important; padding: 10px;">Section</th>
+                                          <th style=" color: black !important; padding: 10px;">Type</th>
+                                          <th style=" color: black !important; padding: 10px;">State</th>
+                                          <th style=" color: black !important; padding: 10px;">Priority</th>
 
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>2:30</td>
-                                                <td>2020\10\30</td>
-                                                <td>ahmed</td>
-                                                <td>title</td>
-                                                <td><button class=" btn btn-success"
-                                                        routerLink="/individual-ticketk-detalis">solved</button></td>
-                                                <td>51654141</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fw-bold fs-6  ">Delivery state problem</td>
+                                      </thead>
+                                      <br>
+                                      <!-- <br> -->
+                                      <tbody *ngFor="let item of data" >
+                                          <tr  >
+                                              <td class="fw-bold  " colspan="6" >Delivery state problem</td>
+                                          </tr>
+                                          <tr >
 
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>2:30</td>
-                                                <td>2020\10\30</td>
-                                                <td>ahmed</td>
-                                                <td>title</td>
-                                                <td><button class=" btn btn-success">solved</button></td>
-                                                <td>51654141</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fw-bold fs-6 ">Delivery state problem</td>
+                                              <td>{{item.id}}</td>
+                                              <td>{{item.description}}</td>
+                                              <td>{{item.Priority}}</td>
+                                              <td>{{item.title}}</td>
+                                              <td><button class=" btn btn-success" routerLink="/ticket-details">solved</button></td>
+                                              <td>51654141</td>
+                                          </tr>
+                                          <br>
+                                      </tbody>
 
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>2:30</td>
-                                                <td>2020\10\30</td>
-                                                <td>ahmed</td>
-                                                <td>title</td>
-                                                <td><button class=" btn btn-success">solved</button></td>
-                                                <td>51654141</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fw-bold fs-6 ">Delivery state problem</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>2:30</td>
-                                                <td>2020\10\30</td>
-                                                <td>ahmed</td>
-                                                <td>title</td>
-                                                <td><button class=" btn btn-success">solved</button></td>
-                                                <td>51654141</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fw-bold fs-6 ">Delivery state problem</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>2:30</td>
-                                                <td>2020\10\30</td>
-                                                <td>ahmed</td>
-                                                <td>title</td>
-                                                <td><button class=" btn btn-success">solved</button></td>
-                                                <td>51654141</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                                  </table>
+                              </div>
+                          </div>
                         </div>
                     </div>
                 </div>

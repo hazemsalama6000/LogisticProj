@@ -10,38 +10,32 @@ export class CompanyService {
 
   url:string = GlobalConstantsComponent.baseUrl
   apiPassword:string =  GlobalConstantsComponent.apiPassword
-  lang:any
+  lang:any;
+  token:any
 
 
   constructor(private _HttpClient:HttpClient) {
-
+    this.token = localStorage.getItem('usertoken') || '';
+    this.lang = localStorage.getItem('currentLang') || '';
    }
 
   companyRegister(companydata:any):Observable<any>{
-    
+
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
     header = header.append("Apipassword" , this.apiPassword);
     let option ={headers:header} ;
    return this._HttpClient.post(this.url + 'company/register' ,   companydata ,  option)
-  
+
   }
-  
-  
   companyVERifyAccountOtp(otpData:any):Observable<any>{
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
     header = header.append("Apipassword" , this.apiPassword);
     let option ={headers:header} ;
-  
+
    return this._HttpClient.post(this.url + 'company/verifyAccount' , otpData , option)
   }
-  
-  
-  
-  
- 
-  
   companyChangePassword(newpassword:any , token:any ):Observable<any>{
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
@@ -49,16 +43,34 @@ export class CompanyService {
     header = header.append("Authorization" , token);
 
     let option ={headers:header} ;
-  
+
    return this._HttpClient.post(this.url + 'company/changePassword' , newpassword , option)
+  }
+  //Add Company Tickets:
+  addCompanyTicket(formcompany:any):Observable<any> {
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.post(this.url + 'company/tickets',formcompany, option);
+  }
+   //Get Company Tickets:
+  getCompanyTickets() {
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.get(this.url + 'company/tickets', option);
   }
 
   getlang(lang:any){
-  
+
   this.lang = lang
   }
-  
-  
+
+
 
 }
 

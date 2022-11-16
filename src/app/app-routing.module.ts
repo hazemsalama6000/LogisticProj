@@ -69,9 +69,11 @@ const routes: Routes = [
   { path: "pricing", component: PricingComponent },
   { path: "about-us", component: AboutUsComponent },
   { path: "learn-about-us", component: LearnAboutUsComponent },
+
   { path: "customer-support", component: CustomerSupportComponent },
   { path: "new-ticket", component: NewTicketComponent },
   { path: "ticket-details", component: TicketDetailsComponent },
+
   { path: "edit-informations", component: EditInformationsComponent },
   { path: "notification-setting", component: NotificationSettingComponent },
   { path: "change-password", component: ChangePasswordComponent },
@@ -87,10 +89,12 @@ const routes: Routes = [
   { path: "approve-offer", component:ApproveOfferComponent },
   { path: "completed-detalis", component: CompletedDetalisComponent },
   { path: "on-progress-detlis", component: OnProgressDetlisComponent },
+
   { path: "individual-customer-support", component: IndividualCustomerSupportComponent },
-  { path: "individual-new-requests", component: IndividualNewRequestsComponent },
-  { path: "individual-ticketk-detalis", component: IndividualTicketkDetalisComponent },
   { path: "individual-new-ticket", component: IndividualNewTicketComponent },
+  { path: "individual-ticketk-detalis", component: IndividualTicketkDetalisComponent },
+
+  { path: "individual-new-requests", component: IndividualNewRequestsComponent },
   { path: "individual-on-progress", component: IndividualOnProgressComponent },
   { path: "individual-on-progress-detalis", component: IndividualOnProgressDetalisComponent },
   { path: "individul-completed-detalis", component: IndividulCompletedDetalisComponent },
@@ -101,9 +105,11 @@ const routes: Routes = [
   { path: "company-onprogress", component:CompanyOnprogressComponent},
   { path: "company-completed", component:CompanyCompletedComponent},
   { path: "company-representatives", component:CompanyRepresentativesComponent},
+
   { path: "company-customer-support", component:CompanyCustomerSupportComponent},
   { path: "company-new-ticket", component:CompanyNewTicketComponent},
   { path: "companyticket-detalis", component:CompanyticketDetalisComponent},
+
   { path: "company-add-representative", component:CompanyAddRepresentativeComponent},
   { path: "available-for-work", component:AvailableForWorkComponent},
   { path: "company-completed-detalis", component:CompanyCompletedDetalisComponent},

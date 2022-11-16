@@ -20,7 +20,16 @@ export class CustomerTicketsService {
     this.lang = localStorage.getItem('currentLang') || '';
   }
 
-  //Get Client Tickets:
+  //Add Client Tickets:
+  addClientTicket(formclient:any,formData:any):Observable<any> {
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.post(this.url + 'client/tickets',formclient, option);
+  }
+   //Get Client Tickets:
   getClientTickets() {
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
@@ -29,13 +38,6 @@ export class CustomerTicketsService {
     let option ={headers:header} ;
     return this._HttpClient.get(this.url + 'client/tickets', option);
   }
-  addClientTicket(formclient:any):Observable<any> {
-    let header = new HttpHeaders();
-    header = header.append("lang" , this.lang);
-    header = header.append("Apipassword" , this.apiPassword);
-    header = header.append("Authorization" ,`Bearer ${this.token}`);
-    let option ={headers:header} ;
-    return this._HttpClient.post(this.url + 'client/tickets',formclient, option);
-  }
+
 
 }

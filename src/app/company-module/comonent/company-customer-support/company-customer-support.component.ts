@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CompanyService } from 'src/app/service/company-auth/company.service';
 
 @Component({
   selector: 'app-company-customer-support',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./company-customer-support.component.scss']
 })
 export class CompanyCustomerSupportComponent implements OnInit {
-
-  constructor() { }
+  data:any  ;
+  constructor(private companyticket:CompanyService) { }
 
   ngOnInit(): void {
+    this.companyticket.getCompanyTickets().subscribe((res:any) => {
+      this.data = res.data
+      console.log(this.data);
+    })
   }
 
 }
