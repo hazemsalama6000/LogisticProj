@@ -44,17 +44,26 @@
 
             </div>
 
-
-
             <div class="col-12">
                 <label for="address" class="form-label">Attachment</label>
                      <div class="m-auto " style=" border: 1px solid black; height:150px ;">
-                      <input  (change)="onFileChange($event)" formArrayName="src" multiple type="file" class="form-control hidden"   /><br>
-                      <!-- (change)="onFileChange($event)"  formControlName="file"-->
+                      <input  (change)="onFileChange($event)"  formControlName="src" multiple accept="image/*" type="file"
+                      class="form-control hidden"   /><br>
                       <label for="files" class="text-center" style="margin-left: 30% !important;">
-                        You can add attachments in the next field </label>
+                        You can add attachments in the next field
+                       </label><br>
                      </div>
               </div>
+
+              <!-- <div class="col-sm-2" style='text-align: center;'>
+                <input (click)='OrderDate00100()'  class="text mt-2 d1" type="text" placeholder="Images" required="" style="height: 20px;">
+                <input style="overflow: hidden !important; display: none !important; height: 20px;" id="im0" (change)='img($event)'
+                 class="text mt-2 d1" type="file" accept="image/*" placeholder="الصور"  formControlName="src" required="" multiple>
+
+                <a *ngFor='let s of countImage; let x = index' id="but{{x}}"  class="but mt-2"><i class="fas fa-plus-circle"></i>
+                  <img draggable="false" id="put44{{x}}" style="width: 100%; display: block; height: 100%;">
+                </a>
+              </div> -->
 
           </div>
           <div  style="margin-left: 25% !important;">
@@ -64,6 +73,9 @@
         </form>
       </div>
     </div>
+
+
+
 
 
 

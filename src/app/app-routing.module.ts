@@ -72,7 +72,7 @@ const routes: Routes = [
 
   { path: "customer-support", component: CustomerSupportComponent },
   { path: "new-ticket", component: NewTicketComponent },
-  { path: "ticket-details", component: TicketDetailsComponent },
+  { path: "ticket-details/:id", component: TicketDetailsComponent },
 
   { path: "edit-informations", component: EditInformationsComponent },
   { path: "notification-setting", component: NotificationSettingComponent },
@@ -92,7 +92,7 @@ const routes: Routes = [
 
   { path: "individual-customer-support", component: IndividualCustomerSupportComponent },
   { path: "individual-new-ticket", component: IndividualNewTicketComponent },
-  { path: "individual-ticketk-detalis", component: IndividualTicketkDetalisComponent },
+  { path: "individual-ticketk-detalis/:id", component: IndividualTicketkDetalisComponent },
 
   { path: "individual-new-requests", component: IndividualNewRequestsComponent },
   { path: "individual-on-progress", component: IndividualOnProgressComponent },
@@ -108,7 +108,7 @@ const routes: Routes = [
 
   { path: "company-customer-support", component:CompanyCustomerSupportComponent},
   { path: "company-new-ticket", component:CompanyNewTicketComponent},
-  { path: "companyticket-detalis", component:CompanyticketDetalisComponent},
+  { path: "companyticket-detalis/:id", component:CompanyticketDetalisComponent},
 
   { path: "company-add-representative", component:CompanyAddRepresentativeComponent},
   { path: "available-for-work", component:AvailableForWorkComponent},

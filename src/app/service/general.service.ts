@@ -92,7 +92,6 @@ questions(id:any):Observable<any>{
   header = header.append("lang" , this.lang);
   header = header.append("Apipassword" , this.apiPassword);
    return this._HttpClient.get(this.url + `guest/questions/${id}` ,{headers:header} )
-
  }
 companylogout(token:any):Observable<any>{
   let header = new HttpHeaders();
@@ -122,7 +121,6 @@ opratorlogout(token:any):Observable<any>{
 
  return this._HttpClient.post(this.url + 'operator/logout' , option)
 }
-
 getAllCategory() {
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);
@@ -131,7 +129,28 @@ getAllCategory() {
   let option ={headers:header} ;
   return this._HttpClient.get(this.url + 'guest/ticketCategories', option);
 }
-
+getAllCurrency() {
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+ // header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'guest/currencies', option);
+}
+getGoodCategory() {
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'guest/goodCategories', option);
+}
+getCountry() {
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'guest/countries', option);
+}
 getlang(lang:any):Observable<any>{
 
 return this.lang = lang

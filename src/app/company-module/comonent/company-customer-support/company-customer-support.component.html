@@ -53,7 +53,8 @@
                                                 <td>{{item.description}}</td>
                                                 <td>{{item.Priority}}</td>
                                                 <td>{{item.title}}</td>
-                                                <td><button class=" btn btn-success" routerLink="/ticket-details">solved</button></td>
+                                                <td><button class=" btn btn-success" [routerLink]="['/ticket-details',item.id]">solved</button></td>
+
                                                 <td>51654141</td>
                                             </tr>
                                             <br>

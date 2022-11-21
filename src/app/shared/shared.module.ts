@@ -25,14 +25,14 @@ import { GlobalConstantsComponent } from './component/global-constants/global-co
     FinderComponent,
     ProfileSideBarComponent,
     GlobalConstantsComponent,
- 
+
   ],
   imports: [
     CommonModule,
     RouterModule,
     TranslateModule.forChild(),
     BrowserModule,
-   
+
 
   ],
   exports:[
@@ -40,7 +40,7 @@ import { GlobalConstantsComponent } from './component/global-constants/global-co
     FooterComponent,
     SidebarComponent,
     ProfileSideBarComponent,
-   
+
 
   ]
 })

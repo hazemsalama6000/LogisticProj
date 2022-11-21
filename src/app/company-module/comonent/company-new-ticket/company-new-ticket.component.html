@@ -45,14 +45,15 @@
 
           </div>
           <div class="col-12">
-              <label for="address" class="form-label">Attachment</label>
-                   <div class="m-auto " style=" border: 1px solid black; height:150px ;">
-                    <input  type="file" class="form-control hidden"   /><br>
-                    <!-- (change)="onFileChange($event)"  formControlName="file"-->
-                    <label for="files" class="text-center" style="margin-left: 30% !important;">
-                      You can add attachments in the next field </label>
-                   </div>
-            </div>
+            <label for="address" class="form-label">Attachment</label>
+                 <div class="m-auto " style=" border: 1px solid black; height:150px ;">
+                  <input  (change)="onFileChange($event)"  formControlName="src" multiple accept="image/*" type="file"
+                  class="form-control hidden"   /><br>
+                  <label for="files" class="text-center" style="margin-left: 30% !important;">
+                    You can add attachments in the next field
+                   </label><br>
+                 </div>
+          </div>
 
         </div>
         <div  style="margin-left: 25% !important;">

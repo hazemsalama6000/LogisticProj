@@ -4,7 +4,12 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { GeneralService } from 'src/app/service/general.service';
 import { CustomerTicketsService } from 'src/app/service/Tickets/Customer/customer-tickets.service';
+import {  ViewChild, ElementRef } from '@angular/core';
+import { FormArray, } from '@angular/forms'
 
+declare var $:any;
+
+import { Helper } from 'src/app/shared/helper';
 @Component({
   selector: 'app-new-ticket',
   templateUrl: './new-ticket.component.html',
@@ -12,65 +17,56 @@ import { CustomerTicketsService } from 'src/app/service/Tickets/Customer/custome
 })
 export class NewTicketComponent implements OnInit {
   cats: any ;
-  myFiles:string [] = [];
+  files:any= {};
+  myFiles:any[]= [];
   formclient = new FormGroup({
     priority : new FormControl(""),
     ticket_category_id : new FormControl(""),
     description : new FormControl(""),
     title: new FormControl(""),
-    src: new FormControl('', [Validators.required]),
-    //fileSource: new FormControl('', [Validators.required])
+    src: new FormControl(''),
   });
-  selectedFile :File = null as any;
-
+  countImage:any;
+  images:any;
   constructor( private http:HttpClient , private router:Router , private clienttecket:CustomerTicketsService,
-               private gatcatser:GeneralService ) { }
-
+               private gatcatser:GeneralService ,private fb:FormBuilder) { }
   ngOnInit(): void {
-  this.getcategory();
-
+    this.getcategory();
   }
-  // onFileChange(event:any) {
-  //   if (event.target.files.length > 0) {
-  //     const file = event.target.files[0];
-  //     this.formclient.patchValue({
-  //       fileSource: file
-  //     });
-  //   }
-  // }
-  get f(){
-    return this.formclient.controls;
-  }
-
-  onFileChange(event:any) {
-
-    for (var i = 0; i < event.target.files.length; i++) {
-        this.myFiles.push(event.target.files[i]);
-    }
-}
-
-  submit(formclient:FormGroup): void{
-    const formData = new FormData();
-
-    for (var i = 0; i < this.myFiles.length; i++) {
-      formData.append("file[]", this.myFiles[i]);
-    }
-  this.clienttecket.addClientTicket(this.formclient.value,formData).subscribe((res)=>
+   onFileChange(event:any)
   {
-
+    this.myFiles= [];
+    for (var i = 0; i < event.target.files.length; i++)
+     {
+        const file = event.target.files[i];
+        const reader = new FileReader();
+        reader.onload = () => {
+        this.myFiles.push(reader.result);
+      }
+      reader.readAsDataURL(file);
+    }
+    return this.myFiles;
+}
+  submit(formclient:FormGroup): void{
+    this.formclient.value['src'] = this.myFiles;
+    const formdata = new FormData();
+    this.myFiles.forEach(element => {
+      formdata.append("src", element);
+    });
+    console.log(formclient.value['src'] );
+    formdata.append("priority", this.formclient.value['priority']);
+    formdata.append("ticket_category_id", this.formclient.value['ticket_category_id']);
+    formdata.append("description", this.formclient.value['description']);
+    formdata.append("title" , this.formclient.value['title']);
+    this.clienttecket.addClientTicket( formdata).subscribe((res)=>
+  {
     this.router.navigate(['/customer-support'])
-    console.log(this.formclient.value);
-
   }
   )}
   getcategory(){
         this.gatcatser.getAllCategory().subscribe((res:any) =>
           {
             this.cats = res.data
-            console.log(this.cats);
-
           })
   }
-
-
 }

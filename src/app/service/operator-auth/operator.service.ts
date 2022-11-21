@@ -47,13 +47,13 @@ export class OperatorService {
    return this._HttpClient.post(this.url + 'operator/changePassword' ,option, newpassword   )
   }
 //Add Operator Tickets:
-addoperatorTicket(formoperator:any):Observable<any> {
+addoperatorTicket(formData:any):Observable<any> {
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);
   header = header.append("Apipassword" , this.apiPassword);
   header = header.append("Authorization" ,`Bearer ${this.token}`);
   let option ={headers:header} ;
-  return this._HttpClient.post(this.url + 'operator/tickets',formoperator, option);
+  return this._HttpClient.post(this.url + 'operator/tickets',formData, option);
 }
  //Get Client Tickets:
 getoperatorTickets() {
@@ -64,7 +64,26 @@ getoperatorTickets() {
   let option ={headers:header} ;
   return this._HttpClient.get(this.url + 'operator/tickets', option);
 }
+ //Add Replay Tickets:
+ addreplayTicket(formData:any):Observable<any>{
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+   return this._HttpClient.post(this.url + 'operator/ticketreplies',formData ,option )
+ }
+   //Add Replay Tickets:
+getReplayTicketById(id:any){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'operator/ticketreplies' + '?ticket_id=' + id ,option);
+  //return this.http.post('students/enroll/' + id + '?api_token=' + Auth.getApiToken(), null);
 
+}
 getlang(lang:any){
 
 this.lang = lang

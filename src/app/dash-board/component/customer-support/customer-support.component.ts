@@ -14,7 +14,7 @@ data:any  ;
 
       this._CustomerTicketsService.getClientTickets().subscribe((res:any) => {
         this.data = res.data
-        console.log(this.data);
+       // console.log(this.data);
       })
 
       // this._CustomerTicketsService.getClientTickets().subscribe({

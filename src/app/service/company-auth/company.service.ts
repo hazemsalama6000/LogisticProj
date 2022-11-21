@@ -47,13 +47,13 @@ export class CompanyService {
    return this._HttpClient.post(this.url + 'company/changePassword' , newpassword , option)
   }
   //Add Company Tickets:
-  addCompanyTicket(formcompany:any):Observable<any> {
+  addCompanyTicket(formData:any):Observable<any> {
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
     header = header.append("Apipassword" , this.apiPassword);
     header = header.append("Authorization" ,`Bearer ${this.token}`);
     let option ={headers:header} ;
-    return this._HttpClient.post(this.url + 'company/tickets',formcompany, option);
+    return this._HttpClient.post(this.url + 'company/tickets',formData, option);
   }
    //Get Company Tickets:
   getCompanyTickets() {
@@ -64,7 +64,25 @@ export class CompanyService {
     let option ={headers:header} ;
     return this._HttpClient.get(this.url + 'company/tickets', option);
   }
+  //Add Replay Tickets:
+  addreplayTicket(formData:any):Observable<any>{
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+     return this._HttpClient.post(this.url + 'company/ticketreplies',formData ,option )
+   }
+     //Add Replay Tickets:
+  getReplayTicketById(id:any){
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.get(this.url + 'company/ticketreplies' + '?ticket_id=' + id ,option);
 
+  }
   getlang(lang:any){
 
   this.lang = lang
