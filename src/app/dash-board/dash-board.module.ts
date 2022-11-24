@@ -22,7 +22,7 @@ import { OnProgressDetlisComponent } from './component/on-progress-detlis/on-pro
 import { CustomCearanceDetalisComponent } from './component/custom-cearance-detalis/custom-cearance-detalis.component';
 import { ApproveOfferComponent } from './component/approve-offer/approve-offer.component';
 import { OfferDetailsComponent } from './component/offer-details/offer-details.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -52,7 +52,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     SharedModule,
     RouterModule,
-   ReactiveFormsModule
+   ReactiveFormsModule,
+   FormsModule
 
   ]
 })

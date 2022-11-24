@@ -5,35 +5,35 @@
   <div class="row mt-2">
       <div class="col-2"></div>
     <div class="col-md-12 col-lg-8  bg-white card">
-      <form class="needs-validation mt-3" [formGroup]="customsclearance" (submit)="submit(customsclearance)">
+      <form class="needs-validation mt-3">
         <div class="row g-4 ps-4">
           <label  class="form-label mb-0" >Add New Request</label>
           <hr class="mt-1 ">
 
           <div class="col-sm-6">
             <label for="" class="form-label">Country</label>
-            <select  formControlName="country_origin_id" class="form-control">
+            <select  name="country_origin_id" [(ngModel)]="item.country_origin_id" class="form-control">
               <option value="" disabled>Enter your Country</option>
               <option *ngFor="let item of country" value="{{item.id}}">{{item.name}}</option>
             </select>
           </div>
           <div class="col-sm-6">
             <label for="" class="form-label">Destination</label>
-            <select  formControlName="country_destination_id" let class="form-control">
+            <select  name="country_destination_id" [(ngModel)]="item.country_destination_id" let class="form-control">
               <option value="" disabled>Enter Tour Destination</option>
                 <option *ngFor="let item of city" value="{{item.id}}">{{item.name}}</option>
             </select>
           </div>
           <div class="col-sm-6">
             <label for="" class="form-label">Currency</label>
-            <select  formControlName="currency_id" class="form-control">
+            <select  name="currency_id" [(ngModel)]="item.currency_id" class="form-control">
               <option value="" disabled>Enter Your Currency</option>
               <option *ngFor="let item of currencys" value="{{item.id}}">{{item.name}}</option>
             </select>
           </div>
           <div class="col-sm-6">
             <label for="" class="form-label">Ticket Category</label>
-            <select  formControlName="category_id" class="form-control">
+            <select  name="category_id" [(ngModel)]="item.category_id" class="form-control">
               <option value="" disabled>Enter ticket category</option>
               <option *ngFor="let item of cats" value="{{item.id}}">{{item.name}}</option>
 
@@ -42,7 +42,7 @@
           </div>
           <div class="col-sm-6">
             <label for="" class="form-label">Language</label>
-            <select formControlName="language" class="form-control">
+            <select name="language" [(ngModel)]="item.language" class="form-control">
               <option value="" disabled>Select The language</option>
               <option value="en">en</option>
               <option value="ar">ar</option>
@@ -50,14 +50,14 @@
           </div>
           <div class="col-sm-6">
             <label for="" class="form-label">Good Category</label>
-            <select  formControlName="goods_country_origin_id" class="form-control">
+            <select  name="goods_country_origin_id" [(ngModel)]="item.goods_country_origin_id" class="form-control">
               <option value="" disabled>Select Good Category</option>
               <option *ngFor="let item of goodcats" value="{{item.id}}">{{item.name}}</option>
             </select>
           </div>
            <div class="col-sm-6">
             <label for="" class="form-label">The flow</label>
-            <select  formControlName="flow" class="form-control" >
+            <select  name="flow" [(ngModel)]="item.flow" class="form-control" >
               <option value="" disabled>Enter your flow</option>
               <option value="Export" >Export</option>
               <option value="Import" >Import</option>
@@ -65,57 +65,56 @@
           </div>
           <div class="col-sm-6">
             <label for="lastName" class="form-label">Quote Currency </label>
-            <select  formControlName="quote_currency_id" class="form-control">
+            <select  name="quote_currency_id" [(ngModel)]="item.quote_currency_id" class="form-control">
               <option value="" disabled>Select quote Currency</option>
               <option *ngFor="let item of currencys" value="{{item.id}}">{{item.name}}</option>
             </select>
           </div>
           <div class="col-sm-6">
             <label for="" class="form-label">pickup location lat</label>
-            <input type="text" class="form-control" formControlName="pickup_location_lat" id="address2"
+            <input type="text" class="form-control" name="pickup_location_lat" [(ngModel)]="item.pickup_location_lat" id="address2"
             placeholder="The pickup location lat must be at least 8 characters.">
           </div>
           <div class="col-sm-6">
             <label for="" class="form-label">pickup location long</label>
-            <input type="text" class="form-control" formControlName="pickup_location_long" id="address2"
+            <input type="text" class="form-control" name="pickup_location_long" [(ngModel)]="item.pickup_location_long" id="address2"
             placeholder="The pickup location long must be at least 8 characters">
           </div>
           <div class="col-sm-6">
             <label for="" class="form-label">destination location lat</label>
-            <input type="text" class="form-control" formControlName="destination_location_lat" id="address2"
+            <input type="text" class="form-control" name="destination_location_lat" [(ngModel)]="item.destination_location_lat" id="address2"
              placeholder="The destination location lat must be at least 8 characters.">
           </div>
            <div class="col-sm-6">
             <label for="" class="form-label">destination location long</label>
-            <input type="text" class="form-control" formControlName="destination_location_long" id="address2"
+            <input type="text" class="form-control" name="destination_location_long" [(ngModel)]="item.destination_location_long" id="address2"
              placeholder="Enter the destination location long">
           </div>
           <div class="col-sm-6">
             <label for="" class="form-label">commercial reference</label>
-            <input type="text" class="form-control" formControlName="commercial_reference" id="address2"
+            <input type="text" class="form-control" name="commercial_reference" [(ngModel)]="item.commercial_reference" id="address2"
              placeholder="The commercial reference must be at least 5 characters.">
           </div>
           <div class="col-sm-6">
             <label for="firstName" class="form-label">Date</label><br>
-            <!-- <input [(ngModel)]="val2" type="date" id="birthdaytime" class="form-control" formControlName="estimated_date" > -->
-            <input type="date" formControlName="estimated_date"  min="{{currentDate | date:'yyyy-MM-dd'}}" class="form-control" placeholder="Date"/>
+            <input type="date" name="estimated_date" [(ngModel)]="item.estimated_date" min="{{currentDate | date:'yyyy-MM-dd'}}" class="form-control" placeholder="Date"/>
 
           </div>
           <div class="col-sm-6">
             <label for="address2" class="form-label">value</label>
-            <input type="number" class="form-control" formControlName="value" id="address2"
+            <input type="number" class="form-control" [(ngModel)]="item.value" name="value" id="address2"
              placeholder="Your value">
           </div>
           <div class="col-sm-6">
             <label for="address" class="form-label">Problem Description</label>
-            <textarea type="text" class="form-control" formControlName="description" id="address"
+            <textarea type="text" class="form-control" [(ngModel)]="item.description" name="description" id="address"
             placeholder="The description must be at least 10 characters." ></textarea>
 
           </div>
           <div class="col-12">
               <label for="address" class="form-label">Attachment</label>
                    <div class="m-auto " style=" border: 1px solid black; height:150px ;">
-                    <input  (change)="onFileChange($event)"  formControlName="file" multiple accept="image/*" type="file"
+                    <input  (change)="helper.setFile($event, 'file[]', item)"  name="src" multiple accept="image/*" type="file"
                     class="form-control hidden"   /><br>
                     <label for="files" class="text-center" style="margin-left: 30% !important;">
                       You can add attachments in the next field
@@ -126,7 +125,7 @@
 
         </div>
         <div  style="margin-left: 25% !important;">
-          <button class="w-75 btn btn-primary  my-3 " style="width:60% !important ;" type="submit">send</button>
+          <button class="w-75 btn btn-primary  my-3 " (click)="submit()" style="width:60% !important ;" type="submit">send</button>
 
         </div>
       </form>

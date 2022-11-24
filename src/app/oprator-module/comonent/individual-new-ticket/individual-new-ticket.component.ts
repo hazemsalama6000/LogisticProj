@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GeneralService } from 'src/app/service/general.service';
 import { OperatorService } from 'src/app/service/operator-auth/operator.service';
+import { Helper } from 'src/app/shared/helper';
 
 @Component({
   selector: 'app-individual-new-ticket',
@@ -11,18 +12,13 @@ import { OperatorService } from 'src/app/service/operator-auth/operator.service'
   styleUrls: ['./individual-new-ticket.component.scss']
 })
 export class IndividualNewTicketComponent implements OnInit {
+  helper: any = Helper;
+  item: any = {};
   cats: any ;
-  files:any= {};
-  myFiles:any[]= [];
-  formoperator = new FormGroup({
-    priority : new FormControl(""),
-    ticket_category_id : new FormControl(""),
-    description : new FormControl(""),
-    title: new FormControl(""),
-    src: new FormControl(''),
-  });
-  countImage:any;
-  images:any;
+  priority:any;
+  ticket_category_id:any;
+  description:any;
+  title:any;
   constructor(private http:HttpClient , private router:Router , private operatorclient:OperatorService
     , private gatcatser:GeneralService ) { }
 
@@ -30,34 +26,12 @@ export class IndividualNewTicketComponent implements OnInit {
     this.getcategory();
   }
 
-  onFileChange(event:any)
-  {
-    this.myFiles= [];
-    for (var i = 0; i < event.target.files.length; i++)
-     {
-        const file = event.target.files[i];
-        const reader = new FileReader();
-        reader.onload = () => {
-        this.myFiles.push(reader.result);
-      }
-      reader.readAsDataURL(file);
-    }
-    return this.myFiles;
-}
-submit(formoperator:FormGroup): void{
-  this.formoperator.value['src'] = this.myFiles;
-  const formdata = new FormData();
-  this.myFiles.forEach(element => {
-    formdata.append("src", element);
-  });
-  console.log(formoperator.value['src'] );
-  formdata.append("priority", this.formoperator.value['priority']);
-  formdata.append("ticket_category_id", this.formoperator.value['ticket_category_id']);
-  formdata.append("description", this.formoperator.value['description']);
-  formdata.append("title" , this.formoperator.value['title']);
-  this.operatorclient.addoperatorTicket( formdata).subscribe((res)=>
+
+submit(): void{
+
+  this.operatorclient.addoperatorTicket( Helper.toFormData(this.item)).subscribe((res)=>
 {
-  this.router.navigate(['/customer-support'])
+  this.router.navigate(['/individual-customer-support'])
 }
 )}
     getcategory(){

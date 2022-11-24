@@ -14,22 +14,8 @@ data:any  ;
 
       this._CustomerTicketsService.getClientTickets().subscribe((res:any) => {
         this.data = res.data
-       // console.log(this.data);
       })
 
-      // this._CustomerTicketsService.getClientTickets().subscribe({
-      //   next: result =>
-      //   {
-      //     this.data = result
-      //     console.log(this.data);
-      //   },
-      //   error :error =>  error
-
-
-      // })
   }
-
-  //Get Customer Tickets:
-
 
 }

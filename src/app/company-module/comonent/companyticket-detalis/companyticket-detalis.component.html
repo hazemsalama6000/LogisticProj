@@ -100,47 +100,47 @@
 
 
 
-            <div class="col-9 card mt-2" >
-                <div class="" style="border-radius: 15px;">
-                    <div class="">
-                      <div class="d-flex text-black">
-                        <div class="flex-shrink-0">
-                          <img src="../../../../assets/Logisty ui images/Group 14437.jpg"
-                            alt="" class="py-2"
-                            style="width: 50px; border-radius: 10px;">
-                        </div>
-                        <div class="flex-grow-1 ms-3 py-2">
-                          <h5 class="mb-1 fw-bold fs-6">ahmed ali</h5>
-                          <p class="fw-light ">Support</p>
-                          <p>2020/10/10 02:30</p>
+          <div class="col-9 card mt-2" *ngFor="let item of data" >
+            <div class="" style="border-radius: 15px;">
+                <div  class="">
+                  <div class="d-flex text-black">
+                    <div class="flex-shrink-0">
+                      <img src="../../../../assets/Logisty ui images/Group 14437.jpg"
+                        alt="" class="py-2"
+                        style="width: 50px; border-radius: 10px;">
+                    </div>
+                    <div class="flex-grow-1 ms-3 py-2">
+                      <h5 class="mb-1 fw-bold fs-6">ahmed ali</h5>
+                      <!-- <p class="fw-light ">{{item.comment}}</p> -->
+                      <p>{{item.comment}}</p>
 
-                        </div>
-                      </div>
                     </div>
                   </div>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Quisquam aliquid molestiae impedit repellendus asperiores tenetur?</p>
-                    <hr>
-                    <p>doce.file </p>
-            </div>
+                </div>
+              </div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam aliquid molestiae impedit repellendus asperiores tenetur?</p>
+                <hr>
+                <p><img src="{{item.file}}"  width="40px" height="40px" alt="file"></p>
 
-            <!-- *ngFor="let item of data"
-               <form  [formGroup]="formreplayclient" (submit)="submit(formreplayclient)">
+        </div>
+
+            <form  >
               <label for="" class="fw-bold fs-4 my-3">Add reply</label><br>
-              <textarea formControlName="comment" id="" cols="50" rows="5"  placeholder=""></textarea>
+              <textarea name="comment" [(ngModel)]="item.comment"  cols="50" rows="5"  placeholder=""></textarea>
               <div class="col-12">
                 <label for="" class="fw-bold fs-6 mt-2">add file</label>
                 <div class=" " style=" border: 1px solid black; height:130px ; width: 380px;">
-                      <input  (change)="onFileChange($event)"  formControlName="src" multiple accept="image/*" type="file"
+                      <input  (change)="helper.setFile($event, 'src', item)"  name="src" multiple accept="image/*" type="file"
                       class="form-control hidden"   /><br>
                       <label for="files" class="text-center" style="margin-left: 17% !important;">
                         You can add attachments in the next field
                        </label><br>
                      </div>
               </div>
-              <button class="w-50 btn btn-primary  my-3 " style="width:30% !important ;" type="submit">send</button>
+              <button class="w-50 btn btn-primary  my-3 " (click)="submit()" style="width:30% !important ;" type="submit">send</button>
 
-             </form> -->
+             </form>
 
         </div>
     </div>

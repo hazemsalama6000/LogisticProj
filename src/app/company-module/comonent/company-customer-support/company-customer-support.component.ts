@@ -13,7 +13,6 @@ export class CompanyCustomerSupportComponent implements OnInit {
   ngOnInit(): void {
     this.companyticket.getCompanyTickets().subscribe((res:any) => {
       this.data = res.data
-      console.log(this.data);
     })
   }
 

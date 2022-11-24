@@ -45,9 +45,9 @@ export class CustomerTicketsService {
     header = header.append("Apipassword" , this.apiPassword);
     header = header.append("Authorization" ,`Bearer ${this.token}`);
     let option ={headers:header} ;
-     return this._HttpClient.post(this.url + 'client/ticketreplies',formData ,option )
+     return this._HttpClient.post(this.url + 'client/ticketreplies',formData,option )
    }
-     //Add Replay Tickets:
+  //Add Replay Tickets:
   getReplayTicketById(id:any){
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
@@ -55,10 +55,8 @@ export class CustomerTicketsService {
     header = header.append("Authorization" ,`Bearer ${this.token}`);
     let option ={headers:header} ;
     return this._HttpClient.get(this.url + 'client/ticketreplies' + '?ticket_id=' + id ,option);
-    //return this.http.post('students/enroll/' + id + '?api_token=' + Auth.getApiToken(), null);
-
   }
-  //Add Replay Tickets:
+  //Add Customs Clearance
   addCustomsClearance(formData:any):Observable<any>{
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
@@ -67,4 +65,13 @@ export class CustomerTicketsService {
     let option ={headers:header} ;
      return this._HttpClient.post(this.url + 'client/add_customs_clearance',formData ,option )
    }
+  //Get Customs Clearance:
+  getCustomsClearance() {
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.get(this.url + 'client/customs_clearance', option);
+  }
 }

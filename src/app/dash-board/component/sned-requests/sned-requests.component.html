@@ -37,22 +37,22 @@
                                 <th>Flow</th>
                                 <th>Origin</th>
                                 <th>Distination</th>
-                                <th>Required Service</th>
-                                <th>Quetes</th>
+                                <th>Category </th>
+                                <th>Code</th>
                                 <th>#</th>
                             </tr>
                         </thead>
                         <!--Table head-->
                         <!--Table body-->
-                        <tbody>
+                        <tbody *ngFor="let item of data; let i = index">
                             <tr>
-                                <th >send</th>
-                                <td>Export</td>
-                                <td>EGY</td>
-                                <td>KSA</td>
-                                <td>C.C</td>
-                                <td>1</td>
-                                <td><a routerLink="/requst-details"><i class="bi bi-info-circle"></i>
+                                <th >{{item.status}}</th>
+                                <td>{{item.flow}}</td>
+                                <td>{{item.country_origin_name}}</td>
+                                <td>{{item.country_destination_name}}</td>
+                                <td>{{item.category_name}}</td>
+                                <td>{{item.code}}</td>
+                                <td><a [routerLink]='["/requst-details",i+1]'><i class="bi bi-info-circle"></i>
                                 </a></td>
                             </tr>
 

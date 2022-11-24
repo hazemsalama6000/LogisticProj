@@ -53,6 +53,15 @@ import { AvailableForWorkComponent } from './company-module/comonent/available-f
 import { IndividualRequestDetilesComponent } from './oprator-module/comonent/individual-request-detiles/individual-request-detiles.component';
 import { CompanyCompletedDetalisComponent } from './company-module/comonent/company-completed-detalis/company-completed-detalis.component';
 import { ApproveOfferComponent } from './dash-board/component/approve-offer/approve-offer.component';
+import { AirfrieghtnewrequestComponent } from './freight/component/airfrieghtnewrequest/airfrieghtnewrequest.component';
+import { AirfrieghtsendrequestComponent } from './freight/component/airfrieghtsendrequest/airfrieghtsendrequest.component';
+import { AirfrieghtrequestdetailsComponent } from './freight/component/airfrieghtrequestdetails/airfrieghtrequestdetails.component';
+import { SeafrieghtnewrequestComponent } from './freight/component/seafrieghtnewrequest/seafrieghtnewrequest.component';
+import { SeafrieghtsendrequestComponent } from './freight/component/seafrieghtsendrequest/seafrieghtsendrequest.component';
+import { SeafrieghtrequestdetailsComponent } from './freight/component/seafrieghtrequestdetails/seafrieghtrequestdetails.component';
+import { LocalfrieghtnewrequestComponent } from './freight/component/localfrieghtnewrequest/localfrieghtnewrequest.component';
+import { LocalfrieghtsendrequestComponent } from './freight/component/localfrieghtsendrequest/localfrieghtsendrequest.component';
+import { LocalfrieghtrequestdetailsComponent } from './freight/component/localfrieghtrequestdetails/localfrieghtrequestdetails.component';
 
 const routes: Routes = [
   { path: "register", component: RegisterComponent },
@@ -79,12 +88,14 @@ const routes: Routes = [
   { path: "change-password", component: ChangePasswordComponent },
   { path: "change-langauge", component: ChangeLangaugeComponent },
   { path: "offer-details", component: OfferDetailsComponent },
+
+  { path: "new-request", component: NewRequestComponent },
   { path: "send-requests", component: SnedRequestsComponent },
-  { path: "requst-details", component: RequetDetailsComponent },
+  { path: "requst-details/:id", component: RequetDetailsComponent },
+
   { path: "resend-verifiy-otp", component: ResendVerifiyOtpComponent },
   { path: "verifiy-account-company", component: VerifiyAccountCompanyComponent },
   { path: "Completed", component: CompletedComponent },
-  { path: "new-request", component: NewRequestComponent },
   { path: "on-progress", component: OnProgressComponent },
   { path: "approve-offer", component:ApproveOfferComponent },
   { path: "completed-detalis", component: CompletedDetalisComponent },
@@ -114,6 +125,19 @@ const routes: Routes = [
   { path: "available-for-work", component:AvailableForWorkComponent},
   { path: "company-completed-detalis", component:CompanyCompletedDetalisComponent},
   { path: "individual-request-detiles", component:IndividualRequestDetilesComponent},
+// ======================================FREIGHT=====================================
+  { path: "air-new-request", component:AirfrieghtnewrequestComponent},
+  { path: "air-send-request", component:AirfrieghtsendrequestComponent},
+  { path: "air-request-detiles", component:AirfrieghtrequestdetailsComponent},
+
+  { path: "sea-new-request", component:SeafrieghtnewrequestComponent},
+  { path: "sea-send-request", component:SeafrieghtsendrequestComponent},
+  { path: "sea-request-detiles", component:SeafrieghtrequestdetailsComponent},
+
+  { path: "local-new-request", component:LocalfrieghtnewrequestComponent},
+  { path: "local-send-request", component:LocalfrieghtsendrequestComponent},
+  { path: "local-request-detiles", component:LocalfrieghtrequestdetailsComponent},
+// ======================================FREIGHT=====================================
 
   { path: "**", redirectTo: "home-page", pathMatch: "full" },
 

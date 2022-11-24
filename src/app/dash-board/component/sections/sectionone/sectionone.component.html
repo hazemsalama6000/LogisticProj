@@ -2,23 +2,30 @@
     <div class="row">
         <div class="col-3 ">
             <app-sidebar></app-sidebar>
-     
+
     </div>
         <div class="col-9">
             <div class="container  text-end ms-3 ms-md-0 ms-lg-0 pt-4">
-                <button class="btn me-1 me-lg-3 me-md-1 w-25"><i class="bi bi-plus-lg me-2 fw-bold"></i>
-                  International Service</button>
-                <button class="btn w-25"> <i class="bi bi-plus-lg float-start fw-bold"></i>Local Service</button>
+                <button routerLink="/local-new-request" class="btn me-1 me-lg-3 me-md-1 w-25"><i class="bi bi-plus-lg me-2 fw-bold"></i>
+                  Local Freight
+                </button>
+                <button routerLink="/sea-new-request" class="btn me-1 me-lg-3 me-md-1 w-25"> <i class="bi bi-plus-lg float-start fw-bold"></i>
+                  Sea Freight
+                </button>
+                <button routerLink="/air-new-request" class="btn w-25"> <i class="bi bi-plus-lg float-start fw-bold"></i>
+                  Air Freight
+                </button>
+
                 <h2 class="text-start">Dashboard</h2>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-12 align-items-md-center ">
 
-                 
+
                   <div class="  card-body bg-white ">
                     <div class="text-start ">
                         <h3 class="fw-bold ms-2">REQUESTS LOCATIONS</h3>
                         <p class="ms-2">15 requests </p>
                         <img class="w-100" src="../../../../../assets/Logisty ui images/world.svg" alt="" srcset="">
-                        
+
                      </div>
                 </div>
               </div>

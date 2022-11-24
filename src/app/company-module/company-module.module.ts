@@ -6,7 +6,7 @@ import { VerifiyAccountCompanyComponent } from './comonent/verifiy-account-compa
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CompanySideBarComponent } from './comonent/company-side-bar/company-side-bar.component';
 import { CompanyCustomerSupportComponent } from './comonent/company-customer-support/company-customer-support.component';
 import { CompanyNewRequestsComponent } from './comonent/company-new-requests/company-new-requests.component';
@@ -37,7 +37,7 @@ import { CompanyCompletedDetalisComponent } from './comonent/company-completed-d
     CompanyAddRepresentativeComponent,
     AvailableForWorkComponent,
     CompanyCompletedDetalisComponent,
- 
+
   ],
   imports: [
     CommonModule,
@@ -47,6 +47,7 @@ import { CompanyCompletedDetalisComponent } from './comonent/company-completed-d
     ReactiveFormsModule,
     NgxIntlTelInputModule,
     TranslateModule.forChild(),
+    FormsModule
   ]
 })
 export class CompanyModuleModule { }
