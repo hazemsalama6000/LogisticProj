@@ -151,6 +151,7 @@ getCountry() {
   let option ={headers:header} ;
   return this._HttpClient.get(this.url + 'guest/countries', option);
 }
+
 getlang(lang:any):Observable<any>{
 
 return this.lang = lang

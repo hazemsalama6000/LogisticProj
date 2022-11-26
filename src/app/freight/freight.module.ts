@@ -17,7 +17,7 @@ import { ProfileModule } from '../profile/profile.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { TranslateModule } from '@ngx-translate/core';
-
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -39,9 +39,11 @@ import { TranslateModule } from '@ngx-translate/core';
     SharedModule,
     ProfileModule,
     ReactiveFormsModule,
+    FormsModule,
     CarouselModule,
     NgxIntlTelInputModule,
     TranslateModule.forChild(),
+
   ]
 })
 export class FreightModule { }

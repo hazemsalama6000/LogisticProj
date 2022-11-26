@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OpratorModuleModule } from './oprator-module/oprator-module.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { TranslateLoader } from '@ngx-translate/core';
+import { FreightModule } from './freight/freight.module';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { TranslateLoader } from '@ngx-translate/core';
     UserModelModule,
     CompanyModuleModule,
     OpratorModuleModule,
+    FreightModule,
     DashBoardModule,
     CommonModule,
     ProfileModule,
@@ -53,8 +55,8 @@ import { TranslateLoader } from '@ngx-translate/core';
         deps: [HttpClient]
       }
     }),
-    
-    
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

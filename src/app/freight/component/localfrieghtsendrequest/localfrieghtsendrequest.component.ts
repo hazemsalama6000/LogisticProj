@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FreightService } from 'src/app/service/freight.service';
 
 @Component({
   selector: 'app-localfrieghtsendrequest',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./localfrieghtsendrequest.component.scss']
 })
 export class LocalfrieghtsendrequestComponent implements OnInit {
+  data:any  ;
 
-  constructor() { }
+  constructor(private localfreight:FreightService) { }
 
   ngOnInit(): void {
+
+
+    this.localfreight.getLocalFreight().subscribe((res:any) => {
+      this.data = res.data
+    })
+
+
   }
 
 }

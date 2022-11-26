@@ -25,6 +25,15 @@
             </select>
           </div>
           <div class="col-sm-6">
+            <label for="" class="form-label">The flow</label>
+            <select  name="flow" [(ngModel)]="item.flow" class="form-control" >
+              <option value="" disabled>Enter your flow</option>
+              <option value="Export" >Export</option>
+              <option value="Import" >Import</option>
+            </select>
+          </div>
+
+          <div class="col-sm-6">
             <label for="" class="form-label">Currency</label>
             <select  name="currency_id" [(ngModel)]="item.currency_id" class="form-control">
               <option value="" disabled>Enter Your Currency</option>
@@ -55,14 +64,7 @@
               <option *ngFor="let item of goodcats" value="{{item.id}}">{{item.name}}</option>
             </select>
           </div>
-           <div class="col-sm-6">
-            <label for="" class="form-label">The flow</label>
-            <select  name="flow" [(ngModel)]="item.flow" class="form-control" >
-              <option value="" disabled>Enter your flow</option>
-              <option value="Export" >Export</option>
-              <option value="Import" >Import</option>
-            </select>
-          </div>
+
           <div class="col-sm-6">
             <label for="lastName" class="form-label">Quote Currency </label>
             <select  name="quote_currency_id" [(ngModel)]="item.quote_currency_id" class="form-control">
@@ -129,10 +131,10 @@
 
         </div>
       </form>
-    </div>
-  </div>
+</div>
+</div>
 
-
+</div>
 
 
 

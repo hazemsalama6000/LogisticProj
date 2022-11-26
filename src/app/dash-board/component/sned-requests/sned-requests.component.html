@@ -36,7 +36,7 @@
                                 <th>Status</th>
                                 <th>Flow</th>
                                 <th>Origin</th>
-                                <th>Distination</th>
+                                <th>Currency</th>
                                 <th>Category </th>
                                 <th>Code</th>
                                 <th>#</th>
@@ -48,8 +48,8 @@
                             <tr>
                                 <th >{{item.status}}</th>
                                 <td>{{item.flow}}</td>
-                                <td>{{item.country_origin_name}}</td>
-                                <td>{{item.country_destination_name}}</td>
+                                <td>{{item.goods_country_origin_name}}</td>
+                                <td>{{item.currency_name}}</td>
                                 <td>{{item.category_name}}</td>
                                 <td>{{item.code}}</td>
                                 <td><a [routerLink]='["/requst-details",i+1]'><i class="bi bi-info-circle"></i>

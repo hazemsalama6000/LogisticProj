@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FreightService } from 'src/app/service/freight.service';
 
 @Component({
   selector: 'app-seafrieghtsendrequest',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seafrieghtsendrequest.component.scss']
 })
 export class SeafrieghtsendrequestComponent implements OnInit {
-
-  constructor() { }
+data:any;
+  constructor(private seafreight:FreightService) { }
 
   ngOnInit(): void {
+    this.seafreight.getSeaFreight().subscribe((res:any) => {
+      this.data = res.data
+    })
   }
 
 }
