@@ -67,7 +67,7 @@ import { AuthGuard } from './guard/auth.guard';
 const routes: Routes = [
   
   // main entry pages
-  {path: '', component: HomePegeComponent, children: [
+  
   { path: "register", component: RegisterComponent },
   { path: "log-in", component: LogInComponent },
   { path: "home-page", component: HomePegeComponent },
@@ -82,8 +82,7 @@ const routes: Routes = [
   { path: "pricing", component: PricingComponent },
   { path: "about-us", component: AboutUsComponent },
   { path: "learn-about-us", component: LearnAboutUsComponent },
-  ]},
-
+  
   { path: "customer-support", component: CustomerSupportComponent ,canActivate:[AuthGuard] },
   { path: "new-ticket", component: NewTicketComponent ,canActivate:[AuthGuard] },
   { path: "ticket-details/:id", component: TicketDetailsComponent ,canActivate:[AuthGuard] },
