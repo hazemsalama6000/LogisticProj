@@ -62,8 +62,12 @@ import { SeafrieghtrequestdetailsComponent } from './freight/component/seafriegh
 import { LocalfrieghtnewrequestComponent } from './freight/component/localfrieghtnewrequest/localfrieghtnewrequest.component';
 import { LocalfrieghtsendrequestComponent } from './freight/component/localfrieghtsendrequest/localfrieghtsendrequest.component';
 import { LocalfrieghtrequestdetailsComponent } from './freight/component/localfrieghtrequestdetails/localfrieghtrequestdetails.component';
-
+import { AuthGuard } from './guard/auth.guard';
+// canActivate:[AuthGuard]
 const routes: Routes = [
+  
+  // main entry pages
+  {path: '', component: HomePegeComponent, children: [
   { path: "register", component: RegisterComponent },
   { path: "log-in", component: LogInComponent },
   { path: "home-page", component: HomePegeComponent },
@@ -78,6 +82,7 @@ const routes: Routes = [
   { path: "pricing", component: PricingComponent },
   { path: "about-us", component: AboutUsComponent },
   { path: "learn-about-us", component: LearnAboutUsComponent },
+  ]},
 
   { path: "customer-support", component: CustomerSupportComponent },
   { path: "new-ticket", component: NewTicketComponent },
