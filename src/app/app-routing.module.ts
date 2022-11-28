@@ -62,6 +62,11 @@ import { SeafrieghtrequestdetailsComponent } from './freight/component/seafriegh
 import { LocalfrieghtnewrequestComponent } from './freight/component/localfrieghtnewrequest/localfrieghtnewrequest.component';
 import { LocalfrieghtsendrequestComponent } from './freight/component/localfrieghtsendrequest/localfrieghtsendrequest.component';
 import { LocalfrieghtrequestdetailsComponent } from './freight/component/localfrieghtrequestdetails/localfrieghtrequestdetails.component';
+import { AllrequestsComponent } from './oprator-module/comonent/allrequests/allrequests.component';
+import { QuotationsComponent } from './oprator-module/comonent/quotations/quotations.component';
+import { NewquotationComponent } from './oprator-module/comonent/newquotation/newquotation.component';
+import { AllrequestcomComponent } from './company-module/comonent/allrequestcom/allrequestcom.component';
+import { DetailsrequestcomComponent } from './company-module/comonent/detailsrequestcom/detailsrequestcom.component';
 
 const routes: Routes = [
   { path: "register", component: RegisterComponent },
@@ -83,16 +88,62 @@ const routes: Routes = [
   { path: "new-ticket", component: NewTicketComponent },
   { path: "ticket-details/:id", component: TicketDetailsComponent },
 
+  { path: "new-request", component: NewRequestComponent },
+  { path: "send-requests", component: SnedRequestsComponent },
+  { path: "requst-details/:id", component: RequetDetailsComponent },
+
+  { path: "individual-customer-support", component: IndividualCustomerSupportComponent },
+  { path: "individual-new-ticket", component: IndividualNewTicketComponent },
+  { path: "individual-ticketk-detalis/:id", component: IndividualTicketkDetalisComponent },
+
+  { path: "company-customer-support", component:CompanyCustomerSupportComponent},
+  { path: "company-new-ticket", component:CompanyNewTicketComponent},
+  { path: "companyticket-detalis/:id", component:CompanyticketDetalisComponent},
+
+  // ======================================START FREIGHT=====================================
+  { path: "air-new-request", component:AirfrieghtnewrequestComponent},
+  { path: "air-send-request", component:AirfrieghtsendrequestComponent},
+  { path: "air-request-detiles", component:AirfrieghtrequestdetailsComponent},
+  { path: "sea-new-request", component:SeafrieghtnewrequestComponent},
+  { path: "sea-send-request", component:SeafrieghtsendrequestComponent},
+  { path: "sea-request-detiles", component:SeafrieghtrequestdetailsComponent},
+  { path: "local-new-request", component:LocalfrieghtnewrequestComponent},
+  { path: "local-send-request", component:LocalfrieghtsendrequestComponent},
+  { path: "local-request-detiles", component:LocalfrieghtrequestdetailsComponent},
+  // ======================================END FREIGHT=====================================
+
+  { path: "individual-new-requests", component: IndividualNewRequestsComponent },
+  { path: "individual-all-requests", component:IndividualRequestDetilesComponent},
+  { path: "individual-active-requests", component:AllrequestsComponent},
+
+  { path: "individual-all-quotations", component:QuotationsComponent},
+  { path: "individual-new-quotation/:id", component:NewquotationComponent},
+
+  { path: "individual-on-progress", component: IndividualOnProgressComponent },
+  { path: "individual-on-progress-detalis", component: IndividualOnProgressDetalisComponent },
+  { path: "individul-completed-detalis", component: IndividulCompletedDetalisComponent },
+  { path: "individual-completed", component: IndividualcompletedComponent },
+  { path: "individual-dashboard", component:IndividualDashboardComponent },
+  // =================================================================================
+
+  { path: "company-new-requests", component:CompanyNewRequestsComponent},
+  { path: "company-all-requests", component:DetailsrequestcomComponent},
+  { path: "company-active-requests", component:AllrequestcomComponent},
+
+  { path: "company-dash-board", component:CompanyDashBoardComponent},
+  { path: "company-onprogress", component:CompanyOnprogressComponent},
+  { path: "company-completed", component:CompanyCompletedComponent},
+  { path: "company-representatives", component:CompanyRepresentativesComponent},
+  { path: "company-add-representative", component:CompanyAddRepresentativeComponent},
+  { path: "available-for-work", component:AvailableForWorkComponent},
+  { path: "company-completed-detalis", component:CompanyCompletedDetalisComponent},
+
+  // =================================================================================
   { path: "edit-informations", component: EditInformationsComponent },
   { path: "notification-setting", component: NotificationSettingComponent },
   { path: "change-password", component: ChangePasswordComponent },
   { path: "change-langauge", component: ChangeLangaugeComponent },
   { path: "offer-details", component: OfferDetailsComponent },
-
-  { path: "new-request", component: NewRequestComponent },
-  { path: "send-requests", component: SnedRequestsComponent },
-  { path: "requst-details/:id", component: RequetDetailsComponent },
-
   { path: "resend-verifiy-otp", component: ResendVerifiyOtpComponent },
   { path: "verifiy-account-company", component: VerifiyAccountCompanyComponent },
   { path: "Completed", component: CompletedComponent },
@@ -100,44 +151,6 @@ const routes: Routes = [
   { path: "approve-offer", component:ApproveOfferComponent },
   { path: "completed-detalis", component: CompletedDetalisComponent },
   { path: "on-progress-detlis", component: OnProgressDetlisComponent },
-
-  { path: "individual-customer-support", component: IndividualCustomerSupportComponent },
-  { path: "individual-new-ticket", component: IndividualNewTicketComponent },
-  { path: "individual-ticketk-detalis/:id", component: IndividualTicketkDetalisComponent },
-
-  { path: "individual-new-requests", component: IndividualNewRequestsComponent },
-  { path: "individual-on-progress", component: IndividualOnProgressComponent },
-  { path: "individual-on-progress-detalis", component: IndividualOnProgressDetalisComponent },
-  { path: "individul-completed-detalis", component: IndividulCompletedDetalisComponent },
-  { path: "individual-completed", component: IndividualcompletedComponent },
-  { path: "individual-dashboard", component:IndividualDashboardComponent },
-  { path: "company-dash-board", component:CompanyDashBoardComponent},
-  { path: "company-new-requests", component:CompanyNewRequestsComponent},
-  { path: "company-onprogress", component:CompanyOnprogressComponent},
-  { path: "company-completed", component:CompanyCompletedComponent},
-  { path: "company-representatives", component:CompanyRepresentativesComponent},
-
-  { path: "company-customer-support", component:CompanyCustomerSupportComponent},
-  { path: "company-new-ticket", component:CompanyNewTicketComponent},
-  { path: "companyticket-detalis/:id", component:CompanyticketDetalisComponent},
-
-  { path: "company-add-representative", component:CompanyAddRepresentativeComponent},
-  { path: "available-for-work", component:AvailableForWorkComponent},
-  { path: "company-completed-detalis", component:CompanyCompletedDetalisComponent},
-  { path: "individual-request-detiles", component:IndividualRequestDetilesComponent},
-// ======================================FREIGHT=====================================
-  { path: "air-new-request", component:AirfrieghtnewrequestComponent},
-  { path: "air-send-request", component:AirfrieghtsendrequestComponent},
-  { path: "air-request-detiles", component:AirfrieghtrequestdetailsComponent},
-
-  { path: "sea-new-request", component:SeafrieghtnewrequestComponent},
-  { path: "sea-send-request", component:SeafrieghtsendrequestComponent},
-  { path: "sea-request-detiles", component:SeafrieghtrequestdetailsComponent},
-
-  { path: "local-new-request", component:LocalfrieghtnewrequestComponent},
-  { path: "local-send-request", component:LocalfrieghtsendrequestComponent},
-  { path: "local-request-detiles", component:LocalfrieghtrequestdetailsComponent},
-// ======================================FREIGHT=====================================
 
   { path: "**", redirectTo: "home-page", pathMatch: "full" },
 

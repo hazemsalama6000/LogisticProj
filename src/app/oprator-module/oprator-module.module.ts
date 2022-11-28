@@ -22,6 +22,9 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { IndividualDashboardComponent } from './comonent/individual-dashboard/individual-dashboard.component';
 import { IndividualRequestDetilesComponent } from './comonent/individual-request-detiles/individual-request-detiles.component';
 import { IndividulCompletedDetalisComponent } from './comonent/individul-completed-detalis/individul-completed-detalis.component';
+import { AllrequestsComponent } from './comonent/allrequests/allrequests.component';
+import { QuotationsComponent } from './comonent/quotations/quotations.component';
+import { NewquotationComponent } from './comonent/newquotation/newquotation.component';
 
 
 
@@ -45,6 +48,9 @@ import { IndividulCompletedDetalisComponent } from './comonent/individul-complet
     IndividualDashboardComponent,
     IndividualRequestDetilesComponent,
     IndividulCompletedDetalisComponent,
+    AllrequestsComponent,
+    QuotationsComponent,
+    NewquotationComponent,
    
   ],
   imports: [

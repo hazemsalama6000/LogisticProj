@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OperatorService } from 'src/app/service/operator-auth/operator.service';
 
 @Component({
   selector: 'app-individual-request-detiles',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./individual-request-detiles.component.scss']
 })
 export class IndividualRequestDetilesComponent implements OnInit {
-
-  constructor() { }
+data:any;
+  constructor(private operator:OperatorService) { }
 
   ngOnInit(): void {
+    this.operator.getsupplierfiles().subscribe((res:any) => {
+      this.data =res.data;
+      console.log(this.data);
+
+    })
   }
 
 }
