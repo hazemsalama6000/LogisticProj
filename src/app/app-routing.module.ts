@@ -62,13 +62,12 @@ import { SeafrieghtrequestdetailsComponent } from './freight/component/seafriegh
 import { LocalfrieghtnewrequestComponent } from './freight/component/localfrieghtnewrequest/localfrieghtnewrequest.component';
 import { LocalfrieghtsendrequestComponent } from './freight/component/localfrieghtsendrequest/localfrieghtsendrequest.component';
 import { LocalfrieghtrequestdetailsComponent } from './freight/component/localfrieghtrequestdetails/localfrieghtrequestdetails.component';
-import { AllrequestsComponent } from './oprator-module/comonent/allrequests/allrequests.component';
-import { QuotationsComponent } from './oprator-module/comonent/quotations/quotations.component';
-import { NewquotationComponent } from './oprator-module/comonent/newquotation/newquotation.component';
-import { AllrequestcomComponent } from './company-module/comonent/allrequestcom/allrequestcom.component';
-import { DetailsrequestcomComponent } from './company-module/comonent/detailsrequestcom/detailsrequestcom.component';
-
+import { AuthGuard } from './guard/auth.guard';
+// canActivate:[AuthGuard]
 const routes: Routes = [
+
+  // main entry pages
+
   { path: "register", component: RegisterComponent },
   { path: "log-in", component: LogInComponent },
   { path: "home-page", component: HomePegeComponent },
@@ -84,73 +83,65 @@ const routes: Routes = [
   { path: "about-us", component: AboutUsComponent },
   { path: "learn-about-us", component: LearnAboutUsComponent },
 
-  { path: "customer-support", component: CustomerSupportComponent },
-  { path: "new-ticket", component: NewTicketComponent },
-  { path: "ticket-details/:id", component: TicketDetailsComponent },
+  { path: "customer-support", component: CustomerSupportComponent ,canActivate:[AuthGuard] },
+  { path: "new-ticket", component: NewTicketComponent ,canActivate:[AuthGuard] },
+  { path: "ticket-details/:id", component: TicketDetailsComponent ,canActivate:[AuthGuard] },
 
-  { path: "new-request", component: NewRequestComponent },
-  { path: "send-requests", component: SnedRequestsComponent },
-  { path: "requst-details/:id", component: RequetDetailsComponent },
+  { path: "edit-informations", component: EditInformationsComponent ,canActivate:[AuthGuard] },
+  { path: "notification-setting", component: NotificationSettingComponent ,canActivate:[AuthGuard] },
+  { path: "change-password", component: ChangePasswordComponent ,canActivate:[AuthGuard] },
+  { path: "change-langauge", component: ChangeLangaugeComponent ,canActivate:[AuthGuard] },
+  { path: "offer-details", component: OfferDetailsComponent ,canActivate:[AuthGuard] },
 
-  { path: "individual-customer-support", component: IndividualCustomerSupportComponent },
-  { path: "individual-new-ticket", component: IndividualNewTicketComponent },
-  { path: "individual-ticketk-detalis/:id", component: IndividualTicketkDetalisComponent },
+  { path: "new-request", component: NewRequestComponent ,canActivate:[AuthGuard] },
+  { path: "send-requests", component: SnedRequestsComponent ,canActivate:[AuthGuard] },
+  { path: "requst-details/:id", component: RequetDetailsComponent ,canActivate:[AuthGuard] },
 
-  { path: "company-customer-support", component:CompanyCustomerSupportComponent},
-  { path: "company-new-ticket", component:CompanyNewTicketComponent},
-  { path: "companyticket-detalis/:id", component:CompanyticketDetalisComponent},
+  { path: "resend-verifiy-otp", component: ResendVerifiyOtpComponent ,canActivate:[AuthGuard] },
+  { path: "verifiy-account-company", component: VerifiyAccountCompanyComponent ,canActivate:[AuthGuard] },
+  { path: "Completed", component: CompletedComponent ,canActivate:[AuthGuard] },
+  { path: "on-progress", component: OnProgressComponent ,canActivate:[AuthGuard] },
+  { path: "approve-offer", component:ApproveOfferComponent ,canActivate:[AuthGuard] },
+  { path: "completed-detalis", component: CompletedDetalisComponent ,canActivate:[AuthGuard] },
+  { path: "on-progress-detlis", component: OnProgressDetlisComponent ,canActivate:[AuthGuard] },
 
-  // ======================================START FREIGHT=====================================
-  { path: "air-new-request", component:AirfrieghtnewrequestComponent},
-  { path: "air-send-request", component:AirfrieghtsendrequestComponent},
-  { path: "air-request-detiles", component:AirfrieghtrequestdetailsComponent},
-  { path: "sea-new-request", component:SeafrieghtnewrequestComponent},
-  { path: "sea-send-request", component:SeafrieghtsendrequestComponent},
-  { path: "sea-request-detiles", component:SeafrieghtrequestdetailsComponent},
-  { path: "local-new-request", component:LocalfrieghtnewrequestComponent},
-  { path: "local-send-request", component:LocalfrieghtsendrequestComponent},
-  { path: "local-request-detiles", component:LocalfrieghtrequestdetailsComponent},
-  // ======================================END FREIGHT=====================================
+  { path: "individual-customer-support", component: IndividualCustomerSupportComponent ,canActivate:[AuthGuard] },
+  { path: "individual-new-ticket", component: IndividualNewTicketComponent ,canActivate:[AuthGuard] },
+  { path: "individual-ticketk-detalis/:id", component: IndividualTicketkDetalisComponent ,canActivate:[AuthGuard] },
 
-  { path: "individual-new-requests", component: IndividualNewRequestsComponent },
-  { path: "individual-all-requests", component:IndividualRequestDetilesComponent},
-  { path: "individual-active-requests", component:AllrequestsComponent},
+  { path: "individual-new-requests", component: IndividualNewRequestsComponent ,canActivate:[AuthGuard] },
+  { path: "individual-on-progress", component: IndividualOnProgressComponent ,canActivate:[AuthGuard] },
+  { path: "individual-on-progress-detalis", component: IndividualOnProgressDetalisComponent ,canActivate:[AuthGuard] },
+  { path: "individul-completed-detalis", component: IndividulCompletedDetalisComponent ,canActivate:[AuthGuard] },
+  { path: "individual-completed", component: IndividualcompletedComponent ,canActivate:[AuthGuard] },
+  { path: "individual-dashboard", component:IndividualDashboardComponent ,canActivate:[AuthGuard] },
+  { path: "company-dash-board", component:CompanyDashBoardComponent,canActivate:[AuthGuard]},
+  { path: "company-new-requests", component:CompanyNewRequestsComponent,canActivate:[AuthGuard]},
+  { path: "company-onprogress", component:CompanyOnprogressComponent,canActivate:[AuthGuard]},
+  { path: "company-completed", component:CompanyCompletedComponent,canActivate:[AuthGuard]},
+  { path: "company-representatives", component:CompanyRepresentativesComponent,canActivate:[AuthGuard]},
 
-  { path: "individual-all-quotations", component:QuotationsComponent},
-  { path: "individual-new-quotation/:id", component:NewquotationComponent},
+  { path: "company-customer-support", component:CompanyCustomerSupportComponent,canActivate:[AuthGuard]},
+  { path: "company-new-ticket", component:CompanyNewTicketComponent,canActivate:[AuthGuard]},
+  { path: "companyticket-detalis/:id", component:CompanyticketDetalisComponent,canActivate:[AuthGuard]},
 
-  { path: "individual-on-progress", component: IndividualOnProgressComponent },
-  { path: "individual-on-progress-detalis", component: IndividualOnProgressDetalisComponent },
-  { path: "individul-completed-detalis", component: IndividulCompletedDetalisComponent },
-  { path: "individual-completed", component: IndividualcompletedComponent },
-  { path: "individual-dashboard", component:IndividualDashboardComponent },
-  // =================================================================================
+  { path: "company-add-representative", component:CompanyAddRepresentativeComponent,canActivate:[AuthGuard]},
+  { path: "available-for-work", component:AvailableForWorkComponent,canActivate:[AuthGuard]},
+  { path: "company-completed-detalis", component:CompanyCompletedDetalisComponent,canActivate:[AuthGuard]},
+  { path: "individual-request-detiles", component:IndividualRequestDetilesComponent,canActivate:[AuthGuard]},
+// ======================================FREIGHT=====================================
+  { path: "air-new-request", component:AirfrieghtnewrequestComponent,canActivate:[AuthGuard]},
+  { path: "air-send-request", component:AirfrieghtsendrequestComponent,canActivate:[AuthGuard]},
+  { path: "air-request-detiles", component:AirfrieghtrequestdetailsComponent,canActivate:[AuthGuard]},
 
-  { path: "company-new-requests", component:CompanyNewRequestsComponent},
-  { path: "company-all-requests", component:DetailsrequestcomComponent},
-  { path: "company-active-requests", component:AllrequestcomComponent},
+  { path: "sea-new-request", component:SeafrieghtnewrequestComponent,canActivate:[AuthGuard]},
+  { path: "sea-send-request", component:SeafrieghtsendrequestComponent,canActivate:[AuthGuard]},
+  { path: "sea-request-detiles", component:SeafrieghtrequestdetailsComponent,canActivate:[AuthGuard]},
 
-  { path: "company-dash-board", component:CompanyDashBoardComponent},
-  { path: "company-onprogress", component:CompanyOnprogressComponent},
-  { path: "company-completed", component:CompanyCompletedComponent},
-  { path: "company-representatives", component:CompanyRepresentativesComponent},
-  { path: "company-add-representative", component:CompanyAddRepresentativeComponent},
-  { path: "available-for-work", component:AvailableForWorkComponent},
-  { path: "company-completed-detalis", component:CompanyCompletedDetalisComponent},
-
-  // =================================================================================
-  { path: "edit-informations", component: EditInformationsComponent },
-  { path: "notification-setting", component: NotificationSettingComponent },
-  { path: "change-password", component: ChangePasswordComponent },
-  { path: "change-langauge", component: ChangeLangaugeComponent },
-  { path: "offer-details", component: OfferDetailsComponent },
-  { path: "resend-verifiy-otp", component: ResendVerifiyOtpComponent },
-  { path: "verifiy-account-company", component: VerifiyAccountCompanyComponent },
-  { path: "Completed", component: CompletedComponent },
-  { path: "on-progress", component: OnProgressComponent },
-  { path: "approve-offer", component:ApproveOfferComponent },
-  { path: "completed-detalis", component: CompletedDetalisComponent },
-  { path: "on-progress-detlis", component: OnProgressDetlisComponent },
+  { path: "local-new-request", component:LocalfrieghtnewrequestComponent,canActivate:[AuthGuard]},
+  { path: "local-send-request", component:LocalfrieghtsendrequestComponent,canActivate:[AuthGuard]},
+  { path: "local-request-detiles", component:LocalfrieghtrequestdetailsComponent,canActivate:[AuthGuard]},
+// ======================================FREIGHT=====================================
 
   { path: "**", redirectTo: "home-page", pathMatch: "full" },
 

@@ -2,7 +2,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { GlobalConstantsComponent } from '../shared/component/global-constants/global-constants.component';
-
+import jwt_decode from "jwt-decode";
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +13,7 @@ export class ClientAuthService {
   url:string = GlobalConstantsComponent.baseUrl;
   apiPassword:string =  GlobalConstantsComponent.apiPassword;
   lang:any;
+  isLoggedIn = false;
 
   constructor(private _HttpClient:HttpClient) {}
 
@@ -31,8 +32,8 @@ export class ClientAuthService {
     header = header.append("Apipassword" , this.apiPassword);
     // header = header.append("Authorization" , token);
     let option ={headers:header} ;
+    console.log( loginData , option);
     return this._HttpClient.post(this.url + 'guest/login' , loginData , option )
-
   }
   clientOtp(otpData:any):Observable<any>{
     let header = new HttpHeaders();
@@ -78,8 +79,15 @@ export class ClientAuthService {
 
    return this._HttpClient.post(this.url + 'client/changePassword' , newpassword , option)
   }
-
-
+  
+  isAuthenticated(){
+      let token:any = localStorage.getItem("usertoken")
+      // let rout:any = jwt_decode(token)
+      if (localStorage.getItem("usertoken") != null && localStorage.getItem("usertoken") != "") {
+        this.isLoggedIn = true;
+       }
+      return this.isLoggedIn;
+  }
 
 getlang(lang:any){
 
