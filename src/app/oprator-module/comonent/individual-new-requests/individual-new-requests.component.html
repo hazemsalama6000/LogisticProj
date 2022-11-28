@@ -1,188 +1,39 @@
-<div class="container">
-    <div class="row">
-        <div class="col-3">
-      <app-individual-sidebar></app-individual-sidebar>
+<div class="container  ">
+  <div class="row mt-2">
+      <div class="col-2"></div>
+    <div class="col-md-12 col-lg-8  bg-white card">
+      <form class="needs-validation mt-3"  >
+        <div class="row g-4 ps-4">
+          <label  class="form-label mb-0" >Add New Service Files</label>
+          <hr class="mt-1 ">
+          <div class="col-sm-6">
+            <label  class="form-label">Services</label>
+            <select   [(ngModel)]="item.service_id" name="service_id" class="form-control">
+              <option value="" disabled>Select The service</option>
+              <option *ngFor="let item of Service" value="{{item.id}}">{{item.name}}</option>
+            </select>
+          </div>
+
+          <div class="col-12">
+              <label for="address" class="form-label">Attachment</label>
+                   <div class="m-auto " style=" border: 1px solid black; height:150px ;">
+                    <input
+
+                     (change)="helper.setFile($event, 'meanviest', item)"  name="meanviest"
+                    multiple accept="image/*" type="file"
+                    class="form-control hidden"   /><br>
+                    <label for="files" class="text-center" style="margin-left: 30% !important;">
+                      You can add attachments in the next field
+                     </label><br>
+                   </div>
+            </div>
         </div>
-        
-        <div class="col-8 ">
-           
-         
-                <div class="row   mt-5 ">
-                    <div class="feature col mb-3">
-                        <div class="card">
-                          <div class="card-body">
-                            <h3 class="fw-bold d-inline">Custom Clearence </h3>
-                            <span class="float-end"><img class="mt-2" src="../../../../../assets/Logisty ui images/um.svg" height="30px"
-                                ms-3alt="" srcset=""></span>
-                            <p class="text-muted bi bi-bag ">12/2/2022 8:00 pm</p>
-                            <p>Sent</p>
-                            <p>Cairo Airport</p>
-                            <hr>
-                            <h4 class="fw-semibold">Set Offer</h4>
-                            <div class="d-flex justify-content-around">
-                
-                              <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Price</a>
-                              <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Time</a>
-                              <a class=" btn btn2   btn-success w-50 mx-1 btn1 text-decoration-none " routerLink="/individual-request-detiles">SEND</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-            
-                  <div class="feature col  mb-3">
-            
-                    <div class="card">
-                      <div class="card-body">
-                        <h3 class="fw-bold d-inline">Custom Clearence </h3>
-                        <span class="float-end"><img class="mt-2" src="../../../../../assets/Logisty ui images/um.svg" height="30px"
-                            ms-3alt="" srcset=""></span>
-                        <p class="text-muted bi bi-bag ">12/2/2022 8:00 pm</p>
-                        <p>Sent</p>
-                        <p>Cairo Airport</p>
-                        <hr>
-                        <h4 class="fw-semibold">Set Offer</h4>
-                        <div class="d-flex justify-content-around">
-            
-                          <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Price</a>
-                          <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Time</a>
-                          <a class=" btn btn2   btn-success w-50 mx-1 btn1 text-decoration-none " routerLink="/individual-request-detiles">SEND</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="feature col mb-3">
-                    <div class="card">
-                      <div class="card-body">
-                        <h3 class="fw-bold d-inline">Custom Clearence </h3>
-                        <span class="float-end"><img class="mt-2" src="../../../../../assets/Logisty ui images/um.svg" height="30px"
-                            ms-3alt="" srcset=""></span>
-                        <p class="text-muted bi bi-bag ">12/2/2022 8:00 pm</p>
-                        <p>Sent</p>
-                        <p>Cairo Airport</p>
-                        <hr>
-                        <h4 class="fw-semibold">Set Offer</h4>
-                        <div class="d-flex justify-content-around">
-            
-                          <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Price</a>
-                          <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Time</a>
-                          <a class=" btn btn2   btn-success w-50 mx-1 btn1 text-decoration-none " href="">SEND</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        
-              <div class="feature col  mb-3">
-        
-                <div class="card">
-                  <div class="card-body">
-                    <h3 class="fw-bold d-inline">Custom Clearence </h3>
-                    <span class="float-end"><img class="mt-2" src="../../../../../assets/Logisty ui images/um.svg" height="30px"
-                        ms-3alt="" srcset=""></span>
-                    <p class="text-muted bi bi-bag ">12/2/2022 8:00 pm</p>
-                    <p>Sent</p>
-                    <p>Cairo Airport</p>
-                    <hr>
-                    <h4 class="fw-semibold">Set Offer</h4>
-                    <div class="d-flex justify-content-around">
-        
-                      <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Price</a>
-                      <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Time</a>
-                      <a class=" btn btn2   btn-success w-50 mx-1 btn1 text-decoration-none " href="">SEND</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="feature col mb-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h3 class="fw-bold d-inline">Custom Clearence </h3>
-                    <span class="float-end"><img class="mt-2" src="../../../../../assets/Logisty ui images/um.svg" height="30px"
-                        ms-3alt="" srcset=""></span>
-                    <p class="text-muted bi bi-bag ">12/2/2022 8:00 pm</p>
-                    <p>Sent</p>
-                    <p>Cairo Airport</p>
-                    <hr>
-                    <h4 class="fw-semibold">Set Offer</h4>
-                    <div class="d-flex justify-content-around">
-        
-                      <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Price</a>
-                      <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Time</a>
-                      <a class=" btn btn2   btn-success w-50 mx-1 btn1 text-decoration-none " href="">SEND</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-          <div class="feature col  mb-3">
-    
-            <div class="card">
-              <div class="card-body">
-                <h3 class="fw-bold d-inline">Custom Clearence </h3>
-                <span class="float-end"><img class="mt-2" src="../../../../../assets/Logisty ui images/um.svg" height="30px"
-                    ms-3alt="" srcset=""></span>
-                <p class="text-muted bi bi-bag ">12/2/2022 8:00 pm</p>
-                <p>Sent</p>
-                <p>Cairo Airport</p>
-                <hr>
-                <h4 class="fw-semibold">Set Offer</h4>
-                <div class="d-flex justify-content-around">
-    
-                  <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Price</a>
-                  <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Time</a>
-                  <a class=" btn btn2   btn-success w-50 mx-1 btn1 text-decoration-none " href="">SEND</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="feature col mb-3">
-            <div class="card">
-              <div class="card-body">
-                <h3 class="fw-bold d-inline">Custom Clearence </h3>
-                <span class="float-end"><img class="mt-2" src="../../../../../assets/Logisty ui images/um.svg" height="30px"
-                    ms-3alt="" srcset=""></span>
-                <p class="text-muted bi bi-bag ">12/2/2022 8:00 pm</p>
-                <p>Sent</p>
-                <p>Cairo Airport</p>
-                <hr>
-                <h4 class="fw-semibold">Set Offer</h4>
-                <div class="d-flex justify-content-around">
-    
-                  <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Price</a>
-                  <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Time</a>
-                  <a class=" btn btn2   btn-success w-50 mx-1 btn1 text-decoration-none " href="">SEND</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-      <div class="feature col  mb-3">
-
-        <div class="card">
-          <div class="card-body">
-            <h3 class="fw-bold d-inline">Custom Clearence </h3>
-            <span class="float-end"><img class="mt-2" src="../../../../../assets/Logisty ui images/um.svg" height="30px"
-                ms-3alt="" srcset=""></span>
-            <p class="text-muted bi bi-bag ">12/2/2022 8:00 pm</p>
-            <p>Sent</p>
-            <p>Cairo Airport</p>
-            <hr>
-            <h4 class="fw-semibold">Set Offer</h4>
-            <div class="d-flex justify-content-around">
-
-              <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Price</a>
-              <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Time</a>
-              <a class=" btn btn2   btn-success w-50 mx-1 btn1 text-decoration-none " href="">SEND</a>
-            </div>
-          </div>
+        <div  style="margin-left: 25% !important;">
+          <button  (click)="submit()" class="w-75 btn btn-primary  my-3 " style="width:60% !important ;" type="submit">send</button>
         </div>
-      </div>
-                </div>
-              </div>
-
-      </div> 
+      </form>
     </div>
- 
-          
-          
+  </div>
+</div>
 
 

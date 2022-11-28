@@ -151,6 +151,13 @@ getCountry() {
   let option ={headers:header} ;
   return this._HttpClient.get(this.url + 'guest/countries', option);
 }
+getService() {
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'guest/services', option);
+}
 
 getlang(lang:any):Observable<any>{
 

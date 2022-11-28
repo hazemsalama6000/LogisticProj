@@ -19,7 +19,7 @@ export class OperatorService {
    }
 
 
-  opratorRegister(opratorDAta:any):Observable<any>{
+opratorRegister(opratorDAta:any):Observable<any>{
 
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
@@ -28,7 +28,7 @@ export class OperatorService {
    return this._HttpClient.post(this.url + 'operator/register' ,   opratorDAta ,  option)
 
   }
-  opratorverifyAccount(otpData:any):Observable<any>{
+opratorverifyAccount(otpData:any):Observable<any>{
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
     header = header.append("Apipassword" , this.apiPassword);
@@ -36,7 +36,7 @@ export class OperatorService {
 
    return this._HttpClient.post(this.url + 'operator/verifyAccount' , otpData , option)
   }
-  opratorChangePassword(newpassword:any ,token:any ):Observable<any>{
+opratorChangePassword(newpassword:any ,token:any ):Observable<any>{
 
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
@@ -65,7 +65,7 @@ getoperatorTickets() {
   return this._HttpClient.get(this.url + 'operator/tickets', option);
 }
  //Add Replay Tickets:
- addreplayTicket(formData:any):Observable<any>{
+addreplayTicket(formData:any):Observable<any>{
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);
   header = header.append("Apipassword" , this.apiPassword);
@@ -83,6 +83,48 @@ getReplayTicketById(id:any){
   return this._HttpClient.get(this.url + 'operator/ticketreplies' + '?ticket_id=' + id ,option);
   //return this.http.post('students/enroll/' + id + '?api_token=' + Auth.getApiToken(), null);
 
+}
+// ==============Service File=======================
+ApplyToService(formData:any):Observable<any>{
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.post(this.url + 'operator/supplierfiles',formData ,option )
+ }
+ getAllSuppliers(){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'operator/availableRequests'  ,option);
+}
+getsupplierfiles(){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'operator/supplierfiles' + '?status=' + 1 ,option);
+}
+// ==============QUOTATION=======================
+addnewquotation(formData:any):Observable<any>{
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.post(this.url + 'operator/quotations',formData ,option )
+ }
+ getAllquotations(){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'operator/quotations' +"?status="+ 1 ,option);
 }
 getlang(lang:any){
 

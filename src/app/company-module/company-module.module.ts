@@ -19,6 +19,8 @@ import { CompanyDashBoardComponent } from './comonent/company-dash-board/company
 import { CompanyAddRepresentativeComponent } from './comonent/company-add-representative/company-add-representative.component';
 import { AvailableForWorkComponent } from './comonent/available-for-work/available-for-work.component';
 import { CompanyCompletedDetalisComponent } from './comonent/company-completed-detalis/company-completed-detalis.component';
+import { AllrequestcomComponent } from './comonent/allrequestcom/allrequestcom.component';
+import { DetailsrequestcomComponent } from './comonent/detailsrequestcom/detailsrequestcom.component';
 
 
 
@@ -37,6 +39,8 @@ import { CompanyCompletedDetalisComponent } from './comonent/company-completed-d
     CompanyAddRepresentativeComponent,
     AvailableForWorkComponent,
     CompanyCompletedDetalisComponent,
+    AllrequestcomComponent,
+    DetailsrequestcomComponent,
 
   ],
   imports: [
