@@ -2,7 +2,7 @@ import { IndividualTicketkDetalisComponent } from './comonent/individual-ticketk
 import { IndividualNewRequestsComponent } from './comonent/individual-new-requests/individual-new-requests.component';
 import { IndividualCustomerSupportComponent } from './comonent/individual-customer-support/individual-customer-support.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -22,7 +22,12 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { IndividualDashboardComponent } from './comonent/individual-dashboard/individual-dashboard.component';
 import { IndividualRequestDetilesComponent } from './comonent/individual-request-detiles/individual-request-detiles.component';
 import { IndividulCompletedDetalisComponent } from './comonent/individul-completed-detalis/individul-completed-detalis.component';
+// import { AuthGuard } from '../guard/auth.guard';
 
+const routes: Routes = [
+  { path: "individual-dashboard", component:IndividualDashboardComponent  },
+  
+];
 
 
 
@@ -49,7 +54,7 @@ import { IndividulCompletedDetalisComponent } from './comonent/individul-complet
   ],
   imports: [
     CommonModule,
-    RouterModule,
+    RouterModule.forRoot(routes),
     BrowserModule,
     SharedModule,
     ReactiveFormsModule,

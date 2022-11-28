@@ -1,10 +1,10 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { IndividualNewRequestsComponent } from './oprator-module/comonent/individual-new-requests/individual-new-requests.component';
 import { IndividualCustomerSupportComponent } from './oprator-module/comonent/individual-customer-support/individual-customer-support.component';
 import { VerifiyAccountOpratorComponent } from './oprator-module/comonent/verifiy-account-oprator/verifiy-account-oprator.component';
 import { ForgotPassOtoComponent } from './user-model/component/forgot-pass-oto/forgot-pass-oto.component';
 import { ActivateAccountComponent } from './user-model/component/activate-account/activate-account.component';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { HomePegeComponent } from './user-model/component/home-pege/home-pege.component';
 import { LogInComponent } from './user-model/component/log-in/log-in.component';
 import { RegisterComponent } from './user-model/component/register/register.component';
@@ -114,7 +114,15 @@ const routes: Routes = [
   { path: "individual-on-progress-detalis", component: IndividualOnProgressDetalisComponent ,canActivate:[AuthGuard] },
   { path: "individul-completed-detalis", component: IndividulCompletedDetalisComponent ,canActivate:[AuthGuard] },
   { path: "individual-completed", component: IndividualcompletedComponent ,canActivate:[AuthGuard] },
-  { path: "individual-dashboard", component:IndividualDashboardComponent ,canActivate:[AuthGuard] },
+  
+    // apply lazy loading 
+    {
+      path: 'individual-dashboard',canActivate:[AuthGuard],
+      loadChildren: () => import('./oprator-module/oprator-module.module').then(m => m.OpratorModuleModule)
+    },
+   
+    // { path: "individual-dashboard", component:IndividualDashboardComponent ,canActivate:[AuthGuard] },
+
   { path: "company-dash-board", component:CompanyDashBoardComponent,canActivate:[AuthGuard]},
   { path: "company-new-requests", component:CompanyNewRequestsComponent,canActivate:[AuthGuard]},
   { path: "company-onprogress", component:CompanyOnprogressComponent,canActivate:[AuthGuard]},
