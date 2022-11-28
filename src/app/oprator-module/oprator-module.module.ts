@@ -28,7 +28,7 @@ import { NewquotationComponent } from './comonent/newquotation/newquotation.comp
 import { AuthGuard } from '../guard/auth.guard';
 
 const routes: Routes = [
-  { path: "individual-dashboard", component:IndividualDashboardComponent  },
+  { path: "individual-dashboard",canActivate:[AuthGuard], component:IndividualDashboardComponent  },
   
 ];
 

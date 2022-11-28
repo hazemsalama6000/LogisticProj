@@ -68,16 +68,40 @@ import { NewquotationComponent } from './oprator-module/comonent/newquotation/ne
 import { AllrequestcomComponent } from './company-module/comonent/allrequestcom/allrequestcom.component';
 import { DetailsrequestcomComponent } from './company-module/comonent/detailsrequestcom/detailsrequestcom.component';
 import {AuthGuard} from '../app/guard/auth.guard';
+/*
+RegisterComponent,
+    HomePegeComponent,
+    LogInComponent,
+    ActivateAccountComponent,
+    SectiontwoComponent,
+     SectionthreeeComponent,
+    SectionfourComponent,
+    SectionfiveComponent,
+    ForgotPasswordComponent,
+    ForgotPassOtoComponent,
+    NewPssOtpComponent,
+    ResendVerifiyOtpComponent,
+*/
 const routes: Routes = [
-  { path: "register", component: RegisterComponent },
-  { path: "log-in", component: LogInComponent },
-  { path: "home-page", component: HomePegeComponent },
-  { path: "activate-account", component: ActivateAccountComponent },
+      // main pages 
+     { path:' "register"',loadChildren:()=>import('./user-model/user-model.module').then(m=>m.UserModelModule)},
+     { path:' "log-in"',loadChildren:()=>import('./user-model/user-model.module').then(m=>m.UserModelModule)},
+     { path:' "home-page"',loadChildren:()=>import('./user-model/user-model.module').then(m=>m.UserModelModule)},
+     { path:' "activate-account"',loadChildren:()=>import('./user-model/user-model.module').then(m=>m.UserModelModule)},
+     { path:' "resend-verifiy-otp"',loadChildren:()=>import('./user-model/user-model.module').then(m=>m.UserModelModule)},
+     { path:' "forgot-password"',loadChildren:()=>import('./user-model/user-model.module').then(m=>m.UserModelModule)},
+     { path:' "new-pass-otp"',loadChildren:()=>import('./user-model/user-model.module').then(m=>m.UserModelModule)},
+    
+    {
+      // { path: "individual-dashboard", component:IndividualDashboardComponent ,canActivate:[AuthGuard] },
+      path: 'individual-dashboard',canActivate:[AuthGuard],
+      loadChildren: () => import('./oprator-module/oprator-module.module').then(m => m.OpratorModuleModule)
+    },
+    
   { path: "oprator-register", component: OpratorRegisterComponent },
   { path: "verifiy-account-oprator", component: VerifiyAccountOpratorComponent },
-  { path: "new-pass-otp", component: NewPssOtpComponent },
   { path: "forgot-pass-oto", component: ForgotPassOtoComponent },
-  { path: "forgot-password", component: ForgotPasswordComponent },
+  
   { path: "main-sction", component: MainSectionComponent },
   { path: "faq", component: FAQComponent },
   { path: "pricing", component: PricingComponent },
@@ -105,15 +129,6 @@ const routes: Routes = [
   { path: "individual-on-progress-detalis", component: IndividualOnProgressDetalisComponent ,canActivate:[AuthGuard] },
   { path: "individul-completed-detalis", component: IndividulCompletedDetalisComponent ,canActivate:[AuthGuard] },
   { path: "individual-completed", component: IndividualcompletedComponent ,canActivate:[AuthGuard] },
-  
-    // apply lazy loading 
-    {
-      path: 'individual-dashboard',canActivate:[AuthGuard],
-      loadChildren: () => import('./oprator-module/oprator-module.module').then(m => m.OpratorModuleModule)
-    },
-   
-    // { path: "individual-dashboard", component:IndividualDashboardComponent ,canActivate:[AuthGuard] },
-
   { path: "company-dash-board", component:CompanyDashBoardComponent,canActivate:[AuthGuard]},
   { path: "company-new-requests", component:CompanyNewRequestsComponent,canActivate:[AuthGuard]},
   { path: "company-onprogress", component:CompanyOnprogressComponent,canActivate:[AuthGuard]},
@@ -163,7 +178,7 @@ const routes: Routes = [
   { path: "change-password", component: ChangePasswordComponent },
   { path: "change-langauge", component: ChangeLangaugeComponent },
   { path: "offer-details", component: OfferDetailsComponent },
-  { path: "resend-verifiy-otp", component: ResendVerifiyOtpComponent },
+  // { path: "resend-verifiy-otp", component: ResendVerifiyOtpComponent },
   { path: "verifiy-account-company", component: VerifiyAccountCompanyComponent },
   { path: "Completed", component: CompletedComponent },
   { path: "on-progress", component: OnProgressComponent },
@@ -171,13 +186,14 @@ const routes: Routes = [
   { path: "completed-detalis", component: CompletedDetalisComponent },
   { path: "on-progress-detlis", component: OnProgressDetlisComponent },
 
-  { path: "**", redirectTo: "home-page", pathMatch: "full" },
+  { path: "**", redirectTo: "/home-page", pathMatch: "full" },
+  
 
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  // imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

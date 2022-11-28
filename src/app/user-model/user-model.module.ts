@@ -2,7 +2,7 @@ import { ProfileModule } from './../profile/profile.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './component/register/register.component';
@@ -21,6 +21,17 @@ import { ResendVerifiyOtpComponent } from './component/resend-verifiy-otp/resend
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { TranslateModule } from '@ngx-translate/core';
 
+const routes: Routes = [
+  
+  { path: "register", component: RegisterComponent },
+  { path: "log-in", component: LogInComponent },
+  { path: "home-page", component: HomePegeComponent },
+  { path: "activate-account", component: ActivateAccountComponent },
+  { path: "resend-verifiy-otp", component: ResendVerifiyOtpComponent },
+  { path: "forgot-password", component: ForgotPasswordComponent },
+  { path: "new-pass-otp", component: NewPssOtpComponent },
+  
+];
 
 
 @NgModule({
@@ -41,7 +52,7 @@ import { TranslateModule } from '@ngx-translate/core';
   ],
   imports: [
     CommonModule,
-    RouterModule,
+    RouterModule.forRoot(routes),
     BrowserModule,
     SharedModule,
     ProfileModule,

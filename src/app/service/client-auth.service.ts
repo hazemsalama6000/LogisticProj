@@ -32,7 +32,7 @@ export class ClientAuthService {
     header = header.append("Apipassword" , this.apiPassword);
     // header = header.append("Authorization" , token);
     let option ={headers:header} ;
-    console.log( loginData , option);
+    
     return this._HttpClient.post(this.url + 'guest/login' , loginData , option )
   }
   clientOtp(otpData:any):Observable<any>{
