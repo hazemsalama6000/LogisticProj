@@ -1,7 +1,7 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { TranslateModule } from '@ngx-translate/core';
-import { RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './component/navbar/navbar.component';
@@ -13,6 +13,14 @@ import { AboutUsComponent } from './component/about-us/about-us.component';
 import { FinderComponent } from './component/finder/finder.component';
 import { ProfileSideBarComponent } from './component/profile-side-bar/profile-side-bar.component';
 import { GlobalConstantsComponent } from './component/global-constants/global-constants.component';
+import { LearnAboutUsComponent } from '../dash-board/component/learn-about-us/learn-about-us.component';
+const routes: Routes = [
+    { path: "faq", component: FAQComponent },
+    { path: "pricing", component: PricingComponent },
+    { path: "about-us", component: AboutUsComponent },
+    { path: "learn-about-us", component: LearnAboutUsComponent },
+  
+];
 
 @NgModule({
   declarations: [
@@ -25,22 +33,18 @@ import { GlobalConstantsComponent } from './component/global-constants/global-co
     FinderComponent,
     ProfileSideBarComponent,
     GlobalConstantsComponent,
-
   ],
   imports: [
     CommonModule,
-    RouterModule,
+    RouterModule.forRoot(routes),
     TranslateModule.forChild(),
     BrowserModule,
-
-
   ],
   exports:[
     NavbarComponent,
     FooterComponent,
     SidebarComponent,
     ProfileSideBarComponent,
-
 
   ]
 })

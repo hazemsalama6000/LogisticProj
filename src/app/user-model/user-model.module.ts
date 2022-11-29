@@ -22,15 +22,14 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
-  
+  { path: "" ,redirectTo:"home-page", pathMatch:"full" },
+  { path: "home-page", component: HomePegeComponent },
   { path: "register", component: RegisterComponent },
   { path: "log-in", component: LogInComponent },
-  { path: "home-page", component: HomePegeComponent },
   { path: "activate-account", component: ActivateAccountComponent },
   { path: "resend-verifiy-otp", component: ResendVerifiyOtpComponent },
   { path: "forgot-password", component: ForgotPasswordComponent },
   { path: "new-pass-otp", component: NewPssOtpComponent },
-  
 ];
 
 
