@@ -85,7 +85,10 @@ export class ClientAuthService {
       // let rout:any = jwt_decode(token)
       if (localStorage.getItem("usertoken") != null && localStorage.getItem("usertoken") != "") {
         this.isLoggedIn = true;
+       }else{
+        this.isLoggedIn = false;
        }
+       
       return this.isLoggedIn;
   }
 
