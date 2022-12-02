@@ -11,13 +11,13 @@ export class QuotationsrepComponent implements OnInit {
   data:any  ;
   id:any;
 
-  constructor(private operatorqout:CompanyService, Active:ActivatedRoute)
+  constructor(private companyqout:CompanyService, Active:ActivatedRoute)
    {
     this.id = Active.snapshot.paramMap.get("id")
     }
 
   ngOnInit(): void {
-    this.operatorqout.getAllquotations().subscribe((res:any) => {
+    this.companyqout.getAllquotations().subscribe((res:any) => {
       this.data = res.data
       console.log(this.data);
     })

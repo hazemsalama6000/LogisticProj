@@ -2,7 +2,7 @@ import { IndividualTicketkDetalisComponent } from './comonent/individual-ticketk
 import { IndividualNewRequestsComponent } from './comonent/individual-new-requests/individual-new-requests.component';
 import { IndividualCustomerSupportComponent } from './comonent/individual-customer-support/individual-customer-support.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -25,7 +25,27 @@ import { IndividulCompletedDetalisComponent } from './comonent/individul-complet
 import { AllrequestsComponent } from './comonent/allrequests/allrequests.component';
 import { QuotationsComponent } from './comonent/quotations/quotations.component';
 import { NewquotationComponent } from './comonent/newquotation/newquotation.component';
+import { AuthGuard } from '../guard/auth.guard';
+import { ForgotPassOtoComponent } from '../user-model/component/forgot-pass-oto/forgot-pass-oto.component';
 
+const routes: Routes = [
+  { path: "individual-dashboard",canActivate:[AuthGuard], component:IndividualDashboardComponent  },
+  { path: "verifiy-account-oprator", component:VerifiyAccountOpratorComponent  },
+  { path: "forgot-pass-oto", component:ForgotPassOtoComponent  },
+  { path: "oprator-register", component:OpratorRegisterComponent  },
+  { path: "individual-new-requests", canActivate:[AuthGuard],component: IndividualNewRequestsComponent  },
+  { path: "individual-customer-support", canActivate:[AuthGuard],component: IndividualCustomerSupportComponent },
+  { path: "individual-ticketk-detalis/:id", canActivate:[AuthGuard],component: IndividualTicketkDetalisComponent },
+  { path: "individul-completed-detalis", canActivate:[AuthGuard],component: IndividulCompletedDetalisComponent },
+  { path: "individual-new-ticket", canActivate:[AuthGuard],component: IndividualNewTicketComponent },
+  { path: "individual-on-progress", canActivate:[AuthGuard],component: IndividualOnProgressComponent },
+  { path: "individual-on-progress-detalis", canActivate:[AuthGuard],component: IndividualOnProgressDetalisComponent  },
+  { path: "individual-completed", canActivate:[AuthGuard],component: IndividualcompletedComponent  },
+  { path: "individual-all-requests", canActivate:[AuthGuard],component:IndividualRequestDetilesComponent},
+  { path: "individual-active-requests", canActivate:[AuthGuard],component:AllrequestsComponent},
+  { path: "individual-all-quotations", canActivate:[AuthGuard],component:QuotationsComponent},
+  { path: "individual-new-quotation/:id", canActivate:[AuthGuard],component:NewquotationComponent},  
+];
 
 
 
@@ -55,7 +75,7 @@ import { NewquotationComponent } from './comonent/newquotation/newquotation.comp
   ],
   imports: [
     CommonModule,
-    RouterModule,
+    RouterModule.forRoot(routes),
     BrowserModule,
     SharedModule,
     ReactiveFormsModule,

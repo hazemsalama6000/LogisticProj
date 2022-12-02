@@ -1,4 +1,4 @@
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectiononeComponent } from './component/sections/sectionone/sectionone.component';
@@ -23,8 +23,28 @@ import { CustomCearanceDetalisComponent } from './component/custom-cearance-deta
 import { ApproveOfferComponent } from './component/approve-offer/approve-offer.component';
 import { OfferDetailsComponent } from './component/offer-details/offer-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthGuard } from '../guard/auth.guard';
 import { CustomsendComponent } from './component/customsend/customsend.component';
 import { ClientqouteComponent } from './component/clientqoute/clientqoute.component';
+
+const routes : Routes = [
+  { path:"main-sction", component:MainSectionComponent ,canActivate:[AuthGuard] },
+  { path: "ticket-details/:id", component: TicketDetailsComponent ,canActivate:[AuthGuard] },
+  { path: "customer-support", component: CustomerSupportComponent ,canActivate:[AuthGuard] },
+  { path: "new-ticket", component: NewTicketComponent ,canActivate:[AuthGuard] },
+  { path: "send-requests", component: SnedRequestsComponent ,canActivate:[AuthGuard] },
+  { path: "requst-details/:id", component: RequetDetailsComponent ,canActivate:[AuthGuard] },
+  { path: "Completed", component: CompletedComponent ,canActivate:[AuthGuard] },
+  { path: "on-progress", component: OnProgressComponent ,canActivate:[AuthGuard] },
+  { path: "offer-details", component: OfferDetailsComponent ,canActivate:[AuthGuard] },
+  { path: "new-request", component: NewRequestComponent ,canActivate:[AuthGuard] },
+  { path: "completed-detalis", component: CompletedDetalisComponent ,canActivate:[AuthGuard] },
+  { path: "on-progress-detlis", component: OnProgressDetlisComponent ,canActivate:[AuthGuard] },
+  { path: "approve-offer", component:ApproveOfferComponent ,canActivate:[AuthGuard] },
+  { path: "client-quotation/:id", component:ClientqouteComponent ,canActivate:[AuthGuard] },
+  { path: "send-request", component: CustomsendComponent ,canActivate:[AuthGuard]  },
+];
+
 
 
 @NgModule({
@@ -53,11 +73,12 @@ import { ClientqouteComponent } from './component/clientqoute/clientqoute.compon
     ClientqouteComponent,
   ],
   imports: [
+    RouterModule.forRoot(routes),
     CommonModule,
     SharedModule,
     RouterModule,
-   ReactiveFormsModule,
-   FormsModule
+    ReactiveFormsModule,
+    FormsModule,
 
   ]
 })

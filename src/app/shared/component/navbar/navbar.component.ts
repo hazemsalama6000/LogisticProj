@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  isLogin: boolean = false;
+  // isLogin: boolean = false;
   currentLang?: string;
   ischange: boolean = false;
   body: any
@@ -28,7 +28,8 @@ export class NavbarComponent implements OnInit {
     translate.setDefaultLang('en');
     this.currentLang = localStorage.getItem('currentLang') || 'en';
     this.translate.use(this.currentLang)
-
+    // console.log(_GeneralService.userToken.getValue());
+    
     _GeneralService.userToken.subscribe(()=>{
       if(_GeneralService.userToken.getValue() !=null)
       {
@@ -73,19 +74,12 @@ export class NavbarComponent implements OnInit {
 
   let token:any = localStorage.getItem("usertoken")
   let rout:any = jwt_decode(token)
-
+  
   if(rout.type == "client" ){
     this._GeneralService.cliendLogOut(token).subscribe((res)=>{
-
      this._GeneralService.savecurrentuser();
     localStorage.removeItem("usertoken");
     this._Router.navigate(['/home-page']);
-    setTimeout(() =>
-    {
-    location.reload();
-    }, 1000);
-    //window.location.reload();
-
     });
 
   }
@@ -103,6 +97,7 @@ export class NavbarComponent implements OnInit {
   if(rout.type == "operator" ){
     this._GeneralService.opratorlogout(token).subscribe((res)=>{
       this._GeneralService.savecurrentuser();
+      
       localStorage.removeItem("usertoken")
       this._Router.navigate(['/home-page'])
       setTimeout(() =>
