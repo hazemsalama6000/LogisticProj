@@ -94,6 +94,10 @@ export class NavbarComponent implements OnInit {
       this._GeneralService.savecurrentuser();
       localStorage.removeItem("usertoken");
       this._Router.navigate(['/home-page'])
+      setTimeout(() =>
+    {
+    location.reload();
+    }, 1000);
     });
   }
   if(rout.type == "operator" ){
@@ -101,8 +105,24 @@ export class NavbarComponent implements OnInit {
       this._GeneralService.savecurrentuser();
       localStorage.removeItem("usertoken")
       this._Router.navigate(['/home-page'])
+      setTimeout(() =>
+    {
+    location.reload();
+    }, 1000);
 
     });
+  }
+    if(rout.type == "representative" ){
+      this._GeneralService.opratorlogout(token).subscribe((res)=>{
+        this._GeneralService.savecurrentuser();
+        localStorage.removeItem("usertoken")
+        this._Router.navigate(['/home-page'])
+        setTimeout(() =>
+    {
+    location.reload();
+    }, 1000);
+
+      });
 
   }
 

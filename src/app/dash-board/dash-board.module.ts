@@ -23,6 +23,8 @@ import { CustomCearanceDetalisComponent } from './component/custom-cearance-deta
 import { ApproveOfferComponent } from './component/approve-offer/approve-offer.component';
 import { OfferDetailsComponent } from './component/offer-details/offer-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomsendComponent } from './component/customsend/customsend.component';
+import { ClientqouteComponent } from './component/clientqoute/clientqoute.component';
 
 
 @NgModule({
@@ -47,6 +49,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CustomCearanceDetalisComponent,
     ApproveOfferComponent,
     OfferDetailsComponent,
+    CustomsendComponent,
+    ClientqouteComponent,
   ],
   imports: [
     CommonModule,

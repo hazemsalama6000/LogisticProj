@@ -67,6 +67,12 @@ import { QuotationsComponent } from './oprator-module/comonent/quotations/quotat
 import { NewquotationComponent } from './oprator-module/comonent/newquotation/newquotation.component';
 import { AllrequestcomComponent } from './company-module/comonent/allrequestcom/allrequestcom.component';
 import { DetailsrequestcomComponent } from './company-module/comonent/detailsrequestcom/detailsrequestcom.component';
+import { RepresentetivedashboardComponent } from './company-module/comonent/representetivedashboard/representetivedashboard.component';
+import { AllreprequestsComponent } from './company-module/comonent/allreprequests/allreprequests.component';
+import { NewquotationrepComponent } from './company-module/comonent/newquotationrep/newquotationrep.component';
+import { QuotationsrepComponent } from './company-module/comonent/quotationsrep/quotationsrep.component';
+import { CustomsendComponent } from './dash-board/component/customsend/customsend.component';
+import { ClientqouteComponent } from './dash-board/component/clientqoute/clientqoute.component';
 
 const routes: Routes = [
   { path: "register", component: RegisterComponent },
@@ -88,9 +94,13 @@ const routes: Routes = [
   { path: "new-ticket", component: NewTicketComponent },
   { path: "ticket-details/:id", component: TicketDetailsComponent },
 
+  { path: "client-quotation/:id", component:ClientqouteComponent},
+  //{ path: "individual-new-quotation/:id", component:NewquotationComponent},
+
   { path: "new-request", component: NewRequestComponent },
   { path: "send-requests", component: SnedRequestsComponent },
   { path: "requst-details/:id", component: RequetDetailsComponent },
+  { path: "send-request", component: CustomsendComponent },
 
   { path: "individual-customer-support", component: IndividualCustomerSupportComponent },
   { path: "individual-new-ticket", component: IndividualNewTicketComponent },
@@ -133,7 +143,13 @@ const routes: Routes = [
   { path: "company-dash-board", component:CompanyDashBoardComponent},
   { path: "company-onprogress", component:CompanyOnprogressComponent},
   { path: "company-completed", component:CompanyCompletedComponent},
+
   { path: "company-representatives", component:CompanyRepresentativesComponent},
+  { path: "representative-dashboard", component:RepresentetivedashboardComponent},
+  { path: "representative-all-requests", component:AllreprequestsComponent},
+  { path: "representative-all-quotations", component:QuotationsrepComponent},
+  { path: "representative-new-quotation/:id", component:NewquotationrepComponent},
+
   { path: "company-add-representative", component:CompanyAddRepresentativeComponent},
   { path: "available-for-work", component:AvailableForWorkComponent},
   { path: "company-completed-detalis", component:CompanyCompletedDetalisComponent},

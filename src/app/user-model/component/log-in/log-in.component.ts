@@ -45,12 +45,17 @@ loginform = new FormGroup({
       this._GeneralService.savecurrentuser();
       this._Router.navigate(['/individual-dashboard'])
     }
+    if(res.status == true && res.type == "representative" ){
+      localStorage.setItem('usertoken', res.token)
+      this._GeneralService.savecurrentuser();
+      this._Router.navigate(['/representative-dashboard'])
+    }
     else{
       this.error = res.message
       console.log(this.error )
     }
 
-//console.log(res);
+
    })
 
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { CustomerTicketsService } from 'src/app/service/Tickets/Customer/customer-tickets.service';
 
 @Component({
@@ -11,11 +11,9 @@ data:any  ;
   constructor(private _CustomerTicketsService:CustomerTicketsService) { }
 
   ngOnInit(): void {
-
       this._CustomerTicketsService.getClientTickets().subscribe((res:any) => {
         this.data = res.data
       })
 
   }
-
 }

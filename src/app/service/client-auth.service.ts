@@ -79,7 +79,6 @@ export class ClientAuthService {
 
    return this._HttpClient.post(this.url + 'client/changePassword' , newpassword , option)
   }
-  
   isAuthenticated(){
       let token:any = localStorage.getItem("usertoken")
       // let rout:any = jwt_decode(token)

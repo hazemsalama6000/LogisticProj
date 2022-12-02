@@ -21,6 +21,11 @@ import { AvailableForWorkComponent } from './comonent/available-for-work/availab
 import { CompanyCompletedDetalisComponent } from './comonent/company-completed-detalis/company-completed-detalis.component';
 import { AllrequestcomComponent } from './comonent/allrequestcom/allrequestcom.component';
 import { DetailsrequestcomComponent } from './comonent/detailsrequestcom/detailsrequestcom.component';
+import { RepresentetivedashboardComponent } from './comonent/representetivedashboard/representetivedashboard.component';
+import { AllreprequestsComponent } from './comonent/allreprequests/allreprequests.component';
+import { QuotationsrepComponent } from './comonent/quotationsrep/quotationsrep.component';
+import { NewquotationrepComponent } from './comonent/newquotationrep/newquotationrep.component';
+import { RepresentetivesidebarComponent } from './comonent/representetivesidebar/representetivesidebar.component';
 
 
 
@@ -41,6 +46,11 @@ import { DetailsrequestcomComponent } from './comonent/detailsrequestcom/details
     CompanyCompletedDetalisComponent,
     AllrequestcomComponent,
     DetailsrequestcomComponent,
+    RepresentetivedashboardComponent,
+    AllreprequestsComponent,
+    QuotationsrepComponent,
+    NewquotationrepComponent,
+    RepresentetivesidebarComponent,
 
   ],
   imports: [

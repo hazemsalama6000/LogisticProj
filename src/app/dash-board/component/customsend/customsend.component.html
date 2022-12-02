@@ -25,46 +25,48 @@
                 </div>
                 </form>
           </div>
+
           <div class="card mb-4">
+            <h2 class="text-center">Customer Clearnce Requests</h2>
               <div class="card-body table-responsive">
                   <!--Table-->
                   <table class="table table-hover table-striped   table-borderless table-responsive ">
                       <!--Table head-->
-                      <thead class="mdb-color darken-3" >
-                          <tr class="text-white">
-                              <!-- <th>Status</th> -->
-                              <th>ID</th>
-                              <th>Day Number</th>
-                              <th>Start Date</th>
-                              <th>End Date</th>
-                              <th>Price</th>
-                              <th>Accept</th>
 
+                      <thead class="mdb-color darken-3 ">
+                          <tr class="text-white">
+                              <th>Status</th>
+                              <th>Flow</th>
+                              <th>Origin</th>
+                              <th>Currency</th>
+                              <th>Category </th>
+                              <th>Code</th>
+                              <th>#</th>
                           </tr>
                       </thead>
-                      <tbody *ngFor="let item of data">
+                      <!--Table head-->
+                      <!--Table body-->
+                      <tbody *ngFor="let item of data1; let i = index">
                           <tr>
-                              <!-- <td>{{item.status}}</td>
-                               <td class="d-none"> <input type="hidden" #item.id></td>-->
-                               <th>{{item.id}}</th>
-                              <th>{{item.day_number}}</th>
-                              <td>{{item.start_date}}</td>
-                              <td>{{item.end_date}}</td>
-                              <td>{{item.price}}</td>
-                              <td><button  [routerLink]='["/client-quotation" ,item.id]' class="btn btn-success">Accept</button></td>
-
+                              <th >{{item.status}}</th>
+                              <td>{{item.flow}}</td>
+                              <td>{{item.goods_country_origin_name}}</td>
+                              <td>{{item.currency_name}}</td>
+                              <td>{{item.category_name}}</td>
+                              <td>{{item.code}}</td>
+                              <td><a [routerLink]='["/requst-details",i+1]'><i class="bi bi-info-circle"></i>
+                              </a></td>
                           </tr>
 
 
-<!-- [routerLink]='["/client-quotation" ,item.id]' -->
+
                       </tbody>
                       <!--Table body-->
                   </table>
                   <!--Table-->
               </div>
           </div>
+        </div>
       </div>
+
   </div>
-
-</div>
-
