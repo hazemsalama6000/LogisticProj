@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
     this.currentLang = localStorage.getItem('currentLang') || 'en';
     this.translate.use(this.currentLang)
     // console.log(_GeneralService.userToken.getValue());
-    
+
     _GeneralService.userToken.subscribe(()=>{
       if(_GeneralService.userToken.getValue() !=null)
       {
@@ -74,7 +74,7 @@ export class NavbarComponent implements OnInit {
 
   let token:any = localStorage.getItem("usertoken")
   let rout:any = jwt_decode(token)
-  
+
   if(rout.type == "client" ){
     this._GeneralService.cliendLogOut(token).subscribe((res)=>{
      this._GeneralService.savecurrentuser();
@@ -100,6 +100,15 @@ export class NavbarComponent implements OnInit {
       this.islogin = false;
 
     });
+  }
+    if(rout.type == "representative" ){
+      this._GeneralService.opratorlogout(token).subscribe((res)=>{
+        this._GeneralService.savecurrentuser();
+        localStorage.removeItem("usertoken")
+        this._Router.navigate(['/home-page'])
+        this.islogin = false;
+
+      });
 
   }
 

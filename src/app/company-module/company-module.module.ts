@@ -22,6 +22,11 @@ import { CompanyCompletedDetalisComponent } from './comonent/company-completed-d
 import { AllrequestcomComponent } from './comonent/allrequestcom/allrequestcom.component';
 import { DetailsrequestcomComponent } from './comonent/detailsrequestcom/detailsrequestcom.component';
 import { AuthGuard } from '../guard/auth.guard';
+import { RepresentetivedashboardComponent } from './comonent/representetivedashboard/representetivedashboard.component';
+import { AllreprequestsComponent } from './comonent/allreprequests/allreprequests.component';
+import { QuotationsrepComponent } from './comonent/quotationsrep/quotationsrep.component';
+import { RepresentetivesidebarComponent } from './comonent/representetivesidebar/representetivesidebar.component';
+import { NewquotationrepComponent } from './comonent/newquotationrep/newquotationrep.component';
 
 const routes : Routes=[
     { path: "verifiy-account-company", component: VerifiyAccountCompanyComponent},
@@ -38,6 +43,10 @@ const routes : Routes=[
     { path: "company-add-representative", component:CompanyAddRepresentativeComponent ,canActivate:[AuthGuard]},
     { path: "available-for-work", component:AvailableForWorkComponent ,canActivate:[AuthGuard]},
     { path: "company-completed-detalis", component:CompanyCompletedDetalisComponent ,canActivate:[AuthGuard]},
+    { path: "representative-dashboard", component:RepresentetivedashboardComponent,canActivate:[AuthGuard]},
+    { path: "representative-all-requests", component:AllreprequestsComponent ,canActivate:[AuthGuard]},
+    { path: "representative-all-quotations", component:QuotationsrepComponent,canActivate:[AuthGuard]},
+    { path: "representative-new-quotation/:id", component:NewquotationrepComponent,canActivate:[AuthGuard]},
 ]
 
 
@@ -58,6 +67,11 @@ const routes : Routes=[
     CompanyCompletedDetalisComponent,
     AllrequestcomComponent,
     DetailsrequestcomComponent,
+    RepresentetivedashboardComponent,
+    AllreprequestsComponent,
+    QuotationsrepComponent,
+    NewquotationrepComponent,
+    RepresentetivesidebarComponent,
 
   ],
   imports: [

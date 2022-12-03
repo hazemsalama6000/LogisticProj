@@ -24,6 +24,16 @@ import { ApproveOfferComponent } from './component/approve-offer/approve-offer.c
 import { OfferDetailsComponent } from './component/offer-details/offer-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from '../guard/auth.guard';
+import { CustomsendComponent } from './component/customsend/customsend.component';
+import { ClientqouteComponent } from './component/clientqoute/clientqoute.component';
+import { PaymentsComponent } from './component/payments/payments.component';
+import { NewpaymentComponent } from './component/newpayment/newpayment.component';
+import { NewchatComponent } from './component/newchat/newchat.component';
+import { ChatsComponent } from './component/chats/chats.component';
+import { RatesComponent } from './component/rates/rates.component';
+import { NewrateComponent } from './component/newrate/newrate.component';
+import { NewnotificationComponent } from './component/newnotification/newnotification.component';
+import { NotificationsComponent } from './component/notifications/notifications.component';
 
 const routes : Routes = [
   { path:"main-sction", component:MainSectionComponent ,canActivate:[AuthGuard] },
@@ -35,11 +45,23 @@ const routes : Routes = [
   { path: "Completed", component: CompletedComponent ,canActivate:[AuthGuard] },
   { path: "on-progress", component: OnProgressComponent ,canActivate:[AuthGuard] },
   { path: "offer-details", component: OfferDetailsComponent ,canActivate:[AuthGuard] },
-  { path: "new-request", component: NewRequestComponent ,canActivate:[AuthGuard] },  
+  { path: "new-request", component: NewRequestComponent ,canActivate:[AuthGuard] },
   { path: "completed-detalis", component: CompletedDetalisComponent ,canActivate:[AuthGuard] },
   { path: "on-progress-detlis", component: OnProgressDetlisComponent ,canActivate:[AuthGuard] },
   { path: "approve-offer", component:ApproveOfferComponent ,canActivate:[AuthGuard] },
+  { path: "client-quotation/:id", component:ClientqouteComponent ,canActivate:[AuthGuard] },
+  { path: "send-request", component: CustomsendComponent ,canActivate:[AuthGuard]  },
+  { path: "new-payment/:id", component: NewpaymentComponent ,canActivate:[AuthGuard]  },
+  { path: "all-paymetns", component: PaymentsComponent ,canActivate:[AuthGuard]  },
+  { path: "new-chat", component: NewchatComponent ,canActivate:[AuthGuard]  },
+  { path: "all-chats", component: ChatsComponent ,canActivate:[AuthGuard]  },
+  { path: "new-rate", component: NewrateComponent ,canActivate:[AuthGuard]  },
+  { path: "all-rates", component: RatesComponent ,canActivate:[AuthGuard]  },
+  { path: "new-notification", component: NewnotificationComponent ,canActivate:[AuthGuard]  },
+  { path: "all-notifications", component: NotificationsComponent ,canActivate:[AuthGuard]  },
+
 ];
+
 
 
 @NgModule({
@@ -64,6 +86,16 @@ const routes : Routes = [
     CustomCearanceDetalisComponent,
     ApproveOfferComponent,
     OfferDetailsComponent,
+    CustomsendComponent,
+    ClientqouteComponent,
+    PaymentsComponent,
+    NewpaymentComponent,
+    NewchatComponent,
+    ChatsComponent,
+    RatesComponent,
+    NewrateComponent,
+    NewnotificationComponent,
+    NotificationsComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

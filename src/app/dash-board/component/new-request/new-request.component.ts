@@ -51,7 +51,7 @@ this.getCity();
 submit(): void{
 this.clienttecket.addCustomsClearance(Helper.toFormData(this.item)).subscribe((res)=>
 {
-this.router.navigate(['/send-requests'])
+this.router.navigate(['/send-request'])
 }
 )}
 getcategory(){
