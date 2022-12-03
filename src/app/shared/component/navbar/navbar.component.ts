@@ -80,6 +80,7 @@ export class NavbarComponent implements OnInit {
      this._GeneralService.savecurrentuser();
     localStorage.removeItem("usertoken");
     this._Router.navigate(['/home-page']);
+    this.islogin = false;
     });
 
   }
@@ -88,14 +89,15 @@ export class NavbarComponent implements OnInit {
       this._GeneralService.savecurrentuser();
       localStorage.removeItem("usertoken");
       this._Router.navigate(['/home-page'])
+      this.islogin = false;
     });
   }
   if(rout.type == "operator" ){
     this._GeneralService.opratorlogout(token).subscribe((res)=>{
       this._GeneralService.savecurrentuser();
-      
       localStorage.removeItem("usertoken")
       this._Router.navigate(['/home-page'])
+      this.islogin = false;
 
     });
 
