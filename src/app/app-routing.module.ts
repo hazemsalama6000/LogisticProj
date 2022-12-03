@@ -57,6 +57,15 @@ const routes: Routes = [
     { path: "approve-offer", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
     { path: "client-quotation/:id", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
     { path: "send-request", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "new-payment/:id", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "all-paymetns", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "new-chat", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "all-chats", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "new-rate", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "all-rates", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "new-notification", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "all-notifications", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+
     // ---------------------------------
 
 

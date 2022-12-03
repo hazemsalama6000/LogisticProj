@@ -26,6 +26,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from '../guard/auth.guard';
 import { CustomsendComponent } from './component/customsend/customsend.component';
 import { ClientqouteComponent } from './component/clientqoute/clientqoute.component';
+import { PaymentsComponent } from './component/payments/payments.component';
+import { NewpaymentComponent } from './component/newpayment/newpayment.component';
+import { NewchatComponent } from './component/newchat/newchat.component';
+import { ChatsComponent } from './component/chats/chats.component';
+import { RatesComponent } from './component/rates/rates.component';
+import { NewrateComponent } from './component/newrate/newrate.component';
+import { NewnotificationComponent } from './component/newnotification/newnotification.component';
+import { NotificationsComponent } from './component/notifications/notifications.component';
 
 const routes : Routes = [
   { path:"main-sction", component:MainSectionComponent ,canActivate:[AuthGuard] },
@@ -43,6 +51,15 @@ const routes : Routes = [
   { path: "approve-offer", component:ApproveOfferComponent ,canActivate:[AuthGuard] },
   { path: "client-quotation/:id", component:ClientqouteComponent ,canActivate:[AuthGuard] },
   { path: "send-request", component: CustomsendComponent ,canActivate:[AuthGuard]  },
+  { path: "new-payment/:id", component: NewpaymentComponent ,canActivate:[AuthGuard]  },
+  { path: "all-paymetns", component: PaymentsComponent ,canActivate:[AuthGuard]  },
+  { path: "new-chat", component: NewchatComponent ,canActivate:[AuthGuard]  },
+  { path: "all-chats", component: ChatsComponent ,canActivate:[AuthGuard]  },
+  { path: "new-rate", component: NewrateComponent ,canActivate:[AuthGuard]  },
+  { path: "all-rates", component: RatesComponent ,canActivate:[AuthGuard]  },
+  { path: "new-notification", component: NewnotificationComponent ,canActivate:[AuthGuard]  },
+  { path: "all-notifications", component: NotificationsComponent ,canActivate:[AuthGuard]  },
+
 ];
 
 
@@ -71,6 +88,14 @@ const routes : Routes = [
     OfferDetailsComponent,
     CustomsendComponent,
     ClientqouteComponent,
+    PaymentsComponent,
+    NewpaymentComponent,
+    NewchatComponent,
+    ChatsComponent,
+    RatesComponent,
+    NewrateComponent,
+    NewnotificationComponent,
+    NotificationsComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

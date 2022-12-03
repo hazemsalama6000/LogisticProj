@@ -25,9 +25,8 @@ export class ClientqouteComponent implements OnInit {
         this.item.id = this.id
         this.clientqout.acceptQuotations(Helper.toFormData(this.item)).subscribe((res)=>
       {
-          this.router.navigate(['/send-requests'])
-      }
-      )
+
+      })
   }
 
 }
