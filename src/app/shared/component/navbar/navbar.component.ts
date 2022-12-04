@@ -80,10 +80,7 @@ export class NavbarComponent implements OnInit {
      this._GeneralService.savecurrentuser();
     localStorage.removeItem("usertoken");
     this._Router.navigate(['/home-page']);
-    setTimeout(() =>
-    {
-    location.reload();
-    }, 1000);
+    this.islogin = false;
     });
 
   }
@@ -92,22 +89,15 @@ export class NavbarComponent implements OnInit {
       this._GeneralService.savecurrentuser();
       localStorage.removeItem("usertoken");
       this._Router.navigate(['/home-page'])
-      setTimeout(() =>
-    {
-    location.reload();
-    }, 1000);
+      this.islogin = false;
     });
   }
   if(rout.type == "operator" ){
     this._GeneralService.opratorlogout(token).subscribe((res)=>{
       this._GeneralService.savecurrentuser();
-
       localStorage.removeItem("usertoken")
       this._Router.navigate(['/home-page'])
-      setTimeout(() =>
-    {
-    location.reload();
-    }, 1000);
+      this.islogin = false;
 
     });
   }
@@ -116,10 +106,7 @@ export class NavbarComponent implements OnInit {
         this._GeneralService.savecurrentuser();
         localStorage.removeItem("usertoken")
         this._Router.navigate(['/home-page'])
-        setTimeout(() =>
-    {
-    location.reload();
-    }, 1000);
+        this.islogin = false;
 
       });
 
