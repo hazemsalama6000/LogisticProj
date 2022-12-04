@@ -16,13 +16,13 @@ export class RequetDetailsComponent implements OnInit {
   order_id:any;
   constructor(private clientqout:CustomerTicketsService, Active:ActivatedRoute, private router:Router)
   {
-    this.id = Active.snapshot.paramMap.get("id")
+    this.order_id= Active.snapshot.paramMap.get("id")
    }
 
   ngOnInit(): void {
-    this.clientqout.getquotations(this.id).subscribe((res:any) => {
+    this.clientqout.getquotations(this.order_id).subscribe((res:any) => {
       this.data = res.data
-      console.log(this.data);
+      //console.log(this.data);
     })
 
   }
