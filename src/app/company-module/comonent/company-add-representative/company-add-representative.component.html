@@ -1,21 +1,24 @@
+
 <section class="vh-100" style="background-color: #eee;">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100 mt-3">
         <div class="col-lg-12 col-xl-11">
+          <h3>New Representative</h3>
           <div class="card text-black" style="border-radius: 25px;">
             <div class="card-body p-md-4">
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1 ">
-  
                   <form >
                     <div class="row justify-content-center ">
                       <button style="border:none;width: 50px;background-color:white;" class="rounded-circle" >
                         <img   src="../../../../assets/Logisty ui images/Ellipse 259.jpg"  alt="">  
                         <input class="rounded-circle" style="display: none;background-color: white;"type="file" #fileInput >
+                      <div class="rounded-circle" style="background: #00A311 0% 0% no-repeat padding-box;
+                      border: 3px solid #F0F6FA;
+                      opacity: 1;width: 32px; height: 32px;  left: 660px;
+                      right: 282px; top: 100px; color: white;font-size: 30px; position: absolute; text-align: center; padding: 1px;">+</div>
                       </button>
                       
-                    
-                    
                     </div>
                     
 
@@ -42,14 +45,13 @@
                  
                     <div class="form-outline mb-4">
                       <label class="form-label">Representative Field</label>
-                      <input  type="file" class="form-control" />
+                      <!-- <input  type="file" class="form-control" /> -->
+                      <input  type="text" class="form-control" />
+
                     </div>
 
                     
-                    <button type="submit "
-                      class="btn  btnDsing w-50 float-end">Finish</button>
-                    
-                   
+                    <button type="submit" (click)="submit()" class="btn  btnDsing w-50 float-end">Finish</button>
                   
                   </form>
                 </div>
