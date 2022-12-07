@@ -19,6 +19,9 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from '../guard/auth.guard';
+import { AirdetailsComponent } from './component/airdetails/airdetails.component';
+import { SeadetailsComponent } from './component/seadetails/seadetails.component';
+import { LocaldetailsComponent } from './component/localdetails/localdetails.component';
 const routes: Routes =[
 { path:"air-new-request" ,canActivate:[AuthGuard], component:AirfrieghtnewrequestComponent},
 { path:"air-send-request" ,canActivate:[AuthGuard], component:AirfrieghtsendrequestComponent},
@@ -29,6 +32,9 @@ const routes: Routes =[
 { path:"local-new-request" ,canActivate:[AuthGuard], component:LocalfrieghtnewrequestComponent},
 { path:"local-send-request" ,canActivate:[AuthGuard], component:LocalfrieghtsendrequestComponent},
 { path:"local-request-detiles" ,canActivate:[AuthGuard], component:LocalfrieghtrequestdetailsComponent},
+{ path:"air-details/:id" ,canActivate:[AuthGuard], component:AirdetailsComponent},
+{ path:"local-details/:id" ,canActivate:[AuthGuard], component:LocaldetailsComponent},
+{ path:"sea-details/:id" ,canActivate:[AuthGuard], component:SeadetailsComponent},
 ];
 @NgModule({
   declarations: [
@@ -40,7 +46,10 @@ const routes: Routes =[
     AirfrieghtnewrequestComponent,
     SeafrieghtnewrequestComponent,
     SeafrieghtrequestdetailsComponent,
-    SeafrieghtsendrequestComponent
+    SeafrieghtsendrequestComponent,
+    AirdetailsComponent,
+    SeadetailsComponent,
+    LocaldetailsComponent
   ],
   imports: [
     CommonModule,

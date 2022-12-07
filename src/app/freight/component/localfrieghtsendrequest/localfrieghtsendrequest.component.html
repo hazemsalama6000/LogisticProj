@@ -41,6 +41,7 @@
                               <th>Category </th>
                               <th>Code</th>
                               <th>#</th>
+                              <th>details</th>
                           </tr>
                       </thead>
                       <!--Table head-->
@@ -55,6 +56,9 @@
                               <td>{{item.code}}</td>
                               <td><a [routerLink]='["/requst-details",i+1]'><i class="bi bi-info-circle"></i>
                               </a></td>
+                              <td><a [routerLink]='["/local-details",item.order_id]'>
+                                <i class="bi bi-info-circle"></i>
+                                </a></td>
                           </tr>
 
 

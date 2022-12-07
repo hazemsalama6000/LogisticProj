@@ -68,6 +68,9 @@ const routes: Routes = [
     { path: "local-service", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
     { path: "international-service", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
     { path: "details/:id", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "air-details/:id", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "local-details/:id", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "sea-details/:id", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
 
     // ---------------------------------
 
