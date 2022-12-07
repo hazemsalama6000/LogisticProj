@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerTicketsService } from 'src/app/service/Tickets/Customer/customer-tickets.service';
 
 @Component({
   selector: 'app-notifications',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notifications.component.scss']
 })
 export class NotificationsComponent implements OnInit {
-
-  constructor() { }
+  data:any;
+  constructor(private clientqout:CustomerTicketsService) { }
 
   ngOnInit(): void {
+    this.clientqout.getNotifications().subscribe((res:any)=>
+    {
+       this.data = res.data["notifications"]
+       console.log(this.data);
+
+    })
   }
 
 }
