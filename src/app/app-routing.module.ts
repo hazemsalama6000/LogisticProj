@@ -65,6 +65,9 @@ const routes: Routes = [
     { path: "all-rates", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
     { path: "new-notification", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
     { path: "all-notifications", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "local-service", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "international-service", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "details/:id", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
 
     // ---------------------------------
 
