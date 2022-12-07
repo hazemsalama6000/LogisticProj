@@ -10,6 +10,10 @@ export class CompanyAddRepresentativeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
+  submit(){
+    
+  }
 }
