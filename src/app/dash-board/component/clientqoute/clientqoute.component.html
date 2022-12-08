@@ -51,7 +51,7 @@ body {
 
 
 <div class="row pt-4">
-  <div class="column">
+  <div class="column" style="height: 180px;">
     <div class="card">
       <h1>Payment</h1>
       <a [routerLink]='["/new-payment" ,this.order_id]' class="text-decoration-none">Add New Payment</a><br>
@@ -62,7 +62,7 @@ body {
     </div>
   </div>
 
-  <div class="column">
+  <div class="column" style="height: 180px;">
     <div class="card">
       <h1>Chat</h1>
       <a routerLink="/new-chat" class="text-decoration-none">Add New Chat</a><br>
@@ -73,7 +73,7 @@ body {
     </div>
   </div>
 
-  <div class="column">
+  <div class="column" style="height: 180px;">
     <div class="card">
       <h1>Rate</h1>
       <a routerLink="/new-rate" class="text-decoration-none">Add New Rate</a><br>
@@ -84,13 +84,13 @@ body {
     </div>
   </div>
 
-  <div class="column">
+  <div class="column" style="height: 190px;">
     <div class="card">
       <h1>Notification</h1>
-      <a routerLink="/new-notification" class="text-decoration-none">Add New Notification</a><br>
+      <a routerLink="/new-notification" class=" text-decoration-none d-none">Add New Notification</a><br>
       <a routerLink="/all-notifications" class="text-decoration-none">All Notifications</a>
-      <img src="../../../../assets/Logisty ui images/notification .webp"
-      alt="" class="m-auto"
+      <img  src="../../../../assets/Logisty ui images/notification .webp"
+      alt="" class="m-auto pt-3"
       style="width: 50px; border-radius: 10px;">
     </div>
   </div>

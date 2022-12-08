@@ -34,6 +34,9 @@ import { RatesComponent } from './component/rates/rates.component';
 import { NewrateComponent } from './component/newrate/newrate.component';
 import { NewnotificationComponent } from './component/newnotification/newnotification.component';
 import { NotificationsComponent } from './component/notifications/notifications.component';
+import { LocalComponent } from './component/local/local.component';
+import { InternationalComponent } from './component/international/international.component';
+import { DetailsComponent } from './component/details/details.component';
 
 const routes : Routes = [
   { path:"main-sction", component:MainSectionComponent ,canActivate:[AuthGuard] },
@@ -59,6 +62,9 @@ const routes : Routes = [
   { path: "all-rates", component: RatesComponent ,canActivate:[AuthGuard]  },
   { path: "new-notification", component: NewnotificationComponent ,canActivate:[AuthGuard]  },
   { path: "all-notifications", component: NotificationsComponent ,canActivate:[AuthGuard]  },
+  { path: "local-service", component: LocalComponent ,canActivate:[AuthGuard]  },
+  { path: "international-service", component: InternationalComponent ,canActivate:[AuthGuard]  },
+  { path: "details/:id", component: DetailsComponent ,canActivate:[AuthGuard]  },
 
 ];
 
@@ -96,6 +102,9 @@ const routes : Routes = [
     NewrateComponent,
     NewnotificationComponent,
     NotificationsComponent,
+    LocalComponent,
+    InternationalComponent,
+    DetailsComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

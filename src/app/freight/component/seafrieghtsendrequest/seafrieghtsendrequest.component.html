@@ -41,20 +41,25 @@
                               <th>Category </th>
                               <th>Code</th>
                               <th>#</th>
+                              <th>details</th>
                           </tr>
                       </thead>
                       <!--Table head-->
                       <!--Table body-->
+                      <!-- {{data | json}} -->
                       <tbody *ngFor="let item of data; let i = index">
                           <tr>
                               <th >{{item.status}}</th>
-                              <td>{{item.pickup_city_name}}</td>
+                              <td>{{item.country_destination_name}}</td>
                               <td>{{item.goods_country_origin_name}}</td>
                               <td>{{item.currency_name}}</td>
                               <td>{{item.category_name}}</td>
                               <td>{{item.code}}</td>
                               <td><a [routerLink]='["/requst-details",i+1]'><i class="bi bi-info-circle"></i>
                               </a></td>
+                              <td><a [routerLink]='["/sea-details",item.order_id]'>
+                                <i class="bi bi-info-circle"></i>
+                                </a></td>
                           </tr>
 
 

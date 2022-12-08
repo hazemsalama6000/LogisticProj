@@ -1,0 +1,34 @@
+.bi{
+  color: #57B8CE;
+
+}
+
+$basecolor:#57B8CE;
+$secondColor:#021955;
+$background:#FAFAFA;
+
+
+.btn{
+  background-color: $secondColor ;
+  color:$background ;
+}
+@media only screen and (max-width: 600px) {
+  .btn {
+ font-size: 8px;
+ font-weight: 300;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .btn {
+    font-size: 10px;
+    font-weight: 500;
+     }
+   }
+
+   @media only screen and (max-width: 415px) {
+    .btn {
+
+   font-size: 4px;
+   font-weight: 300;
+    }
+  }
