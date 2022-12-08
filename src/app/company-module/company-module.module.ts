@@ -27,7 +27,7 @@ import { AllreprequestsComponent } from './comonent/allreprequests/allreprequest
 import { QuotationsrepComponent } from './comonent/quotationsrep/quotationsrep.component';
 import { RepresentetivesidebarComponent } from './comonent/representetivesidebar/representetivesidebar.component';
 import { NewquotationrepComponent } from './comonent/newquotationrep/newquotationrep.component';
-import { CompanyEditRepresentativeComponent } from './comonent/company-edit-representative/company-edit-representative.component';
+
 
 
 const routes : Routes=[
@@ -43,7 +43,7 @@ const routes : Routes=[
     { path: "company-active-requests", component:AllrequestcomComponent ,canActivate:[AuthGuard]},
     { path: "company-dash-board", component:CompanyDashBoardComponent ,canActivate:[AuthGuard]},
     { path: "company-add-representative", component:CompanyAddRepresentativeComponent ,canActivate:[AuthGuard]},
-    { path: "company-edit-representative", component:CompanyEditRepresentativeComponent ,canActivate:[AuthGuard]},
+    
     { path: "available-for-work", component:AvailableForWorkComponent ,canActivate:[AuthGuard]},
     { path: "company-completed-detalis", component:CompanyCompletedDetalisComponent ,canActivate:[AuthGuard]},
     { path: "representative-dashboard", component:RepresentetivedashboardComponent,canActivate:[AuthGuard]},
@@ -76,7 +76,7 @@ const routes : Routes=[
     QuotationsrepComponent,
     NewquotationrepComponent,
     RepresentetivesidebarComponent,
-    CompanyEditRepresentativeComponent,
+    
 
   ],
   imports: [
