@@ -98,7 +98,7 @@ const routes: Routes = [
     { path: "company-active-requests", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
     { path: "company-dash-board", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
     { path: "company-add-representative", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
-    { path: "company-edit-representative/:id", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
+    // { path: "company-edit-representative", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
     { path: "available-for-work", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
     { path: "company-completed-detalis", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
     { path: "representative-dashboard", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
