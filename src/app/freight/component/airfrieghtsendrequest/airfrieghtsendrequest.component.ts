@@ -15,5 +15,13 @@ data:any;
           this.data = res.data;
     })
   }
-
+  destroy(id:any)
+  {
+    this.airfreigft.deleteAirFreight(id).subscribe((res:any) => {
+      setTimeout(() =>
+      {
+      location.reload();
+      }, 1000);
+    })
+  }
 }

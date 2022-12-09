@@ -45,4 +45,13 @@ submit(): void{
   })
 
 }
+destroy(id:any)
+{
+  this.clienttecket.deleteticketreplies(id).subscribe((res:any) => {
+    setTimeout(() =>
+    {
+    location.reload();
+    }, 1000);
+  })
+}
 }

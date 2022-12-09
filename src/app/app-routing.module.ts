@@ -61,7 +61,7 @@ const routes: Routes = [
     { path: "all-paymetns", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
     { path: "new-chat", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
     { path: "all-chats", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
-    { path: "new-rate", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "new-rate/:id", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
     { path: "all-rates", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
     { path: "new-notification", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
     { path: "all-notifications", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
@@ -71,6 +71,7 @@ const routes: Routes = [
     { path: "air-details/:id", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
     { path: "local-details/:id", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
     { path: "sea-details/:id", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "track/:id", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
 
     // ---------------------------------
 

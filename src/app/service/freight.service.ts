@@ -35,7 +35,14 @@ export class FreightService {
     let option ={headers:header} ;
     return this._HttpClient.get(this.url + 'client/local_freight', option);
   }
-
+  deleteLocalFreight(id:any) {
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.get(this.url + `client/delete_local_freight/${id}`, option);
+  }
    //Add Air Freight:
    addAirFreight(formData:any):Observable<any>{
       let header = new HttpHeaders();
@@ -54,7 +61,14 @@ export class FreightService {
       let option ={headers:header} ;
       return this._HttpClient.get(this.url + 'client/air_freight', option);
     }
-
+    deleteAirFreight(id:any) {
+      let header = new HttpHeaders();
+      header = header.append("lang" , this.lang);
+      header = header.append("Apipassword" , this.apiPassword);
+      header = header.append("Authorization" ,`Bearer ${this.token}`);
+      let option ={headers:header} ;
+      return this._HttpClient.get(this.url + `client/delete_air_freight/${id}`, option);
+    }
    //Add Sea Freight:
    addSeaFreight(formData:any):Observable<any>{
     let header = new HttpHeaders();
@@ -73,4 +87,13 @@ export class FreightService {
     let option ={headers:header} ;
     return this._HttpClient.get(this.url + 'client/sea_freight', option);
   }
+  deleteSeaFreight(id:any) {
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.get(this.url + `client/client/sea_freight/${id}`, option);
+  }
 }
+//delete_

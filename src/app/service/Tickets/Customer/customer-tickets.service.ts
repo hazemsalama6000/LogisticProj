@@ -38,6 +38,14 @@ export class CustomerTicketsService {
     let option ={headers:header} ;
     return this._HttpClient.get(this.url + 'client/tickets', option);
   }
+  deleteClientTickets(id:any) {
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.get(this.url + 'client/tickets/${id}', option);
+  }
   //Add Replay Tickets:
   addreplayTicket(formData:any):Observable<any>{
     let header = new HttpHeaders();
@@ -56,6 +64,14 @@ export class CustomerTicketsService {
     let option ={headers:header} ;
     return this._HttpClient.get(this.url + 'client/ticketreplies' + '?ticket_id=' + id ,option);
   }
+  deleteticketreplies(id:any) {
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.get(this.url + `client/ticketreplies/${id}`, option);
+  }
   //Add Customs Clearance
   addCustomsClearance(formData:any):Observable<any>{
     let header = new HttpHeaders();
@@ -73,6 +89,14 @@ export class CustomerTicketsService {
     header = header.append("Authorization" ,`Bearer ${this.token}`);
     let option ={headers:header} ;
     return this._HttpClient.get(this.url + 'client/customs_clearance', option);
+  }
+  deleteCustomsClearance(id:any) {
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.get(this.url + `client/delete_customs_clearance/${id}`, option);
   }
   // ==============QUOTATION=======================
   acceptQuotations(formData:any):Observable<any>{
@@ -160,6 +184,14 @@ export class CustomerTicketsService {
     let option ={headers:header} ;
     return this._HttpClient.get(this.url + 'client/notifications/readNotify' ,option )
   }
+  deleteNotification(id:any) {
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.get(this.url + `client/notifications/${id}`, option);
+  }
  // ==============TRACK=======================
  trackOrder(formData:any):Observable<any>{
   let header = new HttpHeaders();
@@ -167,6 +199,6 @@ export class CustomerTicketsService {
   header = header.append("Apipassword" , this.apiPassword);
   header = header.append("Authorization" ,`Bearer ${this.token}`);
   let option ={headers:header} ;
-  return this._HttpClient.post(this.url + 'client/tracksById',formData ,option )
+  return this._HttpClient.post(this.url + 'client/tracksById' ,formData ,option )
 }
 }

@@ -16,4 +16,13 @@ data:any;
     })
   }
 
+  destroy(id:any)
+  {
+    this.seafreight.deleteSeaFreight(id).subscribe((res:any) => {
+      setTimeout(() =>
+      {
+      location.reload();
+      }, 1000);
+    })
+  }
 }
