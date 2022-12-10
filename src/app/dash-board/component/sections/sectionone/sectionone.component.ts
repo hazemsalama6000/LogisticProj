@@ -11,5 +11,10 @@ export class SectiononeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  hide():void{
+    // this.hide(); // whenever you need to hide an element
+    // this.el.nativeElement.style.display='none';
+    
+    // this.nativeElement.style.display = 'none';
+  }
 }

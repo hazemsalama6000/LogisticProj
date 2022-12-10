@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
+import { first } from 'rxjs';
 @Component({
   selector: 'app-main-section',
   templateUrl: './main-section.component.html',
@@ -7,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainSectionComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(){}
   ngOnInit(): void {
   }
 
