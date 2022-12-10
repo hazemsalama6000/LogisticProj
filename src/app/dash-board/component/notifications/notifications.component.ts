@@ -18,5 +18,13 @@ export class NotificationsComponent implements OnInit {
 
     })
   }
-
+  destroy(id:any)
+  {
+    this.clientqout.deleteNotification(id).subscribe((res:any) => {
+      setTimeout(() =>
+      {
+      location.reload();
+      }, 1000);
+    })
+  }
 }

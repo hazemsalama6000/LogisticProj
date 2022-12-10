@@ -16,4 +16,13 @@ data:any  ;
       })
 
   }
+  destroy(id:any)
+  {
+    this._CustomerTicketsService.deleteClientTickets(id).subscribe((res:any) => {
+      setTimeout(() =>
+      {
+      location.reload();
+      }, 1000);
+    })
+  }
 }

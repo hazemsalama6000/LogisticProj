@@ -20,5 +20,13 @@ export class LocalfrieghtsendrequestComponent implements OnInit {
 
 
   }
-
+  destroy(id:any)
+  {
+    this.localfreight.deleteLocalFreight(id).subscribe((res:any) => {
+      setTimeout(() =>
+      {
+      location.reload();
+      }, 1000);
+    })
+  }
 }

@@ -14,6 +14,7 @@ export class ClientqouteComponent implements OnInit {
   data:any  ;
   id:any;
   order_id:any;
+  supplier_id:any;
   constructor(private clientqout:CustomerTicketsService, Active:ActivatedRoute, private router:Router)
   {
     this.order_id = Active.snapshot.paramMap.get("id")
@@ -27,9 +28,10 @@ export class ClientqouteComponent implements OnInit {
       this.data = res.data
       // console.log(this.data[0].id);
       this.id = this.data[0].id
-      console.log(this.id);
+      //console.log(this.id);
       this.item.id = this.id;
       this.item.order_id = this.order_id;
+      this.supplier_id = this.item.supplier_id
       console.log(this.item);
 
       this.clientqout.acceptQuotations(Helper.toFormData(this.item)).subscribe((res)=>

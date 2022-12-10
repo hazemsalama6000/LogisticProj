@@ -37,6 +37,7 @@ import { NotificationsComponent } from './component/notifications/notifications.
 import { LocalComponent } from './component/local/local.component';
 import { InternationalComponent } from './component/international/international.component';
 import { DetailsComponent } from './component/details/details.component';
+import { TrackComponent } from './component/track/track.component';
 
 
 const routes : Routes = [
@@ -59,13 +60,14 @@ const routes : Routes = [
   { path: "all-paymetns", component: PaymentsComponent ,canActivate:[AuthGuard]  },
   { path: "new-chat", component: NewchatComponent ,canActivate:[AuthGuard]  },
   { path: "all-chats", component: ChatsComponent ,canActivate:[AuthGuard]  },
-  { path: "new-rate", component: NewrateComponent ,canActivate:[AuthGuard]  },
+  { path: "new-rate/:id", component: NewrateComponent ,canActivate:[AuthGuard]  },
   { path: "all-rates", component: RatesComponent ,canActivate:[AuthGuard]  },
   { path: "new-notification", component: NewnotificationComponent ,canActivate:[AuthGuard]  },
   { path: "all-notifications", component: NotificationsComponent ,canActivate:[AuthGuard]  },
   { path: "local-service", component: LocalComponent ,canActivate:[AuthGuard]  },
   { path: "international-service", component: InternationalComponent ,canActivate:[AuthGuard]  },
   { path: "details/:id", component: DetailsComponent ,canActivate:[AuthGuard]  },
+  { path: "track/:id", component: TrackComponent ,canActivate:[AuthGuard]  },
 
 ];
 
@@ -106,6 +108,7 @@ const routes : Routes = [
     LocalComponent,
     InternationalComponent,
     DetailsComponent,
+    TrackComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

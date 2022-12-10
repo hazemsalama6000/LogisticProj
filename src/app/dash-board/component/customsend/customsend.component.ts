@@ -17,5 +17,13 @@ export class CustomsendComponent implements OnInit {
       console.log(this.data1);
     })
   }
-
+  destroy(id:any)
+  {
+    this._CustomerTicketsService.deleteCustomsClearance(id).subscribe((res:any) => {
+      setTimeout(() =>
+      {
+      location.reload();
+      }, 1000);
+    })
+  }
 }
