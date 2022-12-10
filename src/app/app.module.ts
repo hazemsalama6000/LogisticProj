@@ -22,6 +22,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { TranslateLoader } from '@ngx-translate/core';
 import { FreightModule } from './freight/freight.module';
 
+ 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +56,7 @@ import { FreightModule } from './freight/freight.module';
         deps: [HttpClient]
       }
     }),
+
 
 
   ],

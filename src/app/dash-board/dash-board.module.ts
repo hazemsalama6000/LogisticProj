@@ -38,6 +38,7 @@ import { LocalComponent } from './component/local/local.component';
 import { InternationalComponent } from './component/international/international.component';
 import { DetailsComponent } from './component/details/details.component';
 
+
 const routes : Routes = [
   { path:"main-sction", component:MainSectionComponent ,canActivate:[AuthGuard] },
   { path: "ticket-details/:id", component: TicketDetailsComponent ,canActivate:[AuthGuard] },
@@ -113,6 +114,8 @@ const routes : Routes = [
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
+    
+
 
   ]
 })
