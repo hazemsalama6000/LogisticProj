@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAKA,AAAA,CAAC,AAAA,MAAM,CAAA;EACH,gBAAgB,EALT,OAAO;CAMjB",
+    "sources": [
+        "profile-side-bar.component.scss"
+    ],
+    "names": [],
+    "file": "profile-side-bar.component.css"
+}

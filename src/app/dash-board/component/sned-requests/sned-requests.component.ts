@@ -13,16 +13,17 @@ export class SnedRequestsComponent implements OnInit {
   data3:any ;
   data4:any ;
   all:any[] =[];
-  constructor(private _CustomerTicketsService:CustomerTicketsService
+  constructor(
+    private _CustomerTicketsService:CustomerTicketsService
     ,private airfreigft:FreightService
     ,private seafreight:FreightService
     ,private localfreight:FreightService) { }
 
   ngOnInit(): void {
+
     this._CustomerTicketsService.getCustomsClearance().subscribe((res:any) => {
       this.data1 = res.data
       console.log(this.data1);
-
     })
     this.airfreigft.getAirFreight().subscribe((res:any) => {
       this.data2 = res.data;
@@ -36,5 +37,6 @@ export class SnedRequestsComponent implements OnInit {
       this.data4 = res.data
       console.log(this.data4);
     })
+
   }
 }

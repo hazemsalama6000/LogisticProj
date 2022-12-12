@@ -1,0 +1,59 @@
+.backgroudImgsection2 {
+  background-image: url("../../../../assets/Logisty ui images/freepik--Symbols--inject-82.svg");
+  background-size: 100vh;
+  color: white;
+  background-color: #021955;
+  font-weight: bold;
+  border: none;
+  height: 50px;
+  width: 100%;
+}
+
+.backgroudImgsection2:hover {
+  opacity: 0.5;
+}
+
+.sectiontwoIamg {
+  background-image: url("../../../../assets/Logisty ui images/Group18616.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.addries {
+  font-size: 40px;
+}
+
+p {
+  font-size: 16px;
+}
+
+.btn {
+  background-color: #021955;
+  border-radius: 2%;
+  border: none;
+  color: #FFFFFF;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .btn {
+    font-size: 8px;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .btn {
+    font-size: 10px;
+    font-weight: 500;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .btn {
+    font-size: 4px;
+    font-weight: 300;
+  }
+}
+/*# sourceMappingURL=sectiontwo.component.css.map */

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,EAAE,CAAA;EACE,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,MAAM;CAElB;;AACD,AAAA,EAAE,CAAA;EACE,UAAU,EAAE,MAAM;CAErB;;AACD,AAAA,GAAG,CAAA;EACC,KAAK,EAAE,GAAG;CACb;;AACD,AAAA,KAAK,CAAA;EACD,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,KAAK;CAGf;;AACD,AAAA,IAAI,CAAA;EACA,KAAK,EAAE,KAAK;EACZ,gBAAgB,EAAE,OAAO;CAC5B",
+    "sources": [
+        "on-progress.component.scss"
+    ],
+    "names": [],
+    "file": "on-progress.component.css"
+}

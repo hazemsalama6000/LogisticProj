@@ -27,6 +27,8 @@ import { AllreprequestsComponent } from './comonent/allreprequests/allreprequest
 import { QuotationsrepComponent } from './comonent/quotationsrep/quotationsrep.component';
 import { RepresentetivesidebarComponent } from './comonent/representetivesidebar/representetivesidebar.component';
 import { NewquotationrepComponent } from './comonent/newquotationrep/newquotationrep.component';
+import { PaymentsComponent } from './comonent/payments/payments.component';
+import { PriceComponent } from './comonent/price/price.component';
 
 
 
@@ -43,14 +45,16 @@ const routes : Routes=[
     { path: "company-active-requests", component:AllrequestcomComponent ,canActivate:[AuthGuard]},
     { path: "company-dash-board", component:CompanyDashBoardComponent ,canActivate:[AuthGuard]},
     { path: "company-add-representative", component:CompanyAddRepresentativeComponent ,canActivate:[AuthGuard]},
-    
+    { path: "company-payment", component:PaymentsComponent ,canActivate:[AuthGuard]},
+    { path: "company-price", component:PriceComponent ,canActivate:[AuthGuard]},
+
     { path: "available-for-work", component:AvailableForWorkComponent ,canActivate:[AuthGuard]},
     { path: "company-completed-detalis", component:CompanyCompletedDetalisComponent ,canActivate:[AuthGuard]},
     { path: "representative-dashboard", component:RepresentetivedashboardComponent,canActivate:[AuthGuard]},
     { path: "representative-all-requests", component:AllreprequestsComponent ,canActivate:[AuthGuard]},
     { path: "representative-all-quotations", component:QuotationsrepComponent,canActivate:[AuthGuard]},
     { path: "representative-new-quotation/:id", component:NewquotationrepComponent,canActivate:[AuthGuard]},
-    
+
 ]
 
 
@@ -76,7 +80,9 @@ const routes : Routes=[
     QuotationsrepComponent,
     NewquotationrepComponent,
     RepresentetivesidebarComponent,
-    
+    PaymentsComponent,
+    PriceComponent,
+
 
   ],
   imports: [

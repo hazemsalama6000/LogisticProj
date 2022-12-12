@@ -99,7 +99,7 @@ ApplyToService(formData:any):Observable<any>{
   header = header.append("Apipassword" , this.apiPassword);
   header = header.append("Authorization" ,`Bearer ${this.token}`);
   let option ={headers:header} ;
-  return this._HttpClient.get(this.url + 'operator/availableRequests'  ,option);
+  return this._HttpClient.get(this.url + 'operator/supplierfiles' +"?status="+ 2  ,option);
 }
 getsupplierfiles(){
   let header = new HttpHeaders();
@@ -124,7 +124,7 @@ addnewquotation(formData:any):Observable<any>{
   header = header.append("Apipassword" , this.apiPassword);
   header = header.append("Authorization" ,`Bearer ${this.token}`);
   let option ={headers:header} ;
-  return this._HttpClient.get(this.url + 'operator/quotations' +"?status="+ 1 ,option);
+  return this._HttpClient.get(this.url + 'operator/quotations' +"?status="+ 2 ,option);
 }
 getacceptquotations(){
   let header = new HttpHeaders();
@@ -133,6 +133,14 @@ getacceptquotations(){
   header = header.append("Authorization" ,`Bearer ${this.token}`);
   let option ={headers:header} ;
   return this._HttpClient.get(this.url + 'operator/quotations' +"?status="+ 2 ,option);
+}
+getavailableRequests(){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'operator/availableRequests' +"?status="+ 2 ,option);
 }
 getlang(lang:any){
 this.lang = lang

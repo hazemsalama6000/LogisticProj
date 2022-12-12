@@ -1,0 +1,16 @@
+.btn {
+  background-color: #C8523B;
+  border: #C8523B;
+}
+
+.alert-danger {
+  color: red;
+}
+
+.error {
+  text-align: end;
+  color: red;
+  font-size: small;
+  margin: 0;
+}
+/*# sourceMappingURL=register.component.css.map */

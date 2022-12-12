@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerTicketsService } from 'src/app/service/Tickets/Customer/customer-tickets.service';
 import { Helper } from 'src/app/shared/helper';
+import { FreightService } from 'src/app/service/freight.service';
 
 @Component({
   selector: 'app-clientqoute',
@@ -15,14 +16,39 @@ export class ClientqouteComponent implements OnInit {
   id:any;
   order_id:any;
   supplier_id:any;
-  constructor(private clientqout:CustomerTicketsService, Active:ActivatedRoute, private router:Router)
+  data1:any ;
+  data2:any ;
+  data3:any ;
+  data4:any ;
+  all:any[] =[];
+  constructor(
+     private airfreigft:FreightService
+   ,private clientqout:CustomerTicketsService, Active:ActivatedRoute, private router:Router)
   {
     this.order_id = Active.snapshot.paramMap.get("id")
-
-
    }
 
   ngOnInit(): void {
+    // this.clientqout.getCustomsClearance().subscribe((res:any) => {
+    //   this.data1 = res.data
+    //   console.log(this.data1);
+    // })
+    this.airfreigft.getAirFreight().subscribe((res:any) => {
+      this.data2 = res.data;
+      console.log(this.data2);
+    })
+    // this.seafreight.getSeaFreight().subscribe((res:any) => {
+    //   this.data3 = res.data
+    //   console.log(this.data3);
+    // })
+    // this.localfreight.getLocalFreight().subscribe((res:any) => {
+    //   this.data4 = res.data
+    //   console.log(this.data4);
+    // })
+    // ,private seafreight:FreightService
+    // ,private localfreight:FreightService,
+
+
 
     this.clientqout.getquotations(this.order_id).subscribe((res:any) => {
       this.data = res.data

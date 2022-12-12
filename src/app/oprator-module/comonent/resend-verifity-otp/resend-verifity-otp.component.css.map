@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "resend-verifity-otp.component.scss"
+    ],
+    "names": [],
+    "file": "resend-verifity-otp.component.css"
+}

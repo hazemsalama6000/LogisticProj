@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAA;EACJ,UAAU,EAAE,IAAI;CACnB;;AACD,AAAA,UAAU,CAAA;EACN,WAAW,EAAE,IAAI;CACpB;;AACD,AAAA,SAAS,CAAA;EAEL,gBAAgB,EAAE,OAAO;EACzB,MAAM,EAAE,OAAO;EACf,KAAK,EAAE,KAAK;CACf",
+    "sources": [
+        "verifiy-account-company.component.scss"
+    ],
+    "names": [],
+    "file": "verifiy-account-company.component.css"
+}

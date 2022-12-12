@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAYA,AAAA,QAAQ,CAAA;EACJ,UAAU,EAAE,IAAI;CACnB;;AACD,AAAA,UAAU,CAAA;EACN,WAAW,EAAE,IAAI;CACpB;;AACD,AAAA,SAAS,CAAA;EAEL,gBAAgB,EAAE,OAAO;EACzB,MAAM,EAAC,OAAQ;CAClB",
+    "sources": [
+        "activate-account.component.scss"
+    ],
+    "names": [],
+    "file": "activate-account.component.css"
+}

@@ -1,0 +1,26 @@
+.btn {
+  background-color: #021955;
+  color: #FAFAFA;
+}
+
+@media only screen and (max-width: 600px) {
+  .btn {
+    font-size: 8px;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .btn {
+    font-size: 10px;
+    font-weight: 500;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .btn {
+    font-size: 4px;
+    font-weight: 300;
+  }
+}
+/*# sourceMappingURL=sectionone.component.css.map */

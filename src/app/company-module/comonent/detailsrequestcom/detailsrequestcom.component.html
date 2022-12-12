@@ -23,8 +23,9 @@
 
                             <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Price</a>
                             <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Time</a>
-                            <a class=" btn btn2   btn-success w-50 mx-1 btn1 text-decoration-none ">SEND</a>
-                          </div>
+                            <a  (click)="destroy(item.id)" class=" btn btn2   btn-danger   btn1 text-decoration-none ">
+                              <i class="bi bi-trash"></i>
+                             </a>                          </div>
                         </div>
                       </div>
                 </div>

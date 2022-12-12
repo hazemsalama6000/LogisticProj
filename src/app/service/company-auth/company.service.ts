@@ -133,7 +133,48 @@ addnewquotation(formData:any):Observable<any>{
   let option ={headers:header} ;
   return this._HttpClient.get(this.url + 'representative/quotations' +"?status="+ 2  ,option);
 }
-// ?status=2&order_id=9   +"&order_id="+ order_id
+
+///////////////////////////
+deletecompanyTickets(id:any) {
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + `company/tickets/${id}`, option);
+}
+deleteticketreplies(id:any) {
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + `company/ticketreplies/${id}`, option);
+}
+deleteservisefile(id:any) {
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + `company/supplierfiles/${id}`, option);
+}
+getPayments(){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'company/paymenthistories' ,option);
+}
+getPrice(){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'company/serviceprices' ,option);
+}
   getlang(lang:any){
 
   this.lang = lang

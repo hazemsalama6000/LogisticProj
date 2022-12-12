@@ -1,0 +1,28 @@
+th {
+  padding: 20px;
+  text-align: center;
+}
+
+tr {
+  text-align: center;
+}
+
+.bi {
+  color: red;
+}
+
+thead {
+  background-color: #021955;
+  color: white;
+}
+
+.bi1 {
+  color: white;
+  background-color: #57B8CE;
+}
+
+.btn:hover {
+  background-color: #021955;
+  color: white;
+}
+/*# sourceMappingURL=company-completed.component.css.map */

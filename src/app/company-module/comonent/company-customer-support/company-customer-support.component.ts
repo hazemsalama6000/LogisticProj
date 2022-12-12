@@ -15,5 +15,13 @@ export class CompanyCustomerSupportComponent implements OnInit {
       this.data = res.data
     })
   }
-
+  destroy(id:any)
+  {
+    this.companyticket.deletecompanyTickets(id).subscribe((res:any) => {
+      setTimeout(() =>
+      {
+      location.reload();
+      }, 1000);
+    })
+  }
 }

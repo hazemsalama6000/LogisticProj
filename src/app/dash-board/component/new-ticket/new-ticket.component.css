@@ -1,0 +1,36 @@
+.btn {
+  background: #C8523B 0% 0% no-repeat padding-box;
+}
+
+.but {
+  display: none;
+  margin-right: 0.3rem;
+  text-align: center;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  text-decoration: none;
+  background: #e8f4de;
+  border: 1px dashed #c5d7b5;
+  border-radius: 5px;
+}
+
+.but i {
+  margin-top: 38%;
+  color: #0069d9;
+  font-size: 27px;
+}
+
+.but .asd {
+  display: none;
+}
+
+.but:hover {
+  -webkit-transition: 1s all;
+  transition: 1s all;
+}
+
+.but:hover .asd {
+  display: block;
+}
+/*# sourceMappingURL=new-ticket.component.css.map */

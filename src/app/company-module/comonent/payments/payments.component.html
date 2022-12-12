@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+<div class="col-12">
+  <div class="row clearfix">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="card">
+              <div class="header">
+                  <h3 style="font-size:25px;" class="fw-bold mt-3 ms-2 text-center" >Payments</h3>
+
+
+              </div>
+              <div class="body">
+                  <div class="table-responsive ">
+                      <table
+                          class="table table-bordered table-striped table-hover  dataTable"
+                          >
+                          <thead   style="background-color: #e4e1e1 !important;">
+
+                              <th style=" color: black !important; padding: 10px;">ID</th>
+                              <th style=" color: black !important; padding: 10px;">Commission</th>
+                              <th style=" color: black !important; padding: 10px;">Total Amount</th>
+                              <th style=" color: black !important; padding: 10px;">Supplier Amount</th>
+                              <th style=" color: black !important; padding: 10px;">Status</th>
+                              <th style=" color: black !important; padding: 10px;">Supplier</th>
+
+                          </thead>
+                          <br>
+                          <!-- <br> -->
+                          <tbody *ngFor="let item of data" >
+                              <tr  >
+                                  <td class="fw-bold  " colspan="6" >Delivery state problem</td>
+                              </tr>
+                              <tr >
+
+                                  <td>{{item.id}}</td>
+                                  <td>{{item.commission}}</td>
+                                  <td>{{item.total_amount}}</td>
+                                  <td>{{item.supplier_amount}}</td>
+                                  <td >{{item.status}}</td>
+                                  <td>{{item.supplier}}</td>
+
+                              </tr>
+                              <br>
+                          </tbody>
+
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>

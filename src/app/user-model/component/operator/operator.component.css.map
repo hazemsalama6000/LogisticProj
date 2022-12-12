@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAA;EACA,gBAAgB,EAAE,OAAO;EACzB,MAAM,EAAE,OAAO;CAClB",
+    "sources": [
+        "operator.component.scss"
+    ],
+    "names": [],
+    "file": "operator.component.css"
+}

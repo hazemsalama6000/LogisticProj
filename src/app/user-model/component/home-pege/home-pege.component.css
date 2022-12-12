@@ -1,0 +1,90 @@
+.backgroudImg {
+  background-image: url("../../../../assets/Logisty ui images/Group42696.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #021955;
+  color: white;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.backhroundimageSection {
+  background-image: url("../../../../assets/Logisty ui images/Group 42658.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.fw-bold {
+  color: black;
+}
+
+.textfont {
+  color: wheat;
+}
+
+@media only screen and (max-width: 600px) {
+  .mida {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mida {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .mida {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .fontcontrol {
+    font-size: 24px;
+  }
+  .fontcontrolprg {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .fontcontrol {
+    font-size: 10px;
+  }
+  .fontcontrolprg {
+    font-size: 8px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .fontcontrol {
+    font-size: 12px;
+  }
+  .fontcontrolprg {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .fontcontrol {
+    font-size: 10px;
+  }
+  .fontcontrolprg {
+    font-size: 8px;
+  }
+}
+
+@media only screen and (max-width: 415px) and (max-width: 300px) {
+  .fontcontrol {
+    font-size: 8px;
+  }
+  .fontcontrolprg {
+    font-size: 6px;
+  }
+}
+/*# sourceMappingURL=home-pege.component.css.map */

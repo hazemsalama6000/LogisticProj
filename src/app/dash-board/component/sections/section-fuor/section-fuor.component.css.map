@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAA;EAEL,KAAK,EAAE,KAAK;EACZ,SAAS,EAAE,IAAI;CAElB",
+    "sources": [
+        "section-fuor.component.scss"
+    ],
+    "names": [],
+    "file": "section-fuor.component.css"
+}

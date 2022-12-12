@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAA;EACH,gBAAgB,EAAC,OAAO;EACxB,sBAAsB,EAAE,IAAK;EAC7B,uBAAuB,EAAE,IAAK;EAC9B,UAAU,EAAE,MAAM;CAGrB;;AACD,AAAA,UAAU,CAAA;EACN,KAAK,EAAE,KAAK;CACf;;AACD,AAAA,YAAY,CAAA;EACR,KAAK,EAAE,KAAK;EACZ,SAAS,EAAE,MAAM;CAEpB;;AACD,AAAA,SAAS,CAAA;EACL,gBAAgB,EAAC,OAAO;EACxB,KAAK,EAAE,KAAK;CAEf",
+    "sources": [
+        "individual-request-detiles.component.scss"
+    ],
+    "names": [],
+    "file": "individual-request-detiles.component.css"
+}

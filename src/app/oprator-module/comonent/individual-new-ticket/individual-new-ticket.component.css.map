@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAA;EACA,UAAU,EAAE,oCAAoC;CACnD",
+    "sources": [
+        "individual-new-ticket.component.scss"
+    ],
+    "names": [],
+    "file": "individual-new-ticket.component.css"
+}

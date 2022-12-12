@@ -1,0 +1,16 @@
+.btnLogin {
+  background-color: #021955;
+  color: #FAFAFA;
+}
+
+.btnRegister {
+  background-color: #FAFAFA;
+  border: #021955 solid 2px;
+}
+
+.bi {
+  color: #57B8CE;
+  font-size: 20px;
+  margin-right: 10px;
+}
+/*# sourceMappingURL=navbar.component.css.map */

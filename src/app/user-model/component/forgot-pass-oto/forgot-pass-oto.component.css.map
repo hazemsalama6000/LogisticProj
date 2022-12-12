@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,SAAS,CAAA;EACL,KAAK,EAAE,KAAK;EACZ,gBAAgB,EAAE,OAAO;EACzB,MAAM,EAAE,OAAO;CAClB",
+    "sources": [
+        "forgot-pass-oto.component.scss"
+    ],
+    "names": [],
+    "file": "forgot-pass-oto.component.css"
+}

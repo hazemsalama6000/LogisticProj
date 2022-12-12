@@ -1,0 +1,23 @@
+th {
+  padding: 20px;
+  text-align: center;
+}
+
+tr {
+  text-align: center;
+}
+
+.bi {
+  color: red;
+}
+
+thead {
+  background-color: #57B8CE;
+  color: white;
+}
+
+.bi1 {
+  color: white;
+  background-color: #57B8CE;
+}
+/*# sourceMappingURL=customsend.component.css.map */

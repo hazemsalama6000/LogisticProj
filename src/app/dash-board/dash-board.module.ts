@@ -38,6 +38,7 @@ import { LocalComponent } from './component/local/local.component';
 import { InternationalComponent } from './component/international/international.component';
 import { DetailsComponent } from './component/details/details.component';
 import { TrackComponent } from './component/track/track.component';
+import { CchatsComponent } from './component/cchats/cchats.component';
 
 
 const routes : Routes = [
@@ -56,18 +57,18 @@ const routes : Routes = [
   { path: "approve-offer", component:ApproveOfferComponent ,canActivate:[AuthGuard] },
   { path: "client-quotation/:id", component:ClientqouteComponent ,canActivate:[AuthGuard] },
   { path: "send-request", component: CustomsendComponent ,canActivate:[AuthGuard]  },
-  { path: "new-payment/:id", component: NewpaymentComponent ,canActivate:[AuthGuard]  },
-  { path: "all-paymetns", component: PaymentsComponent ,canActivate:[AuthGuard]  },
-  { path: "new-chat", component: NewchatComponent ,canActivate:[AuthGuard]  },
-  { path: "all-chats", component: ChatsComponent ,canActivate:[AuthGuard]  },
-  { path: "new-rate/:id", component: NewrateComponent ,canActivate:[AuthGuard]  },
-  { path: "all-rates", component: RatesComponent ,canActivate:[AuthGuard]  },
-  { path: "new-notification", component: NewnotificationComponent ,canActivate:[AuthGuard]  },
-  { path: "all-notifications", component: NotificationsComponent ,canActivate:[AuthGuard]  },
+  { path: "new-cpayment/:id", component: NewpaymentComponent ,canActivate:[AuthGuard]  },
+  { path: "all-cpaymetns", component: PaymentsComponent ,canActivate:[AuthGuard]  },
+  { path: "new-cchat/:id", component: NewchatComponent ,canActivate:[AuthGuard]  },
+  { path: "all-cchats/:id", component: CchatsComponent ,canActivate:[AuthGuard]  },
+  { path: "new-crate/:id", component: NewrateComponent ,canActivate:[AuthGuard]  },
+  { path: "all-crates", component: RatesComponent ,canActivate:[AuthGuard]  },
+  { path: "new-cnotification", component: NewnotificationComponent ,canActivate:[AuthGuard]  },
+  { path: "all-cnotifications", component: NotificationsComponent ,canActivate:[AuthGuard]  },
   { path: "local-service", component: LocalComponent ,canActivate:[AuthGuard]  },
   { path: "international-service", component: InternationalComponent ,canActivate:[AuthGuard]  },
   { path: "details/:id", component: DetailsComponent ,canActivate:[AuthGuard]  },
-  { path: "track/:id", component: TrackComponent ,canActivate:[AuthGuard]  },
+  { path: "ctrack/:id", component: TrackComponent ,canActivate:[AuthGuard]  },
 
 ];
 
@@ -109,6 +110,7 @@ const routes : Routes = [
     InternationalComponent,
     DetailsComponent,
     TrackComponent,
+    CchatsComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -117,7 +119,7 @@ const routes : Routes = [
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
-    
+
 
 
   ]

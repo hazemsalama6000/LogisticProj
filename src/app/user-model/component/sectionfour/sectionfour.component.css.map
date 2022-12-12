@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAA;EACF,SAAS,EAAE,IAAI;EACf,KAAK,EAAE,OAAO;CAEjB;;AACD,AAAA,GAAG,CAAA;EACC,KAAK,EAAE,OAAO;EACd,SAAS,EAAE,IAAI;CAClB",
+    "sources": [
+        "sectionfour.component.scss"
+    ],
+    "names": [],
+    "file": "sectionfour.component.css"
+}

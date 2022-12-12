@@ -39,8 +39,8 @@
   <div class=" col-lg-2" >
     <div class="card">
       <h1>Chat</h1>
-      <a routerLink="/new-chat" class="text-decoration-none">Add New Chat</a><br>
-      <a routerLink="/all-chats" class="text-decoration-none">All Chats</a>
+      <a [routerLink]='["/new-chat" ,this.order_id]' class="text-decoration-none">Add New Chat</a><br>
+      <a [routerLink]='["/all-chats" ,this.order_id]' class="text-decoration-none">All Chats</a>
       <img src="../../../../assets/Logisty ui images/chat.jpg"
       alt="" class="m-auto"
       style="width: 80px; border-radius: 10px;">

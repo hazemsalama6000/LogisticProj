@@ -1,0 +1,41 @@
+.addries {
+  font-size: 45px;
+  font-weight: bold;
+  color: #202020;
+}
+
+.btn {
+  background: white 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.btn:hover {
+  color: #009F8B;
+}
+
+.card-body {
+  border: 1px solid #ede5e5;
+  border-radius: 2%;
+  font-size: 14px;
+  background-color: white;
+}
+
+.accordion-itemBody {
+  border-radius: 5px;
+  background-color: #D5D5D5;
+}
+
+.accordion-header {
+  font-size: 16px;
+  color: #202020;
+}
+
+.card-body:hover {
+  color: #009F8B;
+}
+
+.accordion-button {
+  background-color: #D5D5D5;
+  color: #202020;
+}
+/*# sourceMappingURL=sectionfive.component.css.map */

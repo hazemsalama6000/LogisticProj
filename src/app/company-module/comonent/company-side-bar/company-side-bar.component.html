@@ -26,22 +26,17 @@
         </div>
       </li>
       <li class=" border-top"></li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-          Accepted Quotes
-        </button>
-        <div class="collapse" id="orders-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small d-block">
-            <button class="btn-sm border-0 bg-white d-flex">
-              <a routerLink="/company-onprogress"
-               class="link-dark rounded text-decoration-none">on progress</a></button>
-            <button class="btn-sm border-0 bg-white"><a
-              routerLink="/company-completed"
-               class="link-dark rounded text-decoration-none">Completed</a></button>
 
-          </ul>
-        </div>
-      </li>
+        <button routerLink="/company-onprogress" class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          company details
+        </button>
+        <!-- <div class="collapse" id="orders-collapse">
+          <button routerLink="/company-onprogress" class="btn  align-items-center rounded collapsed fw-semibold text-muted">
+
+          company details
+          </button>
+        </div> -->
+
       <li class=" border-top"></li>
       <li class="mb-1">
         <button  routerLink="/company-representatives"

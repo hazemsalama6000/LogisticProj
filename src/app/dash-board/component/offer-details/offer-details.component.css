@@ -1,0 +1,29 @@
+li {
+  margin-bottom: 10px;
+}
+
+.btn {
+  background-color: #CA5135;
+  color: #FAFAFA;
+}
+
+.bi-currency-dollar {
+  border: #57B8CE solid 1px;
+  font-size: 28px;
+  border-radius: 50% 50%;
+  background-color: grey;
+}
+
+.btn-success {
+  background-color: green;
+  border-radius: 2;
+}
+
+.btn1 {
+  text-align: center;
+  border-radius: 2;
+  color: grey;
+  border: solid 1px #CA5135;
+  background-color: white;
+}
+/*# sourceMappingURL=offer-details.component.css.map */

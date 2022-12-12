@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACE,AAAA,KAAK,CAAA;EACD,MAAM,EAAE,IAAI;CAEf;;AACD,AAAA,YAAY,CAAA;EACR,QAAQ,EAAE,QAAQ;EAClB,UAAU,EAAE,IAAI;CACnB",
+    "sources": [
+        "change-langauge.component.scss"
+    ],
+    "names": [],
+    "file": "change-langauge.component.css"
+}

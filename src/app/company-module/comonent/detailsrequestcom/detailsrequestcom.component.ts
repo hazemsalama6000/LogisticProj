@@ -18,5 +18,13 @@ export class DetailsrequestcomComponent implements OnInit {
 
     })
   }
-
+  destroy(id:any)
+  {
+    this.company.deleteservisefile(id).subscribe((res:any) => {
+      setTimeout(() =>
+      {
+      location.reload();
+      }, 1000);
+    })
+  }
 }

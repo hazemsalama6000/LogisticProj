@@ -47,4 +47,13 @@ submit(): void{
   })
 
 }
+destroy(id:any)
+{
+  this.companytecket.deleteticketreplies(id).subscribe((res:any) => {
+    setTimeout(() =>
+    {
+    location.reload();
+    }, 1000);
+  })
+}
 }

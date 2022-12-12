@@ -12,8 +12,8 @@
   <div class="offset-lg-1 col-lg-2" >
     <div class="card">
       <h1>Payment</h1>
-      <a [routerLink]='["/new-payment" ,this.order_id]' class="text-decoration-none"> New Payment</a><br>
-      <a routerLink="/all-paymetns" class="text-decoration-none">All Payments</a>
+      <a [routerLink]='["/new-cpayment" ,this.order_id]' class="text-decoration-none"> New Payment</a><br>
+      <a routerLink="/all-cpaymetns" class="text-decoration-none">All Payments</a>
       <img src="../../../../assets/Logisty ui images/payment.jpg"
                                 alt="" class="m-auto"
                                 style="width: 80px; border-radius: 10px;">
@@ -24,8 +24,8 @@
   <div class=" col-lg-2" >
     <div class="card">
       <h1>Chat</h1>
-      <a routerLink="/new-chat" class="text-decoration-none">Add New Chat</a><br>
-      <a routerLink="/all-chats" class="text-decoration-none">All Chats</a>
+      <a [routerLink]='["/new-cchat",this.order_id ]' class="text-decoration-none">Add New Chat</a><br>
+      <a [routerLink]='["/all-cchats",this.order_id]' class="text-decoration-none">All Chats</a>
       <img src="../../../../assets/Logisty ui images/chat.jpg"
       alt="" class="m-auto"
       style="width: 80px; border-radius: 10px;">
@@ -35,8 +35,8 @@
   <div class="col-lg-2" >
     <div class="card">
       <h1>Rate</h1>
-      <a [routerLink]='["/new-rate",this.order_id ]' class="text-decoration-none">Add New Rate</a><br>
-      <a routerLink="/all-rates" class="text-decoration-none">All Rates</a>
+      <a [routerLink]='["/new-crate",this.order_id ]' class="text-decoration-none">Add New Rate</a><br>
+      <a routerLink="/all-crates" class="text-decoration-none">All Rates</a>
       <img src="../../../../assets/Logisty ui images/rate.webp"
       alt="" class="m-auto"
       style="width: 80px; border-radius: 10px;">
@@ -46,8 +46,8 @@
   <div class="col-lg-2" >
     <div class="card">
       <h1>Notification</h1>
-      <a routerLink="/new-notification" class=" text-decoration-none d-none">Add New Notification</a><br>
-      <a routerLink="/all-notifications" class="text-decoration-none">All Notifications</a>
+      <a routerLink="/new-cnotification" class=" text-decoration-none d-none">Add New Notification</a><br>
+      <a routerLink="/all-cnotifications" class="text-decoration-none">All Notifications</a>
       <img  src="../../../../assets/Logisty ui images/notification .webp"
       alt="" class="m-auto pt-3"
       style="width: 80px; border-radius: 10px;">
@@ -58,7 +58,7 @@
     <div class="card">
       <h1>Tracking</h1>
       <a routerLink="/new-notification" class=" text-decoration-none d-none">Add New Notification</a><br>
-      <a [routerLink]='["/track",this.order_id]' class="text-decoration-none">track this Order</a>
+      <a [routerLink]='["/ctrack",this.order_id]' class="text-decoration-none">track this Order</a>
       <img  src="../../../../assets/Logisty ui images/track.png"
       alt="" class="m-auto pt-3"
       style="width: 80px; border-radius: 10px;">

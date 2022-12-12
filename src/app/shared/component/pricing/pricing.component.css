@@ -1,0 +1,26 @@
+.title {
+  color: #57B8CE;
+  padding: 10px;
+}
+
+.card-body {
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.card-body:hover {
+  background-color: #57B8CE;
+  border: #57B8CE solid 10px;
+  color: white;
+}
+
+.btn {
+  background-color: #CA5135;
+  color: white;
+  border: #CA5135;
+}
+
+.btn:hover {
+  background-color: #CA5135;
+}
+/*# sourceMappingURL=pricing.component.css.map */
