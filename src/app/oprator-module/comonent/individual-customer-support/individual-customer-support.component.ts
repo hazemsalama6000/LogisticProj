@@ -16,5 +16,13 @@ export class IndividualCustomerSupportComponent implements OnInit {
       console.log(this.data);
     })
   }
-
+  destroy(id:any)
+  {
+    this.operatorticket.deleteoperatorTickets(id).subscribe((res:any) => {
+      setTimeout(() =>
+      {
+      location.reload();
+      }, 1000);
+    })
+  }
 }

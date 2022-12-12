@@ -27,6 +27,16 @@ import { QuotationsComponent } from './comonent/quotations/quotations.component'
 import { NewquotationComponent } from './comonent/newquotation/newquotation.component';
 import { AuthGuard } from '../guard/auth.guard';
 import { ForgotPassOtoComponent } from '../user-model/component/forgot-pass-oto/forgot-pass-oto.component';
+import { PaymentsComponent } from './comonent/payments/payments.component';
+import { PriceComponent } from './comonent/price/price.component';
+import { NotificationsComponent } from './comonent/notifications/notifications.component';
+import { ChatsComponent } from './comonent/chats/chats.component';
+import { AddchatComponent } from './comonent/addchat/addchat.component';
+import { RatesComponent } from './comonent/rates/rates.component';
+import { AddrateComponent } from './comonent/addrate/addrate.component';
+import { AddtrackComponent } from './comonent/addtrack/addtrack.component';
+import { TracksComponent } from './comonent/tracks/tracks.component';
+import { TrackidComponent } from './comonent/trackid/trackid.component';
 
 const routes: Routes = [
   { path: "individual-dashboard",canActivate:[AuthGuard], component:IndividualDashboardComponent  },
@@ -36,7 +46,7 @@ const routes: Routes = [
   { path: "individual-new-requests", canActivate:[AuthGuard],component: IndividualNewRequestsComponent  },
   { path: "individual-customer-support", canActivate:[AuthGuard],component: IndividualCustomerSupportComponent },
   { path: "individual-ticketk-detalis/:id", canActivate:[AuthGuard],component: IndividualTicketkDetalisComponent },
-  { path: "individul-completed-detalis", canActivate:[AuthGuard],component: IndividulCompletedDetalisComponent },
+  { path: "individul-completed-detalis/:id", canActivate:[AuthGuard],component: IndividulCompletedDetalisComponent },
   { path: "individual-new-ticket", canActivate:[AuthGuard],component: IndividualNewTicketComponent },
   { path: "individual-on-progress", canActivate:[AuthGuard],component: IndividualOnProgressComponent },
   { path: "individual-on-progress-detalis", canActivate:[AuthGuard],component: IndividualOnProgressDetalisComponent  },
@@ -44,7 +54,18 @@ const routes: Routes = [
   { path: "individual-all-requests", canActivate:[AuthGuard],component:IndividualRequestDetilesComponent},
   { path: "individual-active-requests", canActivate:[AuthGuard],component:AllrequestsComponent},
   { path: "individual-all-quotations", canActivate:[AuthGuard],component:QuotationsComponent},
-  { path: "individual-new-quotation/:id", canActivate:[AuthGuard],component:NewquotationComponent},  
+  { path: "individual-new-quotation/:id", canActivate:[AuthGuard],component:NewquotationComponent},
+
+  { path: "all-price", canActivate:[AuthGuard],component: PriceComponent },
+  { path: "all-paymetns", canActivate:[AuthGuard],component: PaymentsComponent },
+  { path: "all-notifications", canActivate:[AuthGuard],component: NotificationsComponent },
+  { path: "new-chat", canActivate:[AuthGuard],component: AddchatComponent },
+  { path: "all-chats", canActivate:[AuthGuard],component: ChatsComponent  },
+  { path: "new-rate/:id", canActivate:[AuthGuard],component: AddrateComponent  },
+  { path: "all-rates", canActivate:[AuthGuard],component:RatesComponent},
+  { path: "new-track/:id", canActivate:[AuthGuard],component:TrackidComponent},
+  { path: "all-tracks/:id", canActivate:[AuthGuard],component:TracksComponent},
+  // { path: "trackById/:id", canActivate:[AuthGuard],component:TrackidComponent},
 ];
 
 
@@ -71,7 +92,17 @@ const routes: Routes = [
     AllrequestsComponent,
     QuotationsComponent,
     NewquotationComponent,
-   
+    PaymentsComponent,
+    PriceComponent,
+    NotificationsComponent,
+    ChatsComponent,
+    AddchatComponent,
+    RatesComponent,
+    AddrateComponent,
+    AddtrackComponent,
+    TracksComponent,
+    TrackidComponent,
+
   ],
   imports: [
     CommonModule,

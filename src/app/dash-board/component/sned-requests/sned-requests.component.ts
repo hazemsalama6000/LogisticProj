@@ -19,52 +19,22 @@ export class SnedRequestsComponent implements OnInit {
     ,private localfreight:FreightService) { }
 
   ngOnInit(): void {
-
     this._CustomerTicketsService.getCustomsClearance().subscribe((res:any) => {
       this.data1 = res.data
-      //console.log(this.data1);
-          for (let i = 0; i < this.data1.length ; i++) {
-              console.log(this.data1[i].supplier_id);
-
-            }
+      console.log(this.data1);
 
     })
     this.airfreigft.getAirFreight().subscribe((res:any) => {
       this.data2 = res.data;
-      //console.log(this.data2);
-      for (let i = 0; i < this.data2.length ; i++) {
-        console.log(this.data2[i].supplier_id);
-
-      }
+      console.log(this.data2);
     })
     this.seafreight.getSeaFreight().subscribe((res:any) => {
       this.data3 = res.data
-     // console.log(this.data3);
-      for (let i = 0; i < this.data3.length ; i++) {
-        console.log(this.data3[i].supplier_id);
-
-      }
-
+      console.log(this.data3);
     })
     this.localfreight.getLocalFreight().subscribe((res:any) => {
       this.data4 = res.data
-     // console.log(this.data4);
-      for (let i = 0; i < this.data4.length ; i++) {
-        console.log(this.data4[i].supplier_id);
-
-      }
+      console.log(this.data4);
     })
-
-
   }
-
 }
- //   for (let index = 0; index < 4; index++) {
-    //     for (let i = 0; i < this.all[i].length ; i++) {
-    //       //console.log(this.all[i].length);
-    //       console.log(this.all[i]);
-
-    //     }
-    //  }
-    // this.all.push(this.data1 , this.data2 ,this.data3 ,this.data4)
-    // console.log(this.all);

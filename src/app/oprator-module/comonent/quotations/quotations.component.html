@@ -24,6 +24,7 @@
                                         <th style=" color: black !important; padding: 10px;">end date</th>
                                         <th style=" color: black !important; padding: 10px;">price</th>
                                         <th style=" color: black !important; padding: 10px;">status</th>
+                                        <th style=" color: black !important; padding: 10px;"><i class="bi bi-x-circle-fill"></i></th>
 
                                     </thead>
                                     <br>
@@ -38,6 +39,11 @@
                                             <td>{{item.end_date}}</td>
                                             <td>{{item.price}}</td>
                                             <td>{{item.status}}</td>
+                                            <td>
+                                              <a  (click)="destroy(item.order_id)">
+                                                <i class="bi bi-trash"></i>
+                                               </a>
+                                              </td>
                                         </tr>
                                         <br>
                                     </tbody>

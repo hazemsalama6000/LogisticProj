@@ -41,4 +41,13 @@ export class IndividualTicketkDetalisComponent implements OnInit {
     })
 
   }
+  destroy(id:any)
+{
+  this.operatortecket.deleteticketreplies(id).subscribe((res:any) => {
+    setTimeout(() =>
+    {
+    location.reload();
+    }, 1000);
+  })
+}
 }

@@ -16,5 +16,13 @@ export class QuotationsComponent implements OnInit {
       console.log(this.data);
     })
   }
-
+  destroy(id:any)
+  {
+    this.operatorqout.deletequotation(id).subscribe((res:any) => {
+      setTimeout(() =>
+      {
+      location.reload();
+      }, 1000);
+    })
+  }
 }

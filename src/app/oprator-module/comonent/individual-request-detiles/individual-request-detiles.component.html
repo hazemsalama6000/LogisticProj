@@ -18,12 +18,15 @@
                           <p>{{item.status}}</p>
                           <p>Cairo Airport</p>
                           <hr>
-                          <h4 class="fw-semibold">Set Offer</h4>
-                          <div class="d-flex justify-content-around">
+                          <!-- <h4 class="fw-semibold">Set Offer</h4> -->
+                          <div  class="d-flex justify-content-around">
 
-                            <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Price</a>
-                            <a class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Time</a>
-                            <a class=" btn btn2   btn-success w-50 mx-1 btn1 text-decoration-none ">SEND</a>
+                            <p class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Price</p>
+                            <p class=" btn btn2 w-50 mx-1    btn1 text-decoration-none " href="">Time</p>
+                            <!-- <a class=" btn btn2   btn-success w-50 mx-1 btn1 text-decoration-none ">SEND</a> -->
+                            <a  (click)="destroy(item.id)" class=" btn btn2   btn-danger   btn1 text-decoration-none ">
+                              <i class="bi bi-trash"></i>
+                             </a>
                           </div>
                         </div>
                       </div>

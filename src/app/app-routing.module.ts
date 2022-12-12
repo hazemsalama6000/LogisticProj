@@ -28,7 +28,7 @@ const routes: Routes = [
     { path: "individual-new-requests" ,canActivate:[AuthGuard],loadChildren: () => import('./oprator-module/oprator-module.module').then(m => m.OpratorModuleModule)},
     { path: "individual-customer-support" ,canActivate:[AuthGuard],loadChildren: () => import('./oprator-module/oprator-module.module').then(m => m.OpratorModuleModule)},
     { path: "individual-ticketk-detalis/:id" ,canActivate:[AuthGuard],loadChildren: () => import('./oprator-module/oprator-module.module').then(m => m.OpratorModuleModule)},
-    { path: "individul-completed-detalis" ,canActivate:[AuthGuard],loadChildren: () => import('./oprator-module/oprator-module.module').then(m => m.OpratorModuleModule)},
+    { path: "individul-completed-detalis/:id" ,canActivate:[AuthGuard],loadChildren: () => import('./oprator-module/oprator-module.module').then(m => m.OpratorModuleModule)},
     { path: "individual-new-ticket" ,canActivate:[AuthGuard],loadChildren: () => import('./oprator-module/oprator-module.module').then(m => m.OpratorModuleModule)},
     { path: "individual-on-progress" ,canActivate:[AuthGuard],loadChildren: () => import('./oprator-module/oprator-module.module').then(m => m.OpratorModuleModule)},
     { path: "individual-on-progress-detalis" ,canActivate:[AuthGuard],loadChildren: () => import('./oprator-module/oprator-module.module').then(m => m.OpratorModuleModule)},
@@ -37,6 +37,18 @@ const routes: Routes = [
     { path: "individual-active-requests" ,canActivate:[AuthGuard],loadChildren: () => import('./oprator-module/oprator-module.module').then(m => m.OpratorModuleModule)},
     { path: "individual-all-quotations" ,canActivate:[AuthGuard],loadChildren: () => import('./oprator-module/oprator-module.module').then(m => m.OpratorModuleModule)},
     { path: "individual-new-quotation/:id" ,canActivate:[AuthGuard],loadChildren: () => import('./oprator-module/oprator-module.module').then(m => m.OpratorModuleModule)},
+
+    { path: "all-price", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "all-paymetns", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "all-notifications", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "new-chat", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "all-chats", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "new-rate/:id", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "all-rates", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "new-track/:id", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    { path: "all-tracks/:id", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+    // { path: "trackById/:id", canActivate:[AuthGuard],loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule)},
+
     // ---------------------------------
 
 

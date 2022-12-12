@@ -17,97 +17,48 @@
           </div>
           <div class="card mb-4">
               <div class="card-body table-responsive">
-             
+
                   <table class="table table-hover table-striped   table-borderless table-responsive ">
                       <thead class="mdb-color darken-3 ">
                           <tr class="text-white">
                               <th>Status</th>
-                              <th>Flow</th>
-                              <th>Origin</th>
-                              <th>Distination</th>
-                              <th>Required Service</th>
+                              <th>day Number</th>
+                              <th>start date</th>
+                              <th>end date</th>
+                              <th>price</th>
                            <th></th>
                           </tr>
                       </thead>
-                 
-                      <tbody>
+
+                      <tbody *ngFor="let item of data">
                           <tr>
                               <th >send</th>
-                              <td>Export</td>
-                              <td>EGY</td>
-                              <td>KSA</td>
-                              <td>C.C</td>
-                            
-                              <td ><a ><i routerLink="/individul-completed-detalis"  class="bi bi-info-circle" ></i>
+                              <td>{{item.day_number}}</td>
+                             <td>{{item.start_date}}</td>
+                              <td>{{item.end_date}}</td>
+                             <td>{{item.price}}</td>
+
+                              <td ><a ><i [routerLink]='["/individul-completed-detalis",item.order_id ]' class="bi bi-info-circle" ></i>
                               </a></td>
                           </tr>
-                          <tr>
-                              <th >send</th>
-                              <td>Export</td>
-                              <td>EGY</td>
-                              <td>KSA</td>
-                              <td>C.C</td>
-                          
-                              <td><a ><i class="bi bi-info-circle"></i>
-                              </a></td>
-                          </tr>
-                        
-                          <tr>
-                              <th >send</th>
-                              <td>Export</td>
-                              <td>EGY</td>
-                              <td>KSA</td>
-                              <td>C.C</td>
-                          
-                              <td><a ><i class="bi bi-info-circle"></i>
-                              </a></td>
-                          </tr>
-                        
-                          <tr>
-                              <th >send</th>
-                              <td>Export</td>
-                              <td>EGY</td>
-                              <td>KSA</td>
-                              <td>C.C</td>
-                          
-                              <td><a ><i class="bi bi-info-circle"></i>
-                              </a></td>
-                          </tr>
-                        
-                          <tr>
-                              <th >send</th>
-                              <td>Export</td>
-                              <td>EGY</td>
-                              <td>KSA</td>
-                              <td>C.C</td>
-                          
-                              <td><a ><i class="bi bi-info-circle"></i>
-                              </a></td>
-                          </tr>
-                        
-                          <tr>
-                              <th >send</th>
-                              <td>Export</td>
-                              <td>EGY</td>
-                              <td>KSA</td>
-                              <td>C.C</td>
-                          
-                              <td><a ><i class="bi bi-info-circle"></i>
-                              </a></td>
-                          </tr>
-                        
-                          
+
+
+
+
+
+
+
                       </tbody>
-               
+
                   </table>
-              
+
               </div>
           </div>
       </div>
   </div>
-  
+
 </div>
-          
+
 
 
 

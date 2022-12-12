@@ -17,5 +17,13 @@ data:any;
 
     })
   }
-
+  destroy(id:any)
+  {
+    this.operator.deleteservisefile(id).subscribe((res:any) => {
+      setTimeout(() =>
+      {
+      location.reload();
+      }, 1000);
+    })
+  }
 }

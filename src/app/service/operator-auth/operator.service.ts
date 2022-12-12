@@ -126,10 +126,146 @@ addnewquotation(formData:any):Observable<any>{
   let option ={headers:header} ;
   return this._HttpClient.get(this.url + 'operator/quotations' +"?status="+ 1 ,option);
 }
+getacceptquotations(){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'operator/quotations' +"?status="+ 2 ,option);
+}
 getlang(lang:any){
-
 this.lang = lang
 }
+////////////////new/////////////
+deleteoperatorTickets(id:any) {
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + `operator/tickets/${id}`, option);
+}
+deleteticketreplies(id:any) {
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + `operator/ticketreplies/${id}`, option);
+}
+deletequotation(id:any) {
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + `operator/quotations/${id}`, option);
+}
+deleteservisefile(id:any) {
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + `operator/supplierfiles/${id}`, option);
+}
+getPayments(){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'operator/paymenthistories' ,option);
+}
+getPrice(){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'operator/serviceprices' ,option);
+}
+getNotifications(){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'operator/notifications' ,option);
+}
+ readNotification(){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'operator/notifications/readNotify' ,option )
+}
+deleteNotification(id:any) {
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + `operator/notifications/${id}`, option);
+}
+startChat(formData:any):Observable<any>{
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.post(this.url + 'operator/chats',formData ,option )
+  }
+getChats(order_id:any){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'operator/chats' +"?order_id="+ order_id,option);
+  }
+AddRate(formData:any):Observable<any>{
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.post(this.url + 'operator/rates',formData ,option )
+  }
+getRates(){
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.get(this.url + 'operator/rates' ,option);
+  }
+Addtrack(formData:any):Observable<any>{
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.post(this.url + 'operator/tracks',formData ,option )
+  }
+deletetrack(id:any) {
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.get(this.url + `operator/tracks/${id}`, option);
+  }
+trackOrder(formData:any):Observable<any>{
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.post(this.url + 'operator/tracksById' ,formData ,option )
+  }
 }
 
 
