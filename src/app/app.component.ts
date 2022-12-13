@@ -26,7 +26,8 @@ constructor(public translate: TranslateService , private _GeneralService:General
     this._ClientAuthService.getlang(localStorage.getItem("currentLang"));
     this._OperatorService.getlang(localStorage.getItem("currentLang"));
     this._CompanyService.getlang(localStorage.getItem("currentLang"));
-
+    // localStorage.removeItem("usertoken");
+    // this._ClientAuthService.isAuthenticated();
   }
 
 }
