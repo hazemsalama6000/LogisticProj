@@ -48,9 +48,13 @@ export class AirfrieghtnewrequestComponent implements OnInit {
   insure_good:any;
   bulks:any;
   custom_clearance:any;
+  lat = 51.678418;
+  lng = 7.809007;
+
   constructor( private http:HttpClient , private router:Router , private _FreightService:FreightService,
     private gatcatser:GeneralService, private customclearance:CustomerTicketsService ) { }
-
+    
+    
 ngOnInit(): void {
   this.getcategory();
   this.getcurency();

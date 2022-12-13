@@ -14,6 +14,9 @@ import { FinderComponent } from './component/finder/finder.component';
 import { ProfileSideBarComponent } from './component/profile-side-bar/profile-side-bar.component';
 import { GlobalConstantsComponent } from './component/global-constants/global-constants.component';
 import { LearnAboutUsComponent } from '../dash-board/component/learn-about-us/learn-about-us.component';
+import { GoogleMapsComponent } from './component/google-maps/google-maps.component';
+import { AgmCoreModule } from '@agm/core';
+
 const routes: Routes = [
     { path: "faq", component: FAQComponent },
     { path: "pricing", component: PricingComponent },
@@ -33,19 +36,24 @@ const routes: Routes = [
     FinderComponent,
     ProfileSideBarComponent,
     GlobalConstantsComponent,
+
   ],
   imports: [
     CommonModule,
     RouterModule.forRoot(routes),
     TranslateModule.forChild(),
     BrowserModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBCYhW_5AfTwkCf4idRzIwte-ea8wYLPbY'
+    }),
   ],
   exports:[
     NavbarComponent,
     FooterComponent,
     SidebarComponent,
     ProfileSideBarComponent,
-
+    
+    
   ]
 })
 
