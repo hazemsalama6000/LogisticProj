@@ -5,7 +5,9 @@ $basecolor:#57B8CE;
 $secondColor:#CA5135;
 $background:#FAFAFA;
 
-
+.pac-container{
+    z-index: 9999;
+}
 body{
     background-color:$background ;
 

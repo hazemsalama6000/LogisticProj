@@ -21,12 +21,14 @@ import { OpratorModuleModule } from './oprator-module/oprator-module.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { TranslateLoader } from '@ngx-translate/core';
 import { FreightModule } from './freight/freight.module';
+import { GoogleMapsComponent } from './shared/component/google-maps/google-maps.component';
+import { AgmCoreModule } from '@agm/core';
 
- 
 
 @NgModule({
   declarations: [
     AppComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -56,8 +58,10 @@ import { FreightModule } from './freight/freight.module';
         deps: [HttpClient]
       }
     }),
-
-
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBCYhW_5AfTwkCf4idRzIwte-ea8wYLPbY'
+    }),
+    
 
   ],
   providers: [],
