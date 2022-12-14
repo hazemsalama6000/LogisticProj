@@ -194,6 +194,7 @@ getPrice(){
   let option ={headers:header} ;
   return this._HttpClient.get(this.url + 'operator/serviceprices' ,option);
 }
+
 getNotifications(){
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);

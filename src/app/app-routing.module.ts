@@ -118,9 +118,19 @@ const routes: Routes = [
     { path: "available-for-work", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
     { path: "company-completed-detalis", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
     { path: "representative-dashboard", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
+
     { path: "representative-all-requests", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
     { path: "representative-all-quotations", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
     { path: "representative-new-quotation/:id", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
+    { path: "representative-details/:id", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
+    { path: "representative-all-notifications", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
+    { path: "representative-new-chat/:id", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
+    { path: "representative-all-chats/:id", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
+    { path: "representative-new-rate/:id", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
+    { path: "representative-all-rates", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
+    { path: "representative-new-track/:id", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
+    { path: "representative-all-tracks/:id", loadChildren:()=>import('./company-module/company-module.module').then(m=>m.CompanyModuleModule)},
+
     // ---------------------------------
 
     // freight-module

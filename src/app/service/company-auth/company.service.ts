@@ -107,8 +107,10 @@ export class CompanyService {
     let option ={headers:header} ;
     return this._HttpClient.get(this.url + 'company/availableRequests',option);
   }
+
+
   // =======================representitive======================
-  getAllresentitiveSuppliers(){
+getAllresentitiveSuppliers(){
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
     header = header.append("Apipassword" , this.apiPassword);
@@ -116,7 +118,6 @@ export class CompanyService {
     let option ={headers:header} ;
     return this._HttpClient.get(this.url + 'representative/availableRequests',option);
   }
-  // ==============QUOTATION=======================
 addnewquotation(formData:any):Observable<any>{
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);
@@ -131,8 +132,88 @@ addnewquotation(formData:any):Observable<any>{
   header = header.append("Apipassword" , this.apiPassword);
   header = header.append("Authorization" ,`Bearer ${this.token}`);
   let option ={headers:header} ;
-  return this._HttpClient.get(this.url + 'representative/quotations' +"?status="+ 2  ,option);
+  return this._HttpClient.get(this.url + 'representative/quotations' +"?status="+ 1  ,option);
 }
+getNotifications(){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'representative/notifications' ,option);
+}
+readNotification(){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'representative/notifications/readNotify' ,option )
+}
+deleteNotification(id:any) {
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + `representative/notifications/${id}`, option);
+}
+startChat(formData:any):Observable<any>{
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.post(this.url + 'representative/chats',formData ,option )
+  }
+getChats(order_id:any){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'representative/chats' +"?order_id="+ order_id,option);
+  }
+AddRate(formData:any):Observable<any>{
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.post(this.url + 'representative/rates',formData ,option )
+  }
+getRates(){
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.get(this.url + 'representative/rates' ,option);
+  }
+Addtrack(formData:any):Observable<any>{
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.post(this.url + 'representative/tracks',formData ,option )
+  }
+deletetrack(id:any) {
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.get(this.url + `representative/tracks/${id}`, option);
+  }
+trackOrder(formData:any):Observable<any>{
+    let header = new HttpHeaders();
+    header = header.append("lang" , this.lang);
+    header = header.append("Apipassword" , this.apiPassword);
+    header = header.append("Authorization" ,`Bearer ${this.token}`);
+    let option ={headers:header} ;
+    return this._HttpClient.post(this.url + 'representative/tracksById' ,formData ,option )
+  }
 
 ///////////////////////////
 deletecompanyTickets(id:any) {
@@ -175,6 +256,8 @@ getPrice(){
   let option ={headers:header} ;
   return this._HttpClient.get(this.url + 'company/serviceprices' ,option);
 }
+//
+
   getlang(lang:any){
 
   this.lang = lang
