@@ -29,6 +29,14 @@ import { RepresentetivesidebarComponent } from './comonent/representetivesidebar
 import { NewquotationrepComponent } from './comonent/newquotationrep/newquotationrep.component';
 import { PaymentsComponent } from './comonent/payments/payments.component';
 import { PriceComponent } from './comonent/price/price.component';
+import { RepdetailsComponent } from './comonent/repdetails/repdetails.component';
+import { RnotificationsComponent } from './comonent/rnotifications/rnotifications.component';
+import { RaddrateComponent } from './comonent/raddrate/raddrate.component';
+import { RratesComponent } from './comonent/rrates/rrates.component';
+import { RchatsComponent } from './comonent/rchats/rchats.component';
+import { RaddchatComponent } from './comonent/raddchat/raddchat.component';
+import { RaddtrackComponent } from './comonent/raddtrack/raddtrack.component';
+import { RtracksComponent } from './comonent/rtracks/rtracks.component';
 
 
 
@@ -48,13 +56,22 @@ const routes : Routes=[
     { path: "company-payment", component:PaymentsComponent ,canActivate:[AuthGuard]},
     { path: "company-price", component:PriceComponent ,canActivate:[AuthGuard]},
 
+
     { path: "available-for-work", component:AvailableForWorkComponent ,canActivate:[AuthGuard]},
     { path: "company-completed-detalis", component:CompanyCompletedDetalisComponent ,canActivate:[AuthGuard]},
     { path: "representative-dashboard", component:RepresentetivedashboardComponent,canActivate:[AuthGuard]},
-    { path: "representative-all-requests", component:AllreprequestsComponent ,canActivate:[AuthGuard]},
-    { path: "representative-all-quotations", component:QuotationsrepComponent,canActivate:[AuthGuard]},
-    { path: "representative-new-quotation/:id", component:NewquotationrepComponent,canActivate:[AuthGuard]},
 
+    { path: "representative-all-requests", component:AllreprequestsComponent ,canActivate:[AuthGuard]},
+    { path: "representative-new-quotation/:id", component:NewquotationrepComponent,canActivate:[AuthGuard]},
+    { path: "representative-all-quotations", component:QuotationsrepComponent,canActivate:[AuthGuard]},
+    { path: "representative-details/:id", component:RepdetailsComponent,canActivate:[AuthGuard]},
+    { path: "representative-all-notifications", canActivate:[AuthGuard],component: RnotificationsComponent },
+    { path: "representative-new-chat/:id", canActivate:[AuthGuard],component: RaddchatComponent },
+    { path: "representative-all-chats/:id", canActivate:[AuthGuard],component: RchatsComponent  },
+    { path: "representative-new-rate/:id", canActivate:[AuthGuard],component: RaddrateComponent  },
+    { path: "representative-all-rates", canActivate:[AuthGuard],component:RratesComponent},
+    { path: "representative-new-track/:id", canActivate:[AuthGuard],component:RaddtrackComponent},
+    { path: "representative-all-tracks/:id", canActivate:[AuthGuard],component:RtracksComponent},
 ]
 
 
@@ -82,7 +99,14 @@ const routes : Routes=[
     RepresentetivesidebarComponent,
     PaymentsComponent,
     PriceComponent,
-
+    RnotificationsComponent,
+    RaddrateComponent,
+    RratesComponent,
+    RchatsComponent,
+    RaddchatComponent,
+    RaddtrackComponent,
+    RtracksComponent,
+    RepdetailsComponent
 
   ],
   imports: [

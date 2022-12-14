@@ -32,6 +32,7 @@ export class NewquotationrepComponent implements OnInit {
     this.item.order_id = this.id
    this.qoutation.addnewquotation(Helper.toFormData(this.item)).subscribe((res)=>
  {
+  console.log(res.data);
    this.router.navigate(['/representative-all-quotations'])
  }
  )}
