@@ -23,6 +23,13 @@ import { AirdetailsComponent } from './component/airdetails/airdetails.component
 import { SeadetailsComponent } from './component/seadetails/seadetails.component';
 import { LocaldetailsComponent } from './component/localdetails/localdetails.component';
 import { AgmCoreModule } from '@agm/core';
+
+
+  
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 const routes: Routes =[
 { path:"air-new-request" ,canActivate:[AuthGuard], component:AirfrieghtnewrequestComponent},
 { path:"air-send-request" ,canActivate:[AuthGuard], component:AirfrieghtsendrequestComponent},

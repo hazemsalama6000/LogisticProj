@@ -1,11 +1,16 @@
 
-<div class="container  ">
-  <agm-map [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-  </agm-map>
+    
+<div class="container-fluid  ">
+
   <div class="row mt-2">
-      <div class="col-2"></div>
-    <div class="col-md-12 col-lg-8  bg-white card">
+      <div class="col-3">
+        <agm-map [latitude]="latitude" [zoom]="5" [longitude]="longitude" (mapClick)="onMapClicked($event)">
+          <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+        </agm-map>
+        <p><b>lng:</b> {{longitude}} </p>  
+        <p><b>lat:</b> {{latitude}} </p>  
+      </div>
+    <div class="col-md-6 col-lg-6  bg-white card">
       <form class="needs-validation mt-3">
         <div class="row g-4 ps-4">
           <label  class="form-label mb-0" >Add New Request Air Freight</label>
