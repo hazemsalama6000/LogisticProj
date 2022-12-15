@@ -102,7 +102,7 @@ export class NavbarComponent implements OnInit {
     });
   }
     if(rout.type == "representative" ){
-      this._GeneralService.opratorlogout(token).subscribe((res)=>{
+      this._GeneralService.replogout(token).subscribe((res)=>{
         this._GeneralService.savecurrentuser();
         localStorage.removeItem("usertoken")
         this._Router.navigate(['/home-page'])

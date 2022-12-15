@@ -121,6 +121,16 @@ opratorlogout(token:any):Observable<any>{
 
  return this._HttpClient.post(this.url + 'operator/logout' , option)
 }
+replogout(token:any):Observable<any>{
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" , token);
+
+  let option ={headers:header} ;
+
+ return this._HttpClient.post(this.url + 'representative/logout' , option)
+}
 getAllCategory() {
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);

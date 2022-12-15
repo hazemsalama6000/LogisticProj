@@ -214,7 +214,6 @@ trackOrder(formData:any):Observable<any>{
     let option ={headers:header} ;
     return this._HttpClient.post(this.url + 'representative/tracksById' ,formData ,option )
   }
-
 ///////////////////////////
 deletecompanyTickets(id:any) {
   let header = new HttpHeaders();
@@ -256,8 +255,90 @@ getPrice(){
   let option ={headers:header} ;
   return this._HttpClient.get(this.url + 'company/serviceprices' ,option);
 }
-//
+////////////////////////////REPS
+repRegister(repDAta:any):Observable<any>{
 
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+ return this._HttpClient.post(this.url + 'company/reperesentatives' ,   repDAta ,  option)
+
+}
+reptOtp(otpData:any):Observable<any>{
+  let header = new HttpHeaders();
+  // header = header.append('Access-Control-Allow-Origin', '*');
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  let option ={headers:header} ;
+
+ return this._HttpClient.post(this.url + 'company/reperesentatives/verfiyReperesentativeOtp' , otpData , option)
+}
+forgetPassword(forgetpass:any):Observable<any>{
+
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  let option ={headers:header} ;
+
+ return this._HttpClient.post(this.url + 'guest/forgetPassword' , forgetpass , option)
+}
+resetPassword(resetPass:any):Observable<any>{
+
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  let option ={headers:header} ;
+
+ return this._HttpClient.post(this.url + 'guest/resetPassword' , resetPass , option)
+}
+resendVerifiy(otpresend:any):Observable<any>{
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  let option ={headers:header} ;
+
+ return this._HttpClient.post(this.url + 'company/reperesentatives/resendOtp' , otpresend , option)
+}
+repChangePassword(newpassword:any , token:any ):Observable<any>{
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" , token);
+  let option ={headers:header} ;
+
+ return this._HttpClient.post(this.url + 'client/changePassword' , newpassword , option)
+}
+getAllRep(){
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + 'company/reperesentatives'  ,option);
+}
+deleteRep(id:any) {
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  header = header.append("Authorization" ,`Bearer ${this.token}`);
+  let option ={headers:header} ;
+  return this._HttpClient.get(this.url + `company/reperesentatives/${id}`, option);
+}
+// isAuthenticated(){
+//     let token:any = localStorage.getItem("usertoken")
+//     // let rout:any = jwt_decode(token)
+//     if (localStorage.getItem("usertoken") != null && localStorage.getItem("usertoken") != "") {
+//       this.isLoggedIn = true;
+//      }else{
+//       this.isLoggedIn = false;
+//      }
+
+//     return this.isLoggedIn;
+// }
+
+ //+ '?status=' + 1 + '&service_id=' + 2
   getlang(lang:any){
 
   this.lang = lang
