@@ -4,39 +4,39 @@
     <div class="col-md-12 col-lg-8  bg-white card">
       <form class="needs-validation mt-3">
         <div class="row g-4 ps-4">
-          <label  class="form-label mb-0" >Add New Request Sea Freight</label>
+          <label  class="form-label mb-0" >{{"Add New Request Sea Freight" | translate}}</label>
           <hr class="mt-1 ">
 
           <div class="col-sm-6">
-            <label  class="form-label">Country</label>
+            <label  class="form-label">{{"Country" | translate}}</label>
             <select  name="country_origin_id" [(ngModel)]="item.country_origin_id" class="form-control">
               <option value="" disabled selected>Enter your Country</option>
               <option *ngFor="let item of country" value="{{item.id}}">{{item.name}}</option>
             </select>
           </div>
           <div class="col-sm-6">
-            <label  class="form-label">Customs Clearance</label>
+            <label  class="form-label">{{"Customs Clearance" | translate}}</label>
             <select  name="custom_clearance" [(ngModel)]="item.custom_clearance" class="form-control">
               <option value="" disabled selected>Enter your CustomsClearance</option>
               <option *ngFor="let item of CustomsClearance" value="{{item.order_id}}">{{item.code}}</option>
             </select>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">Destination</label>
+            <label for="" class="form-label">{{"Destination" | translate}}</label>
             <select  name="country_destination_id" [(ngModel)]="item.country_destination_id" let class="form-control">
               <option value="" disabled>Enter Tour Destination</option>
                 <option *ngFor="let item of city" value="{{item.id}}">{{item.name}}</option>
             </select>
           </div>
            <div class="col-sm-6">
-            <label for="" class="form-label">Currency</label>
+            <label for="" class="form-label">{{"Currency" | translate}}</label>
             <select  name="currency_id" [(ngModel)]="item.currency_id" class="form-control">
               <option value="" disabled>Enter Your Currency</option>
               <option *ngFor="let item of currencys" value="{{item.id}}">{{item.name}}</option>
             </select>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">Ticket Category</label>
+            <label for="" class="form-label">{{"Ticket Category" | translate}}</label>
             <select  name="category_id" [(ngModel)]="item.category_id" class="form-control">
               <option value="" disabled>Enter ticket category</option>
               <option *ngFor="let item of cats" value="{{item.id}}">{{item.name}}</option>
@@ -45,7 +45,7 @@
 
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">Language</label>
+            <label for="" class="form-label">{{"Language" | translate}}</label>
             <select name="language" [(ngModel)]="item.language" class="form-control">
               <option value="" disabled>Select The language</option>
               <option value="en">en</option>
@@ -53,14 +53,14 @@
             </select>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">Good Category</label>
+            <label for="" class="form-label">{{"Good Category" | translate}}</label>
             <select  name="goods_country_origin_id" [(ngModel)]="item.goods_country_origin_id" class="form-control">
               <option value="" disabled>Select Good Category</option>
               <option *ngFor="let item of goodcats" value="{{item.id}}">{{item.name}}</option>
             </select>
           </div>
            <div class="col-sm-6">
-            <label for="" class="form-label">The flow</label>
+            <label for="" class="form-label">{{"The flow" | translate}}</label>
             <select  name="flow" [(ngModel)]="item.flow" class="form-control" >
               <option value="" disabled>Enter your flow</option>
               <option value="Export" >Export</option>
@@ -68,55 +68,55 @@
             </select>
           </div>
           <div class="col-sm-6">
-            <label for="lastName" class="form-label">Quote Currency </label>
+            <label for="lastName" class="form-label">{{"Quote Currency" | translate}}</label>
             <select  name="quote_currency_id" [(ngModel)]="item.quote_currency_id" class="form-control">
               <option value="" disabled>Select quote Currency</option>
               <option *ngFor="let item of currencys" value="{{item.id}}">{{item.name}}</option>
             </select>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">pickup location lat</label>
+            <label for="" class="form-label">{{"pickup location lat" | translate}}</label>
             <input type="text" class="form-control" name="pickup_location_lat" [(ngModel)]="item.pickup_location_lat" id="address2"
-            placeholder="The pickup location lat must be at least 8 characters.">
+            placeholder='{{"The pickup location lat must be at least 8 characters.." | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">pickup location long</label>
+            <label for="" class="form-label">{{"pickup location long" | translate}}</label>
             <input type="text" class="form-control" name="pickup_location_long" [(ngModel)]="item.pickup_location_long" id="address2"
-            placeholder="The pickup location long must be at least 8 characters">
+            placeholder='{{"The pickup location long must be at least 8 characters." | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">destination location lat</label>
+            <label for="" class="form-label">{{"destination location lat" | translate}}</label>
             <input type="text" class="form-control" name="destination_location_lat" [(ngModel)]="item.destination_location_lat" id="address2"
-             placeholder="The destination location lat must be at least 8 characters.">
+             placeholder='{{"The destination location lat must be at least 8 characters." | translate}}'>
           </div>
            <div class="col-sm-6">
-            <label for="" class="form-label">destination location long</label>
+            <label for="" class="form-label">{{"destination location long" | translate}}</label>
             <input type="text" class="form-control" name="destination_location_long" [(ngModel)]="item.destination_location_long" id="address2"
-             placeholder="Enter the destination location long">
+             placeholder='{{"Enter the destination location long." | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">commercial reference</label>
+            <label for="" class="form-label">{{"commercial reference" | translate}}</label>
             <input type="text" class="form-control" name="commercial_reference" [(ngModel)]="item.commercial_reference" id="address2"
-             placeholder="The commercial reference must be at least 5 characters.">
+             placeholder='{{"The commercial reference must be at least 5 characters." | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="firstName" class="form-label">Date</label><br>
+            <label for="firstName" class="form-label">{{"Date" | translate}}</label><br>
             <input type="date" name="estimated_date" [(ngModel)]="item.estimated_date" min="{{currentDate | date:'yyyy-MM-dd'}}" class="form-control" placeholder="Date"/>
 
           </div>
 
           <div class="col-sm-6">
-            <label for="address2" class="form-label">value</label>
+            <label for="address2" class="form-label">{{"value" | translate}}</label>
             <input type="number" class="form-control" [(ngModel)]="item.value" name="value" id="address2"
-             placeholder="Your value">
+             placeholder='{{"Your value" | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">Bulks</label>
+            <label for="" class="form-label">{{"Bulks" | translate}}</label>
             <input type="text" class="form-control" name="bulks" [(ngModel)]="item.bulks" id="address2"
-            placeholder="The bulks must be at least 8 characters.">
+            placeholder='{{"The bulks must be at least 8 characters." | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">insure good</label>
+            <label for="" class="form-label">{{"insure good" | translate}}</label>
             <select  name="insure_good" [(ngModel)]="item.insure_good" let class="form-control">
                 <option value="" disabled>Enter pickup city id</option>
                 <option value="2">YES</option>
@@ -124,7 +124,7 @@
             </select>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">need pickup</label>
+            <label for="" class="form-label">{{"need pickup" | translate}}</label>
             <select  name="need_pickup" [(ngModel)]="item.need_pickup" let class="form-control">
               <option value="" disabled>need pickup</option>
               <option value="2">YES</option>
@@ -132,7 +132,7 @@
           </select>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">palletized</label>
+            <label for="" class="form-label">{{"palletized" | translate}}</label>
             <select  name="palletized" [(ngModel)]="item.palletized" let class="form-control">
               <option value="" disabled>palletized</option>
               <option value="2">YES</option>
@@ -140,7 +140,7 @@
           </select>
           </div>
           <div class="col-sm-6">
-            <label  class="form-label">pickup insure</label>
+            <label  class="form-label">{{"pickup insure" | translate}}</label>
             <select class="form-control" name="pickup_insure" [(ngModel)]="item.pickup_insure" >
               <option disabled>pickup insure</option>
               <option value="2">YES</option>
@@ -148,60 +148,60 @@
           </select>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">Pickup City Id</label>
+            <label for="" class="form-label">{{"Pickup City Id" | translate}}</label>
             <select  name="pickup_city_id" [(ngModel)]="item.pickup_city_id" let class="form-control">
               <option value="" disabled>Enter pickup city id</option>
                 <option *ngFor="let item of city" value="{{item.id}}">{{item.name}}</option>
             </select>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">volume</label>
+            <label for="" class="form-label">{{"volume" | translate}}</label>
             <input type="text" class="form-control" name="volume" [(ngModel)]="item.volume" id="address2"
-            placeholder="The volume must be at least 8 characters.">
+            placeholder='{{"The volume must be at least 8 characters." | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">weight</label>
+            <label for="" class="form-label">{{"weight" | translate}}</label>
             <input type="text" class="form-control" name="weight" [(ngModel)]="item.weight" id="address2"
-            placeholder="The weight must be at least 8 characters.">
+            placeholder='{{"The weight must be at least 8 characters." | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">zip code</label>
+            <label for="" class="form-label">{{"zip code" | translate}}</label>
             <input type="text" class="form-control" name="zip_code" [(ngModel)]="item.zip_code" id="address2"
-            placeholder="The zip code must be at least 8 characters.">
+            placeholder='{{"The zip code must be at least 5 characters." | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">count</label>
+            <label for="" class="form-label">{{"count" | translate}}</label>
             <input type="text" class="form-control" name="count" [(ngModel)]="item.count" id="address2"
-            placeholder="The zip code must be at least 8 characters.">
+            placeholder='{{"The count must be at least 8 characters." | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">type</label>
+            <label for="" class="form-label">{{"type" | translate}}</label>
             <input type="text" class="form-control" name="type" [(ngModel)]="item.type" id="address2"
-            placeholder="The type must be at least 8 characters.">
+            placeholder='{{"The type must be at least 8 characters." | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">load type</label>
+            <label for="" class="form-label">{{"load type" | translate}}</label>
             <input type="text" class="form-control" name="load_type" [(ngModel)]="item.load_type" id="address2"
-            placeholder="The load_type must be at least 8 characters.">
+            placeholder='{{"The load_type must be at least 8 characters." | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="" class="form-label">reefer Container</label>
+            <label for="" class="form-label">{{"reefer Container" | translate}}</label>
             <input type="text" class="form-control" name="reefer_container" [(ngModel)]="item.reefer_container" id="address2"
-            placeholder="The reefer container must be at least 8 characters.">
+            placeholder='{{"The reefer container must be at least 8 characters." | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="address" class="form-label">Problem Description</label>
+            <label for="address" class="form-label">{{"Problem Description" | translate}}</label>
             <textarea type="text" class="form-control" [(ngModel)]="item.description" name="description" id="address"
-            placeholder="The description must be at least 10 characters." ></textarea>
+            placeholder='{{"The description must be at least 10 characters." | translate}}'></textarea>
 
           </div>
           <div class="col-12">
-              <label for="address" class="form-label">Attachment</label>
+              <label for="address" class="form-label">{{"Attachment" | translate}}</label>
                    <div class="m-auto " style=" border: 1px solid black; height:150px ;">
                     <input  (change)="helper.setFile($event, 'file[]', item)"  name="src" multiple accept="image/*" type="file"
                     class="form-control hidden"   /><br>
                     <label for="files" class="text-center" style="margin-left: 30% !important;">
-                      You can add attachments in the next field
+                      {{"You can add attachments in the next field" | translate}}
                      </label><br>
                    </div>
             </div>
@@ -209,7 +209,8 @@
 
         </div>
         <div  style="margin-left: 25% !important;">
-          <button class="w-75 btn btn-primary  my-3 " (click)="submit()" style="width:60% !important ;" type="submit">send</button>
+          <button class="w-75 btn btn-primary  my-3 " (click)="submit()" style="width:60% !important ;" type="submit">
+            {{"send" | translate}}</button>
 
         </div>
       </form>

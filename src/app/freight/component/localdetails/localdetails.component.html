@@ -4,20 +4,20 @@
       <div class="col-6 " style="margin-left: 16%;">
         <div class="card ">
             <div class="header " >
-                 <h3 class="textDsing mt-2">LOCAL Request For Quote #12QAXW</h3>
+                 <h3 class="textDsing mt-2">{{"LOCAL Request For Quote #12QAXW" | translate}}</h3>
             </div>
 
         <div class="ms-2">
               <div>
-                  <h4 class="mt-1">Request For Quote</h4>
+                  <h4 class="mt-1">{{"Request For Quote" | translate}}</h4>
               </div>
               <div class="d-flex">
                 <div class=" me-5">
-                    <p>commercial reference</p>
-                    <p>currency</p>
-                    <p>Status</p>
-                    <p>Estimated Service Date</p>
-                    <p>Langauge</p>
+                    <p>{{"commercial reference" | translate}}</p>
+                    <p>{{"Currency" | translate}}</p>
+                    <p>{{"Status" | translate}}</p>
+                    <p>{{"Estimated Service Date" | translate}}</p>
+                    <p>{{"Langauge" | translate}}</p>
 
                 </div>
                 <div *ngFor="let item of arr">
@@ -30,15 +30,15 @@
                 </div>
               </div>
               <div>
-                <h3 class="text-start ">Required Service</h3>
-                <h4 class="text-end me-2">Export Customs Clearance In Cairo</h4>
+                <h3 class="text-start ">{{"Required Service" | translate}}</h3>
+                <!-- <h4 class="text-end me-2">Export Customs Clearance In Cairo{{"" | translate}}</h4> -->
               </div>
               <div class="d-flex ">
                 <div class=" me-5">
-                    <p>Goods</p>
-                    <p>Origin</p>
-                    <p>Category</p>
-                    <p>Value</p>
+                    <p>{{"Goods" | translate}}</p>
+                    <p>{{"Origin" | translate}}</p>
+                    <p>{{"Category" | translate}}</p>
+                    <p>{{"Value" | translate}}</p>
                 </div>
                 <div class="mt-4" *ngFor="let item of arr">
                    <p>{{item.goods_country_origin_name}}</p>

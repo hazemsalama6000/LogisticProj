@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { GeneralService } from 'src/app/service/general.service';
 
 @Component({
   selector: 'app-sectionone',
@@ -7,14 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectiononeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public translate: TranslateService , private _GeneralService:GeneralService) { }
 
   ngOnInit(): void {
   }
   hide():void{
     // this.hide(); // whenever you need to hide an element
     // this.el.nativeElement.style.display='none';
-    
+
     // this.nativeElement.style.display = 'none';
   }
 }

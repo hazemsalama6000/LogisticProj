@@ -4,14 +4,15 @@
     <li class="mb-1">
       <button class="btn fw-semibold text-muted align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
         <i class="bi bi-file-earmark-break fw-bold me-2"></i>
-        My Requests
+        {{"My Requests" | translate}}
       </button>
       <div class="collapse" id="dashboard-collapse">
         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small d-block">
           <button class="btn-sm border-0 bg-white d-flex">
             <a routerLink="/main-sction" class="link-dark rounded text-decoration-none"
-            >new request</a></button>
-          <button class="btn-sm border-0 bg-white"><a  routerLink="/send-requests" class="link-dark rounded text-decoration-none">All Requests</a></button>
+            >{{"new request" | translate}}</a></button>
+          <button class="btn-sm border-0 bg-white"><a  routerLink="/send-requests"
+            class="link-dark rounded text-decoration-none">{{"All Requests" | translate}}</a></button>
         </ul>
       </div>
     </li>
@@ -19,12 +20,15 @@
     <li class="mb-1">
       <button class="btn  align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
         <i class="bi bi-check-circle-fill me-2"></i>
-        Accepted Quotes
+        {{"Accepted Quotes" | translate}}
+
       </button>
       <div class="collapse" id="orders-collapse">
         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small d-block">
-          <button class="btn-sm border-0 bg-white d-flex"><a routerLink="/on-progress" class="link-dark rounded text-decoration-none">on progress</a></button>
-          <button class="btn-sm border-0 bg-white"><a  routerLink="/Completed" class="link-dark rounded text-decoration-none">Completed</a></button>
+          <button class="btn-sm border-0 bg-white d-flex"><a routerLink="/on-progress"
+            class="link-dark rounded text-decoration-none">{{"on progress" | translate}}</a></button>
+          <button class="btn-sm border-0 bg-white"><a  routerLink="/Completed"
+             class="link-dark rounded text-decoration-none">{{"Completed" | translate}}</a></button>
 
         </ul>
       </div>
@@ -33,7 +37,7 @@
     <li class="mb-1">
       <button  routerLink="/customer-support" class="btn text-muted fw-semibold align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
         <i class="bi bi-chat-text me-2"></i>
-        Customer Support
+        {{"Customer Support" | translate}}
       </button>
     </li>
   </ul>
