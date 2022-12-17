@@ -7,34 +7,37 @@
     <div class="col-md-12 col-lg-8  bg-white card">
       <form class="needs-validation mt-3"  >
         <div class="row g-4 ps-4">
-          <label  class="form-label mb-0" >Add New quotation</label>
+          <label  class="form-label mb-0" >{{"Add New quotation" | translate}}</label>
           <hr class="mt-1 ">
 
 
           <div class="col-sm-6">
-            <label for="address2" class="form-label">day of number</label>
+            <label for="address2" class="form-label">{{"Day Number" | translate}}</label>
             <input type="number" class="form-control"
             name="day_number" [(ngModel)]="item.day_number"
-             id="address2" placeholder="Your day number">
+             id="address2"
+             placeholder='{{"Your day number" | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="address2" class="form-label">price</label>
+            <label for="address2" class="form-label">{{"Price" | translate}}</label>
             <input type="number" class="form-control"
             name="price" [(ngModel)]="item.price"
-             id="address2" placeholder="Your price">
+             id="address2"
+             placeholder='{{"Your price" | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="firstName" class="form-label">start date</label><br>
+            <label for="firstName" class="form-label"> {{"Start Date" | translate}}</label><br>
             <input type="date" name="start_date" [(ngModel)]="item.start_date" min="{{currentDate | date:'yyyy-MM-dd'}}" class="form-control" placeholder="Date"/>
           </div>
           <div class="col-sm-6">
-            <label for="firstName" class="form-label">start date</label><br>
+            <label for="firstName" class="form-label">{{"End Date" | translate}}</label><br>
             <input type="date" name="end_date" [(ngModel)]="item.end_date" min="{{currentDate | date:'yyyy-MM-dd'}}" class="form-control" placeholder="Date"/>
 
           </div>
         </div>
         <div  style="margin-left: 25% !important;">
-          <button  (click)="submit()" class="w-75 btn btn-primary  my-3 " style="width:60% !important ;" type="submit">send</button>
+          <button  (click)="submit()" class="w-75 btn btn-primary  my-3 " style="width:60% !important ;" type="submit">
+            {{"send" | translate}}</button>
         </div>
       </form>
     </div>

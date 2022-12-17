@@ -4,14 +4,14 @@
     <div class="col-md-12 col-lg-8  bg-white card">
       <form class="needs-validation mt-3"  >
         <div class="row g-4 ps-4">
-          <label  class="form-label mb-0" > New Rate</label>
+          <label  class="form-label mb-0" >{{"New Rate" | translate}} </label>
           <hr class="mt-1 ">
 
 
           <div class="col-sm-6">
-            <label for="address2" class="form-label">RATING</label>
+            <label for="address2" class="form-label">{{"RATING" | translate}}</label>
            <select  name="rate" [(ngModel)]="item.rate" class="form-control">
-            <option value="">select Rate</option>
+            <option value="">{{"select Rate" | translate}}</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -21,16 +21,18 @@
            </select>
           </div>
           <div class="col-sm-6">
-            <label for="address2" class="form-label">description</label>
+            <label for="address2" class="form-label">description{{"" | translate}}</label>
             <textarea type="text" class="form-control"
             name="body" [(ngModel)]="item.body"
-             id="address2" placeholder="Your description"></textarea>
+             id="address2"
+             placeholder='{{"Your description" | translate}}'></textarea>
           </div>
 
 
         </div>
         <div  style="margin-left: 25% !important;">
-          <button  (click)="submit()" class="w-75 btn btn-primary  my-3 " style="width:60% !important ;" type="submit">send</button>
+          <button  (click)="submit()" class="w-75 btn btn-primary  my-3 " style="width:60% !important ;" type="submit">
+            {{"send" | translate}}</button>
         </div>
       </form>
     </div>

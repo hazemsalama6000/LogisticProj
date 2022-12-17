@@ -5,10 +5,10 @@
 
             <div class="box box-warning direct-chat direct-chat-warning">
               <div class="box-header with-border">
-                <h3 class="box-title">Chat Messages</h3>
+                <h3 class="box-title">{{"Chat Messages" | translate}}</h3>
 
                 <div class="box-tools pull-right">
-                  <span data-toggle="tooltip" title="" class="badge bg-yellow" data-original-title="3 New Messages">20</span>
+                  <!-- <span data-toggle="tooltip" title="" class="badge bg-yellow" data-original-title="3 New Messages">20</span> -->
                   <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                   </button>
                   <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-widget="chat-pane-toggle" data-original-title="Contacts">
@@ -62,16 +62,19 @@
               <div class="box-footer">
                 <form action="#" method="post">
                   <div class="input-group">
-                    <input type="text"name="message" [(ngModel)]="item.message" placeholder="Type Message ..." class="form-control">
+                    <input type="text"name="message" [(ngModel)]="item.message"
+                    class="form-control"
+                     placeholder='{{"Type Message ..." | translate}}'>
                     <div class=" " style=" border: 1px solid black; height:130px ; width: 390px;">
                        <input  (change)="helper.setFile($event, 'file', item)"  name="src" multiple accept="image/*" type="file"
                       class="form-control hidden"   /><br>
                       <label for="files" class="text-center" style="margin-left: 17% !important;">
-                        You can add attachments in the next field
+                        {{"You can add attachments in the next field" | translate}}
                        </label><br>
                      </div>
                     <span class="input-group-btn">
-                      <button class=" btn btn-primary " (click)="submit()"  type="submit">send</button>
+                      <button class=" btn btn-primary " (click)="submit()"  type="submit">
+                        {{"send" | translate}}</button>
                     </span>
                   </div>
 
