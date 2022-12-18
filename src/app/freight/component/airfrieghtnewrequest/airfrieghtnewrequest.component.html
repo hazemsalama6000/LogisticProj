@@ -3,13 +3,15 @@
 <div class="container-fluid  ">
 
   <div class="row mt-2">
-      <div class="col-3">
+      
+    <div class="col-3">
         <agm-map [latitude]="latitude" [zoom]="5" [longitude]="longitude" (mapClick)="onMapClicked($event)">
           <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
         </agm-map>
         <p><b>lng:</b> {{longitude}} </p>  
         <p><b>lat:</b> {{latitude}} </p>  
       </div>
+
     <div class="col-md-6 col-lg-6  bg-white card">
       <form class="needs-validation mt-3">
         <div class="row g-4 ps-4">

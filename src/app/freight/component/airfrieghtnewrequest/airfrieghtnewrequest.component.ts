@@ -59,12 +59,6 @@ export class AirfrieghtnewrequestComponent implements OnInit {
   @ViewChild('search')
   public searchElementRef!: ElementRef;
 
-
-
-
-  
-
-
   constructor( private http:HttpClient , private router:Router , private _FreightService:FreightService,
     private gatcatser:GeneralService, private customclearance:CustomerTicketsService,
     private mapsAPILoader: MapsAPILoader,

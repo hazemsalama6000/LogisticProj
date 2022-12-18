@@ -6,6 +6,9 @@ import { FreightService } from 'src/app/service/freight.service';
 import { GeneralService } from 'src/app/service/general.service';
 import { CustomerTicketsService } from 'src/app/service/Tickets/Customer/customer-tickets.service';
 import { Helper } from 'src/app/shared/helper';
+import {  ViewChild, ElementRef, NgZone } from '@angular/core';
+import { MapsAPILoader } from '@agm/core';
+
 @Component({
   selector: 'app-seafrieghtnewrequest',
   templateUrl: './seafrieghtnewrequest.component.html',
@@ -52,8 +55,19 @@ export class SeafrieghtnewrequestComponent implements OnInit {
   type:any;
   reefer_container:any;
   load_type:any;
+  lat :any;
+  lng:any;
+  latitude!: number;   
+  longitude!: number; 
+  ;
+  title: string = 'AGM project';
+  @ViewChild('search')
+  public searchElementRef!: ElementRef;
   constructor( private http:HttpClient , private router:Router , private _FreightService:FreightService,
-    private gatcatser:GeneralService, private customclearance:CustomerTicketsService ) { }
+    private gatcatser:GeneralService, private customclearance:CustomerTicketsService,
+    private mapsAPILoader: MapsAPILoader,
+    private ngZone: NgZone
+    ) { }
 
   ngOnInit(): void {
     this.getcategory();
@@ -61,7 +75,13 @@ export class SeafrieghtnewrequestComponent implements OnInit {
     this.getGoodCategory();
     this.getCountry();
     this.getCity();
+    // this.getCustomsClearance();
     this.getCustomsClearance();
+      this.mapsAPILoader.load().then(() => {
+    });
+    this.longitude =29.9602364242958;
+    this.latitude =31.324048029083443;
+    
   }
   submit(): void{
     this._FreightService.addSeaFreight(Helper.toFormData(this.item)).subscribe((res)=>
@@ -115,4 +135,12 @@ export class SeafrieghtnewrequestComponent implements OnInit {
       })
 
     }
+
+  onMapClicked(event: any){
+    // console.table(event.coords);
+    this.latitude = event.coords.lat;
+    this.longitude = event.coords.lng;
+    this.item.destination_location_long =event.coords.lng;
+    this.item.destination_location_lat =event.coords.lat;
+  }
 }
