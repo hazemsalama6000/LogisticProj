@@ -8,6 +8,7 @@ import { CustomerTicketsService } from 'src/app/service/Tickets/Customer/custome
 import { Helper } from 'src/app/shared/helper';
 import {  ViewChild, ElementRef, NgZone } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
+
 @Component({
   selector: 'app-airfrieghtnewrequest',
   templateUrl: './airfrieghtnewrequest.component.html',
@@ -54,15 +55,16 @@ export class AirfrieghtnewrequestComponent implements OnInit {
   lng:any;
   latitude!: number;   
   longitude!: number; 
-  ;
+  latitude_dest!: number;   
+  longitude_dest!: number; 
   title: string = 'AGM project';
   @ViewChild('search')
   public searchElementRef!: ElementRef;
-
+  
   constructor( private http:HttpClient , private router:Router , private _FreightService:FreightService,
     private gatcatser:GeneralService, private customclearance:CustomerTicketsService,
-    private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone
+    private mapsAPILoader: MapsAPILoader,private ngZone: NgZone
+    
      ) {
       
      }
@@ -74,11 +76,12 @@ ngOnInit(): void {
   this.getGoodCategory();
   this.getCountry();
   this.getCity();
-  this.getCustomsClearance();
-      this.mapsAPILoader.load().then(() => {
-    });
-    this.longitude =29.9602364242958;
-    this.latitude =31.324048029083443;
+  this.mapsAPILoader.load().then(() => {
+  });
+  this.longitude =29.9602364242958;
+  this.latitude =31.324048029083443;
+  this.latitude_dest=29.9602364242958;
+  this.longitude_dest =31.324048029083443;
 }
 
 submit(): void{
@@ -134,13 +137,19 @@ submit(): void{
 
   }
 
-
+  
   onMapClicked(event: any){
     // console.table(event.coords);
     this.latitude = event.coords.lat;
     this.longitude = event.coords.lng;
+    this.item.pickup_location_long =event.coords.lng;
+    this.item.pickup_location_lat =event.coords.lat;
+  }
+  onMapClicked_dest(event: any){
+    // console.table(event.coords);
+    this.latitude_dest = event.coords.lat;
+    this.longitude_dest = event.coords.lng;
     this.item.destination_location_long =event.coords.lng;
     this.item.destination_location_lat =event.coords.lat;
   }
-
 }

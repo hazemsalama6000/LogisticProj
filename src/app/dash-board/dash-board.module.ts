@@ -40,7 +40,7 @@ import { DetailsComponent } from './component/details/details.component';
 import { TrackComponent } from './component/track/track.component';
 import { CchatsComponent } from './component/cchats/cchats.component';
 import { TranslateModule } from '@ngx-translate/core';
-
+import { AgmCoreModule } from '@agm/core';
 
 const routes : Routes = [
   { path:"main-sction", component:MainSectionComponent ,canActivate:[AuthGuard] },
@@ -121,7 +121,10 @@ const routes : Routes = [
     ReactiveFormsModule,
     FormsModule,
     TranslateModule.forChild(),
-
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBCYhW_5AfTwkCf4idRzIwte-ea8wYLPbY'
+  }),
+  
 
 
   ]
