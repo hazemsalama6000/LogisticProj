@@ -48,6 +48,7 @@ const routes : Routes=[
     { path: "company-new-requests", component:CompanyNewRequestsComponent,canActivate:[AuthGuard]},
     { path: "company-onprogress", component:CompanyOnprogressComponent,canActivate:[AuthGuard]},
     { path: "company-completed", component:CompanyCompletedComponent,canActivate:[AuthGuard]},
+
     { path: "company-representatives", component:CompanyRepresentativesComponent,canActivate:[AuthGuard]},
     { path: "company-all-requests", component:DetailsrequestcomComponent ,canActivate:[AuthGuard]},
     { path: "company-active-requests", component:AllrequestcomComponent ,canActivate:[AuthGuard]},

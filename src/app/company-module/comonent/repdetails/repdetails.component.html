@@ -1,4 +1,4 @@
-<h1 class="text-center pt-5"> Qoutation Details !</h1>
+<h1 class="text-center pt-5"> {{"Qoutation Details !" | translate}}</h1>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,8 +12,8 @@
 
   <div class=" col-lg-3" >
     <div class="card">
-      <h1>Notification</h1>
-      <a routerLink="/representative-all-notifications" class="text-decoration-none">All Notifications</a>
+      <h1>{{"Notification" | translate}}</h1>
+      <a routerLink="/representative-all-notifications" class="text-decoration-none">{{"All Notifications" | translate}}</a>
       <img  src="../../../../assets/Logisty ui images/notification .webp"
       alt="" class="m-auto pt-3"
       style="width: 80px; border-radius: 10px;">
@@ -21,9 +21,11 @@
   </div>
   <div class=" col-lg-3" >
     <div class="card">
-      <h1>Chat</h1>
-      <a [routerLink]='["/representative-new-chat" ,this.order_id]' class="text-decoration-none">Add New Chat</a><br>
-      <a [routerLink]='["/representative-all-chats" ,this.order_id]' class="text-decoration-none">All Chats</a>
+      <h1>{{"Chat" | translate}}</h1>
+      <a [routerLink]='["/representative-new-chat" ,this.order_id]' class="text-decoration-none">
+        {{"Add New Chat" | translate}}</a><br>
+      <a [routerLink]='["/representative-all-chats" ,this.order_id]' class="text-decoration-none">
+        {{"All Chats" | translate}}</a>
       <img src="../../../../assets/Logisty ui images/chat.jpg"
       alt="" class="m-auto"
       style="width: 80px; border-radius: 10px;">
@@ -32,9 +34,11 @@
 
   <div class="col-lg-3" >
     <div class="card">
-      <h1>Rate</h1>
-      <a [routerLink]='["/representative-new-rate",this.client_id ]' class="text-decoration-none">Add New Rate</a><br>
-      <a routerLink="/representative-all-rates" class="text-decoration-none">All Rates</a>
+      <h1>{{"Rate" | translate}}</h1>
+      <a [routerLink]='["/representative-new-rate",this.client_id ]' class="text-decoration-none">
+        {{"Add New Rate" | translate}}</a><br>
+      <a routerLink="/representative-all-rates" class="text-decoration-none">
+        {{"All Rates" | translate}}</a>
       <img src="../../../../assets/Logisty ui images/rate.webp"
       alt="" class="m-auto"
       style="width: 80px; border-radius: 10px;">
@@ -45,9 +49,11 @@
 
   <div class="col-lg-3 "style="" >
     <div class="card">
-      <h1>Tracking</h1>
-      <a [routerLink]='["/representative-new-track",this.order_id]' class="text-decoration-none">Add New track</a><br>
-      <a [routerLink]='["/representative-all-tracks",this.order_id]' class=" text-decoration-none">track this Order</a>
+      <h1>{{"Tracking" | translate}}</h1>
+      <a [routerLink]='["/representative-new-track",this.order_id]' class="text-decoration-none">
+        {{"Add New track" | translate}}</a><br>
+      <a [routerLink]='["/representative-all-tracks",this.order_id]' class=" text-decoration-none">
+        {{"track this Order" | translate}}</a>
       <img  src="../../../../assets/Logisty ui images/track.png"
       alt="" class="m-auto pt-3"
       style="width: 80px; border-radius: 10px;">

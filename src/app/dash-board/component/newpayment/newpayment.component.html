@@ -4,37 +4,37 @@
     <div class="col-md-12 col-lg-8  bg-white card">
       <form class="needs-validation mt-3"  >
         <div class="row g-4 ps-4">
-          <label  class="form-label mb-0" >Add New Payment</label>
+          <label  class="form-label mb-0" >{{"Add New Payment" | translate}}</label>
           <hr class="mt-1 ">
 
 
           <div class="col-sm-6">
-            <label for="address2" class="form-label">total amount</label>
+            <label for="address2" class="form-label">{{"total amount" | translate}}</label>
             <input type="text" class="form-control"
             name="total_amount" [(ngModel)]="item.total_amount"
-             id="address2" placeholder="Your total amount">
+             id="address2" placeholder='{{"Your total amount" | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="address2" class="form-label">commission</label>
+            <label for="address2" class="form-label">{{"commission" | translate}}</label>
             <input type="text" class="form-control"
             name="commission" [(ngModel)]="item.commission"
-             id="address2" placeholder="Your commission">
+             id="address2" placeholder='{{"Your commission" | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="address2" class="form-label">supplier amount</label>
+            <label for="address2" class="form-label">{{"supplier amount" | translate}}</label>
             <input type="text" class="form-control"
             name="supplier_amount" [(ngModel)]="item.supplier_amount"
-             id="address2" placeholder="Your supplier amount">
+             id="address2" placeholder='{{"Your supplier amount" | translate}}'>
           </div>
           <div class="col-sm-6">
-            <label for="address2" class="form-label">transaction number</label>
+            <label for="address2" class="form-label">{{"transaction number" | translate}}</label>
             <input type="text" class="form-control"
             name="transaction_number" [(ngModel)]="item.transaction_number"
-             id="address2" placeholder="Your transaction number">
+             id="address2" placeholder='{{"Your transaction number" | translate}}'>
           </div>
         </div>
         <div  style="margin-left: 25% !important;">
-          <button  (click)="submit()" class="w-75 btn btn-primary  my-3 " style="width:60% !important ;" type="submit">send</button>
+          <button  (click)="submit()" class="w-75 btn btn-primary  my-3 " style="width:60% !important ;" type="submit">{{"send" | translate}}</button>
         </div>
       </form>
     </div>

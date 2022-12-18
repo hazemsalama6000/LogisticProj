@@ -3,23 +3,23 @@
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
           data-bs-target="#dashboard-collapse" aria-expanded="false">
-          My Requests
+          {{"My Requests" | translate}}
         </button>
         <div class="collapse" id="dashboard-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small d-block">
             <button class="btn-sm border-0 bg-white d-flex">
               <a routerLink="/individual-new-requests"
-                class="link-dark rounded text-decoration-none">new request
+                class="link-dark rounded text-decoration-none">{{"new request" | translate}}
               </a>
             </button>
             <button class="btn-sm border-0 bg-white d-flex">
               <a routerLink="/individual-all-requests"
-                class="link-dark rounded text-decoration-none">pending requests
+                class="link-dark rounded text-decoration-none">{{"pending requests" | translate}}
               </a>
             </button>
             <button class="btn-sm border-0 bg-white d-flex">
               <a routerLink="/individual-active-requests"
-                class="link-dark rounded text-decoration-none">all requests
+                class="link-dark rounded text-decoration-none">{{"all requests" | translate}}
               </a>
             </button>
           </ul>
@@ -29,14 +29,14 @@
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
           data-bs-target="#orders-collapse" aria-expanded="false">
-          Accepted Quotes
+          {{"Accepted Quotes" | translate}}
         </button>
         <div class="collapse" id="orders-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small d-block">
             <button class="btn-sm border-0 bg-white d-flex"><a routerLink="/individual-on-progress"
                 class="link-dark rounded text-decoration-none fw-normal"></a></button>
             <button class="btn-sm border-0 bg-white"><a routerLink="/individual-completed"
-                class="link-dark rounded text-decoration-none">Completed</a></button>
+                class="link-dark rounded text-decoration-none">{{"Completed" | translate}}</a></button>
 
           </ul>
         </div>
@@ -45,7 +45,7 @@
       <li class="mb-1">
         <button routerLink="/individual-customer-support" class="btn text-muted fw-semibold align-items-center rounded collapsed"
           data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-          Customer Support
+          {{"Customer Support" | translate}}
         </button>
       </li>
     </ul>

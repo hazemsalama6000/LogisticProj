@@ -129,19 +129,20 @@
 
 
        <form  >
-        <label for="" class="fw-bold fs-4 my-3">Add reply</label><br>
+        <label for="" class="fw-bold fs-4 my-3">{{"Add reply" | translate}}</label><br>
         <textarea name="comment" [(ngModel)]="item.comment"  cols="50" rows="5"  placeholder=""></textarea>
         <div class="col-12">
-          <label for="" class="fw-bold fs-6 mt-2">add file</label>
+          <label for="" class="fw-bold fs-6 mt-2">{{"add file" | translate}}</label>
           <div class=" " style=" border: 1px solid black; height:130px ; width: 380px;">
                 <input  (change)="helper.setFile($event, 'src', item)"  name="src" multiple accept="image/*" type="file"
                 class="form-control hidden"   /><br>
                 <label for="files" class="text-center" style="margin-left: 17% !important;">
-                  You can add attachments in the next field
+                  {{"You can add attachments in the next field" | translate}}
                  </label><br>
                </div>
         </div>
-        <button class="w-50 btn btn-primary  my-3 " (click)="submit()" style="width:30% !important ;" type="submit">send</button>
+        <button class="w-50 btn btn-primary  my-3 " (click)="submit()" style="width:30% !important ;" type="submit">
+          {{"send" | translate}}</button>
 
        </form>
     </div>

@@ -39,6 +39,7 @@ import { InternationalComponent } from './component/international/international.
 import { DetailsComponent } from './component/details/details.component';
 import { TrackComponent } from './component/track/track.component';
 import { CchatsComponent } from './component/cchats/cchats.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 const routes : Routes = [
@@ -119,6 +120,7 @@ const routes : Routes = [
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
+    TranslateModule.forChild(),
 
 
 

@@ -33,15 +33,14 @@
     "Existingcustomergroup":"Existing Customer Group",
     "client":"client",
      "customssupplycompany":"Customs Supply Company",
-    
+
      "You as a supplier or importer can do the following during the site":"You as a supplier or importer can do the following during the site",
      "You can create a new request by filling in the required information":"You can create a new request by filling in the required information",
      "imported":"imported ",
      "CustomsBroker":"Customs broker",
      "As a supplier or importer, you can do the following during the site":"As a supplier or importer, you can do the following during the site",
      "Create a new request":"Create a new request ",
-     "":"Create a new request "
-
-     
+     "":"Create a new request ",
+     "Services":"Services"
 
 }

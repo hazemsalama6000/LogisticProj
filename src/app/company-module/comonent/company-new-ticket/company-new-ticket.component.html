@@ -5,11 +5,11 @@
     <div class="col-md-12 col-lg-8  bg-white card">
       <form class="needs-validation mt-3" >
         <div class="row g-4 ps-4">
-          <label  class="form-label mb-0" >Add New Ticket</label>
+          <label  class="form-label mb-0" >{{"Add New Ticket" | translate}}</label>
           <hr class="mt-1 ">
           <div class="col-sm-6">
 
-            <label for="firstName" class="form-label">Priority</label>
+            <label for="firstName" class="form-label">{{"Priority" | translate}}</label>
             <select name="priority" [(ngModel)]="item.priority" class="form-control">
               <option value="" disabled>Select The Priority</option>
               <option value="high">high</option>
@@ -19,7 +19,7 @@
 
           </div>
           <div class="col-sm-6">
-            <label for="lastName" class="form-label">ticket category</label>
+            <label for="lastName" class="form-label">{{"ticket category" | translate}}</label>
             <select  name="ticket_category_id" [(ngModel)]="item.ticket_category_id" class="form-control">
               <option value="" disabled>Enter ticket category</option>
               <option *ngFor="let item of cats" value="{{item.id}}">{{item.name}}</option>
@@ -27,29 +27,31 @@
             </select>
           </div>
           <div class="col-12">
-            <label for="address2" class="form-label">Title</label>
-            <input type="text" class="form-control" name="title" [(ngModel)]="item.title" id="address2" placeholder="Your Title">
+            <label for="address2" class="form-label">{{"Title" | translate}}</label>
+            <input type="text" class="form-control" name="title" [(ngModel)]="item.title" id="address2"
+            placeholder='{{"Your Title" | translate}}'>
           </div>
           <div class="col-12">
-            <label for="address" class="form-label">Problem Description</label>
+            <label for="address" class="form-label">{{"Problem Description" | translate}}</label>
             <textarea type="text" class="form-control" name="description" [(ngModel)]="item.description" id="address"
-            placeholder="Please , describe your issue" ></textarea>
+            placeholder='{{"Please , describe your issue" | translate}}' ></textarea>
 
           </div>
           <div class="col-12">
-            <label for="address" class="form-label">Attachment</label>
+            <label for="address" class="form-label">{{"Attachment" | translate}}</label>
                  <div class="m-auto " style=" border: 1px solid black; height:150px ;">
                   <input  (change)="helper.setFile($event, 'src[]', item)"  name="src" multiple accept="image/*" type="file"
                   class="form-control hidden"   /><br>
                   <label for="files" class="text-center" style="margin-left: 30% !important;">
-                    You can add attachments in the next field
+                    {{"You can add attachments in the next field" | translate}}
                    </label><br>
                  </div>
           </div>
 
         </div>
         <div  style="margin-left: 25% !important;">
-          <button class="w-75 btn btn-primary  my-3 " (click)="submit()" style="width:60% !important ;" type="submit">send</button>
+          <button class="w-75 btn btn-primary  my-3 " (click)="submit()" style="width:60% !important ;" type="submit">
+            {{"send" | translate}}</button>
 
         </div>
       </form>
