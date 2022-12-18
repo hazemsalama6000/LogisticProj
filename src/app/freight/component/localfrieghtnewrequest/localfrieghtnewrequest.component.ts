@@ -6,6 +6,8 @@ import { FreightService } from 'src/app/service/freight.service';
 import { GeneralService } from 'src/app/service/general.service';
 import { CustomerTicketsService } from 'src/app/service/Tickets/Customer/customer-tickets.service';
 import { Helper } from 'src/app/shared/helper';
+import {  ViewChild, ElementRef, NgZone } from '@angular/core';
+import { MapsAPILoader } from '@agm/core';
 @Component({
   selector: 'app-localfrieghtnewrequest',
   templateUrl: './localfrieghtnewrequest.component.html',
@@ -46,8 +48,19 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
     need_pickup:any;
     insure_good:any;
     bulks:any;
+    lat :any;
+    lng:any;
+    
+    latitude!: number;   
+    longitude!: number; 
+    latitude_dest!: number;   
+    longitude_dest!: number; 
+    @ViewChild('search')
+    public searchElementRef!: ElementRef;
     constructor( private http:HttpClient , private router:Router , private _FreightService:FreightService,
-      private gatcatser:GeneralService ) { }
+      private gatcatser:GeneralService,
+      private mapsAPILoader: MapsAPILoader,
+    private ngZone: NgZone  ) { }
 
   ngOnInit(): void {
     this.getcategory();
@@ -55,6 +68,12 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
     this.getGoodCategory();
     this.getCountry();
     this.getCity();
+    this.mapsAPILoader.load().then(() => {
+    });
+    this.longitude =29.9602364242958;
+    this.latitude =31.324048029083443;
+    this.latitude_dest=29.9602364242958;
+    this.longitude_dest =31.324048029083443;
   }
 
   submit(): void{
@@ -99,5 +118,19 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
                     }
                }
             })
+    }
+    onMapClicked(event: any){
+      // console.table(event.coords);
+      this.latitude = event.coords.lat;
+      this.longitude = event.coords.lng;
+      this.item.pickup_location_long =event.coords.lng;
+      this.item.pickup_location_lat =event.coords.lat;
+    }
+    onMapClicked_dest(event: any){
+      // console.table(event.coords);
+      this.latitude_dest = event.coords.lat;
+      this.longitude_dest = event.coords.lng;
+      this.item.destination_location_long =event.coords.lng;
+      this.item.destination_location_lat =event.coords.lat;
     }
 }

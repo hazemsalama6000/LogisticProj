@@ -28,6 +28,7 @@ import { AgmCoreModule } from '@agm/core';
   
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GoogleMapsComponent } from "../shared/component/google-maps/google-maps.component";
 
 
 const routes: Routes =[
@@ -45,34 +46,36 @@ const routes: Routes =[
 { path:"sea-details/:id" ,canActivate:[AuthGuard], component:SeadetailsComponent},
 ];
 @NgModule({
-  declarations: [
-    LocalfrieghtnewrequestComponent,
-    LocalfrieghtsendrequestComponent,
-    LocalfrieghtrequestdetailsComponent,
-    AirfrieghtrequestdetailsComponent,
-    AirfrieghtsendrequestComponent,
-    AirfrieghtnewrequestComponent,
-    SeafrieghtnewrequestComponent,
-    SeafrieghtrequestdetailsComponent,
-    SeafrieghtsendrequestComponent,
-    AirdetailsComponent,
-    SeadetailsComponent,
-    LocaldetailsComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes),
-    BrowserModule,
-    SharedModule,
-    ProfileModule,
-    ReactiveFormsModule,
-    FormsModule,
-    CarouselModule,
-    NgxIntlTelInputModule,
-    TranslateModule.forChild(),
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBCYhW_5AfTwkCf4idRzIwte-ea8wYLPbY'
-    }),
-  ]
+    declarations: [
+        LocalfrieghtnewrequestComponent,
+        LocalfrieghtsendrequestComponent,
+        LocalfrieghtrequestdetailsComponent,
+        AirfrieghtrequestdetailsComponent,
+        AirfrieghtsendrequestComponent,
+        AirfrieghtnewrequestComponent,
+        SeafrieghtnewrequestComponent,
+        SeafrieghtrequestdetailsComponent,
+        SeafrieghtsendrequestComponent,
+        AirdetailsComponent,
+        SeadetailsComponent,
+        LocaldetailsComponent,
+        GoogleMapsComponent
+    ],
+    imports: [
+        CommonModule,
+        RouterModule.forRoot(routes),
+        BrowserModule,
+        SharedModule,
+        ProfileModule,
+        ReactiveFormsModule,
+        FormsModule,
+        CarouselModule,
+        NgxIntlTelInputModule,
+        TranslateModule.forChild(),
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyBCYhW_5AfTwkCf4idRzIwte-ea8wYLPbY'
+        }),
+        
+    ]
 })
 export class FreightModule { }

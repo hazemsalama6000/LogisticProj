@@ -1,2 +1,8 @@
-
-  <h4>Hello world</h4>
+  
+    <agm-map [latitude]="latitude" [zoom]="5" [longitude]="longitude" [(ngModel)]="latitude" [(ngModel)]="longitude" (mapClick)="onMapClicked($event)">
+      <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+    </agm-map>
+    <p><b>lng:</b> {{longitude}} </p>
+    <p><b>lat:</b> {{latitude}} </p>
+  
+  

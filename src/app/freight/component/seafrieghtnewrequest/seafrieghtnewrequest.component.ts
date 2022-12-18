@@ -59,8 +59,8 @@ export class SeafrieghtnewrequestComponent implements OnInit {
   lng:any;
   latitude!: number;   
   longitude!: number; 
-  ;
-  title: string = 'AGM project';
+  latitude_dest!: number;   
+  longitude_dest!: number; 
   @ViewChild('search')
   public searchElementRef!: ElementRef;
   constructor( private http:HttpClient , private router:Router , private _FreightService:FreightService,
@@ -81,7 +81,8 @@ export class SeafrieghtnewrequestComponent implements OnInit {
     });
     this.longitude =29.9602364242958;
     this.latitude =31.324048029083443;
-    
+    this.latitude_dest=29.9602364242958;
+    this.longitude_dest =31.324048029083443;
   }
   submit(): void{
     this._FreightService.addSeaFreight(Helper.toFormData(this.item)).subscribe((res)=>
@@ -140,6 +141,13 @@ export class SeafrieghtnewrequestComponent implements OnInit {
     // console.table(event.coords);
     this.latitude = event.coords.lat;
     this.longitude = event.coords.lng;
+    this.item.pickup_location_long =event.coords.lng;
+    this.item.pickup_location_lat =event.coords.lat;
+  }
+  onMapClicked_dest(event: any){
+    // console.table(event.coords);
+    this.latitude_dest = event.coords.lat;
+    this.longitude_dest = event.coords.lng;
     this.item.destination_location_long =event.coords.lng;
     this.item.destination_location_lat =event.coords.lat;
   }
