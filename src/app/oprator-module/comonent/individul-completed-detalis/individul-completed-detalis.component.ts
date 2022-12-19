@@ -20,18 +20,12 @@ export class IndividulCompletedDetalisComponent implements OnInit {
   constructor(private clientqout:OperatorService, Active:ActivatedRoute, private router:Router)
    {
      this.order_id = Active.snapshot.paramMap.get("id")
-      // const client_id2 =  this.client_id;
-      // console.log(client_id2);
    }
-
   ngOnInit(): void {
-    // const client_id2 =  this.client_id;
-    // console.log(client_id2);
-    this.clientqout.getavailableRequests().subscribe((res:any) => {
-
+    this.clientqout.getavailableRequests().subscribe((res:any) =>
+     {
       for (let index = 0; index < res.data.length; index++) {
-        console.log(res.data);
-
+      console.log(res.data);
        this.data = res.data[index]["customs_clearance_request"].order_id
        || res.data[index]["sea_freight"].order_id
        || res.data[index]["air_freight"].order_id
@@ -43,11 +37,8 @@ export class IndividulCompletedDetalisComponent implements OnInit {
         || res.data[index]["air_freight"].client_id
         || res.data[index]["local_freight"].client_id;
         console.log(this.client_id);
-
        }
-
       }
-
    })
       this.clientqout.getacceptquotations().subscribe((res:any) => {
       this.item.order_id = this.order_id;

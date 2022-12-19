@@ -1,1 +1,57 @@
-<p>rates works!</p>
+<div class="container">
+  <div class="row">
+<div class="col-12">
+  <div class="row clearfix">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="card">
+              <div class="header">
+                  <h3 style="font-size:25px;" class="fw-bold mt-3 ms-2 text-center" >{{"RATING" | translate}}</h3>
+
+
+              </div>
+              <div class="body">
+                  <div class="table-responsive ">
+                      <table
+                          class="table table-bordered table-striped table-hover  dataTable"
+                          >
+                          <thead   style="background-color: #e4e1e1 !important ; width: 100% !important; ">
+
+                              <th style=" color: black !important; padding: 10px;">{{"ID" | translate}}</th>
+                              <th style=" color: black !important; padding: 10px;">{{"Date" | translate}} </th>
+                              <th style=" color: black !important; padding: 10px;">{{"description" | translate}}</th>
+                              <th style=" color: black !important; padding: 10px;">{{"RATING" | translate}}</th>
+                              <th style=" color: black !important; padding: 10px;">{{"name" | translate}}</th>
+                              <th style=" color: black !important; padding: 10px;">{{"image" | translate}}</th>
+
+
+
+                          </thead>
+                          <br>
+                          <!-- <br> -->
+                          <tbody *ngFor="let item of data" >
+                              <tr  >
+                                  <td class="fw-bold  " colspan="6" >Delivery state problem</td>
+                              </tr>
+                              <tr >
+
+                                  <td>{{item.id}}</td>
+                                  <td>{{item.date}}</td>
+                                  <td>{{item.body}}</td>
+                                  <td >{{item.rate}}</td>
+                                  <td >{{item["whoRate"].name}}</td>
+                                  <td ><img src='{{item["whoRate"].image}}' width="50px"></td>
+
+                                  <!-- image -->
+                              </tr>
+                              <br>
+                          </tbody>
+
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
