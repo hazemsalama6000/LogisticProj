@@ -27,7 +27,7 @@ export class FreightService {
      return this._HttpClient.post(this.url + 'client/add_local_freight',formData ,option )
    }
    //Get Local Freight:
-   getLocalFreight() {
+   getLocalFreight():Observable<any> {
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
     header = header.append("Apipassword" , this.apiPassword);
@@ -53,7 +53,7 @@ export class FreightService {
        return this._HttpClient.post(this.url + 'client/add_air_freight',formData ,option )
      }
    //Get Air Freight:
-   getAirFreight() {
+   getAirFreight():Observable<any> {
       let header = new HttpHeaders();
       header = header.append("lang" , this.lang);
       header = header.append("Apipassword" , this.apiPassword);
@@ -79,7 +79,7 @@ export class FreightService {
      return this._HttpClient.post(this.url + 'client/add_sea_freight',formData ,option )
    }
    //Get Sea Freight:
-   getSeaFreight() {
+   getSeaFreight():Observable<any> {
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
     header = header.append("Apipassword" , this.apiPassword);
