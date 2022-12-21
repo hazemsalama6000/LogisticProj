@@ -55,7 +55,10 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
     longitude!: number; 
     latitude_dest!: number;   
     longitude_dest!: number; 
+    
     @ViewChild('search')
+    
+
     public searchElementRef!: ElementRef;
     constructor( private http:HttpClient , private router:Router , private _FreightService:FreightService,
       private gatcatser:GeneralService,
@@ -74,6 +77,8 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
     this.latitude =31.324048029083443;
     this.latitude_dest=29.9602364242958;
     this.longitude_dest =31.324048029083443;
+    // document.getElementById("start").scrollIntoView({ behavior: "smooth", block: "start" });
+    this.moveto("part_1");
   }
 
   submit(): void{
@@ -133,4 +138,10 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
       this.item.destination_location_long =event.coords.lng;
       this.item.destination_location_lat =event.coords.lat;
     }
+
+    moveto(section:any){
+      section.scrollIntoView({behavior:"smooth",block: 'start'});
+    }
+    
 }
+
