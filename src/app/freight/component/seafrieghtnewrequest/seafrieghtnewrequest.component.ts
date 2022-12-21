@@ -61,6 +61,8 @@ export class SeafrieghtnewrequestComponent implements OnInit {
   longitude!: number; 
   latitude_dest!: number;   
   longitude_dest!: number; 
+  currentlng:any;
+    
   @ViewChild('search')
   public searchElementRef!: ElementRef;
   constructor( private http:HttpClient , private router:Router , private _FreightService:FreightService,
@@ -83,6 +85,7 @@ export class SeafrieghtnewrequestComponent implements OnInit {
     this.latitude =31.324048029083443;
     this.latitude_dest=29.9602364242958;
     this.longitude_dest =31.324048029083443;
+    this.currentlng = localStorage.getItem('currentLang');
   }
   submit(): void{
     this._FreightService.addSeaFreight(Helper.toFormData(this.item)).subscribe((res)=>
@@ -150,5 +153,8 @@ export class SeafrieghtnewrequestComponent implements OnInit {
     this.longitude_dest = event.coords.lng;
     this.item.destination_location_long =event.coords.lng;
     this.item.destination_location_lat =event.coords.lat;
+  }
+  moveto(section:any){
+    section.scrollIntoView({behavior:"smooth",block: 'start'});
   }
 }

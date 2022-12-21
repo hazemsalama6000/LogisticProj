@@ -3,8 +3,7 @@
     <form class="needs-validation mt-3">
       <label  class="form-label mb-0" >{{"Add New Request Local Freight" | translate}}</label>
       <hr class="mt-1 ">
-
-  <section id="start" #part_1 class="sectionPage">
+  <section id="start" #part_1  class="sectionPage">
     <div class="container-fluid">
     <div class="row">
       <div class="col-sm-6">
@@ -48,7 +47,7 @@
     </div>
     <br>
       <br>
-      <a style="float: right;" (click)="moveto(part_2)"><button class="btn btn-success">Next</button></a>
+      <a style="float: right;" (click)="moveto(part_2)"><button class="btn btn-success">{{"next" | translate}}</button></a>
   </div>
   <br>
   </section>
@@ -56,7 +55,7 @@
     <br>
     <div class="container">
       <div class="col-md-12">
-        <h3 align="center">Select Pickup</h3>
+        <h3 align="center">{{"Select Pickup" | translate}}</h3>
         <agm-map [latitude]="latitude" [zoom]="5" [longitude]="longitude" (mapClick)="onMapClicked($event)">
           <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
         </agm-map>
@@ -77,14 +76,14 @@
       </div>
     </div>
     <br>
-    <a (click)="moveto(part_1)"><button class="btn btn-info">Prev</button></a>
-    <a style="float: right;" (click)="moveto(part_3)"><button class="btn btn-success">Next</button></a>
+    <a style="float: left" (click)="moveto(part_1)"><button class="btn btn-info">{{"prev" | translate}}</button></a>
+    <a style="float: right" (click)="moveto(part_3)"><button class="btn btn-success">{{"next" | translate}}</button></a>
   </section>
   <section class="sectionPage" style="height: 100vh;" #part_3>
     <br>
     <div class="container">
       <div class="col-md-12">
-      <h3 align="center">Select Destination</h3>
+      <h3 align="center">{{"Select Destination" | translate}}</h3>
     <agm-map [latitude]="latitude_dest" [zoom]="5" [longitude]="longitude_dest" (mapClick)="onMapClicked_dest($event)">
       <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
     </agm-map>
@@ -105,8 +104,8 @@
   </div>
   </div>
   <br>
-  <a (click)="moveto(part_2)"><button class="btn btn-info">Prev</button></a>
-    <a style="float: right;" (click)="moveto(part_4)"><button class="btn btn-success">Next</button></a>
+    <a  style="float: left" (click)="moveto(part_2)"><button class="btn btn-info">{{"prev" | translate}}</button></a>
+    <a  style="float: right;" (click)="moveto(part_4)"><button class="btn btn-success">{{"next" | translate}}</button></a>
   </section>
   <section class="sectionPage" #part_4>
     <br>
@@ -135,8 +134,8 @@
   </div>
 </div>
 <br>
-<a (click)="moveto(part_3)"><button class="btn btn-info">Prev</button></a>
-<a style="float: right;" (click)="moveto(part_5)"><button class="btn btn-success">Next</button></a>
+<a style="float: left" (click)="moveto(part_3)"><button class="btn btn-info">{{"prev" | translate}}</button></a>
+<a style="float: right;" (click)="moveto(part_5)"><button class="btn btn-success">{{"next" | translate}}</button></a>
   </section>
   <section class="sectionPage" #part_5>
     <br>
@@ -185,8 +184,8 @@
         </div>
       </div>
       <br>
-      <a (click)="moveto(part_4)"><button class="btn btn-info">Prev</button></a>
-      <a style="float: right;" (click)="moveto(part_6)"><button class="btn btn-success">Next</button></a>      
+      <a style="float: left" (click)="moveto(part_4)"><button class="btn btn-info">{{"prev" | translate}}</button></a>
+      <a style="float: right;" (click)="moveto(part_6)"><button class="btn btn-success">{{"next" | translate}}</button></a>      
   </section>
   <section class="sectionPage" #part_6>
     <br>
@@ -232,7 +231,7 @@
       </div>
     </div>
     <br>
-      <a (click)="moveto(part_5)"><button class="btn btn-info">Prev</button></a>
+      <a (click)="moveto(part_5)"><button class="btn btn-info">{{"prev" | translate}}</button></a>
   </section>
   
 </form>

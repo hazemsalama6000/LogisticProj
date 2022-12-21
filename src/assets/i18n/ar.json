@@ -290,6 +290,9 @@
     "Please Re-Enter Your password":"اعد الدخال الباسورد",
     "Change Number":"تغيير الرقم",
     "You received sms at number 123456789":"لقد تلقيت رسالة نصية على الرقم 123456789",
-    "":"",
-    "":""
+    "Select Pickup":"نقطة البداية",
+    "Select Destination":"نقطة النهاية",
+    "next":"التالي",
+    "prev":"السابق"
+
 }
