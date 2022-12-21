@@ -30,7 +30,7 @@ export class CustomerTicketsService {
     return this._HttpClient.post(this.url + 'client/tickets',formData, option);
   }
    //Get Client Tickets:
-  getClientTickets() {
+  getClientTickets():Observable<any> {
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
     header = header.append("Apipassword" , this.apiPassword);
@@ -56,7 +56,7 @@ export class CustomerTicketsService {
      return this._HttpClient.post(this.url + 'client/ticketreplies',formData,option )
    }
   //Add Replay Tickets:
-  getReplayTicketById(id:any){
+  getReplayTicketById(id:any):Observable<any>{
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
     header = header.append("Apipassword" , this.apiPassword);
@@ -82,7 +82,7 @@ export class CustomerTicketsService {
      return this._HttpClient.post(this.url + 'client/add_customs_clearance',formData ,option )
    }
   //Get Customs Clearance:
-  getCustomsClearance() {
+  getCustomsClearance():Observable<any> {
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
     header = header.append("Apipassword" , this.apiPassword);
@@ -107,7 +107,7 @@ export class CustomerTicketsService {
   let option ={headers:header} ;
   return this._HttpClient.post(this.url + 'client/acceptQuotations',formData ,option )
   }
-  getquotations(order_id:any){
+  getquotations(order_id:any):Observable<any>{
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);
   header = header.append("Apipassword" , this.apiPassword);
@@ -125,7 +125,7 @@ export class CustomerTicketsService {
     let option ={headers:header} ;
     return this._HttpClient.post(this.url + 'client/paymenthistories',formData ,option )
   }
-  getPayments(){
+  getPayments():Observable<any>{
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
     header = header.append("Apipassword" , this.apiPassword);
@@ -142,7 +142,7 @@ export class CustomerTicketsService {
   let option ={headers:header} ;
   return this._HttpClient.post(this.url + 'client/chats',formData ,option )
   }
-  getChats(order_id:any){
+  getChats(order_id:any):Observable<any>{
   let header = new HttpHeaders();
   header = header.append("lang" , this.lang);
   header = header.append("Apipassword" , this.apiPassword);
@@ -159,7 +159,7 @@ export class CustomerTicketsService {
     let option ={headers:header} ;
     return this._HttpClient.post(this.url + 'client/rates',formData ,option )
   }
-  getRates(){
+  getRates():Observable<any>{
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
     header = header.append("Apipassword" , this.apiPassword);
@@ -168,7 +168,7 @@ export class CustomerTicketsService {
     return this._HttpClient.get(this.url + 'client/rates' ,option);
   }
    // ==============Notification=======================
-   getNotifications(){
+   getNotifications():Observable<any>{
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
     header = header.append("Apipassword" , this.apiPassword);
@@ -176,7 +176,7 @@ export class CustomerTicketsService {
     let option ={headers:header} ;
     return this._HttpClient.get(this.url + 'client/notifications' ,option);
   }
-   readNotification(){
+   readNotification():Observable<any>{
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
     header = header.append("Apipassword" , this.apiPassword);
@@ -184,7 +184,7 @@ export class CustomerTicketsService {
     let option ={headers:header} ;
     return this._HttpClient.get(this.url + 'client/notifications/readNotify' ,option )
   }
-  deleteNotification(id:any) {
+  deleteNotification(id:any):Observable<any> {
     let header = new HttpHeaders();
     header = header.append("lang" , this.lang);
     header = header.append("Apipassword" , this.apiPassword);
