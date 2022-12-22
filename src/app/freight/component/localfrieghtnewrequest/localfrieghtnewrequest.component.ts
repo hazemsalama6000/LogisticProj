@@ -8,6 +8,8 @@ import { CustomerTicketsService } from 'src/app/service/Tickets/Customer/custome
 import { Helper } from 'src/app/shared/helper';
 import {  ViewChild, ElementRef, NgZone } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
+import { HostListener } from '@angular/core';
+
 @Component({
   selector: 'app-localfrieghtnewrequest',
   templateUrl: './localfrieghtnewrequest.component.html',
@@ -50,21 +52,24 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
     bulks:any;
     lat :any;
     lng:any;
+    currentlng:any;
     
     latitude!: number;   
     longitude!: number; 
     latitude_dest!: number;   
     longitude_dest!: number; 
     
+    currentPosition :any;
     @ViewChild('search')
     
-
     public searchElementRef!: ElementRef;
     constructor( private http:HttpClient , private router:Router , private _FreightService:FreightService,
       private gatcatser:GeneralService,
       private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone  ) { }
-
+      private ngZone: NgZone  ) { }
+      
+    
+    
   ngOnInit(): void {
     this.getcategory();
     this.getcurency();
@@ -77,10 +82,11 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
     this.latitude =31.324048029083443;
     this.latitude_dest=29.9602364242958;
     this.longitude_dest =31.324048029083443;
-    // document.getElementById("start").scrollIntoView({ behavior: "smooth", block: "start" });
-    this.moveto("part_1");
+    this.currentlng = localStorage.getItem('currentLang');
+    
+    
   }
-
+  
   submit(): void{
     this._FreightService.addLocalFreight(Helper.toFormData(this.item)).subscribe((res)=>
     {
@@ -142,6 +148,7 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
     moveto(section:any){
       section.scrollIntoView({behavior:"smooth",block: 'start'});
     }
+    
     
 }
 

@@ -41,6 +41,9 @@
      "As a supplier or importer, you can do the following during the site":"As a supplier or importer, you can do the following during the site",
      "Create a new request":"Create a new request ",
      "":"Create a new request ",
-     "Services":"Services"
-
+     "Services":"Services",
+     "Select Pickup":"Select Pickup",
+     "Select Destination":"Select Destination",
+     "next":"Next",
+     "prev":"Prev"
 }

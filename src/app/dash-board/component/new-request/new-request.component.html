@@ -1,23 +1,9 @@
-<!-- <ul *ngFor="let item of dest">
-  <li >{{item }}</li>
-</ul> -->
-<div class="container-fluid  ">
-  <div class="row mt-2">
-    <div class="col-md-3">
-      <h3 align="center">Pickup</h3>
-              
-          <agm-map [latitude]="latitude" [zoom]="5" [longitude]="longitude" (mapClick)="onMapClicked($event)">
-            <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
-          </agm-map>
-          <p><b>lng:</b> {{longitude}} </p>
-          <p><b>lat:</b> {{latitude}} </p>
-          </div>
-    <div class="col-md-6 col-lg-6  bg-white card">
-      <form class="needs-validation mt-3">
-        <div class="row g-4 ps-4">
-          <label  class="form-label mb-0" >{{"Add New Request" | translate}}</label>
-          <hr class="mt-1 ">
-
+<div class="container">
+  <label  class="form-label mb-0" >{{"Add New Request" | translate}}</label>
+  <form class="needs-validation mt-3">
+    <section id="start" #part_1 class="sectionPage">
+      <div class="container-fluid">
+        <div class="row">
           <div class="col-sm-6">
             <label for="" class="form-label">{{"Country" | translate}}</label>
             <select  name="country_origin_id" [(ngModel)]="item.country_origin_id" class="form-control">
@@ -65,6 +51,77 @@
               <option value="ar">ar</option>
             </select>
           </div>
+        </div>
+        <br>
+        
+      <a style="float: right;" (click)="moveto(part_2)"><button class="btn btn-success">{{"next"|translate}}</button></a>
+      </div>
+    </section>
+
+    <section #part_2 id="part_2" class="sectionPage">
+      <br>
+      <div class="container">
+        <div class="col-md-12">
+          <h3 align="center">{{"Select Pickup" | translate}}</h3>
+          <agm-map [latitude]="latitude" [zoom]="5" [longitude]="longitude" (mapClick)="onMapClicked($event)">
+            <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+          </agm-map>
+          <!-- <p><b>lng:</b> {{longitude}} </p>
+          <p><b>lat:</b> {{latitude}} </p> -->
+        </div>
+        <div class="row mt-2">
+          <div class="col-sm-6">
+            <label for="" class="form-label">{{"pickup location lat" | translate}}</label>
+            <input type="text" class="form-control" name="pickup_location_lat" [(ngModel)]="item.pickup_location_lat"
+              id="address2" placeholder='{{"The pickup location lat must be at least 8 characters.." | translate}}'>
+          </div>
+          <div class="col-sm-6">
+            <label for="" class="form-label">{{"pickup location long" | translate}}</label>
+            <input type="text" class="form-control" name="pickup_location_long" [(ngModel)]="item.pickup_location_long"
+              id="address2" placeholder='{{"The pickup location long must be at least 8 characters." | translate}}'>
+          </div>
+        </div>
+      </div>
+      <br>
+      <a style="float: left" (click)="moveto(part_1)"><button class="btn btn-info">{{"prev" | translate}}</button></a>
+      <a style="float: right" (click)="moveto(part_3)"><button class="btn btn-success">{{"next"
+          |translate}}</button></a>
+    </section>
+    <section class="sectionPage" style="height: 100vh;" #part_3>
+      <br>
+      <div class="container">
+        <div class="col-md-12">
+          <h3 align="center">{{"Select Destination" | translate}}</h3>
+          <agm-map [latitude]="latitude_dest" [zoom]="5" [longitude]="longitude_dest"
+            (mapClick)="onMapClicked_dest($event)">
+            <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+          </agm-map>
+          <!-- <p><b>lng:</b> {{longitude_dest}} </p> -->
+          <!-- <p><b>lat:</b> {{latitude_dest}} </p> -->
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <label for="" class="form-label">{{"destination location lat" | translate}}</label>
+            <input type="text" class="form-control" name="destination_location_lat"
+              [(ngModel)]="item.destination_location_lat" id="address2"
+              placeholder='{{"The destination location lat must be at least 8 characters." | translate}}'>
+          </div>
+          <div class="col-sm-6">
+            <label for="" class="form-label">{{"destination location long" | translate}}</label>
+            <input type="text" class="form-control" name="destination_location_long"
+              [(ngModel)]="item.destination_location_long" id="address2"
+              placeholder='{{"Enter the destination location long." | translate}}'>
+          </div>
+        </div>
+      </div>
+      <br>
+      <a style="float: left" (click)="moveto(part_2)"><button class="btn btn-info">{{"prev" | translate}}</button></a>
+      <a style="float: right;" (click)="moveto(part_4)"><button class="btn btn-success">{{"next"|translate}}</button></a>
+    </section>
+
+    <section id="start" #part_4 class="sectionPage">
+      <div class="container-fluid">
+        <div class="row">
           <div class="col-sm-6">
             <label for="" class="form-label">{{"Good Category" | translate}}</label>
             <select  name="goods_country_origin_id" [(ngModel)]="item.goods_country_origin_id" class="form-control">
@@ -80,26 +137,7 @@
               <option *ngFor="let item of currencys" value="{{item.id}}">{{item.name}}</option>
             </select>
           </div>
-          <div class="col-sm-6">
-            <label for="" class="form-label">{{"pickup location lat" | translate}}</label>
-            <input type="text" class="form-control" name="pickup_location_lat" [(ngModel)]="item.pickup_location_lat" id="address2"
-            placeholder='{{"The pickup location lat must be at least 8 characters.." | translate}}'>
-          </div>
-          <div class="col-sm-6">
-            <label for="" class="form-label">{{"pickup location long" | translate}}</label>
-            <input type="text" class="form-control" name="pickup_location_long" [(ngModel)]="item.pickup_location_long" id="address2"
-            placeholder='{{"The pickup location long must be at least 8 characters." | translate}}'>
-          </div>
-          <div class="col-sm-6">
-            <label for="" class="form-label">{{"destination location lat" | translate}}</label>
-            <input type="text" class="form-control" name="destination_location_lat" [(ngModel)]="item.destination_location_lat" id="address2"
-            placeholder='{{"The destination location lat must be at least 8 characters." | translate}}'>
-          </div>
-           <div class="col-sm-6">
-            <label for="" class="form-label">{{"destination location long" | translate}}</label>
-            <input type="text" class="form-control" name="destination_location_long" [(ngModel)]="item.destination_location_long" id="address2"
-            placeholder='{{"Enter the destination location long." | translate}}'>
-          </div>
+          
           <div class="col-sm-6">
             <label for="" class="form-label">{{"commercial reference" | translate}}</label>
             <input type="text" class="form-control" name="commercial_reference" [(ngModel)]="item.commercial_reference" id="address2"
@@ -138,22 +176,15 @@
         <div  style="margin-left: 25% !important;">
           <button class="w-75 btn btn-primary  my-3 " (click)="submit()" style="width:60% !important ;" type="submit">{{"send" | translate}}</button>
 
+        
         </div>
-      </form>
-</div>
-
-<div class="col-md-3">          
-  <h3 align="center">Destination</h3>
-  <agm-map [latitude]="latitude_dest" [zoom]="5" [longitude]="longitude_dest" (mapClick)="onMapClicked_dest($event)">
-    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
-  </agm-map>
-  <p><b>lng:</b> {{longitude_dest}} </p>
-  <p><b>lat:</b> {{latitude_dest}} </p>
-  </div>
-</div>
-
-</div>
-
-
+        <br>
+        <a style="float: left" (click)="moveto(part_3)"><button class="btn btn-info">{{"prev" | translate}}</button></a>
+      
+      </div>
+    </section>
+    
+    </form>
+    </div>
 
 

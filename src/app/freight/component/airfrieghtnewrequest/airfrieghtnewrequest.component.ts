@@ -152,4 +152,7 @@ submit(): void{
     this.item.destination_location_long =event.coords.lng;
     this.item.destination_location_lat =event.coords.lat;
   }
+  moveto(section:any){
+    section.scrollIntoView({behavior:"smooth",block: 'start'});
+  }
 }
