@@ -7,8 +7,8 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./global-constants.component.scss']
 })
 export class GlobalConstantsComponent implements OnInit {
-  public static baseUrl: any = 'https://ams-egypt.in/logistics/public/';
-  //public static baseUrl: any = '    https://amtaque.com/logisty/public/';
+  //public static baseUrl: any = 'https://ams-egypt.in/logistics/public/';
+  public static baseUrl: any = '    https://amtaque.com/logisty/public/';
   public static apiPassword: string = '#as@$#$@as#';
 
   constructor() {
