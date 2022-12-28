@@ -43,8 +43,6 @@ export class HomePegeComponent implements OnInit {
     this._GeneralService.slider().subscribe((res:any)=>{
 
       this.sliderbar = res.data;
-      //console.log(this.sliderbar);
-
     })
   }
 

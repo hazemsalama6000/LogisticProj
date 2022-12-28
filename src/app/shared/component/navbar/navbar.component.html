@@ -28,10 +28,10 @@
           {{ 'register' | translate }}
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" routerLink="/register">عميل</a></li>
+          <li><a class="dropdown-item" routerLink="/register">{{ 'client' | translate }}</a></li>
           <li>
             <a class="dropdown-item" routerLink="/oprator-register"
-              >مقدم خدمه</a
+              >{{ 'operator' | translate }}</a
             >
           </li>
         </ul>
@@ -126,12 +126,17 @@
 
     <div class="dropdown">
       <button
+
         class="btn dropdown-toggle"
         type="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
-      ></button>
-      <ul class="dropdown-menu">
+
+      >      <i class="bi bi-globe" style="color:black ;"></i>
+    </button>
+      <!-- <i class="bi bi-globe"></i> -->
+      <ul class="dropdown-menu"
+      >
         <h3 class="ms-3">{{"Langauges" | translate}}</h3>
         <li class="d-flex my-3 mx-3">
           <img

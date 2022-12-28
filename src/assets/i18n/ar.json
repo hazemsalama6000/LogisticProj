@@ -293,6 +293,13 @@
     "Select Pickup":"نقطة البداية",
     "Select Destination":"نقطة النهاية",
     "next":"التالي",
-    "prev":"السابق"
+    "prev":"السابق",
+    "client": "عميل",
+    "operator":" مقدم خدمه ",
+    "Browse offer":" العرض تصفح",
+    "Find the service you need using Search box at the top or across categories":"ابحث عن الخدمه التى تحتاجها بتسخدام <br> مربع البحث فى الاعلى او عبر التصنيفات ",
+    "":"",
+    "":""
+
 
 }

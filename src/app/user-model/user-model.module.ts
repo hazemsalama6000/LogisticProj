@@ -20,9 +20,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ResendVerifiyOtpComponent } from './component/resend-verifiy-otp/resend-verifiy-otp.component';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { TranslateModule } from '@ngx-translate/core';
+import { AppComponent } from '../app.component';
 
 const routes: Routes = [
-  { path: "" ,redirectTo:"home-page", pathMatch:"full" },
+  //{ path: "" ,redirectTo:"home-page", pathMatch:"full" },
+  { path: "", component: HomePegeComponent },
   { path: "home-page", component: HomePegeComponent },
   { path: "register", component: RegisterComponent },
   { path: "log-in", component: LogInComponent },
@@ -47,7 +49,7 @@ const routes: Routes = [
     ForgotPassOtoComponent,
     NewPssOtpComponent,
     ResendVerifiyOtpComponent,
-    
+
   ],
   imports: [
     CommonModule,
@@ -63,6 +65,6 @@ const routes: Routes = [
   ]
 })
 export class UserModelModule {
-  
-  
+
+
  }

@@ -10,7 +10,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { UserModelModule } from './user-model/user-model.module';
 import { DashBoardModule } from './dash-board/dash-board.module';
 import { ProfileModule } from './profile/profile.module';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { CompanyModuleModule } from './company-module/company-module.module';
@@ -23,12 +23,19 @@ import { TranslateLoader } from '@ngx-translate/core';
 import { FreightModule } from './freight/freight.module';
 import { GoogleMapsComponent } from './shared/component/google-maps/google-maps.component';
 import { AgmCoreModule } from '@agm/core';
+// import { SectiontwoComponent } from './user-model/component/sectiontwo/sectiontwo.component';
+// import { SectionthreeeComponent } from './user-model/component/sectionthreee/sectionthreee.component';
+// import { SectionfiveComponent } from './user-model/component/sectionfive/sectionfive.component';
+// import { SectionfourComponent } from './user-model/component/sectionfour/sectionfour.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    
+    // SectiontwoComponent,
+    // SectionthreeeComponent,
+    // SectionfourComponent,
+    // SectionfiveComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +68,7 @@ import { AgmCoreModule } from '@agm/core';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBCYhW_5AfTwkCf4idRzIwte-ea8wYLPbY'
     }),
-    
+
 
   ],
   providers: [],
