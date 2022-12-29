@@ -1,16 +1,74 @@
+// agm-map {
+//     height: 300px;
+// }
+
+// .sectionPage{
+//     height: 100vh;
+//     padding-top: 10%;
+// }
+// .ng-invalid:not(form){
+// border-left: 5px solid red;
+// }
+
+// .ng-valid:not(form) {
+//     border-left: 5px solid green;
+
+// }
 agm-map {
     height: 300px;
+}   
+
+.map {
+  position: relative;
 }
 
-.sectionPage{
-    height: 100vh;
-    padding-top: 10%;
-}
-.ng-invalid:not(form){
-border-left: 5px solid red;
+.map-center-overlay {
+  margin: 0;
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
-.ng-valid:not(form) {
-    border-left: 5px solid green;
 
+// .sectionPage{
+    // height: 1000%;
+    // overflow-y: hidden; /* Hide vertical scrollbar */
+    // overflow-x: hidden; 
+// }
+
+@import "~swiper/css/mousewheel";
+@import "~swiper/css";
+@import "~swiper/css/pagination";
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  // text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

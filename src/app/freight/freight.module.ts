@@ -23,6 +23,7 @@ import { AirdetailsComponent } from './component/airdetails/airdetails.component
 import { SeadetailsComponent } from './component/seadetails/seadetails.component';
 import { LocaldetailsComponent } from './component/localdetails/localdetails.component';
 import { AgmCoreModule } from '@agm/core';
+import { SwiperModule } from "swiper/angular";
 
 
   
@@ -70,6 +71,7 @@ const routes: Routes =[
         ReactiveFormsModule,
         FormsModule,
         CarouselModule,
+        SwiperModule,
         NgxIntlTelInputModule,
         TranslateModule.forChild(),
         AgmCoreModule.forRoot({

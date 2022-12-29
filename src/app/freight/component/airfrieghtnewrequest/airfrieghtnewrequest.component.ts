@@ -8,11 +8,17 @@ import { CustomerTicketsService } from 'src/app/service/Tickets/Customer/custome
 import { Helper } from 'src/app/shared/helper';
 import {  ViewChild, ElementRef, NgZone } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
+import SwiperCore from "swiper";
+import {ViewEncapsulation } from "@angular/core";
+import  {  Virtual } from 'swiper';
+
+SwiperCore.use([Virtual]);
 
 @Component({
   selector: 'app-airfrieghtnewrequest',
   templateUrl: './airfrieghtnewrequest.component.html',
-  styleUrls: ['./airfrieghtnewrequest.component.scss']
+  styleUrls: ['./airfrieghtnewrequest.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class AirfrieghtnewrequestComponent implements OnInit {
   helper: any = Helper;
@@ -60,6 +66,7 @@ export class AirfrieghtnewrequestComponent implements OnInit {
   title: string = 'AGM project';
   @ViewChild('search')
   public searchElementRef!: ElementRef;
+  @ViewChild('swiper', { static: false }) swiper:any;
   
   constructor( private http:HttpClient , private router:Router , private _FreightService:FreightService,
     private gatcatser:GeneralService, private customclearance:CustomerTicketsService,
@@ -152,7 +159,13 @@ submit(): void{
     this.item.destination_location_long =event.coords.lng;
     this.item.destination_location_lat =event.coords.lat;
   }
-  moveto(section:any){
-    section.scrollIntoView({behavior:"smooth",block: 'start'});
+  // moveto(section:any){
+  //   section.scrollIntoView({behavior:"smooth",block: 'start'});
+  // }
+  slideNext(){
+    this.swiper.swiperRef.slideNext(100);
+  }
+  slidePrev(){
+    this.swiper.swiperRef.slidePrev(100);
   }
 }
