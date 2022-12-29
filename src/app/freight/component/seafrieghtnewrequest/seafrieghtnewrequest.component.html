@@ -16,7 +16,9 @@
             <label class="form-label">{{"Customs Clearance" | translate}}</label>
             <select name="custom_clearance" [(ngModel)]="item.custom_clearance" class="form-control">
               <option value="" disabled selected>Enter your CustomsClearance</option>
-              <option *ngFor="let item of CustomsClearance" value="{{item.order_id}}">{{item.code}}</option>
+              <!-- <option *ngFor="let item of CustomsClearance" value="{{item.order_id}}">{{item.code}}</option> -->
+              <option value="2">YES</option>
+              <option value="1">NO</option>
             </select>
           </div>
           <div class="col-sm-6">

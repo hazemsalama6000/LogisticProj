@@ -3,7 +3,7 @@
     "register":"انشاء حساب",
     "aboutUs":"لماذا نحن",
     "commonquestions":"الاساله الشائعه",
-    "HowWeWork":"كيف نعمل",
+    "HowWeWork":"كيف تعمل ؟",
     "FullName":"الاسم كامل",
     "Email":"البريد الالكترونى",
     "Phone":"رقم الهاتف",
@@ -296,7 +296,7 @@
     "prev":"السابق",
     "client": "عميل",
     "operator":" مقدم خدمه ",
-    "Browse offer":" العرض تصفح",
+    "Browse offer":"تصفح العرض ",
     "Find the service you need using Search box at the top or across categories":"ابحث عن الخدمه التى تحتاجها بتسخدام <br> مربع البحث فى الاعلى او عبر التصنيفات ",
     "":"",
     "":""

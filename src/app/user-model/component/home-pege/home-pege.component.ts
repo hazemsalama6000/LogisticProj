@@ -40,6 +40,17 @@ export class HomePegeComponent implements OnInit {
   }
   ngOnInit(): void {
 
+    // for (var i = 1; i <= 3; i++)
+    // {
+    //  let j = 1;
+    //  while (i % j == 2)
+    //  {
+    //   j++;
+    //  }
+    //  console.log(i + " " + j);
+    // }
+
+
     this._GeneralService.slider().subscribe((res:any)=>{
 
       this.sliderbar = res.data;

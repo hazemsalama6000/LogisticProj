@@ -2,42 +2,54 @@
     <div class=" container">
       <div class="row">
         <div class="col-12 text-center mt-5">
-          <h2 class="addries "> <span><i class="bi bi-briefcase-fill"></i></span> {{ "HowWeWork" | translate }}</h2>
+          <h2 class="addries "> <span><i class="bi bi-briefcase-fill" style="color: black;"></i></span> {{ "HowWeWork" | translate }}</h2>
 
    <div class="py-3">
            <p >{{ "thisTextforTexting2" | translate }}  </p>
              <p>{{ "thisTextforTexting" | translate }}  </p>
 
    </div>
-          <ul class="nav nav-pills   " id="pills-tab" role="tablist">
-          <div class="col-4 col-lg-4 col-md-4">
-            <li class="nav-item " role="presentation">
-              <button class="btn w-75 "
+          <!-- <ul class="nav nav-pills   " id="pills-tab" role="tablist">
+          <div class=" " style="background-color: red;">
+            <li class="nav-item " role="presentation"> -->
+              <button col-4 class="btn w-25 active"
                id="pills-contact-tab" data-bs-toggle="pill"
                 data-bs-target="#pills-contact" type="button" role="tab"
                 aria-controls="pills-contact"
-                aria-selected="false">{{ "customssupplycompany" | translate }}</button>
-            </li>
-          </div>
+                aria-selected="false">{{ "customssupplycompany" | translate }}
 
-           <div class="col-4 col-lg-4 col-md-4 " >
-             <li class="nav-item  "  role="presentation">
-               <button class=" btn w-75 " id="pills-profile-tab"
+              </button>
+            <!-- </li>
+          </div> -->
+
+           <!-- <div class="  " >
+             <li class="nav-item  "  role="presentation"> -->
+
+               <button col-4 class=" btn w-25 active " id="pills-profile-tab"
                 data-bs-toggle="pill" data-bs-target="#pills-profile"
                 type="button" role="tab" aria-controls="pills-profile"
-                 aria-selected="false">{{ "CustomsBroker" | translate }}</button>
-             </li>
+                 aria-selected="false">{{ "CustomsBroker" | translate }}
+                </button>
+
+             <!-- </li>
            </div>
 
-       <div class="col-4 col-lg-4 col-md-4 ">
-             <li class="nav-item  " role="presentation">
-               <button class=" btn w-75 active" id="pills-home-tab"
+       <div class="  ">
+             <li class="nav-item  " role="presentation"> -->
+               <button col-4 class=" btn w-25 active" id="pills-home-tab"
                 data-bs-toggle="pill" data-bs-target="#pills-home"
                  type="button" role="tab" aria-controls="pills-home"
-                  aria-selected="true">{{ "imported" | translate }}</button>
-             </li>
+                  aria-selected="true">{{ "imported" | translate }}
+                </button>
+                <div class="container1">
+                  <div class="circle">
+                  </div>
+                </div>
+
+
+             <!-- </li>
        </div>
-          </ul>
+          </ul> -->
 
           <div class="tab-content text-center active" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
