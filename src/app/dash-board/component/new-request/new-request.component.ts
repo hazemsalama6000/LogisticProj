@@ -7,11 +7,19 @@ import { CustomerTicketsService } from 'src/app/service/Tickets/Customer/custome
 import { Helper } from 'src/app/shared/helper';
 import {  ViewChild, ElementRef, NgZone } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
+import { SwiperComponent } from "swiper/angular";
+import SwiperCore, { Pagination } from "swiper";
+import {ViewEncapsulation } from "@angular/core";
+import  { SwiperOptions } from 'swiper';
+import  { Swiper, Virtual } from 'swiper';
+
+SwiperCore.use([Virtual]);
 
 @Component({
   selector: 'app-new-request',
   templateUrl: './new-request.component.html',
-  styleUrls: ['./new-request.component.scss']
+  styleUrls: ['./new-request.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class NewRequestComponent implements OnInit {
     helper: any = Helper;
@@ -48,11 +56,20 @@ export class NewRequestComponent implements OnInit {
     longitude_dest!: number; 
     @ViewChild('search')
     public searchElementRef!: ElementRef;
+    @ViewChild('swiper', { static: false }) swiper:any;
+    // @ViewChild('gallery', { static: false }) gallery: SwiperComponent | undefined;
 
   constructor( private http:HttpClient , private router:Router , private clienttecket:CustomerTicketsService,
     private gatcatser:GeneralService,
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone ) { }
+    
+  slideNext(){
+    this.swiper.swiperRef.slideNext(100);
+  }
+  slidePrev(){
+    this.swiper.swiperRef.slidePrev(100);
+  }
 
     ngOnInit(): void {
     this.getcategory();
@@ -60,6 +77,7 @@ export class NewRequestComponent implements OnInit {
     this.getGoodCategory();
     this.getCountry();
     this.getCity();
+    
     this.mapsAPILoader.load().then(() => {
     });
     this.longitude =29.9602364242958;
@@ -125,8 +143,18 @@ onMapClicked_dest(event: any){
   this.item.destination_location_long =event.coords.lng;
   this.item.destination_location_lat =event.coords.lat;
 }
-moveto(section:any){
-  section.scrollIntoView({behavior:"smooth",block: 'start'});
+// moveto(section:any){
+//   section.scrollIntoView({behavior:"smooth",block: 'start'});
+// }
+
+// onSwiper([swiper]:any) {
+//   console.log(swiper);
+// }
+// onSlideChange() {
+//   console.log('slide change');
+// }
+changePoint(event:any){
+  alert(1)
 }
 }
 

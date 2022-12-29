@@ -40,6 +40,7 @@
     "ngx-owl-carousel-o": "^7.0.4",
     "rxjs": "~7.5.0",
     "snazzy-info-window": "^1.1.1",
+    "swiper": "^8.4.5",
     "tslib": "^1.14.1",
     "zone.js": "~0.11.4"
   },

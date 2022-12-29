@@ -79,7 +79,7 @@ export class NavbarComponent implements OnInit {
     this._GeneralService.cliendLogOut(token).subscribe((res)=>{
      this._GeneralService.savecurrentuser();
     localStorage.removeItem("usertoken");
-    this._Router.navigate(['/home-page']);
+    this._Router.navigate(['/']);
     this.islogin = false;
     });
 
@@ -88,7 +88,7 @@ export class NavbarComponent implements OnInit {
     this._GeneralService.companylogout(token).subscribe((res)=>{
       this._GeneralService.savecurrentuser();
       localStorage.removeItem("usertoken");
-      this._Router.navigate(['/home-page'])
+      this._Router.navigate(['/'])
       this.islogin = false;
     });
   }
@@ -96,7 +96,7 @@ export class NavbarComponent implements OnInit {
     this._GeneralService.opratorlogout(token).subscribe((res)=>{
       this._GeneralService.savecurrentuser();
       localStorage.removeItem("usertoken")
-      this._Router.navigate(['/home-page'])
+      this._Router.navigate(['/'])
       this.islogin = false;
 
     });
@@ -105,7 +105,7 @@ export class NavbarComponent implements OnInit {
       this._GeneralService.replogout(token).subscribe((res)=>{
         this._GeneralService.savecurrentuser();
         localStorage.removeItem("usertoken")
-        this._Router.navigate(['/home-page'])
+        this._Router.navigate(['/'])
         this.islogin = false;
 
       });

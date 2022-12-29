@@ -7,7 +7,7 @@ const routes: Routes = [
     // ---------------------------------
     { path:' "register"',loadChildren:()=>import('./user-model/user-model.module').then(m=>m.UserModelModule)},
     { path:' "log-in"',loadChildren:()=>import('./user-model/user-model.module').then(m=>m.UserModelModule)},
-    { path:' "home-page"',loadChildren:()=>import('./user-model/user-model.module').then(m=>m.UserModelModule)},
+    { path:' ""',loadChildren:()=>import('./user-model/user-model.module').then(m=>m.UserModelModule)},
     { path:' "activate-account"',loadChildren:()=>import('./user-model/user-model.module').then(m=>m.UserModelModule)},
     { path:' "resend-verifiy-otp"',loadChildren:()=>import('./user-model/user-model.module').then(m=>m.UserModelModule)},
     { path:' "forgot-password"',loadChildren:()=>import('./user-model/user-model.module').then(m=>m.UserModelModule)},
@@ -145,7 +145,7 @@ const routes: Routes = [
     {path: "local-send-request", loadChildren: () => import('./freight/freight.module').then(m => m.FreightModule)},
     {path: "local-request-detiles", loadChildren: () => import('./freight/freight.module').then(m => m.FreightModule)},
     // ---------------------------------
-    // { path: "**", redirectTo: "/home-page", pathMatch: "full" },
+    // { path: "**", redirectTo: "/", pathMatch: "full" },
 
 ];
 
