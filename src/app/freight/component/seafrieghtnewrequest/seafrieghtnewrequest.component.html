@@ -1,20 +1,18 @@
-<div class="container">
-  <label class="form-label mb-0">{{"Add New Request Sea Freight" | translate}}</label>
-  <form class="needs-validation mt-3">
-    <hr>
-    <section id="start" #part_1 class="sectionPage">
-      <div class="container-fluid">
+<form class="needs-validation mt-3">
+  <swiper #swiper [virtual]="true" [preventClicksPropagation]="false" [simulateTouch]="false">
+    <ng-template swiperSlide>
+      <div class="container">
         <div class="row">
           <div class="col-sm-6">
             <label class="form-label">{{"Country" | translate}}</label>
-            <select name="country_origin_id" [(ngModel)]="item.country_origin_id" class="form-control">
+            <select name="country_origin_id" [(ngModel)]="item.country_origin_id" class="form-select">
               <option value="" disabled selected>Enter your Country</option>
               <option *ngFor="let item of country" value="{{item.id}}">{{item.name}}</option>
             </select>
           </div>
           <div class="col-sm-6">
             <label class="form-label">{{"Customs Clearance" | translate}}</label>
-            <select name="custom_clearance" [(ngModel)]="item.custom_clearance" class="form-control">
+            <select name="custom_clearance" [(ngModel)]="item.custom_clearance" class="form-select">
               <option value="" disabled selected>Enter your CustomsClearance</option>
               <!-- <option *ngFor="let item of CustomsClearance" value="{{item.order_id}}">{{item.code}}</option> -->
               <option value="2">YES</option>
@@ -23,21 +21,21 @@
           </div>
           <div class="col-sm-6">
             <label for="" class="form-label">{{"Destination" | translate}}</label>
-            <select name="country_destination_id" [(ngModel)]="item.country_destination_id" let class="form-control">
+            <select name="country_destination_id" [(ngModel)]="item.country_destination_id" let class="form-select">
               <option value="" disabled>Enter Tour Destination</option>
               <option *ngFor="let item of city" value="{{item.id}}">{{item.name}}</option>
             </select>
           </div>
           <div class="col-sm-6">
             <label for="" class="form-label">{{"Currency" | translate}}</label>
-            <select name="currency_id" [(ngModel)]="item.currency_id" class="form-control">
+            <select name="currency_id" [(ngModel)]="item.currency_id" class="form-select">
               <option value="" disabled>Enter Your Currency</option>
               <option *ngFor="let item of currencys" value="{{item.id}}">{{item.name}}</option>
             </select>
           </div>
           <div class="col-sm-6">
             <label for="" class="form-label">{{"Ticket Category" | translate}}</label>
-            <select name="category_id" [(ngModel)]="item.category_id" class="form-control">
+            <select name="category_id" [(ngModel)]="item.category_id" class="form-select">
               <option value="" disabled>Enter ticket category</option>
               <option *ngFor="let item of cats" value="{{item.id}}">{{item.name}}</option>
 
@@ -46,7 +44,7 @@
           </div>
           <div class="col-sm-6">
             <label for="" class="form-label">{{"Language" | translate}}</label>
-            <select name="language" [(ngModel)]="item.language" class="form-control">
+            <select name="language" [(ngModel)]="item.language" class="form-select">
               <option value="" disabled>Select The language</option>
               <option value="en">en</option>
               <option value="ar">ar</option>
@@ -61,22 +59,28 @@
           </div>
         </div>
         <br>
-        <br>
-        <a style="float: right;" (click)="moveto(part_2)"><button class="btn btn-success">{{"next" |
-            translate}}</button></a>
+        <div class="row">
+          <div class="col-md-6 "><button class="btn btn-primary" style="float: left;"
+              (click)="slidePrev()">Prev</button></div>
+          <div class="col-md-6 "><button class="btn btn-success" [disabled]="!item.currency_id && !item.category_id"
+              style="float: right;" (click)="slideNext()">{{"next"|translate}}</button></div>
+        </div>
       </div>
-      <br>
-    </section>
-    <section #part_2 id="part_2" class="sectionPage">
-      <br>
+
+
+    </ng-template>
+    <ng-template swiperSlide>
       <div class="container">
-        <div class="col-md-12">
-          <h3 align="center">{{"Select Pickup" | translate}}</h3>
-          <agm-map [latitude]="latitude" [zoom]="5" [longitude]="longitude" (mapClick)="onMapClicked($event)">
-            <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
-          </agm-map>
-          <!-- <p><b>lng:</b> {{longitude}} </p>
-          <p><b>lat:</b> {{latitude}} </p> -->
+        <div class="row mt-2">
+
+          <div class="col-md-12">
+            <h3 align="center">{{"Select Pickup" | translate}}</h3>
+            <agm-map [latitude]="latitude" [zoom]="5" [longitude]="longitude">
+              <agm-marker [markerDraggable]="true" (dragEnd)="onMapClicked($event)" [latitude]="latitude"
+                [longitude]="longitude">
+              </agm-marker>
+            </agm-map>
+          </div>
         </div>
         <div class="row mt-2">
           <div class="col-sm-6">
@@ -89,24 +93,34 @@
             <input type="text" class="form-control" name="pickup_location_long" [(ngModel)]="item.pickup_location_long"
               id="address2" placeholder='{{"The pickup location long must be at least 8 characters." | translate}}'>
           </div>
+
         </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6 "><button class="btn btn-primary" style="float: left;"
+              (click)="slidePrev()">Prev</button></div>
+          <div class="col-md-6 "><button class="btn btn-success"
+              [disabled]="!item.pickup_location_lat && !item.pickup_location_long" style="float: right;"
+              (click)="slideNext()">{{"next"|translate}}</button></div>
+        </div>
+
+
       </div>
       <br>
-      <a style="float: left" (click)="moveto(part_1)"><button class="btn btn-info">{{"prev" | translate}}</button></a>
-      <a style="float: right" (click)="moveto(part_3)"><button class="btn btn-success">{{"next"
-          |translate}}</button></a>
-    </section>
-    <section class="sectionPage" style="height: 100vh;" #part_3>
-      <br>
+
+
+
+    </ng-template>
+    <ng-template swiperSlide>
       <div class="container">
         <div class="col-md-12">
           <h3 align="center">{{"Select Destination" | translate}}</h3>
-          <agm-map [latitude]="latitude_dest" [zoom]="5" [longitude]="longitude_dest"
-            (mapClick)="onMapClicked_dest($event)">
-            <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+          <agm-map [latitude]="latitude_dest" [zoom]="5" [longitude]="longitude_dest">
+            <agm-marker [markerDraggable]="true" [latitude]="latitude" [longitude]="longitude"
+              (dragEnd)="onMapClicked_dest($event)"></agm-marker>
           </agm-map>
-          <!-- <p><b>lng:</b> {{longitude_dest}} </p> -->
-          <!-- <p><b>lat:</b> {{latitude_dest}} </p> -->
+
+
         </div>
         <div class="row">
           <div class="col-sm-6">
@@ -122,19 +136,24 @@
               placeholder='{{"Enter the destination location long." | translate}}'>
           </div>
         </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6 "><button class="btn btn-primary" style="float: left;"
+              (click)="slidePrev()">Prev</button></div>
+          <div class="col-md-6 "><button class="btn btn-success"
+              [disabled]="!item.destination_location_lat && !item.destination_location_long" style="float: right;"
+              (click)="slideNext()">{{"next"|translate}}</button></div>
+        </div>
+
       </div>
-      <br>
-      <a style="float: left" (click)="moveto(part_2)"><button class="btn btn-info">{{"prev" | translate}}</button></a>
-      <a style="float: right;" (click)="moveto(part_4)"><button class="btn btn-success">{{"next"
-          |translate}}</button></a>
-    </section>
-    <section class="sectionPage" #part_4>
-      <br>
+
+    </ng-template>
+    <ng-template swiperSlide>
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
             <label for="" class="form-label">{{"The flow" | translate}}</label>
-            <select name="flow" [(ngModel)]="item.flow" class="form-control">
+            <select name="flow" [(ngModel)]="item.flow" class="form-select">
               <option value="" disabled>Enter your flow</option>
               <option value="Export">Export</option>
               <option value="Import">Import</option>
@@ -142,7 +161,7 @@
           </div>
           <div class="col-sm-6">
             <label for="lastName" class="form-label">{{"Quote Currency" | translate}}</label>
-            <select name="quote_currency_id" [(ngModel)]="item.quote_currency_id" class="form-control">
+            <select name="quote_currency_id" [(ngModel)]="item.quote_currency_id" class="form-select">
               <option value="" disabled>Select quote Currency</option>
               <option *ngFor="let item of currencys" value="{{item.id}}">{{item.name}}</option>
             </select>
@@ -172,18 +191,24 @@
           </div>
         </div>
         <br>
-        <a style="float: left" (click)="moveto(part_3)"><button class="btn btn-info">{{"prev" | translate}}</button></a>
-        <a style="float: right" (click)="moveto(part_5)"><button class="btn btn-success">{{"next"
-            |translate}}</button></a>
+        <div class="row">
+          <div class="col-md-6 "><button class="btn btn-primary" style="float: left;"
+              (click)="slidePrev()">Prev</button></div>
+              <div class="col-md-6 "><button class="btn btn-success"
+                [disabled]="!item.destination_location_lat && !item.destination_location_long" style="float: right;"
+                (click)="slideNext()">{{"next"|translate}}</button></div>
+        </div>
       </div>
-    </section>
-    <section class="sectionPage" #part_5>
-      <br>
+
+
+    </ng-template>
+    <ng-template swiperSlide>
+
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
             <label for="" class="form-label">{{"insure good" | translate}}</label>
-            <select name="insure_good" [(ngModel)]="item.insure_good" let class="form-control">
+            <select name="insure_good" [(ngModel)]="item.insure_good" let class="form-select">
               <option value="" disabled>Enter pickup city id</option>
               <option value="2">YES</option>
               <option value="1">NO</option>
@@ -191,7 +216,7 @@
           </div>
           <div class="col-sm-6">
             <label for="" class="form-label">{{"need pickup" | translate}}</label>
-            <select name="need_pickup" [(ngModel)]="item.need_pickup" let class="form-control">
+            <select name="need_pickup" [(ngModel)]="item.need_pickup" let class="form-select">
               <option value="" disabled>need pickup</option>
               <option value="2">YES</option>
               <option value="1">NO</option>
@@ -199,7 +224,7 @@
           </div>
           <div class="col-sm-6">
             <label for="" class="form-label">{{"palletized" | translate}}</label>
-            <select name="palletized" [(ngModel)]="item.palletized" let class="form-control">
+            <select name="palletized" [(ngModel)]="item.palletized" let class="form-select">
               <option value="" disabled>palletized</option>
               <option value="2">YES</option>
               <option value="1">NO</option>
@@ -207,7 +232,7 @@
           </div>
           <div class="col-sm-6">
             <label class="form-label">{{"pickup insure" | translate}}</label>
-            <select class="form-control" name="pickup_insure" [(ngModel)]="item.pickup_insure">
+            <select class="form-select" name="pickup_insure" [(ngModel)]="item.pickup_insure">
               <option disabled>pickup insure</option>
               <option value="2">YES</option>
               <option value="1">NO</option>
@@ -215,19 +240,25 @@
           </div>
         </div>
         <br>
-        <a style="float: left" (click)="moveto(part_4)"><button class="btn btn-info">{{"prev" | translate}}</button></a>
-        <a style="float: right" (click)="moveto(part_6)"><button class="btn btn-success">{{"next"
-            |translate}}</button></a>
+        <div class="row">
+          <div class="col-md-6 "><button class="btn btn-primary" style="float: left;"
+              (click)="slidePrev()">Prev</button></div>
+              <div class="col-md-6 "><button class="btn btn-success"
+                [disabled]="!item.destination_location_lat && !item.destination_location_long" style="float: right;"
+                (click)="slideNext()">{{"next"|translate}}</button></div>
+        </div>
       </div>
-    </section>
-    <section class="sectionPage" #part_6>
-      <br>
+    </ng-template>
+
+
+    <ng-template swiperSlide>
+
       <div class="container">
         <div class="row">
 
           <div class="col-sm-6">
             <label for="" class="form-label">{{"Pickup City Id" | translate}}</label>
-            <select name="pickup_city_id" [(ngModel)]="item.pickup_city_id" let class="form-control">
+            <select name="pickup_city_id" [(ngModel)]="item.pickup_city_id" let class="form-select">
               <option value="" disabled>Enter pickup city id</option>
               <option *ngFor="let item of city" value="{{item.id}}">{{item.name}}</option>
             </select>
@@ -289,14 +320,15 @@
         <div style="margin-left: 25% !important;">
           <button class="w-75 btn btn-primary  my-3 " (click)="submit()" style="width:60% !important ;" type="submit">
             {{"send" | translate}}</button>
-
-
         </div>
         <br>
-        <a style="float: left" (click)="moveto(part_5)"><button class="btn btn-info">{{"prev" | translate}}</button></a>
-
+        <div class="row">
+          <div class="col-md-6 "><button class="btn btn-primary" style="float: left;"
+              (click)="slidePrev()">Prev</button></div>
+              
+        </div>
       </div>
-    </section>
-
-  </form>
-</div>
+    </ng-template>
+  </swiper>
+</form>
+<br>
