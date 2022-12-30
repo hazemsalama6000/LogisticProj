@@ -6,21 +6,21 @@
           <div class="card-body p-md-4">
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1 ">
-                <p class="text-center h5 fw-bold  mx-1 mx-md-4 ">{{ "Login" | translate }}</p>
+                <p class="text-center h4  mx-1 mx-md-4 ">{{ "Login" | translate }}</p>
                 <div class=" alert alert-danger text-center" *ngIf="error">{{ error }}</div>
 
                 <form [formGroup]="loginform" (ngSubmit)="sumbnitLoginForm(loginform)">
                   <!-- Email input -->
 
                   <div class="form-outline mb-4">
-                    <label class="form-label">{{ "Email" | translate }}</label>
+                    <label class="form-label h5 mx-1">{{ "Email" | translate }}</label>
 
                     <input formControlName="email" type="email" class="form-control" />
                   </div>
 
                   <!-- Password input -->
                   <div class="form-outline mb-4">
-                    <label class="form-label">{{ "Password" | translate }}</label>
+                    <label class="form-label h5 mx-1 ">{{ "Password" | translate }}</label>
                     <br>
                     <mat-form-field style="width: 100%;" appearance="fill" >
                     <input  matInput [type]="showPassword ? 'text' : 'password'" name="password" class="">
@@ -39,7 +39,7 @@
                   </div>
                   <!-- Register buttons -->
                   <div class="text-center">
-                    <p class=" text-center fs-4">or</p>
+                    <p class=" text-center fs-4">or</p><br>
 
                     <div class="fs-2 mb-3 ">
                       <i style="color: #3B5998;" class="bi bi-facebook me-5 "></i>
