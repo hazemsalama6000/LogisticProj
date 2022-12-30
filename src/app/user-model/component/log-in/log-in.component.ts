@@ -16,7 +16,8 @@ loginform = new FormGroup({
     email: new FormControl(null, [Validators.email , Validators.required]),
     password: new FormControl(null, [Validators.required])
   })
-  public showPassword: boolean = false;
+   showPassword: boolean = false;
+   showConfirmPassword: boolean = false;
   
   
   constructor(private _ClientAuthService:ClientAuthService, private _Router:Router , private _GeneralService:GeneralService ) {
@@ -63,5 +64,9 @@ loginform = new FormGroup({
   }
   togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
+  }
+  
+  toggleConfirmPasswordVisibility(): void {
+    this.showConfirmPassword = !this.showConfirmPassword;
   }
 }

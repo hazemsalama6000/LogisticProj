@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
   CountryISO = CountryISO;
   PhoneNumberFormat = PhoneNumberFormat;
   preferredCountries: CountryISO[] = [CountryISO.UnitedStates, CountryISO.UnitedKingdom];
+  showPassword: boolean = false;
 
   regsiterForm = new FormGroup({
     name: new FormControl(null,
@@ -82,5 +83,8 @@ export class RegisterComponent implements OnInit {
 
     }
   }
-
+  
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
 }

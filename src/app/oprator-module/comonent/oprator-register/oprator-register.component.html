@@ -1,6 +1,7 @@
-<section class="" style="background-color: #eee;">
-  <div class="container ">
-    <div class="row d-flex justify-content-center align-items-center ">
+<section class="vh-100 " style="background-color: #eee;">
+  <div class="container h-100">
+    <!-- <br><br><br><br><br> -->
+      <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-12 col-xl-11">
         <div class="card text-black" style="border-radius: 25px;">
           <div class="card-body p-md-4 ">
@@ -86,9 +87,17 @@
 
 
                   <div class="d-flex flex-row align-items-center ">
-                    <div class="form-outline flex-fill mb-0">
-                      <label class="form-label">{{"Password" | translate }}</label>
-                      <input formControlName="password" type="password" class="form-control" />
+                    <div class="form-outline flex-fill mb-0 ">
+                      <label class="form-label ">{{"Password" | translate }}</label>
+                      <!-- <input formControlName=" " type="password" class="form-control" /> -->
+
+                      <mat-form-field style="width: 100%;" appearance="fill" >
+                        <input  matInput [type]="showPassword ? 'text' : 'password'" formControlName="password" class="">
+                          <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                              {{showPassword?'visibility_off':'visibility'}}
+                          </mat-icon>
+                      </mat-form-field>
+
                       <div
                         *ngIf="opratorRegisterForm.get('password')?.errors != null && opratorRegisterForm.get('password')?.touched"
                         class="alert-danger my-2 mx-3">
@@ -103,8 +112,14 @@
                   <div class="d-flex flex-row align-items-center mb-2">
                     <div class="form-outline flex-fill mb-0">
                       <label class="form-label">{{"ConfirmPassword" | translate }} </label>
-                      <input formControlName="password_confirmation" type="password" class="form-control"
-                        (keyup)="checkPasswordMatch()" />
+                      <!-- <input formControlName="password_confirmation" type="password" class="form-control"
+                        (keyup)="checkPasswordMatch()" /> -->
+                        <mat-form-field style="width: 100%;" appearance="fill" >
+                          <input  matInput [type]="showPassword ? 'text' : 'password'" (keyup)="checkPasswordMatch()" formControlName="password_confirmation" class="">
+                            <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                                {{showPassword?'visibility_off':'visibility'}}
+                            </mat-icon>
+                        </mat-form-field>
                       <p class="error" *ngIf="!isMatching">Password and confirm not match</p>
 
 
@@ -115,7 +130,7 @@
                       class="btn btn-primary btn-lg w-100">{{"btnRegister" | translate }}</button>
                   </div>
 
-                  <p class="text-center mt-2">{{"youhaveaccount"| translate }}؟ <a routerLink="/log-in">{{"Login" |
+                  <p class="text-center mt-2">{{"youhaveaccount"| translate }}؟ <a class="text-decoration-none text-success fw-bold" routerLink="/log-in">{{"Login" |
                       translate }} </a></p>
                 </form>
 

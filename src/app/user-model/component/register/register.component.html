@@ -78,7 +78,13 @@
                   <div class="d-flex flex-row align-items-center ">
                     <div class="form-outline flex-fill mb-0">
                       <label class="form-label">{{"Password" | translate }}</label>
-                      <input formControlName="password" type="password" class="form-control" />
+                      <!-- <input formControlName="password" type="password" class="form-control" /> -->
+                      <mat-form-field style="width: 100%;" appearance="fill" >
+                        <input  matInput [type]="showPassword ? 'text' : 'password'" formControlName="password" class="">
+                          <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                              {{showPassword?'visibility_off':'visibility'}}
+                          </mat-icon>
+                      </mat-form-field>
                       <div *ngIf="regsiterForm.get('password')?.errors != null && regsiterForm.get('password')?.touched"   class="alert-danger my-2 mx-3">
                         <p class="error" *ngIf="regsiterForm.get('password')?.errors?.['required']">password is required</p>
                         <p class="error" *ngIf="regsiterForm.get('password')?.errors?.['minLength']"> The minimum number of digits in the password is 8 digits</p>
@@ -90,8 +96,14 @@
                   <div class="d-flex flex-row align-items-center mb-2">
                     <div class="form-outline flex-fill mb-0">
                       <label class="form-label">{{"ConfirmPassword" | translate }} </label>
-                      <input formControlName="password_confirmation" type="password" class="form-control" (keyup)="checkPasswordMatch()" />
-                      <p  class="error" *ngIf="!isMatching">Password and confirm not match</p>
+                      <!-- <input formControlName="password_confirmation" type="password" class="form-control" (keyup)="checkPasswordMatch()" /> -->
+                      <mat-form-field style="width: 100%;" appearance="fill" >
+                        <input  matInput [type]="showPassword ? 'text' : 'password'" (keyup)="checkPasswordMatch()" formControlName="password_confirmation" class="">
+                          <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                              {{showPassword?'visibility_off':'visibility'}}
+                          </mat-icon>
+                      </mat-form-field>
+                    <p class="error" *ngIf="!isMatching">Password and confirm not match</p>
 
 
                     </div>

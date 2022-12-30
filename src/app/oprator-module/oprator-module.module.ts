@@ -37,6 +37,10 @@ import { AddrateComponent } from './comonent/addrate/addrate.component';
 import { AddtrackComponent } from './comonent/addtrack/addtrack.component';
 import { TracksComponent } from './comonent/tracks/tracks.component';
 import { TrackidComponent } from './comonent/trackid/trackid.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   { path: "individual-dashboard",canActivate:[AuthGuard], component:IndividualDashboardComponent  },
@@ -112,8 +116,13 @@ const routes: Routes = [
     ReactiveFormsModule,
     CarouselModule,
     FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
     NgxIntlTelInputModule,
     TranslateModule.forChild(),
   ]
 })
 export class OpratorModuleModule { }
+  

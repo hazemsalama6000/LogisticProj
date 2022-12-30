@@ -31,7 +31,7 @@ export class OpratorRegisterComponent implements OnInit {
   CountryISO = CountryISO;
   PhoneNumberFormat = PhoneNumberFormat;
   preferredCountries: CountryISO[] = [CountryISO.UnitedStates, CountryISO.UnitedKingdom];
-
+  showPassword: boolean = false;
   opratorRegisterForm = new FormGroup({
     name: new FormControl(null, [Validators.required , Validators.maxLength(150) , Validators.minLength(2)]),
     password: new FormControl(null, [Validators.required, Validators.maxLength(25) , Validators.minLength(8)]),
@@ -108,7 +108,9 @@ export class OpratorRegisterComponent implements OnInit {
     this.preferredCountries = [CountryISO.India, CountryISO.Canada];
   }
   getvalueOption() {
-
-
+  }
+   
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
 }
