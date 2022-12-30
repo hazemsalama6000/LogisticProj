@@ -6,37 +6,46 @@
           <div class="card-body p-md-4">
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1 ">
-                <p class="text-center h2 fw-bold  mx-1 mx-md-4 ">{{ "Login" | translate }}</p>
+                <p class="text-center h4  mx-1 mx-md-4 ">{{ "Login" | translate }}</p>
                 <div class=" alert alert-danger text-center" *ngIf="error">{{ error }}</div>
 
                 <form [formGroup]="loginform" (ngSubmit)="sumbnitLoginForm(loginform)">
                   <!-- Email input -->
 
                   <div class="form-outline mb-4">
-                    <label class="form-label">{{ "Email" | translate }}</label>
+                    <label class="form-label h5 mx-1">{{ "Email" | translate }}</label>
 
                     <input formControlName="email" type="email" class="form-control" />
                   </div>
 
                   <!-- Password input -->
                   <div class="form-outline mb-4">
-                    <label class="form-label">{{ "Password" | translate }}</label>
-                    <input formControlName="password" type="password" class="form-control" />
+                    <label class="form-label h5 mx-1 ">{{ "Password" | translate }}</label>
+                    <br>
+                    <mat-form-field style="width: 100%;" appearance="fill" >
+                    <input  matInput [type]="showPassword ? 'text' : 'password'" name="password" class="">
+                      <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                          {{showPassword?'visibility_off':'visibility'}}
+                      </mat-icon>
+                  </mat-form-field>
+
                   </div>
                   <!-- Submit button -->
                   <button type="submit" [disabled]='loginform.invalid'
                     class="btn btn-primary btn-block  w-100">{{ "Login" | translate }}</button>
                   <div class="col text-end">
                     <!-- Simple link -->
-                    <a routerLink="/forgot-password">{{ "Forgotpassword" | translate }}?</a>
+                    <br>
+                    <a  class="text-decoration-none mt-2"
+                    routerLink="/forgot-password">{{ "Forgotpassword" | translate }}?</a>
                   </div>
                   <!-- Register buttons -->
                   <div class="text-center">
-                    <p class=" text-center fs-4">or</p>
+                    <p class=" text-center fs-4">or</p><br>
 
                     <div class="fs-2 mb-3 ">
-                      <i style="color: #3B5998;" class="bi bi-facebook me-5 "></i>
                       <i style="color:#CCD0D2;" class="bi bi-apple me-5 "></i>
+                      <i style="color: #3B5998;" class="bi bi-facebook me-5 "></i>
                       <a href=""><img src="../../../../assets/Logisty ui images/google-svgrepo-com-2.png" alt=""
                           srcset=""></a>
                     </div>

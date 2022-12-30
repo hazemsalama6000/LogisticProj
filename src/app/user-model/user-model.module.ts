@@ -21,6 +21,10 @@ import { ResendVerifiyOtpComponent } from './component/resend-verifiy-otp/resend
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppComponent } from '../app.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   //{ path: "" ,redirectTo:"home-page", pathMatch:"full" },
@@ -60,6 +64,11 @@ const routes: Routes = [
     ReactiveFormsModule,
     CarouselModule,
     NgxIntlTelInputModule,
+    BrowserModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
     TranslateModule.forChild(),
 
   ]
