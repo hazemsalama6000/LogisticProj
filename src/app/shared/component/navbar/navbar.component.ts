@@ -21,15 +21,15 @@ export class NavbarComponent implements OnInit {
   ischange: boolean = false;
   body: any
   lang: any
-
+  token:any
   islogin:boolean = false
 
   constructor(public translate: TranslateService , private _Router:Router , private _GeneralService:GeneralService ) {
     translate.setDefaultLang('en');
     this.currentLang = localStorage.getItem('currentLang') || 'en';
     this.translate.use(this.currentLang)
-    // console.log(_GeneralService.userToken.getValue());
-
+    
+    
     _GeneralService.userToken.subscribe(()=>{
       if(_GeneralService.userToken.getValue() !=null)
       {
@@ -69,6 +69,8 @@ export class NavbarComponent implements OnInit {
       body[0].setAttribute('dir', 'ltr')
       localStorage.setItem('currentLang', 'en')
     }
+   const token = localStorage.getItem("usertoken")
+    
   }
   logOut(){
 
