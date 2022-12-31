@@ -23,7 +23,7 @@
                     <label class="form-label h5 mx-1 ">{{ "Password" | translate }}</label>
                     <br>
                     <mat-form-field style="width: 100%;" appearance="fill" >
-                    <input  matInput [type]="showPassword ? 'text' : 'password'" name="password" class="">
+                    <input  matInput [type]="showPassword ? 'text' : 'password'" formControlName="password" class="">
                       <mat-icon matSuffix (click)="togglePasswordVisibility()">
                           {{showPassword?'visibility_off':'visibility'}}
                       </mat-icon>

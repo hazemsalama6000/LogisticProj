@@ -12,7 +12,7 @@
                 <div class="fs-2 text-center my-3 ">
                   <i style="color: #3B5998;" class="bi bi-facebook me-5 "></i>
                   <i style="color:#CCD0D2;" class="bi bi-apple me-5 "></i>
-                  <a href=""><img src="../../../../assets/Logisty ui images/google-svgrepo-com-2.png" alt=""
+                  <a ><img src="../../../../assets/Logisty ui images/google-svgrepo-com-2.png" alt=""
                       srcset=""></a>
                 </div>
                 <div *ngFor='let email of errorIndividual' class="alert alert-danger">
@@ -24,16 +24,16 @@
                 </div>
 
 
-                <div class="d-flex justify-content-around my-3">
+                <div class="d-flex justify-content-around ">
 
                   <div>
-                    <label class="mx-2" for="choose">{{"Individual" | translate }}</label>
-                    <input type="radio" name="choose" id="Individual" value="Individual" [(ngModel)]="model" checked>
+                    <label class="mx-3" for="choose">{{"Individual" | translate }}</label>
+                    <input type="radio" name="choose" id="choose" value="Individual" [(ngModel)]="model" checked>
                   </div>
 
                   <div>
-                    <label class="mx-2 " for="choose">{{"Company" | translate }} </label>
-                    <input type="radio" name="choose" id="Company" value="Company" [(ngModel)]="model">
+                    <label class="mx-3 " for="choose2">{{"Company" | translate }} </label>
+                    <input type="radio" name="choose" id="choose2" value="Company" [(ngModel)]="model">
 
                   </div>
                 </div>
@@ -74,7 +74,7 @@
                   <div class="d-flex flex-row align-items-center ">
                     <div class="form-outline flex-fill mb-0 my-2">
                       <label class="form-label "> {{"Phone" | translate }} </label>
-                      <ngx-intl-tel-input  [cssClass]="'custom'" [preferredCountries]="preferredCountries"
+                      <ngx-intl-tel-input  [cssClass]="'form-control'" [preferredCountries]="preferredCountries"
                         [enableAutoCountrySelect]="true" [enablePlaceholder]="false" [searchCountryFlag]="true"
                         [searchCountryField]="[
                         SearchCountryField.Iso2,

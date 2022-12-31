@@ -27,14 +27,17 @@ p{
   font-size: 16px;
 }
 .btn{
-  background-color:#021955;
+  background-color: white;
    border-radius: 0%;
    margin-left: -2px ;
   //border: none;
-color: #FFFFFF;
+   color: #505050;
 // border-radius: 10px;
 }
-
+.btn:hover
+{
+  background-color:#021955 !important;
+}
 
 @media only screen and (max-width: 600px) {
  .btn {
