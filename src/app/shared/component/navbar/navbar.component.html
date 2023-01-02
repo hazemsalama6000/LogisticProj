@@ -8,36 +8,7 @@
         height="40"
       />
     </a>
-    <form class="d-flex justify-content-start">
-      <button
-        *ngIf="!islogin"
-        class="btnLogin btn me-1 ms-1 ms-lg-3 me-lg-3"
-        type="button"
-        routerLink="/log-in"
-      >
-        {{ 'Login' | translate }}
-      </button>
-      <div class="dropdown">
-        <button
-          *ngIf="!islogin"
-          class="btn dropdown-toggle btnRegister"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          {{ 'register' | translate }}
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" routerLink="/register">{{ 'client' | translate }}</a></li>
-          <li>
-            <a class="dropdown-item" routerLink="/oprator-register"
-              >{{ 'operator' | translate }}</a
-            >
-          </li>
-        </ul>
-      </div>
-    </form>
-
+    
     <button
       class="navbar-toggler"
       type="button"
@@ -123,7 +94,36 @@
         </ul>
       </div>
     </div>
-
+    <form class="d-flex justify-content-start p-2">
+      <button
+        *ngIf="!islogin"
+        class="btnLogin btn me-1 ms-1 ms-lg-3 me-lg-3"
+        type="button"
+        routerLink="/log-in"
+      >
+        {{ 'Login' | translate }}
+      </button>
+      <div class="dropdown">
+        <button
+          *ngIf="!islogin"
+          class="btn dropdown-toggle btnRegister"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          {{ 'register' | translate }}
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/register">{{ 'client' | translate }}</a></li>
+          <li>
+            <a class="dropdown-item" routerLink="/oprator-register"
+              >{{ 'operator' | translate }}</a
+            >
+          </li>
+        </ul>
+      </div>
+    </form>
+    
     <div class="dropdown">
       <button
 

@@ -28,6 +28,7 @@
     "@ngx-translate/http-loader": "^7.0.0",
     "@popperjs/core": "^2.11.6",
     "angular-popper": "^2.0.1",
+    "angularx-social-login": "^4.1.0",
     "bootstrap": "^5.2.1",
     "bootstrap-icons": "^1.9.1",
     "google-libphonenumber": "^3.2.31",
