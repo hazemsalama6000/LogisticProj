@@ -92,9 +92,16 @@ export class ClientAuthService {
   }
 
 getlang(lang:any){
-
-this.lang = lang
+  this.lang = lang
 }
 
+// client/authSocial
+AuthLogin(loginData:any):Observable<any>{
+  let header = new HttpHeaders();
+  header = header.append("lang" , this.lang);
+  header = header.append("Apipassword" , this.apiPassword);
+  let option ={headers:header} ;
+  return this._HttpClient.post(this.url + 'client/authSocial' , loginData , option )
+}
 }
 
