@@ -36,9 +36,31 @@ p{
 }
 .btn:hover
 {
-  background-color:#021955 !important;
-}
+  background-color:white !important;
+  .container1
+  {
+    display: none;
+  }
 
+}
+.ts3:hover
+{
+  background-color:#021955 !important;
+
+  .container2
+  {
+    display: block;
+  }
+
+}
+.ts2:hover
+{
+  background-color:#021955 !important;
+  .container3
+  {
+    display: block;
+  }
+}
 @media only screen and (max-width: 600px) {
  .btn {
  font-size: 8px;
@@ -61,14 +83,30 @@ p{
   }
   .container1 {
     height: 30px;
-    width: 1px;
+    width: 2px;
     background-color: black;
     position: absolute;
-    left: 70%;
+    left: 73%;
+    display: block;
+  }
+  .container2 {
+    height: 30px;
+    width: 2px;
+    background-color: black;
+    position: absolute;
+    left: 30%;
+    display: none;
+    //color: red !important;
+  }
+  .container3 {
+    height: 30px;
+    width: 2px;
+    background-color: black;
+    position: absolute;
+    left: 53%;
+    display: none;
   }
   .circle {
-    //display: inline-block;
-   // vertical-align: middle;
     width: 10px;
     height: 10px;
     background-color: white;
