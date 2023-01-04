@@ -25,6 +25,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
 
 const routes: Routes = [
   //{ path: "" ,redirectTo:"home-page", pathMatch:"full" },
@@ -69,8 +74,25 @@ const routes: Routes = [
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    SocialLoginModule,
     TranslateModule.forChild(),
 
+  ],
+  providers:[
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: true,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            // provider: new GoogleLoginProvider('548589302621-00dr73p43r3nk54pg9j2sp2je1svs4km.apps.googleusercontent.com'),
+            provider: new GoogleLoginProvider('148517665605-jspahbqleats6lvlag9kasc2c11b5g7o.apps.googleusercontent.com')
+
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
   ]
 })
 export class UserModelModule {

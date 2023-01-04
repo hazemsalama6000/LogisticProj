@@ -6,6 +6,12 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { NgxIntlTelInputModule, SearchCountryField } from 'ngx-intl-tel-input';
 import { CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
 import { TranslateService } from '@ngx-translate/core';
+import {
+  SocialAuthService,
+  GoogleLoginProvider,
+  SocialUser,
+} from 'angularx-social-login';
+import { GeneralService } from 'src/app/service/general.service';
 
 @Component({
   selector: 'app-register',
@@ -25,6 +31,8 @@ export class RegisterComponent implements OnInit {
   PhoneNumberFormat = PhoneNumberFormat;
   preferredCountries: CountryISO[] = [CountryISO.UnitedStates, CountryISO.UnitedKingdom];
   showPassword: boolean = false;
+  err_social:boolean = false;
+  err_social_msg:any = '';
 
   regsiterForm = new FormGroup({
     name: new FormControl(null,
@@ -42,13 +50,29 @@ export class RegisterComponent implements OnInit {
 
 
 
-  constructor(private _ClientAuthService: ClientAuthService, private _Router: Router, public translate: TranslateService) {
+  constructor(private _ClientAuthService: ClientAuthService, private _Router: Router, public translate: TranslateService ,private socialAuthService: SocialAuthService  ,    private formBuilder: FormBuilder,
+    private _GeneralService:GeneralService 
+    ,
+    ) {
+      this.err_social_msg = '';
 
   }
-
+  // loginForm!: FormGroup;
+  // socialUser!: SocialUser;
+  // isLoggedin?: boolean;
 
   ngOnInit(): void {
-
+    
+    // this.loginForm = this.formBuilder.group({
+    //   email: ['', Validators.required],
+    //   password: ['', Validators.required],
+    // });
+    // this.socialAuthService.authState.subscribe((user) => {
+    //   this.socialUser = user;
+    //   this.isLoggedin = user != null;
+    //   console.log(this.socialUser);
+    // });
+  
   }
 
 
@@ -60,7 +84,7 @@ export class RegisterComponent implements OnInit {
     this._ClientAuthService.clientRegister(this.regsiterForm.value).subscribe((res: any) => {
 
       if (res.status == true) {
-
+          
         this._Router.navigate(['/activate-account'])
       } else {
         this.email = res.message.email
@@ -86,5 +110,29 @@ export class RegisterComponent implements OnInit {
   
   togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
+  }
+
+  loginWithGoogle(){
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then((res)=>{
+      
+      let authObj = {
+        'name':res.name,
+        'social_id':res.id,
+        // 'phone':'01025125892'
+      };
+            
+      this._ClientAuthService.AuthLogin(authObj).subscribe((res: any) => {
+        if (res.status == true) {
+          console.log(res);
+          
+        } else {
+          this.err_social = true;
+          this.err_social_msg=res.message.phone. 
+                   
+          console.log(res);
+          
+        }
+      })
+    }) 
   }
 }

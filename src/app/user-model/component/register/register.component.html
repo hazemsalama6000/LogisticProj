@@ -9,10 +9,11 @@
 
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1 ">
                 <div class="fs-2 text-center my-3 ">
-                  <i style="color: #3B5998;" class="bi bi-facebook m-2 "></i>
-                  <i style="color:#CCD0D2;" class="bi bi-apple m-2"></i>
-                  <a class="m-2" href=""><img src="../../../../assets/Logisty ui images/google-svgrepo-com-2.png" alt=""
-                      srcset=""></a>
+                  <!-- <i style="color: #3B5998;" class="bi bi-facebook m-2 "></i> -->
+                  <!-- <i style="color:#CCD0D2;" class="bi bi-apple m-2"></i> -->
+                  <a (click)="loginWithGoogle()" routerLink="#" >
+                    <img src="../../../../assets/Logisty ui images/google-svgrepo-com-2.png" alt=""srcset="">
+                  </a> 
                 </div>
                 <div *ngFor='let email of email' class="alert alert-danger">
                   <p>{{email}}</p>
@@ -21,7 +22,10 @@
                 <div *ngFor='let phone of phone' class="alert alert-danger">
                   <p>{{phone}}</p>
                 </div>
-
+                
+                <div *ngIf='err_social' class="alert alert-danger">
+                  <p>{{err_social_msg | json }}</p>
+                </div>
 
                 <form #f="ngForm" class="mx-1 mx-md-4" [formGroup]="regsiterForm" (ngSubmit)="submitRegister(regsiterForm)">
                   <div class="d-flex flex-row align-items-center ">
