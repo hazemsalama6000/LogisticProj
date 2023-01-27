@@ -89,7 +89,7 @@ labelinit=0;
     private gatcatser: GeneralService,
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone
-  ) { }
+  ) { }//
 
   ngOnInit(): void {
     this.getcategory();
