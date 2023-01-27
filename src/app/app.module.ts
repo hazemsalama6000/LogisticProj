@@ -23,6 +23,7 @@ import { TranslateLoader } from '@ngx-translate/core';
 import { FreightModule } from './freight/freight.module';
 import { GoogleMapsComponent } from './shared/component/google-maps/google-maps.component';
 import { AgmCoreModule } from '@agm/core';
+import { MatNativeDateModule } from '@angular/material/core';
 // import { SectiontwoComponent } from './user-model/component/sectiontwo/sectiontwo.component';
 // import { SectionthreeeComponent } from './user-model/component/sectionthreee/sectionthreee.component';
 // import { SectionfiveComponent } from './user-model/component/sectionfive/sectionfive.component';
@@ -45,6 +46,7 @@ import { AgmCoreModule } from '@agm/core';
     BrowserAnimationsModule,
     MatSliderModule,
     UserModelModule,
+    MatNativeDateModule,
     CompanyModuleModule,
     OpratorModuleModule,
     FreightModule,
@@ -66,7 +68,8 @@ import { AgmCoreModule } from '@agm/core';
       }
     }),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBCYhW_5AfTwkCf4idRzIwte-ea8wYLPbY'
+      apiKey: 'AIzaSyCSG5lm6jfZfKjs6dBnU0ZpsajGuMmp9qA',
+      libraries: ['places']
     }),
 
 

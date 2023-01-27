@@ -1,7 +1,7 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ClientAuthService } from 'src/app/service/client-auth.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GeneralService } from 'src/app/service/general.service';
 
 @Component({
@@ -15,17 +15,21 @@ export class ActivateAccountComponent implements OnInit {
   otpform = new FormGroup({
     otp: new FormControl(null, Validators.required)
   })
-
-  constructor(private _ClientAuthService: ClientAuthService, private _Router: Router , private _GeneralService:GeneralService) { }
+  phoneNum = "";
+  constructor(private _ClientAuthService: ClientAuthService, private _Router: Router, private _GeneralService: GeneralService, private activated: ActivatedRoute) {
+    activated.params.subscribe((data: any) => {
+      this.phoneNum = data['phoneNumber'].replace(/\s/g, "");;
+    });
+  }
 
   ngOnInit(): void {
   }
 
-  submitOtp(otpform:FormGroup) {
+  submitOtp(otpform: FormGroup) {
 
-    this._ClientAuthService.clientOtp(this.otpform.value).subscribe((res: any) => {
+    this._ClientAuthService.clientOtp(this.otpform.value.otp,this.phoneNum).subscribe((res: any) => {
 
-      if (res.status == true){
+      if (res.status == true) {
         this._Router.navigate(['/main-sction'])
         localStorage.setItem('usertoken', res.token);
         this._GeneralService.savecurrentuser();

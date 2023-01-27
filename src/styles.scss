@@ -12,6 +12,14 @@ body{
     background-color:$background ;
 
 }
+.date-input {
+	.mat-datepicker-toggle {
+		position: absolute;
+		right: -10px;
+		top: -9px;
+		left: auto;
+	}
+}
 *{
     color: #707070;
     font-family: almarai ;
@@ -21,6 +29,9 @@ thead  {
   // background-color: #006DCC;
   color: red !important;
 }
+
+
+//input.mat-input-element {height:20px;}
 
 .btn{
     border-radius: 10px;

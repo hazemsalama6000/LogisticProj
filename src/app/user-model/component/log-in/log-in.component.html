@@ -13,51 +13,68 @@
                   <!-- Email input -->
 
                   <div class="form-outline mb-4">
-                    <label class="form-label h5 mx-1">{{ "Email" | translate }}</label>
+                    <!--  <label class="form-label h5 mx-1">{{ "Email" | translate }}</label>
 
                     <input formControlName="email" type="email" class="form-control" />
+ -->
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                      <mat-label>{{'Email' | translate}}</mat-label>
+                      <input matInput formControlName="email" type="email" class="">
+                    </mat-form-field>
+
                   </div>
 
                   <!-- Password input -->
                   <div class="form-outline mb-4">
-                    <label class="form-label h5 mx-1 ">{{ "Password" | translate }}</label>
-                    <br>
-                    <mat-form-field style="width: 100%;" appearance="fill" >
-                    <input  matInput [type]="showPassword ? 'text' : 'password'" formControlName="password" class="">
+                    <!--  <label class="form-label h5 mx-1 ">{{ "Password" | translate }}</label>
+                    <br> -->
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                      <mat-label>{{'Password' | translate}}</mat-label>
+
+                      <input matInput [type]="showPassword ? 'text' : 'password'" formControlName="password" class="">
                       <mat-icon matSuffix (click)="togglePasswordVisibility()">
-                          {{showPassword?'visibility_off':'visibility'}}
+                        {{showPassword?'visibility_off':'visibility'}}
                       </mat-icon>
+                    </mat-form-field>
+
+
+                    <!--    <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>{{'periodName' | translate}}</mat-label>
+                    <input type="text" formControlName="periodName"
+                      [ngClass]="{'is-invalid':(inputs.controls[i]?.get('periodName').errors?.required) && submitted}"
+                      placeholder="{{'Label' | translate}}" matInput>
                   </mat-form-field>
+ -->
 
                   </div>
                   <!-- Submit button -->
-                  <button type="submit" [disabled]='loginform.invalid'
-                    class="btn btn-primary btn-block  w-100">{{ "Login" | translate }}</button>
+                  <button type="submit" [disabled]='loginform.invalid' class="btn btn-primary btn-block  w-100">{{
+                    "Login" | translate }}</button>
                   <div class="col text-end">
                     <!-- Simple link -->
                     <br>
-                    <a  class="text-decoration-none mt-2"
-                    routerLink="/forgot-password">{{ "Forgotpassword" | translate }}?</a>
+                    <a class="text-decoration-none mt-2" routerLink="/forgot-password">{{ "Forgotpassword" | translate
+                      }}?</a>
                   </div>
                   <!-- Register buttons -->
                   <div class="text-center">
                     <p class=" text-center fs-4">or</p><br>
 
                     <div class="fs-2 mb-3 ">
-                      <i style="color:#CCD0D2;" class="bi bi-apple m-2 "></i>
-                      <i style="color: #3B5998;" class="bi bi-facebook m-2 "></i>
-                      <a class="m-2" href=""><img src="../../../../assets/Logisty ui images/google-svgrepo-com-2.png" alt=""
-                          srcset=""></a>
+                      <a (click)="loginWithGoogle()">
+                        <img src="../../../../assets/Logisty ui images/google-svgrepo-com-2.png" alt="" srcset="">
+                      </a>
                     </div>
-                    <a class="text-center text-decoration-none " routerLink="/register">{{ "CreateNewAccount" | translate }}  </a>
+                    <a class="text-center text-decoration-none " routerLink="/register">{{ "CreateNewAccount" |
+                      translate }} </a>
                   </div>
                 </form>
               </div>
 
 
               <!-- Modal -->
-              <div *ngIf="validatephone" class="modal fade show " style="display: block ;" id="exampleModal" tabindex="-1"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div *ngIf="validatephone" class="modal fade show " style="display: block ;" id="exampleModal"
+                tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered  ">
                   <div class="modal-content alert alert-danger">
                     <div class="">

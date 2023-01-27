@@ -16,6 +16,7 @@ import { GlobalConstantsComponent } from './component/global-constants/global-co
 import { LearnAboutUsComponent } from '../dash-board/component/learn-about-us/learn-about-us.component';
 import { GoogleMapsComponent } from './component/google-maps/google-maps.component';
 import { AgmCoreModule } from '@agm/core';
+import { MaterialsModules } from './angularMaterialModules';
 
 const routes: Routes = [
     { path: "faq", component: FAQComponent },
@@ -43,8 +44,10 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     TranslateModule.forChild(),
     BrowserModule,
+    MaterialsModules,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBCYhW_5AfTwkCf4idRzIwte-ea8wYLPbY'
+      apiKey: 'AIzaSyCSG5lm6jfZfKjs6dBnU0ZpsajGuMmp9qA',
+      libraries: ['places']
     }),
   ],
   exports:[
@@ -52,7 +55,7 @@ const routes: Routes = [
     FooterComponent,
     SidebarComponent,
     ProfileSideBarComponent,
-    
+    MaterialsModules
     
   ]
 })

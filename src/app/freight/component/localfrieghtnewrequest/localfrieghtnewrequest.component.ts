@@ -69,10 +69,18 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
   longitude!: number;
   latitude_dest!: number;
   longitude_dest!: number;
-
+  address: string = "";
+labelinit=0;
   currentPosition: any;
-  @ViewChild('search')
-  public searchElementRef!: ElementRef;
+
+  @ViewChild('search') public searchElementRef!: ElementRef<HTMLInputElement>;
+
+  @ViewChild('searchToDestination', { static: false }) public searchDestElementRef!: ElementRef<HTMLInputElement>;
+
+  private geoCoder: any;
+  zoom: number = 0;
+
+
   @ViewChild('swiper', { static: false }) swiper: any;
   constructor(
     private http: HttpClient,
@@ -81,7 +89,7 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
     private gatcatser: GeneralService,
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getcategory();
@@ -89,13 +97,117 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
     this.getGoodCategory();
     this.getCountry();
     this.getCity();
-    this.mapsAPILoader.load().then(() => {});
-    this.longitude = 29.9602364242958;
-    this.latitude = 31.324048029083443;
-    this.latitude_dest = 29.9602364242958;
-    this.longitude_dest = 31.324048029083443;
     this.currentlng = localStorage.getItem('currentLang');
   }
+
+  ngAfterViewInit(): void {
+    this.initializeFromLocation();
+  }
+
+  initializeFromLocation() {
+
+    this.mapsAPILoader.load().then(() => {
+      this.setCurrentLocation();
+      this.geoCoder = new google.maps.Geocoder;
+      let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement);
+      autocomplete.addListener("place_changed", () => {
+        this.ngZone.run(() => {
+          //get the place result
+          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+
+          //verify result
+          if (place.geometry === undefined || place.geometry === null) {
+            return;
+          }
+
+          //set latitude, longitude and zoom
+          this.latitude = place.geometry.location!.lat();
+          this.longitude = place.geometry.location!.lng();
+          this.item.pickup_location_long = this.longitude;
+          this.item.pickup_location_lat = this.latitude;
+          this.zoom = 12;
+        });
+      });
+    });
+
+  }
+
+  initializeDestLocation() {
+
+    this.mapsAPILoader.load().then(() => {
+      this.setCurrentLocationForDest();
+      this.geoCoder = new google.maps.Geocoder;
+      let autocomplete = new google.maps.places.Autocomplete(this.searchDestElementRef.nativeElement);
+      autocomplete.addListener("place_changed", () => {
+        this.ngZone.run(() => {
+          //get the place result
+          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+
+          //verify result
+          if (place.geometry === undefined || place.geometry === null) {
+            return;
+          }
+
+          //set latitude, longitude and zoom
+          this.latitude_dest = place.geometry.location!.lat();
+          this.longitude_dest = place.geometry.location!.lng();
+
+          this.item.destination_location_long = this.longitude_dest;
+          this.item.destination_location_lat = this.latitude_dest;
+          this.zoom = 12;
+        });
+      });
+    });
+
+  }
+  // Get Current Location Coordinates
+  private setCurrentLocation() {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.latitude = position.coords.latitude;
+        this.longitude = position.coords.longitude;
+
+        this.item.pickup_location_long = this.longitude;
+        this.item.pickup_location_lat = this.latitude;
+
+        this.zoom = 8;
+       // this.getAddress(this.latitude, this.longitude);
+      });
+    }
+  }
+
+  private setCurrentLocationForDest() {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.latitude_dest = position.coords.latitude;
+        this.longitude_dest = position.coords.longitude;
+
+        this.item.pickup_location_long = this.longitude_dest;
+        this.item.pickup_location_lat = this.latitude_dest;
+
+        this.zoom = 8;
+       // this.getAddress(this.latitude, this.longitude);
+      });
+    }
+  }
+
+/*   getAddress(latitude: any, longitude: any) {
+    this.geoCoder.geocode({ 'location': { lat: latitude, lng: longitude } }, (results: any, status: any) => {
+      console.log(results);
+      console.log(status);
+      if (status === 'OK') {
+        if (results[0]) {
+          this.zoom = 12;
+          this.address = results[0].formatted_address;
+        } else {
+          window.alert('No results found');
+        }
+      } else {
+        window.alert('Geocoder failed due to: ' + status);
+      }
+
+    });
+  } */
 
   submit(): void {
     this._FreightService
@@ -134,14 +246,14 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
     });
   }
   onMapClicked(event: any) {
-    // console.table(event.coords);
+    console.table(event.coords);
     this.latitude = event.coords.lat;
     this.longitude = event.coords.lng;
     this.item.pickup_location_long = event.coords.lng;
     this.item.pickup_location_lat = event.coords.lat;
   }
   onMapClicked_dest(event: any) {
-    // console.table(event.coords);
+    console.table(event.coords);
     this.latitude_dest = event.coords.lat;
     this.longitude_dest = event.coords.lng;
     this.item.destination_location_long = event.coords.lng;
@@ -153,8 +265,17 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
   // }
   slideNext() {
     this.swiper.swiperRef.slideNext(100);
+    //  this.initializeDestLocation();
+
   }
   slidePrev() {
     this.swiper.swiperRef.slidePrev(100);
+  }
+
+  onSlideChange(event: any) {
+    if (event[0].activeIndex == 2 && this.labelinit==0) {
+     this.initializeDestLocation();
+     this.labelinit+=1;
+    }
   }
 }

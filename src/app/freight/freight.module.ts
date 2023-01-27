@@ -75,8 +75,10 @@ const routes: Routes =[
         NgxIntlTelInputModule,
         TranslateModule.forChild(),
         AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyBCYhW_5AfTwkCf4idRzIwte-ea8wYLPbY'
+            apiKey: 'AIzaSyCSG5lm6jfZfKjs6dBnU0ZpsajGuMmp9qA',
+            libraries: ['places']
         }),
+
         
     ]
 })

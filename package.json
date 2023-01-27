@@ -38,6 +38,7 @@
     "jwt-decode": "^3.1.2",
     "ngx-bootstrap": "^8.0.0",
     "ngx-intl-tel-input": "^3.2.0",
+    "ngx-material-timepicker": "^5.5.3",
     "ngx-owl-carousel-o": "^7.0.4",
     "rxjs": "~7.5.0",
     "snazzy-info-window": "^1.1.1",

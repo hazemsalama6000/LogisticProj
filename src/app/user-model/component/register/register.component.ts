@@ -19,7 +19,7 @@ import { GeneralService } from 'src/app/service/general.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-
+  isSubmitted: boolean = false;
   isMatching: boolean = true;
   email: string = ''
 
@@ -31,30 +31,31 @@ export class RegisterComponent implements OnInit {
   PhoneNumberFormat = PhoneNumberFormat;
   preferredCountries: CountryISO[] = [CountryISO.UnitedStates, CountryISO.UnitedKingdom];
   showPassword: boolean = false;
-  err_social:boolean = false;
-  err_social_msg:any = '';
+  err_social: boolean = false;
+  err_social_msg: any = '';
 
   regsiterForm = new FormGroup({
     name: new FormControl(null,
-       [Validators.required , Validators.minLength(2), Validators.maxLength(150)]),
-    email: new FormControl(null, 
+      [Validators.required, Validators.minLength(2), Validators.maxLength(150)]),
+    email: new FormControl(null,
       [Validators.required, Validators.email]),
-    password: new FormControl(null, 
-      [Validators.required, Validators.minLength(8),Validators.maxLength(25)]),
-    password_confirmation: new FormControl(null, 
+    password: new FormControl(null,
+      [Validators.required, Validators.minLength(8), Validators.maxLength(25)]),
+    password_confirmation: new FormControl(null,
       [Validators.required, Validators.minLength(8), Validators.maxLength(250)]),
     phone: new FormControl(null,
-       [Validators.required , Validators.min(12) ,Validators.max(20)]),
+      [Validators.required, Validators.min(12), Validators.max(20)]),
 
   })
 
 
 
-  constructor(private _ClientAuthService: ClientAuthService, private _Router: Router, public translate: TranslateService ,private socialAuthService: SocialAuthService  ,    private formBuilder: FormBuilder,
-    private _GeneralService:GeneralService 
+  constructor(private _ClientAuthService: ClientAuthService, private _Router: Router,
+     public translate: TranslateService, private socialAuthService: SocialAuthService, private formBuilder: FormBuilder,
+    private _GeneralService: GeneralService
     ,
-    ) {
-      this.err_social_msg = '';
+  ) {
+    this.err_social_msg = '';
 
   }
   // loginForm!: FormGroup;
@@ -62,7 +63,7 @@ export class RegisterComponent implements OnInit {
   // isLoggedin?: boolean;
 
   ngOnInit(): void {
-    
+
     // this.loginForm = this.formBuilder.group({
     //   email: ['', Validators.required],
     //   password: ['', Validators.required],
@@ -72,7 +73,7 @@ export class RegisterComponent implements OnInit {
     //   this.isLoggedin = user != null;
     //   console.log(this.socialUser);
     // });
-  
+
   }
 
 
@@ -84,9 +85,9 @@ export class RegisterComponent implements OnInit {
     this._ClientAuthService.clientRegister(this.regsiterForm.value).subscribe((res: any) => {
 
       if (res.status == true) {
-          
         this._Router.navigate(['/activate-account'])
-      } else {
+      }
+      else {
         this.email = res.message.email
         this.phone = res.message.phone
 
@@ -97,7 +98,7 @@ export class RegisterComponent implements OnInit {
   }
   checkPasswordMatch() {
 
-    if (this.regsiterForm.controls["password"].value == this.regsiterForm.controls["password_confirmation"].value ) {
+    if (this.regsiterForm.controls["password"].value == this.regsiterForm.controls["password_confirmation"].value) {
 
       this.isMatching = true
 
@@ -107,32 +108,28 @@ export class RegisterComponent implements OnInit {
 
     }
   }
-  
+
   togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
   }
 
-  loginWithGoogle(){
-    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then((res)=>{
-      
-      let authObj = {
-        'name':res.name,
-        'social_id':res.id,
-        // 'phone':'01025125892'
-      };
-            
-      this._ClientAuthService.AuthLogin(authObj).subscribe((res: any) => {
-        if (res.status == true) {
-          console.log(res);
-          
-        } else {
-          this.err_social = true;
-          this.err_social_msg=res.message.phone. 
-                   
-          console.log(res);
-          
-        }
+  loginWithGoogle() {
+
+   // this.isSubmitted = true;
+  //  if (this.regsiterForm.controls["password"].value != null) {
+      this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then((res) => {
+
+        let authObj = {
+          'name': res.name,
+          'social_id': res.id,
+          'phone': this.regsiterForm.value.phone.number
+        };
+console.log(authObj);
+        this._ClientAuthService.AuthLogin(authObj).subscribe((res: any) => {
+           // console.log(res);
+            this._Router.navigate([`/activate-account/${this.regsiterForm.value.phone.number}`]);
+        })
       })
-    }) 
+   // }
   }
 }

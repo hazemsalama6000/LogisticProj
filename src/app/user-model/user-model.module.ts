@@ -37,7 +37,7 @@ const routes: Routes = [
   { path: "home-page", component: HomePegeComponent },
   { path: "register", component: RegisterComponent },
   { path: "log-in", component: LogInComponent },
-  { path: "activate-account", component: ActivateAccountComponent },
+  { path: "activate-account/:phoneNumber", component: ActivateAccountComponent },
   { path: "resend-verifiy-otp", component: ResendVerifiyOtpComponent },
   { path: "forgot-password", component: ForgotPasswordComponent },
   { path: "new-pass-otp", component: NewPssOtpComponent },

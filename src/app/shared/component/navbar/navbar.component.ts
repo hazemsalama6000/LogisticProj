@@ -21,21 +21,20 @@ export class NavbarComponent implements OnInit {
   ischange: boolean = false;
   body: any
   lang: any
-  token:any
-  islogin:boolean = false
+  token: any
+  islogin: boolean = false
 
-  constructor(public translate: TranslateService , private _Router:Router , private _GeneralService:GeneralService ) {
+  constructor(public translate: TranslateService, private _Router: Router, private _GeneralService: GeneralService) {
     translate.setDefaultLang('en');
     this.currentLang = localStorage.getItem('currentLang') || 'en';
     this.translate.use(this.currentLang)
-    
-    
-    _GeneralService.userToken.subscribe(()=>{
-      if(_GeneralService.userToken.getValue() !=null)
-      {
-        this.islogin=true
-      }else{
-        this.islogin=false
+
+
+    _GeneralService.userToken.subscribe(() => {
+      if (_GeneralService.userToken.getValue() != null) {
+        this.islogin = true
+      } else {
+        this.islogin = false
       }
     })
 
@@ -50,7 +49,7 @@ export class NavbarComponent implements OnInit {
     if (lang == "ar") {
       body[0].setAttribute('dir', 'rtl')
       this.translate.use(lang)
-        localStorage.setItem('currentLang', 'ar')
+      localStorage.setItem('currentLang', 'ar')
     } else {
       this.translate.use(lang)
       body[0].setAttribute('dir', 'ltr')
@@ -69,51 +68,52 @@ export class NavbarComponent implements OnInit {
       body[0].setAttribute('dir', 'ltr')
       localStorage.setItem('currentLang', 'en')
     }
-   const token = localStorage.getItem("usertoken")
-    
-  }
-  logOut(){
-
-  let token:any = localStorage.getItem("usertoken")
-  let rout:any = jwt_decode(token)
-
-  if(rout.type == "client" ){
-    this._GeneralService.cliendLogOut(token).subscribe((res)=>{
-     this._GeneralService.savecurrentuser();
-    localStorage.removeItem("usertoken");
-    this._Router.navigate(['/']);
-    this.islogin = false;
-    });
-
-  }
-  if(rout.type == "company" ){
-    this._GeneralService.companylogout(token).subscribe((res)=>{
-      this._GeneralService.savecurrentuser();
-      localStorage.removeItem("usertoken");
-      this._Router.navigate(['/'])
-      this.islogin = false;
-    });
-  }
-  if(rout.type == "operator" ){
-    this._GeneralService.opratorlogout(token).subscribe((res)=>{
-      this._GeneralService.savecurrentuser();
-      localStorage.removeItem("usertoken")
-      this._Router.navigate(['/'])
-      this.islogin = false;
-
-    });
-  }
-    if(rout.type == "representative" ){
-      this._GeneralService.replogout(token).subscribe((res)=>{
-        this._GeneralService.savecurrentuser();
-        localStorage.removeItem("usertoken")
-        this._Router.navigate(['/'])
-        this.islogin = false;
-
-      });
+    const token = localStorage.getItem("usertoken")
 
   }
 
+  logOut() {
+
+    let token: any = localStorage.getItem("usertoken");
+  
+      let rout: any = jwt_decode(token);
+
+      if (rout.type == "client") {
+        this._GeneralService.cliendLogOut(token).subscribe((res) => {
+          this._GeneralService.savecurrentuser();
+          this.islogin = false;
+
+          this._Router.navigate(['/']);
+        });
+
+      }
+      if (rout.type == "company") {
+        this._GeneralService.companylogout(token).subscribe((res) => {
+          this._GeneralService.savecurrentuser();
+          localStorage.removeItem("usertoken");
+          this._Router.navigate(['/'])
+          this.islogin = false;
+        });
+      }
+      if (rout.type == "operator") {
+        this._GeneralService.opratorlogout(token).subscribe((res) => {
+          this._GeneralService.savecurrentuser();
+          localStorage.removeItem("usertoken");
+          this._Router.navigate(['/'])
+          this.islogin = false;
+
+        });
+      }
+      if (rout.type == "representative") {
+        this._GeneralService.replogout(token).subscribe((res) => {
+          this._GeneralService.savecurrentuser();
+          localStorage.removeItem("usertoken");
+          this._Router.navigate(['/'])
+          this.islogin = false;
+
+        });
+
+      }
 
   }
 
