@@ -10,6 +10,9 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCardModule} from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+//import { MatIconModule } from '@angular/material/icon';
 
 export const MaterialsModules = [
 
@@ -22,9 +25,11 @@ export const MaterialsModules = [
   MatRadioModule,
   MatSlideToggleModule,
   NgxMaterialTimepickerModule,
-
+  MatCardModule,
+  MatDatepickerModule,
+  MatExpansionModule,
+  MatIconModule
   // MatAutocompleteModule,
-   MatDatepickerModule
    ,
   // MatCheckboxModule,
   // MatSliderModule,
@@ -35,11 +40,9 @@ export const MaterialsModules = [
   // MatGridListModule,
   // MatCardModule,
   // MatStepperModule,
-  // ,
-   MatExpansionModule
   // MatButtonToggleModule,
   // MatChipsModule,
-  // MatIconModule,
+  // MatIconModule
   // MatProgressBarModule,
   // MatDialogModule,
   // MatTooltipModule,

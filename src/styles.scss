@@ -30,6 +30,14 @@ thead  {
   color: red !important;
 }
 
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+
+.example-disabled {
+  display: inline-block;
+}
 
 .mat-form-field {
 	font-size: 10px;

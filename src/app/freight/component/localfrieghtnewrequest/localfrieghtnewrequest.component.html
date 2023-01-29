@@ -1,3 +1,10 @@
+<mat-card style="background-color: #ECECEC;">
+  <mat-card-content style="text-align: center;">
+    <h3>local request</h3>
+  </mat-card-content>
+</mat-card>
+
+
 <form class="needs-validation mt-3">
   <swiper #swiper [virtual]="true" (slideChange)="onSlideChange($event)" [preventClicksPropagation]="false"
     [simulateTouch]="false">
@@ -14,7 +21,7 @@
               </option>
             </select> -->
 
-            <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-form-field appearance="outline" class="w-100">
               <mat-label>{{'Currency' | translate}}</mat-label>
               <mat-select name="currency_id" [(ngModel)]="item.currency_id">
                 <mat-option *ngFor="let item of currencys" value="{{item.id}}">
@@ -27,17 +34,16 @@
 
           <div class="col-sm-6">
 
-          <!--   <label for="" class="form-label">{{"Ticket Category" | translate}}</label>
+            <!--   <label for="" class="form-label">{{"Ticket Category" | translate}}</label>
             <select name="category_id" [(ngModel)]="item.category_id" class="form-select">
               <option value="" disabled>Enter ticket category</option>
               <option *ngFor="let item of cats" value="{{item.id}}">{{item.name}}</option>
             </select> -->
 
-            <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-form-field appearance="outline" class="w-100">
               <mat-label>{{'Ticket Category' | translate}}</mat-label>
-              <mat-select name="category_id" [(ngModel)]="item.category_id" >
-                <mat-option *ngFor="let item of cats"
-                 value="{{item.id}}">
+              <mat-select name="category_id" [(ngModel)]="item.category_id">
+                <mat-option *ngFor="let item of cats" value="{{item.id}}">
                   {{item.name}}
                 </mat-option>
               </mat-select>
@@ -47,18 +53,18 @@
 
 
           <div class="col-sm-6">
-          <!--   <label for="" class="form-label">{{"Language" | translate}}</label>
+            <!--   <label for="" class="form-label">{{"Language" | translate}}</label>
             <select name="language" [(ngModel)]="item.language" class="form-select">
               <option value="" disabled>Select The language</option>
               <option value="en">en</option>
               <option value="ar">ar</option>
             </select> -->
 
-            <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-form-field appearance="outline" class="w-100">
               <mat-label>{{'Language' | translate}}</mat-label>
-              <mat-select name="language" [(ngModel)]="item.language" >
-                <mat-option  value="en"> en </mat-option>
-                <mat-option  value="ar"> ar </mat-option>
+              <mat-select name="language" [(ngModel)]="item.language">
+                <mat-option value="en"> en </mat-option>
+                <mat-option value="ar"> ar </mat-option>
               </mat-select>
             </mat-form-field>
 
@@ -66,17 +72,16 @@
 
 
           <div class="col-sm-6">
-           <!--  <label for="" class="form-label">{{"Good Category" | translate}}</label>
+            <!--  <label for="" class="form-label">{{"Good Category" | translate}}</label>
             <select name="goods_country_origin_id" [(ngModel)]="item.goods_country_origin_id" class="form-select">
               <option value="" disabled>Select Good Category</option>
               <option *ngFor="let item of goodcats" value="{{item.id}}">{{item.name}}</option>
             </select> -->
 
-            <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-form-field appearance="outline" class="w-100">
               <mat-label>{{'Good Category' | translate}}</mat-label>
-              <mat-select name="goods_country_origin_id" [(ngModel)]="item.goods_country_origin_id" >
-                <mat-option *ngFor="let item of goodcats"
-                 value="{{item.id}}">
+              <mat-select name="goods_country_origin_id" [(ngModel)]="item.goods_country_origin_id">
+                <mat-option *ngFor="let item of goodcats" value="{{item.id}}">
                   {{item.name}}
                 </mat-option>
               </mat-select>
@@ -86,17 +91,16 @@
 
 
           <div class="col-sm-6">
-         <!--    <label for="lastName" class="form-label">{{"Quote Currency" | translate}}</label>
+            <!--    <label for="lastName" class="form-label">{{"Quote Currency" | translate}}</label>
             <select name="quote_currency_id" [(ngModel)]="item.quote_currency_id" class="form-select">
               <option value="" disabled>Select quote Currency</option>
               <option *ngFor="let item of currencys" value="{{item.id}}">{{item.name}}</option>
             </select> -->
 
-            <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-form-field appearance="outline" class="w-100">
               <mat-label>{{'Quote Currency' | translate}}</mat-label>
-              <mat-select  name="quote_currency_id" [(ngModel)]="item.quote_currency_id" >
-                <mat-option *ngFor="let item of currencys"
-                 value="{{item.id}}">
+              <mat-select name="quote_currency_id" [(ngModel)]="item.quote_currency_id">
+                <mat-option *ngFor="let item of currencys" value="{{item.id}}">
                   {{item.name}}
                 </mat-option>
               </mat-select>
@@ -106,10 +110,23 @@
         </div>
         <br>
         <div class="row">
-          <div class="col-md-6 "><button class="btn btn-primary" style="float: left;"
-              (click)="slidePrev()">Prev</button></div>
-          <div class="col-md-6 "><button class="btn btn-success" [disabled]="!item.currency_id && !item.category_id"
-              style="float: right;" (click)="slideNext()">{{"next"|translate}}</button></div>
+
+          <div class="col-md-6 ">
+          <!--   <button (click)="slidePrev()" style="color: white !important;float: left;" mat-raised-button color="warn">
+              <mat-icon style="color: white;">keyboard_arrow_left</mat-icon>
+              <span style="color: white !important">Prev</span>
+            </button>
+ -->
+          </div>
+
+          <div class="col-md-6">
+            <button (click)="slideNext()" style="color: white !important;float: right;"
+              [disabled]="!item.currency_id && !item.category_id" mat-raised-button color="primary">
+              <span style="color: white !important;">{{"next"|translate}}</span>
+              <mat-icon style="color: white !important;">keyboard_arrow_right</mat-icon>
+            </button>
+          </div>
+
         </div>
       </div>
 
@@ -136,7 +153,7 @@
              placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
           </div> -->
 
-          <mat-form-field class="example-full-width mb-3 w-100" appearance="outline">
+          <mat-form-field class="example-full-width w-100" appearance="outline">
             <mat-label>{{"Search Nearest Location" | translate}}</mat-label>
             <input type="text" (keydown.enter)="$event.preventDefault()" autocapitalize="off" spellcheck="off" #search
               matInput>
@@ -147,7 +164,7 @@
         <div class="row mt-2">
           <div class="col-sm-6">
 
-            <mat-form-field [hidden]="true" class="example-full-width mb-3 w-100" appearance="outline">
+            <mat-form-field [hidden]="true" class="example-full-width w-100" appearance="outline">
               <mat-label>{{"pickup location lat" | translate}}</mat-label>
               <input type="text" id="address2" name="pickup_location_lat" [(ngModel)]="item.pickup_location_lat"
                 matInput>
@@ -156,7 +173,7 @@
           </div>
           <div class="col-sm-6">
 
-            <mat-form-field [hidden]="true" class="example-full-width mb-3 w-100" appearance="outline">
+            <mat-form-field [hidden]="true" class="example-full-width w-100" appearance="outline">
               <mat-label>{{"pickup location long" | translate}}</mat-label>
               <input type="text" id="address2" name="pickup_location_long" [(ngModel)]="item.pickup_location_long"
                 matInput>
@@ -167,11 +184,26 @@
         </div>
         <br>
         <div class="row">
-          <div class="col-md-6 "><button class="btn btn-primary" style="float: left;"
-              (click)="slidePrev()">Prev</button></div>
-          <div class="col-md-6 "><button class="btn btn-success"
-              [disabled]="!item.pickup_location_lat && !item.pickup_location_long" style="float: right;"
-              (click)="slideNext()">{{"next"|translate}}</button></div>
+
+         <!--  <div class="col-md-6 ">
+            <button class="btn btn-success" [disabled]="!item.pickup_location_lat && !item.pickup_location_long"
+              style="float: right;" (click)="slideNext()">{{"next"|translate}}</button>
+          </div> -->
+
+          <div class="col-md-6 ">
+               <button (click)="slidePrev()" style="color: white !important;float: left;" mat-raised-button color="warn">
+                <mat-icon style="color: white;">keyboard_arrow_left</mat-icon>
+                <span style="color: white !important">Prev</span>
+              </button>
+          </div>
+  
+            <div class="col-md-6">
+              <button (click)="slideNext()" style="color: white !important;float: right;"
+              [disabled]="!item.pickup_location_lat && !item.pickup_location_long" mat-raised-button color="primary">
+                <span style="color: white !important;">{{"next"|translate}}</span>
+                <mat-icon style="color: white !important;">keyboard_arrow_right</mat-icon>
+              </button>
+            </div>
         </div>
 
 
@@ -196,7 +228,7 @@
 
         <div class="row mt-4">
 
-          <mat-form-field class="example-full-width mb-3 w-100" appearance="outline">
+          <mat-form-field class="example-full-width w-100" appearance="outline">
             <mat-label>{{"Search Nearest Location" | translate}}</mat-label>
             <input type="text" (keydown.enter)="$event.preventDefault()" autocapitalize="off" spellcheck="off"
               #searchToDestination matInput>
@@ -211,7 +243,7 @@
               [(ngModel)]="item.destination_location_lat" id="address2"
               placeholder='{{"The destination location lat must be at least 8 characters." | translate}}'>
           -->
-            <mat-form-field [hidden]="true" class="example-full-width mb-3 w-100" appearance="outline">
+            <mat-form-field [hidden]="true" class="example-full-width  w-100" appearance="outline">
               <mat-label>{{"pickup location long" | translate}}</mat-label>
               <input type="text" id="address2" name="destination_location_lat"
                 [(ngModel)]="item.destination_location_lat" matInput>
@@ -220,7 +252,7 @@
           </div>
           <div class="col-sm-6">
 
-            <mat-form-field [hidden]="true" class="example-full-width mb-3 w-100" appearance="outline">
+            <mat-form-field [hidden]="true" class="example-full-width w-100" appearance="outline">
               <mat-label>{{"pickup location long" | translate}}</mat-label>
               <input type="text" id="address2" name="destination_location_long"
                 [(ngModel)]="item.destination_location_long" matInput>
@@ -230,11 +262,29 @@
         </div>
         <br>
         <div class="row">
-          <div class="col-md-6 "><button class="btn btn-primary" style="float: left;"
+       <!--    <div class="col-md-6 "><button class="btn btn-primary" style="float: left;"
               (click)="slidePrev()">Prev</button></div>
+
           <div class="col-md-6 "><button class="btn btn-success"
               [disabled]="!item.destination_location_lat && !item.destination_location_long" style="float: right;"
               (click)="slideNext()">{{"next"|translate}}</button></div>
+ -->
+
+              <div class="col-md-6 ">
+                <button (click)="slidePrev()" style="color: white !important;float: left;" mat-raised-button color="warn">
+                 <mat-icon style="color: white;">keyboard_arrow_left</mat-icon>
+                 <span style="color: white !important">Prev</span>
+               </button>
+              </div>
+   
+             <div class="col-md-6">
+               <button (click)="slideNext()" style="color: white !important;float: right;"
+               [disabled]="!item.destination_location_lat && !item.destination_location_long" mat-raised-button color="primary">
+                 <span style="color: white !important;">{{"next"|translate}}</span>
+                 <mat-icon style="color: white !important;">keyboard_arrow_right</mat-icon>
+               </button>
+             </div>
+
         </div>
 
       </div>
@@ -248,7 +298,7 @@
             <input type="text" class="form-control" name="commercial_reference" [(ngModel)]="item.commercial_reference"
               id="address2" placeholder='{{"The commercial reference must be at least 5 characters." | translate}}'>
  -->
-            <mat-form-field class="example-full-width mb-3 w-100" appearance="outline">
+            <mat-form-field class="example-full-width w-100" appearance="outline">
               <mat-label>{{"commercial reference" | translate}}</mat-label>
               <input type="text" id="address2" name="commercial_reference" [(ngModel)]="item.commercial_reference"
                 matInput>
@@ -260,7 +310,7 @@
             <input type="date" name="estimated_date" [(ngModel)]="item.estimated_date"
               min="{{currentDate | date:'yyyy-MM-dd'}}" class="form-control" placeholder="Date" />
  -->
-            <mat-form-field class="w-100 mb-3 date-input" appearance="outline">
+            <mat-form-field class="w-100 date-input" appearance="outline">
               <mat-label>{{'Date' | translate}}</mat-label>
               <input matInput [matDatepicker]="picker" name="estimated_date" [(ngModel)]="item.estimated_date">
               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -273,7 +323,7 @@
             <input type="number" class="form-control" [(ngModel)]="item.value" name="value" id="address2"
               placeholder='{{"Your value" | translate}}'>
           -->
-            <mat-form-field class="example-full-width mb-3 w-100" appearance="outline">
+            <mat-form-field class="example-full-width   w-100" appearance="outline">
               <mat-label>{{"value" | translate}}</mat-label>
               <input type="number" id="address2" name="value" [(ngModel)]="item.value" matInput>
             </mat-form-field>
@@ -284,7 +334,7 @@
             <input type="text" class="form-control" name="bulks" [(ngModel)]="item.bulks" id="address2"
               placeholder='{{"The bulks must be at least 8 characters." | translate}}'>
           -->
-            <mat-form-field class="example-full-width mb-3 w-100" appearance="outline">
+            <mat-form-field class="example-full-width   w-100" appearance="outline">
               <mat-label>{{"Bulks" | translate}}</mat-label>
               <input type="text" id="address2" name="bulks" [(ngModel)]="item.bulks" matInput>
             </mat-form-field>
@@ -293,11 +343,21 @@
         </div>
         <br>
         <div class="row">
-          <div class="col-md-6 "><button class="btn btn-primary" style="float: left;"
-              (click)="slidePrev()">Prev</button></div>
-          <div class="col-md-6 "><button class="btn btn-success"
-              [disabled]="!item.destination_location_lat && !item.destination_location_long" style="float: right;"
-              (click)="slideNext()">{{"next"|translate}}</button></div>
+
+              <div class="col-md-6 ">
+                <button (click)="slidePrev()" style="color: white !important;float: left;" mat-raised-button color="warn">
+                 <mat-icon style="color: white;">keyboard_arrow_left</mat-icon>
+                 <span style="color: white !important">Prev</span>
+               </button>
+              </div>
+   
+             <div class="col-md-6">
+               <button (click)="slideNext()" style="color: white !important;float: right;"
+               [disabled]="!item.destination_location_lat && !item.destination_location_long" mat-raised-button color="primary">
+                 <span style="color: white !important;">{{"next"|translate}}</span>
+                 <mat-icon style="color: white !important;">keyboard_arrow_right</mat-icon>
+               </button>
+             </div>
 
         </div>
       </div>
@@ -315,11 +375,11 @@
               <option value="1">NO</option>
             </select> -->
 
-            <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-form-field appearance="outline" class="w-100  ">
               <mat-label>{{'insure good' | translate}}</mat-label>
-              <mat-select name="insure_good" [(ngModel)]="item.insure_good"  >
-                <mat-option  value="2"> YES </mat-option>
-                <mat-option  value="1"> NO </mat-option>
+              <mat-select name="insure_good" [(ngModel)]="item.insure_good">
+                <mat-option value="2"> YES </mat-option>
+                <mat-option value="1"> NO </mat-option>
               </mat-select>
             </mat-form-field>
 
@@ -327,18 +387,18 @@
 
 
           <div class="col-sm-6">
-          <!--   <label for="" class="form-label">{{"need pickup" | translate}}</label>
+            <!--   <label for="" class="form-label">{{"need pickup" | translate}}</label>
             <select name="need_pickup" [(ngModel)]="item.need_pickup" let class="form-select">
               <option value="" disabled>need pickup</option>
               <option value="2">YES</option>
               <option value="1">NO</option>
             </select> -->
 
-            <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-form-field appearance="outline" class="w-100  ">
               <mat-label>{{'need pickup' | translate}}</mat-label>
-              <mat-select name="need_pickup" [(ngModel)]="item.need_pickup"  >
-                <mat-option  value="2"> YES </mat-option>
-                <mat-option  value="1"> NO </mat-option>
+              <mat-select name="need_pickup" [(ngModel)]="item.need_pickup">
+                <mat-option value="2"> YES </mat-option>
+                <mat-option value="1"> NO </mat-option>
               </mat-select>
             </mat-form-field>
 
@@ -346,53 +406,52 @@
 
 
           <div class="col-sm-6">
-          <!--   <label for="" class="form-label">{{"palletized" | translate}}</label>
+            <!--   <label for="" class="form-label">{{"palletized" | translate}}</label>
             <select name="palletized" [(ngModel)]="item.palletized" let class="form-select">
               <option value="" disabled>palletized</option>
               <option value="2">YES</option>
               <option value="1">NO</option>
             </select> -->
 
-            <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-form-field appearance="outline" class="w-100  ">
               <mat-label>{{'palletized' | translate}}</mat-label>
-              <mat-select name="palletized" [(ngModel)]="item.palletized"  >
-                <mat-option  value="2"> YES </mat-option>
-                <mat-option  value="1"> NO </mat-option>
+              <mat-select name="palletized" [(ngModel)]="item.palletized">
+                <mat-option value="2"> YES </mat-option>
+                <mat-option value="1"> NO </mat-option>
               </mat-select>
             </mat-form-field>
 
           </div>
           <div class="col-sm-6">
-          <!--   <label class="form-label">{{"pickup insure" | translate}}</label>
+            <!--   <label class="form-label">{{"pickup insure" | translate}}</label>
             <select class="form-select" name="pickup_insure" [(ngModel)]="item.pickup_insure">
               <option disabled>pickup insure</option>
               <option value="2">YES</option>
               <option value="1">NO</option>
             </select> -->
 
-            <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-form-field appearance="outline" class="w-100  ">
               <mat-label>{{'pickup insure' | translate}}</mat-label>
-              <mat-select  name="pickup_insure" [(ngModel)]="item.pickup_insure"  >
-                <mat-option  value="2"> YES </mat-option>
-                <mat-option  value="1"> NO </mat-option>
+              <mat-select name="pickup_insure" [(ngModel)]="item.pickup_insure">
+                <mat-option value="2"> YES </mat-option>
+                <mat-option value="1"> NO </mat-option>
               </mat-select>
             </mat-form-field>
 
           </div>
-          
+
 
           <div class="col-sm-6">
-           <!--  <label for="" class="form-label">{{"Pickup City Id" | translate}}</label>
+            <!--  <label for="" class="form-label">{{"Pickup City Id" | translate}}</label>
             <select name="pickup_city_id" [(ngModel)]="item.pickup_city_id" let class="form-select">
               <option value="" disabled>Enter pickup city id</option>
               <option *ngFor="let item of city" value="{{item.id}}">{{item.name}}</option>
             </select> -->
 
-            <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-form-field appearance="outline" class="w-100  ">
               <mat-label>{{"Pickup City Id" | translate}}</mat-label>
-              <mat-select name="pickup_city_id" [(ngModel)]="item.pickup_city_id" >
-                <mat-option *ngFor="let item of city"
-                 value="{{item.id}}">
+              <mat-select name="pickup_city_id" [(ngModel)]="item.pickup_city_id">
+                <mat-option *ngFor="let item of city" value="{{item.id}}">
                   {{item.name}}
                 </mat-option>
               </mat-select>
@@ -404,11 +463,21 @@
         </div>
         <br>
         <div class="row">
-          <div class="col-md-6 "><button class="btn btn-primary" style="float: left;"
-              (click)="slidePrev()">Prev</button></div>
-          <div class="col-md-6 "><button class="btn btn-success"
-              [disabled]="!item.destination_location_lat && !item.destination_location_long" style="float: right;"
-              (click)="slideNext()">{{"next"|translate}}</button></div>
+        
+              <div class="col-md-6 ">
+                <button (click)="slidePrev()" style="color: white !important;float: left;" mat-raised-button color="warn">
+                 <mat-icon style="color: white;">keyboard_arrow_left</mat-icon>
+                 <span style="color: white !important">Prev</span>
+               </button>
+              </div>
+   
+             <div class="col-md-6">
+               <button (click)="slideNext()" style="color: white !important;float: right;"
+               [disabled]="!item.destination_location_lat && !item.destination_location_long" mat-raised-button color="primary">
+                 <span style="color: white !important;">{{"next"|translate}}</span>
+                 <mat-icon style="color: white !important;">keyboard_arrow_right</mat-icon>
+               </button>
+             </div>
 
         </div>
       </div>
@@ -417,71 +486,69 @@
     <ng-template swiperSlide>
       <div class="container">
         <div class="row">
-          <div class="col-sm-6">
-            <!--   <label for="" class="form-label">{{"volume" | translate}}</label>
-            <input type="text" class="form-control" name="volume" [(ngModel)]="item.volume" id="address2"
-              placeholder='{{"The volume must be at least 8 characters." | translate}}'>
-          -->
-            <mat-form-field class="example-full-width mb-3 w-100" appearance="outline">
-              <mat-label>{{"volume" | translate}}</mat-label>
-              <input type="text" id="address2" name="volume" [(ngModel)]="item.volume" matInput>
-            </mat-form-field>
 
+          <div class="col-md-6">
+            
+          <div class="row">
+              <mat-form-field class="example-full-width   w-100" appearance="outline">
+                <mat-label>{{"volume" | translate}}</mat-label>
+                <input type="text" id="address2" name="volume" [(ngModel)]="item.volume" matInput>
+              </mat-form-field>
           </div>
-          <div class="col-sm-6">
-            <!-- <label for="" class="form-label">{{"weight" | translate}}</label>
-            <input type="text" class="form-control" name="weight" [(ngModel)]="item.weight" id="address2"
-              placeholder='{{"The weight must be at least 8 characters." | translate}}'>
-         -->
-            <mat-form-field class="example-full-width mb-3 w-100" appearance="outline">
+          
+       <div class="row">
+            <mat-form-field class="example-full-width   w-100" appearance="outline">
               <mat-label>{{"weight" | translate}}</mat-label>
               <input type="text" id="address2" name="weight" [(ngModel)]="item.weight" matInput>
             </mat-form-field>
-
-          </div>
-          <div class="col-sm-6">
-            <!--    <label for="" class="form-label">{{"zip code" | translate}}</label>
-            <input type="text" class="form-control" name="zip_code" [(ngModel)]="item.zip_code" id="address2"
-              placeholder='{{"The zip code must be at least 8 characters." | translate}}'>
-           -->
-            <mat-form-field class="example-full-width mb-3 w-100" appearance="outline">
-              <mat-label>{{"zip code" | translate}}</mat-label>
-              <input type="text" id="address2" name="zip_code" [(ngModel)]="item.zip_code" matInput>
-            </mat-form-field>
-          </div>
-
-          <div class="col-sm-6">
-            <!--   <label for="address" class="form-label">{{"Problem Description" | translate}}</label>
-            <textarea type="text" class="form-control" [(ngModel)]="item.description" name="description" id="address"
-              placeholder='{{"The description must be at least 10 characters." | translate}}'></textarea>
- -->
-            <mat-form-field class="example-full-width mb-3 w-100" appearance="outline">
-              <mat-label>{{"Problem Description" | translate}}</mat-label>
-              <textarea type="text" id="address2" name="description" [(ngModel)]="item.description" matInput></textarea>
-            </mat-form-field>
-
-          </div>
-          <div class="col-12">
-            <label for="address" class="form-label">{{"Attachment" | translate}}</label>
-            <div class="m-auto " style=" border: 1px solid black; height:150px ;">
-              <input (change)="helper.setFile($event, 'file[]', item)" name="src" multiple accept="image/*" type="file"
-                class="form-control hidden" /><br>
-              <label for="files" class="text-center" style="margin-left: 30% !important;">
-                {{"You can add attachments in the next field" | translate}}
-              </label><br>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-left: 25% !important;">
-          <button class="w-75 btn btn-primary  my-3 " (click)="submit()" style="width:60% !important ;" type="submit">
-            {{"send" | translate}}</button>
-
         </div>
 
         <div class="row">
-          <div class="col-md-6 "><button class="btn btn-primary" style="float: left;"
-              (click)="slidePrev()">Prev</button></div>
+            <mat-form-field class="example-full-width   w-100" appearance="outline">
+              <mat-label>{{"zip code" | translate}}</mat-label>
+              <input type="text" id="address2" name="zip_code" [(ngModel)]="item.zip_code" matInput>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field class="example-full-width w-100" appearance="outline">
+              <mat-label>{{"Problem Description" | translate}}</mat-label>
+              <textarea type="text" id="address2" name="description" [(ngModel)]="item.description" matInput></textarea>
+            </mat-form-field>
+        </div>
+       </div>
+
+
+          <div class="col-6">
+            <div class="m-auto ">
+              <input (change)="helper.setFile($event, 'file[]', item)" name="src" multiple accept="image/*" type="file"
+                class="form-control hidden" />
+              <!--   <br>
+              <label for="files" class="text-center" style="margin-left: 30% !important;">
+                {{"You can add attachments in the next field" | translate}}
+              </label>
+              <br> -->
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row mt-3">
+              <div class="col-md-6 ">
+                <button (click)="slidePrev()" style="color: white !important;float: left;" mat-raised-button color="warn">
+                 <mat-icon style="color: white;">keyboard_arrow_left</mat-icon>
+                 <span style="color: white !important">Prev</span>
+               </button>
+              </div>
+
+              <div class="col-md-6">
+                <button (click)="submit()" style="color: white !important;float: right;"
+                 mat-raised-button color="primary">
+                  <span style="color: white !important;">{{"send"|translate}}</span>
+                  <mat-icon style="color: white !important;" class="mx-1">save</mat-icon>
+                </button>
+              </div>
+
         </div>
       </div>
 
