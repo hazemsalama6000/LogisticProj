@@ -4,15 +4,22 @@
   </mat-card-content>
 </mat-card>
 
+<p-steps  [(activeIndex)]="activeIndex" [model]="items"></p-steps>
 
+<swiper
+   #swiper
+  [direction]="'vertical'"
+  [slidesPerView]="1"
+  [spaceBetween]="30"
+  [mousewheel]="false"
+    [pagination]="{
+      clickable: false
+    }" 
+    [simulateTouch]="false"
+  (slideChange)="onSlideChange($event)" 
+ >
 
-<form class="needs-validation mt-3">
-
-  <p-steps  style="margin-top: 30px !important;" [model]="items"></p-steps>
-
-  <swiper class="mt-4" #swiper [virtual]="true" (slideChange)="onSlideChange($event)" [preventClicksPropagation]="false"
-    [simulateTouch]="false">
-    <ng-template swiperSlide>
+     <ng-template swiperSlide>
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
@@ -133,8 +140,6 @@
 
         </div>
       </div>
-
-
     </ng-template>
     <ng-template swiperSlide>
       <div class="container">
@@ -209,12 +214,8 @@
             </div>
         </div>
 
-
       </div>
       <br>
-
-
-
     </ng-template>
     <ng-template swiperSlide>
       <div class="container">
@@ -555,6 +556,7 @@
       </div>
 
     </ng-template>
+
   </swiper>
-</form>
+
 <br>

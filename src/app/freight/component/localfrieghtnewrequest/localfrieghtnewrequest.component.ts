@@ -65,7 +65,7 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
   lat: any;
   lng: any;
   currentlng: any;
-
+  activeIndex:any = 0;
   latitude!: number;
   longitude!: number;
   latitude_dest!: number;
@@ -84,8 +84,11 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
   items: MenuItem[] =
     [
       { label: 'Step 1' },
-      { label: 'Step 2' },
-      { label: 'Step 3' }
+      { label: 'select pickup' },
+      { label: 'select destination' },
+      { label: 'Step 4' },
+      { label: 'Step 5' },
+      { label: 'Step 6' }
     ];
 
   @ViewChild('swiper', { static: false }) swiper: any;
@@ -280,6 +283,7 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
   }
 
   onSlideChange(event: any) {
+    this.activeIndex=event[0].activeIndex;
     if (event[0].activeIndex == 2 && this.labelinit == 0) {
       this.initializeDestLocation();
       this.labelinit += 1;
