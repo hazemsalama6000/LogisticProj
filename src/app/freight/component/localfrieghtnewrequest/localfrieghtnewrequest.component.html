@@ -5,8 +5,12 @@
 </mat-card>
 
 
+
 <form class="needs-validation mt-3">
-  <swiper #swiper [virtual]="true" (slideChange)="onSlideChange($event)" [preventClicksPropagation]="false"
+
+  <p-steps  style="margin-top: 30px !important;" [model]="items"></p-steps>
+
+  <swiper class="mt-4" #swiper [virtual]="true" (slideChange)="onSlideChange($event)" [preventClicksPropagation]="false"
     [simulateTouch]="false">
     <ng-template swiperSlide>
       <div class="container">
@@ -137,7 +141,6 @@
         <div class="row mt-2">
 
           <div class="col-md-12">
-            <h3>{{"Select Pickup" | translate}}</h3>
             <agm-map [latitude]="latitude" [zoom]="5" [longitude]="longitude">
               <agm-marker [markerDraggable]="true" (dragEnd)="onMapClicked($event)" [latitude]="latitude"
                 [longitude]="longitude">
@@ -216,7 +219,6 @@
     <ng-template swiperSlide>
       <div class="container">
         <div class="col-md-12">
-          <h3>{{"Select Destination" | translate}}</h3>
           <agm-map [latitude]="latitude_dest" [zoom]="5" [longitude]="longitude_dest">
             <agm-marker [markerDraggable]="true" [latitude]="latitude_dest" [longitude]="longitude_dest"
               (dragEnd)="onMapClicked_dest($event)">

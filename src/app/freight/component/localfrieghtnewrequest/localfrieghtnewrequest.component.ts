@@ -17,6 +17,7 @@ import { HostListener } from '@angular/core';
 import SwiperCore from 'swiper';
 import { ViewEncapsulation } from '@angular/core';
 import { Virtual } from 'swiper';
+import { MenuItem } from 'primeng/api';
 
 SwiperCore.use([Virtual]);
 
@@ -70,7 +71,7 @@ export class LocalfrieghtnewrequestComponent implements OnInit {
   latitude_dest!: number;
   longitude_dest!: number;
   address: string = "";
-labelinit=0;
+  labelinit = 0;
   currentPosition: any;
 
   @ViewChild('search') public searchElementRef!: ElementRef<HTMLInputElement>;
@@ -80,6 +81,12 @@ labelinit=0;
   private geoCoder: any;
   zoom: number = 0;
 
+  items: MenuItem[] =
+    [
+      { label: 'Step 1' },
+      { label: 'Step 2' },
+      { label: 'Step 3' }
+    ];
 
   @ViewChild('swiper', { static: false }) swiper: any;
   constructor(
@@ -171,7 +178,7 @@ labelinit=0;
         this.item.pickup_location_lat = this.latitude;
 
         this.zoom = 8;
-       // this.getAddress(this.latitude, this.longitude);
+        // this.getAddress(this.latitude, this.longitude);
       });
     }
   }
@@ -186,28 +193,28 @@ labelinit=0;
         this.item.pickup_location_lat = this.latitude_dest;
 
         this.zoom = 8;
-       // this.getAddress(this.latitude, this.longitude);
+        // this.getAddress(this.latitude, this.longitude);
       });
     }
   }
 
-/*   getAddress(latitude: any, longitude: any) {
-    this.geoCoder.geocode({ 'location': { lat: latitude, lng: longitude } }, (results: any, status: any) => {
-      console.log(results);
-      console.log(status);
-      if (status === 'OK') {
-        if (results[0]) {
-          this.zoom = 12;
-          this.address = results[0].formatted_address;
+  /*   getAddress(latitude: any, longitude: any) {
+      this.geoCoder.geocode({ 'location': { lat: latitude, lng: longitude } }, (results: any, status: any) => {
+        console.log(results);
+        console.log(status);
+        if (status === 'OK') {
+          if (results[0]) {
+            this.zoom = 12;
+            this.address = results[0].formatted_address;
+          } else {
+            window.alert('No results found');
+          }
         } else {
-          window.alert('No results found');
+          window.alert('Geocoder failed due to: ' + status);
         }
-      } else {
-        window.alert('Geocoder failed due to: ' + status);
-      }
-
-    });
-  } */
+  
+      });
+    } */
 
   submit(): void {
     this._FreightService
@@ -273,9 +280,9 @@ labelinit=0;
   }
 
   onSlideChange(event: any) {
-    if (event[0].activeIndex == 2 && this.labelinit==0) {
-     this.initializeDestLocation();
-     this.labelinit+=1;
+    if (event[0].activeIndex == 2 && this.labelinit == 0) {
+      this.initializeDestLocation();
+      this.labelinit += 1;
     }
   }
 }

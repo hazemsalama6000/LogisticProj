@@ -13,9 +13,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 //import { MatIconModule } from '@angular/material/icon';
+import {StepsModule} from 'primeng/steps';
 
 export const MaterialsModules = [
-
+  StepsModule,
   MatButtonModule,
   MatInputModule,
   MatFormFieldModule,

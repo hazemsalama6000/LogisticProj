@@ -40,6 +40,7 @@
     "ngx-intl-tel-input": "^3.2.0",
     "ngx-material-timepicker": "^5.5.3",
     "ngx-owl-carousel-o": "^7.0.4",
+    "primeng": "^13.3.0",
     "rxjs": "~7.5.0",
     "snazzy-info-window": "^1.1.1",
     "swiper": "^8.4.5",
