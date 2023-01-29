@@ -4,10 +4,14 @@
   </mat-card-content>
 </mat-card>
 
-<p-steps  [(activeIndex)]="activeIndex" [model]="items"></p-steps>
+<br>
 
-<swiper
+<p-steps style="margin-top:50px !important;"  [(activeIndex)]="activeIndex" [model]="items"></p-steps>
+
+<swiper 
    #swiper
+   [autoHeight]="true"
+   [loop]="true" 
   [direction]="'vertical'"
   [slidesPerView]="1"
   [spaceBetween]="30"
@@ -24,14 +28,6 @@
         <div class="row">
           <div class="col-sm-6">
 
-            <!--   <label for="" class="form-label">{{"Currency" | translate}}</label>
-            <select name="currency_id" [(ngModel)]="item.currency_id" class="form-select">
-              <option value="" disabled>Enter Your Currency</option>
-              <option *ngFor="let item of currencys" value="{{item.id}}">
-                {{item.name}}
-              </option>
-            </select> -->
-
             <mat-form-field appearance="outline" class="w-100">
               <mat-label>{{'Currency' | translate}}</mat-label>
               <mat-select name="currency_id" [(ngModel)]="item.currency_id">
@@ -44,12 +40,6 @@
 
 
           <div class="col-sm-6">
-
-            <!--   <label for="" class="form-label">{{"Ticket Category" | translate}}</label>
-            <select name="category_id" [(ngModel)]="item.category_id" class="form-select">
-              <option value="" disabled>Enter ticket category</option>
-              <option *ngFor="let item of cats" value="{{item.id}}">{{item.name}}</option>
-            </select> -->
 
             <mat-form-field appearance="outline" class="w-100">
               <mat-label>{{'Ticket Category' | translate}}</mat-label>
@@ -559,4 +549,3 @@
 
   </swiper>
 
-<br>
