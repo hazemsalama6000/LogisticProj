@@ -25,13 +25,20 @@ agm-map {
 @import "~swiper/css/mousewheel";
 @import "~swiper/css";
 @import "~swiper/css/pagination";
+
+
+.swiper-container { 
+  /* height:500px; */ /* This solution causes gaps because the images are resized */
+  height:auto; 
+}
+
 .swiper {
   width: 100%;
   height: 100%;
 }
 
 .swiper-slide {
-  height: 50%;
+  height:auto;
 
   // text-align: center;
   font-size: 18px;
